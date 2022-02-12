@@ -153,6 +153,8 @@ body{
 
 #about{
   flex-direction: column;
+  background-image: url("../images/AboutMe.jpg");
+  background-size: cover;
 }
 
 h2, p{
@@ -258,23 +260,43 @@ h2, p{
   width: 300px;
 }
 
-#eka {
-  background-color: brown;
+/*  Värimaailma:
+
+    #161E1E Tosi tumma
+    #252729 Tumma
+    #515A60 Harmaa
+    #EFEFEF Vaalean harmaa
+    #FB8B53 Oranssi
+
+*/
+
+.example{
+  background-color: #252729;
+  border-radius: 5px;
+  transition: 0.2s;
 }
 
-#toka {
-  background-color: rgb(42, 165, 52);
+.example:hover{
+  background-color: #161E1E;
 }
 
-#kolmas {
-  background-color: rgb(42, 130, 165);
+/* Art */
+
+#art{
+  background-image: url("../images/Art.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Contact */
 
 #contact{
   flex-direction: column;
-  
+  background-image: url("../images/Chat.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #contact > h1, h3, p{
