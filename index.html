@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="icon" href="./favicon.svg">
+    <link rel="icon" href="./images/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./src/index.js" defer></script>
   </head>
   <body>
     <div class="navbar">
-          <a href="#" id="logo-btn">Logo</a>
+          <a href="" id="logo-btn">Logo</a>
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -20,8 +22,9 @@
           
     </div>
     <div class="container dark" id="logo">
-      <h1>Toni&nbsp;<span style="color: #FB8B53;">Cantarella</span></h1>
+      <h1><span style="color: #FB8B53;">Toni&nbsp;</span>Cantarella</h1>
       <img src="./profile_cropped.jpg" alt="profileImage">
+      <a href="#about" id="about-me-btn">About me</a>
     </div>
     <div class="container light main" id="about">
       <h2>About me</h2> 
@@ -32,19 +35,21 @@
       
     </div>
     <div class="container light main" id="examples">
-      <div id="eka"><a href="memorygame.html"></a></div>
+      <div id="eka"></div>
       <div id="toka"></div>
       <div id="kolmas"></div>
     </div>
     <div class="container dark main" id="contact">
-      <h1>Contact me at: </h1>
-      <p>toni.cantarella@outlook.com</p>
+      <h1>Contact information </h1>
+      <h3>Let's get in touch at:</h3>
+      <p class="e-mail">toni.cantarella@outlook.com</p>
+      <h3>You can also find me at:</h3>
       <ul>
-        <li>Linkedin</li>
-        <li>Github</li>
-        <li>CodePen</li>
+        <a href="https://fi.linkedin.com/in/toni-cantarella-957077207" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/ToniCantarella" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://codepen.io/ToniCant" target="_blank"><i class="fa fa-codepen"></i></a>
       </ul>
     </div>
-    <script src="./index.js"></script>
+    
   </body>
 </html>

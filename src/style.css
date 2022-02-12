@@ -1,0 +1,321 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #EFEFEF;
+}
+
+body{
+  background-color: #161E1E;
+  /* overflow: hidden; */
+}
+
+/*  Värimaailma:
+
+    #161E1E Tosi tumma
+    #252729 Tumma
+    #515A60 Harmaa
+    #EFEFEF Vaalean harmaa
+    #FB8B53 Oranssi
+
+*/
+
+/* NavBar */
+
+.navbar{
+  z-index: 10;
+  background-color: #FB8B53;
+  position: fixed;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.navbar *{
+  height: 100%;
+  display: block;
+}
+
+.navbar > a, ul{
+  margin: 0px 5vw;
+}
+
+.navbar a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.navbar a:hover{
+  background-color: #252729;
+  
+}
+
+.navbar li{
+  float: left;
+}
+
+/* Main */
+
+.container{
+  height: 100vh;
+  min-width: 100%;
+  max-width: 100vw;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row; /* Tää kannattais olla row, muuta muualta sitten vastaamaan tätä */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dark{
+  background-color: #252729;
+}
+
+.light{
+  background-color: #515A60;
+}
+
+/* Logo */
+
+#logo{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#logo h1{
+  position: absolute;
+  z-index: 9;
+  color: #EFEFEF;
+  animation-name: logoNameMove;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+  top: 35%;
+  font-size: 7.8vw;
+}
+
+#logo img{
+  position: absolute;
+  max-height: 50vh;
+  opacity: 0;
+  top: 20%;
+  animation-name: logoImgMove;
+  animation-duration: 2.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+#about-me-btn{
+  position: absolute;
+  font-size: larger;
+  padding: 10px;
+  opacity: 0;
+  text-decoration: none;
+  border-style: solid;
+  border-radius: 3px;
+  animation-name: logoBtnMove;
+  animation-duration: 1.5s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+  transition: 0.5s;
+}
+
+#about-me-btn:hover{
+  background-color: #FB8B53;
+}
+
+@keyframes logoNameMove{
+  0%{left: 0vw; opacity: 0;}
+  100%{left: 10vw; opacity: 1;}
+}
+
+@keyframes logoImgMove{
+  0%{right: 0vw; opacity: 0;}
+  100%{right: 10vw; opacity: 1;}
+}
+
+@keyframes logoBtnMove{
+  0%{bottom: 10vh; opacity: 0;}
+  100%{bottom: 20vh; opacity: 1;}
+}
+
+/* About me */
+
+#about{
+  flex-direction: column;
+}
+
+h2, p{
+  color: #EFEFEF;
+}
+
+
+/* Skills */
+
+/*  Värimaailma:
+
+    #161E1E Tosi tumma
+    #252729 Tumma
+    #515A60 Harmaa
+    #EFEFEF Vaalean harmaa
+    #FB8B53 Oranssi
+
+*/
+
+#skills{
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-box{
+  margin: 30px;
+  padding: 10px;
+  height: 400px;
+  width: 300px; 
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  background-color: #EFEFEF;
+  border-radius: 5px;
+}
+
+.skill-container{
+  /* background-color: cadetblue; */
+  border-radius: 5px;
+  width: 95%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.skill-title-container{
+  background-color: #FB8B53;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-star-container{
+  background-color: #515A60;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.prompt{
+  position: absolute;
+  padding: 5px;
+  opacity: 0;
+  margin-top: -75px;
+  margin-right: 50px;
+  text-align: center;
+  max-width: 250px;
+  color: #252729;
+  transition: 0.5s;
+  background: rgba(251, 139, 83, 0.9);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.star{
+  min-height: 10px;
+  min-width: 10px;
+  max-height: 10px;
+  max-width: 10px;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 0 0 5px #EFEFEF;
+}
+
+/* Examples */
+
+#examples{
+  display: flex;
+  flex-direction: column;
+}
+
+#examples > div{
+  margin: 30px;
+  height: 400px;
+  width: 300px;
+}
+
+#eka {
+  background-color: brown;
+}
+
+#toka {
+  background-color: rgb(42, 165, 52);
+}
+
+#kolmas {
+  background-color: rgb(42, 130, 165);
+}
+
+/* Contact */
+
+#contact{
+  flex-direction: column;
+  
+}
+
+#contact > h1, h3, p{
+  margin: 10px;
+}
+
+.e-mail{
+  color: #FB8B53;
+}
+
+#contact ul{
+  margin-top: 30px;
+}
+
+#contact a{
+  font-size: 5vh;
+  margin: 30px;
+}
+
+.fa{
+  transition: 0.2s;
+}
+
+.fa:hover{
+  color: #FB8B53;
+}
+
+/* Media queries */
+
+@media only screen and (min-width: 600px){
+  #logo h1, #logo img/* , .prompt  */{
+    position: absolute;
+  }
+  
+  #skills, #examples {
+    flex-direction: row;
+  }
+
+  /* .skill-box{
+    height: 42vh;
+  } */
+}
+
+
