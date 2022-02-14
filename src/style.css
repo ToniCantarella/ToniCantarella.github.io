@@ -85,6 +85,30 @@ body{
   background-color: #515A60;
 }
 
+.article *{
+  max-width: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.article-title{
+  margin-bottom: 50px;
+}
+
+.article-intro{
+  margin-bottom: 25px;
+}
+
+.article-paragraph{
+  margin-bottom: 10px;
+}
+
+.about-me-article *{
+  text-shadow: 0px 0px 5px #161E1E;
+}
+
 /* Logo */
 
 #logo{
@@ -104,7 +128,7 @@ body{
   font-size: 7.8vw;
 }
 
-#logo img{
+/* #logo img{
   position: absolute;
   max-height: 50vh;
   opacity: 0;
@@ -113,7 +137,7 @@ body{
   animation-duration: 2.5s;
   animation-delay: 2s;
   animation-fill-mode: forwards;
-}
+} */
 
 #about-me-btn{
   position: absolute;
@@ -125,7 +149,7 @@ body{
   border-radius: 3px;
   animation-name: logoBtnMove;
   animation-duration: 1.5s;
-  animation-delay: 3.5s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   transition: 0.5s;
 }
@@ -136,13 +160,13 @@ body{
 
 @keyframes logoNameMove{
   0%{left: 0vw; opacity: 0;}
-  100%{left: 10vw; opacity: 1;}
+  100%{left: 20vw; opacity: 1;}
 }
 
-@keyframes logoImgMove{
+/* @keyframes logoImgMove{
   0%{right: 0vw; opacity: 0;}
   100%{right: 10vw; opacity: 1;}
-}
+} */
 
 @keyframes logoBtnMove{
   0%{bottom: 10vh; opacity: 0;}
@@ -155,6 +179,10 @@ body{
   flex-direction: column;
   background-image: url("../images/AboutMe.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 0px;
+  /* background-position-x: 100px; */
 }
 
 h2, p{
@@ -271,6 +299,9 @@ h2, p{
 */
 
 .example{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #252729;
   border-radius: 5px;
   transition: 0.2s;
@@ -283,7 +314,7 @@ h2, p{
 /* Art */
 
 #art{
-  background-image: url("../images/Art.jpg");
+  /* background-image: url("../images/Art.jpg"); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -294,9 +325,12 @@ h2, p{
 #contact{
   flex-direction: column;
   background-image: url("../images/Chat.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-position-x: 0px;
+  background-position-y: -80px;
+  box-shadow: inset 0 0 0 1000px rgba(143, 48, 0, 0.3);
 }
 
 #contact > h1, h3, p{
@@ -305,15 +339,18 @@ h2, p{
 
 .e-mail{
   color: #FB8B53;
+  margin-bottom: 50px;
 }
 
 #contact ul{
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  
 }
 
 #contact a{
   font-size: 5vh;
-  margin: 30px;
+  margin: 0px 30px;
+  text-decoration: none;
 }
 
 .fa{
@@ -321,7 +358,9 @@ h2, p{
 }
 
 .fa:hover{
-  color: #FB8B53;
+  color: #EFEFEF;
+  text-shadow: 0px 0px 10px #FB8B53;
+  font-size: larger;
 }
 
 /* Media queries */
