@@ -39,6 +39,8 @@ body{
 .navbar *{
   height: 100%;
   display: block;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .navbar > a, ul{
@@ -56,11 +58,23 @@ body{
 
 .navbar a:hover{
   background-color: #252729;
+  padding: 25px;
+}
+
+#logo-btn *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-btn:hover{
+  color:#FB8B53;
   
 }
 
 .navbar li{
   float: left;
+  align-items: center;
 }
 
 /* Main */
@@ -86,7 +100,7 @@ body{
 }
 
 .article *{
-  max-width: 25vw;
+  max-width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,6 +196,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 0px;
+  background-attachment: fixed;
   /* background-position-x: 100px; */
 }
 
@@ -205,12 +220,29 @@ h2, p{
 #skills{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+}
+
+#skill-box-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-info{
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.skills-info h1{
+  margin-bottom: 20px;
 }
 
 .skill-box{
   margin: 30px;
   padding: 10px;
-  height: 400px;
+  /* height: 400px; */
   width: 300px; 
   display: flex;
   /* justify-content: center; */
@@ -220,11 +252,16 @@ h2, p{
   border-radius: 5px;
 }
 
+.skill-title{
+  color: #252729;
+  font-weight: 900;
+  font-size: x-large;
+}
+
 .skill-container{
-  /* background-color: cadetblue; */
   border-radius: 5px;
   width: 95%;
-  height: 50px;
+  height: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -255,10 +292,10 @@ h2, p{
   padding: 5px;
   opacity: 0;
   margin-top: -75px;
-  margin-right: 50px;
+  margin-right: 90px;
   text-align: center;
   max-width: 250px;
-  color: #252729;
+  color: #EFEFEF;
   transition: 0.5s;
   background: rgba(251, 139, 83, 0.9);
   border-radius: 5px;
@@ -333,9 +370,9 @@ h2, p{
   box-shadow: inset 0 0 0 1000px rgba(143, 48, 0, 0.3);
 }
 
-#contact > h1, h3, p{
+/* #contact > h1, h3, p{
   margin: 10px;
-}
+} */
 
 .e-mail{
   color: #FB8B53;
@@ -365,13 +402,21 @@ h2, p{
 
 /* Media queries */
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 1000px){
   #logo h1, #logo img/* , .prompt  */{
     position: absolute;
   }
   
-  #skills, #examples {
+  #skills, #examples{
+    flex-direction: column;
+  }
+
+  #skill-box-container{
     flex-direction: row;
+  }
+
+  .skill-container{
+    height: 50px;
   }
 
   /* .skill-box{

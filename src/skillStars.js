@@ -4,12 +4,12 @@ const programmingLanguages = {
     id: "programming-languages",
     title: "Languages",
     ratings: {
-        "HTML": 2,
-        "CSS": 2,
+        "HTML": 0,
+        "CSS": 1,
         "Javascript": 2,
-        "React": 1,
-        "SQL": 1,
-        "Java": 2,
+        "React": 3,
+        "SQL": 4,
+        "Java": 5,
     }
 }
 
@@ -35,12 +35,12 @@ const other = {
 }
 
 const prompts = [
-    "Coming in the future",
-    "I have surface level knowledge and I need active help from my peers at work",
-    "I have some experience, but I still require more knowledge in order to produce",
-    "I can comfortably produce things however, there is more to learn.",
-    "I can produce things independently. Allthough there is room for improvement",
-    "I am an expert in this skill"
+    "Coming in the future...</br></br>&#9201;",
+    "Surface level knowledge and I need active help from my peers at work",
+    "Some experience, but I require more knowledge to work independently",
+    "Can comfortably produce things however, there is more to learn.",
+    "Can work independently! Allthough there is room for improvement.",
+    "I am an expert in this skill!</br></br>&#127942;"
 ];
 
 const totalStars = 5;
@@ -98,7 +98,7 @@ function createSkillSet(){
 
             skillBox.appendChild(skillContainer);
         }
-        document.getElementById(`skills`).appendChild(skillBox);
+        document.getElementById(`skill-box-container`).appendChild(skillBox);
     }
 }
 
@@ -111,5 +111,5 @@ function mouseOver(containerId){
 function mouseOut(containerId){
     const prompt = document.getElementById(`${containerId}-prompt`);     
     prompt.style.opacity ="0";
-    prompt.style.marginRight = "50px";
+    prompt.style.marginRight = "90px";
 }
