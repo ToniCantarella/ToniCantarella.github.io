@@ -9,22 +9,32 @@
     <link rel="icon" href="./images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./src/skillStars.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./src/jqueryFunctions.js"></script>
   </head>
   <body>
     <div class="navbar">
-          <a href="" id="logo-btn">T &nbsp;<span>C</span></a>
+          <a href="" id="logo-btn">T <span>&nbsp;C</span></a>
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#examples">Examples</a></li>
             <li><a href="#art">Art</a></li>
-            <li><a href="#contact" id="contact-btn"><i class="fa fa-envelope"></i> Contact</a></li>
+            <li><a href="#contact"><i class="fa fa-envelope"></i>&nbsp; Contact</a></li>
           </ul>
+          <a id="drop-down-btn"><i class="fa fa-bars"></i></a>
           
     </div>
+    <ul id="responsive-navbar">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#art">Art</a></li>
+      <li><a href="#contact"><i class="fa fa-envelope"></i>&nbsp; Contact</a></li>
+    </ul>
     <div class="container dark" id="logo">
       <h1><span style="color: #FB8B53;">Toni&nbsp;</span>Cantarella</h1>
-      <a href="#about" id="about-me-btn">Learn more</a>
+      <a href="#about" class="transition-btn" id="about-me-btn">Learn more</a>
     </div>
     <div class="container light main" id="about">
       <div class="article about-me-article">
@@ -40,29 +50,35 @@
           During summer, I enjoy motorbikes! They go fast &#127949;
         </p>
       </div>
+      <a href="#skills" class="transition-btn">Skills</a>
     </div>
     <div class="container dark main" id="skills">
       <div class="skills-info">
         <h1>Skills</h1>
         <h4>Hover over each skill to view details</h4>
       </div>
-      <div id="skill-box-container">
+      <div class="box-container" id="skill-box-container">
 
       </div>
+      <a href="#examples" class="transition-btn">Examples</a>
     </div>
     <div class="container light main" id="examples">
-      <div class="example" id="navigation-examples">
-        <h2>Coming soon...</h2>
+      <div class="box-container">
+        <div class="example" id="navigation-examples">
+          <h2>Coming soon...</h2>
+        </div>
+        <div class="example" id="star-examples">
+          <h2>Coming soon...</h2>
+        </div>
+        <div class="example" id="color-examples">
+          <h2>Coming soon...</h2>
+        </div>
       </div>
-      <div class="example" id="star-examples">
-        <h2>Coming soon...</h2>
-      </div>
-      <div class="example" id="color-examples">
-        <h2>Coming soon...</h2>
-      </div>
+      <a href="#art" class="transition-btn">Art</a>
     </div>
     <div class="container dark main" id="art">
       <h1>Coming in the future...</h1>
+      <a href="#contact" class="transition-btn" id="skills-btn">Contact</a>
     </div>
     <div class="container dark main" id="contact">
       <div class="article">
@@ -74,7 +90,10 @@
           <a href="https://fi.linkedin.com/in/toni-cantarella-957077207" target="_blank"><i class="fa fa-linkedin"></i></a>
           <a href="https://github.com/ToniCantarella" target="_blank"><i class="fa fa-github"></i></a>
           <a href="https://codepen.io/ToniCant" target="_blank"><i class="fa fa-codepen"></i></a>
-      </ul>
+        </ul>
+        <h4 class="article-intro">All images used on this site were taken by my sister Rosa!</h4>
+        <p class="article-paragraph"> You can check the rest of her work at: </p>
+        <a href="https://www.instagram.com/rosanvalokuvaus/?hl=fi" target="_blank"><i class="fa fa-instagram"></i></a>
       </div>
       
     </div>
