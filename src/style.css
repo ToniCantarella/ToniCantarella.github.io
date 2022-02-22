@@ -37,7 +37,7 @@ body{
 
 .navbar *{
   height: 100%;
-  display: block;
+  /* display: block; */
   cursor: pointer;
 }
 
@@ -99,24 +99,28 @@ body{
   z-index: 9;
   list-style: none;
   top: 50px;
-  left: 40vw;
+  left: 45vw;
   background-color: #515A60;
-  padding: 10px;
+  /* padding: 10px; */
   justify-content: space-between;
 }
 
-#responsive-navbar *{
-  height: 100%;
-}
+/* #responsive-navbar *{
+  
+} */
 
 #responsive-navbar li{
-  padding: 15px 0px;
-
+  height: 100%;
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #responsive-navbar a{
   text-decoration: none;
-  
+  display: block;
+  padding: 10px 20px 10px 5px;
 }
 
 #responsive-navbar a:hover{
@@ -127,7 +131,7 @@ body{
 
 .container{
   position: relative;
-  height: 95vh;
+  height: 100vh;
   min-width: 100%;
   max-width: 100vw;
   padding-top: 50px;
@@ -164,7 +168,7 @@ body{
 }
 
 .article-title{
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
 }
 
 .article-intro{
@@ -172,15 +176,11 @@ body{
 }
 
 .article-paragraph{
-  margin-bottom: 1vh;
+  margin-bottom: .5vh;
 }
 
 .article ul{
   margin-bottom: 3vh;
-}
-
-.about-me-article *{
-  text-shadow: 0px 0px 5px #161E1E;
 }
 
 /* Logo */
@@ -215,7 +215,14 @@ body{
   text-decoration: none;
   border-style: solid;
   border-radius: 3px;
-  bottom: 50px;
+  bottom: 20px;
+  transition: 0.2s;
+}
+
+#back-to-top{
+  border-style: none;
+  font-size: 40px;
+  background-color: unset;
 }
 
 .transition-btn:hover{
@@ -255,17 +262,43 @@ body{
 
 /* About me */
 
+#about *{
+  text-shadow: -1px 1px 1px #161E1E,
+                1px 1px 1px #161E1E,
+                1px -1px 1px #161E1E,
+                -1px -1px 1px #161E1E;
+}
+
 #about{
+  /* padding-top: 200px; */
   background-image: url("../images/AboutMe.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 0px;
+  
   background-attachment: fixed;
 }
 
+#thats-me{
+  display: none;
+}
+
+#about-me-article{
+  top: 1000px;
+  /* display: flex;
+  justify-content: left;
+  align-items: initial;
+  flex-direction: column;
+  text-align: left;*/
+} 
+
 h2, p{
   color: #EFEFEF;
+}
+
+.about-me-expanded{
+  display: none;
 }
 
 
@@ -282,8 +315,7 @@ h2, p{
 */
 
 .skills-info{
-  text-align: center;
-  margin-bottom: 100px;
+  display: none;
 }
 
 .skills-info h1{
@@ -291,10 +323,10 @@ h2, p{
 }
 
 .skill-box{
-  margin: 30px;
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
   /* height: 400px; */
-  width: 300px; 
+  width: 250px; 
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -306,7 +338,7 @@ h2, p{
 .skill-title{
   color: #252729;
   font-weight: 900;
-  font-size: x-large;
+  font-size: medium;
 }
 
 .skill-container{
@@ -348,7 +380,7 @@ h2, p{
   max-width: 250px;
   color: #EFEFEF;
   transition: 0.5s;
-  background: rgba(251, 139, 83, 0.9);
+  background: rgba(251, 139, 83, 1);
   border-radius: 5px;
   pointer-events: none;
 }
@@ -417,7 +449,7 @@ h2, p{
   
 } */
 
-#contact a{
+#contact a:not(.transition-btn){
   font-size: 5vh;
   margin: 0px 30px;
   text-decoration: none;
@@ -436,8 +468,39 @@ h2, p{
 /* Media queries */
 
 @media only screen and (min-width: 1000px){
+  .navbar ul{
+    display: block;
+  }
+
+  #drop-down-btn{
+    display: none;
+  }
+
   .article{
-    max-width: 40vw;
+    max-width: 25vw;
+  }
+
+  .article-title{
+    color: #FB8B53;
+  }
+
+  .article i{
+    color: #FB8B53;
+  }
+
+  .article a {
+    color: #FB8B53;
+  }
+
+  .transition-btn{
+    position: absolute;
+    font-size: larger;
+    padding: 10px;
+    opacity: 1;
+    text-decoration: none;
+    border-style: solid;
+    border-radius: 3px;
+    bottom: 50px;
   }
 
   #logo h1{
@@ -450,38 +513,101 @@ h2, p{
   #logo span:after{
     content: none;
   }
+
+  #about{
+    /* background-position-x: 300px; */
+    /* padding-top: 300px; */
+    /*padding-right: 450px; */
+  }
+
+  #thats-me{
+    position: absolute;
+    display: none;
+    top: 150px;
+    left: 800px;
+    font-size: x-large;
+    font-weight: 900;
+    transition: 0.2s;
+  }
+
+  #thats-me i{
+    transform: rotate(45deg);
+  }
+
+  #thats-me:hover {
+    font-size: xx-large;
+    text-shadow: 0px 0px 10px #FB8B53;
+  }
+
+  #about-me-article *{
+    display: inline-block;
+    text-align: left;
+    
+    /* text-shadow: none; */
+  }
+
+  #about-me-article{
+    min-width: 480px;
+    margin-top: 0vw;
+    margin-right: 50vw;
+    background-color: rgba(81, 90, 96, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .about-me-expanded {
+    display: block;
+  }
   
   #skills, #examples{
     flex-direction: column;
+  }
+
+  .skills-info{
+    text-align: center;
+    margin-bottom: 30px;
+    display: block;
+  }
+  
+  .skills-info h1{
+    margin-bottom: 20px;
+  }
+  
+  .skill-box{
+    margin: 30px;
+    padding: 10px;
+    /* height: 400px; */
+    width: 300px; 
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+  }
+  
+  .skill-title{
+    color: #252729;
+    font-weight: 900;
+    font-size: x-large;
   }
 
   .box-container{
     flex-direction: row;
   }
 
-  /* #skill-box-container{
-    flex-direction: row;
-  } */
-
   .skill-container{
     height: 50px;
   }
 
-  .navbar ul{
-    display: block;
-  }
-
-  #drop-down-btn{
-    display: none;
+  .example{
+    height: 400px;
   }
 
   #contact{
     background-position-x: 0px;
   }
 
-  /* .skill-box{
-    height: 42vh;
-  } */
 }
 
 
