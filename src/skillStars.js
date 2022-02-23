@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', createSkillSet);
 
+/* Skill categories contained in seperate objects */
 const programmingLanguages = {
     id: "programming-languages",
     title: "Languages",
     ratings: {
-        "HTML": 0,
-        "CSS": 1,
+        "HTML": 3,
+        "CSS": 3,
         "Javascript": 2,
-        "React": 3,
-        "SQL": 4,
-        "Java": 5,
+        "JQuery": 1,
+        "React": 1,
+        "SQL": 2,
+        /* "Java": 5, */
     }
 }
 
@@ -17,23 +19,24 @@ const tools = {
     id: "tools",
     title: "Tools",
     ratings: {
-        "Git": 1,
+        "VS Code IDE": 3, 
+        "Git": 2,
         "Rest API's": 1,
         "NodeJs": 1,
-        "VS Code IDE": 3, 
     }   
 }
 
-const other = {
-    id: "other",
-    title: "Other",
+const visual = {
+    id: "visual",
+    title: "Visual",
     ratings: {
         "Figma": 1,
+        "InkScape": 1,
         "SketchBook Pro": 5,
-        "InkScape": 0,
     }
 }
 
+/* Array of prompt messages that activate on hover */
 const prompts = [
     "Coming in the future...</br></br>&#9201;",
     "Surface level knowledge and I need active help from my peers at work",
@@ -43,10 +46,13 @@ const prompts = [
     "I am an expert in this skill!</br></br>&#127942;"
 ];
 
+/* Count of stars to be viewed next to each skill */
 const totalStars = 5;
 
-const allRatings = [programmingLanguages, tools, other];
+/* Skill categories contained in an array */
+const allRatings = [programmingLanguages, tools, visual];
 
+/* Function to create every skill category, skill element and stars and append each of them in the "skills" container*/
 function createSkillSet(){
     for(let skillCategory of allRatings){
         const skillBox = document.createElement("div");
@@ -63,7 +69,7 @@ function createSkillSet(){
 
             skillContainer.innerHTML = `
                 <div class="skill-title-container">
-                    <p>${rating}</p>
+                    <a>${rating}</a>
                 </div>
             `;
 
@@ -102,12 +108,14 @@ function createSkillSet(){
     }
 }
 
+/* OnMouseOver function to animate the prompt message */
 function mouseOver(containerId){
     const prompt = document.getElementById(`${containerId}-prompt`);
     prompt.style.opacity ="1";
     prompt.style.marginRight = "0px";
 }
 
+/* OnMouseOut function to animate the prompt message */
 function mouseOut(containerId){
     const prompt = document.getElementById(`${containerId}-prompt`);     
     prompt.style.opacity ="0";

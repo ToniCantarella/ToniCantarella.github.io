@@ -21,6 +21,7 @@ body{
 
 */
 
+
 /* NavBar */
 
 .navbar{
@@ -69,6 +70,24 @@ body{
   padding: 25px;
 }
 
+#contact-btn{
+  border-radius: 20px;
+  height: 50%;
+  padding: 20px;
+}
+
+#contact-btn:hover{
+  animation-name: contactBg;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes contactBg{
+  0%{background-color: #515A60;}
+  50%{background-color: #252729;}
+  100%{background-color: #515A60;}
+}
+
 #logo-btn *{
   display: flex;
   justify-content: center;
@@ -89,9 +108,41 @@ body{
   text-align: center;
 }
 
-/* #drop-down-btn{
-  cursor: pointer;
-} */
+
+/* Transition button */
+
+.transition-btn{
+  position: absolute;
+  font-size: medium;
+  padding: 5px;
+  opacity: 1;
+  text-decoration: none;
+  border-style: solid;
+  border-radius: 3px;
+  bottom: 10vh;
+  transition: 0.2s;
+}
+
+#back-to-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  font-size: 40px;
+  background-color: unset;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  bottom: 3vh;
+
+}
+
+.transition-btn:hover{
+  background-color: #FB8B53;
+}
+
+
+/* Responsive navbar */
 
 #responsive-navbar{
   display: none;
@@ -104,10 +155,6 @@ body{
   /* padding: 10px; */
   justify-content: space-between;
 }
-
-/* #responsive-navbar *{
-  
-} */
 
 #responsive-navbar li{
   height: 100%;
@@ -126,6 +173,7 @@ body{
 #responsive-navbar a:hover{
   background-color: #FB8B53;
 }
+
 
 /* Main */
 
@@ -158,6 +206,9 @@ body{
   background-color: #515A60;
 }
 
+
+/* Article */
+
 .article *{/* 
   max-width: 50vw; */
   /* overflow-wrap: break-word; */
@@ -165,6 +216,8 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* display: inline-block; */
+  /* font-size: medium; */
 }
 
 .article-title{
@@ -173,6 +226,7 @@ body{
 
 .article-intro{
   margin-bottom: 2vh;
+  display: inline-block;
 }
 
 .article-paragraph{
@@ -182,6 +236,7 @@ body{
 .article ul{
   margin-bottom: 3vh;
 }
+
 
 /* Logo */
 
@@ -205,35 +260,6 @@ body{
   content: "\a";
   white-space: pre;
 }
-
-/* This needs to be moved to the container section of this file */
-.transition-btn{
-  position: absolute;
-  font-size: larger;
-  padding: 10px;
-  opacity: 1;
-  text-decoration: none;
-  border-style: solid;
-  border-radius: 3px;
-  bottom: 20px;
-  transition: 0.2s;
-}
-
-#back-to-top{
-  border-style: none;
-  font-size: 40px;
-  background-color: unset;
-}
-
-.transition-btn:hover{
-  background-color: #FB8B53;
-}
-
-/* End */
-
-/* This needs to be moved to the about me section of this file */
-
-/* End */
 
 #about-me-btn{
   position: absolute;
@@ -260,6 +286,7 @@ body{
   100%{bottom: 20vh; opacity: 1;}
 }
 
+
 /* About me */
 
 #about *{
@@ -285,12 +312,7 @@ body{
 }
 
 #about-me-article{
-  top: 1000px;
-  /* display: flex;
-  justify-content: left;
-  align-items: initial;
-  flex-direction: column;
-  text-align: left;*/
+  font-size: small;
 } 
 
 h2, p{
@@ -314,6 +336,10 @@ h2, p{
 
 */
 
+#skills{
+  padding-bottom: 100px;
+}
+
 .skills-info{
   display: none;
 }
@@ -327,12 +353,14 @@ h2, p{
   padding: 5px;
   /* height: 400px; */
   width: 250px; 
+  max-height: 125px;
   display: flex;
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   background-color: #EFEFEF;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .skill-title{
@@ -344,7 +372,8 @@ h2, p{
 .skill-container{
   border-radius: 5px;
   width: 95%;
-  height: 15px;
+  min-height: 15px;
+  max-height: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -371,6 +400,7 @@ h2, p{
 }
 
 .prompt{
+  z-index: 20;
   position: absolute;
   padding: 5px;
   opacity: 0;
@@ -395,7 +425,12 @@ h2, p{
   box-shadow: 0 0 5px #EFEFEF;
 }
 
+
 /* Examples */
+
+#examples{
+  padding-bottom: 80px;
+}
 
 .example{
   display: flex;
@@ -414,6 +449,7 @@ h2, p{
   background-color: #161E1E;
 }
 
+
 /* Art */
 
 #art{
@@ -422,6 +458,7 @@ h2, p{
   background-repeat: no-repeat;
   background-position: center;
 }
+
 
 /* Contact */
 
@@ -465,6 +502,7 @@ h2, p{
   font-size: larger;
 }
 
+
 /* Media queries */
 
 @media only screen and (min-width: 1000px){
@@ -482,6 +520,10 @@ h2, p{
 
   .article-title{
     color: #FB8B53;
+  }
+
+  .article-intro{
+    display: flex;
   }
 
   .article i{
@@ -514,12 +556,6 @@ h2, p{
     content: none;
   }
 
-  #about{
-    /* background-position-x: 300px; */
-    /* padding-top: 300px; */
-    /*padding-right: 450px; */
-  }
-
   #thats-me{
     position: absolute;
     display: none;
@@ -550,9 +586,14 @@ h2, p{
     min-width: 480px;
     margin-top: 0vw;
     margin-right: 50vw;
-    background-color: rgba(81, 90, 96, 0.8);
+    background-color: rgba(37, 39, 41, 0.8);
     padding: 10px;
     border-radius: 5px;
+    font-size: medium;
+  }
+
+  #about-me-article h1, #about-me-article a{
+    text-shadow: 0px 0px 10px #252729;
   }
 
   .about-me-expanded {
@@ -577,6 +618,7 @@ h2, p{
     margin: 30px;
     padding: 10px;
     /* height: 400px; */
+    max-height: none;
     width: 300px; 
     display: flex;
     /* justify-content: center; */
@@ -597,7 +639,11 @@ h2, p{
   }
 
   .skill-container{
-    height: 50px;
+    min-height: 50px;
+  }
+
+  #examples{
+    padding-bottom: 0px;
   }
 
   .example{
