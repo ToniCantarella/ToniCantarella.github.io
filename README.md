@@ -1,7 +1,7 @@
 # Toni Cantarella
 ## Personal website used as a portfolio to show of my web-development skills
 
-[https://tonicantarella.com/](https://tonicantarella.com/)
+[tonicantarella.com/](https://tonicantarella.com/)
 
 The code of this site is currently very simple and or messy. In the future I hope to remake most (if not all) of the code, markup and even the styling from scratch. 
 
