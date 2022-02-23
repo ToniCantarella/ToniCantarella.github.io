@@ -133,8 +133,7 @@ body{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  bottom: 3vh;
-
+  bottom: 5vh;
 }
 
 .transition-btn:hover{
@@ -340,11 +339,11 @@ h2, p{
   padding-bottom: 100px;
 }
 
-.skills-info{
+.container-info{
   display: none;
 }
 
-.skills-info h1{
+.container-info h1{
   margin-bottom: 20px;
 }
 
@@ -429,7 +428,7 @@ h2, p{
 /* Examples */
 
 #examples{
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 
 .example{
@@ -440,9 +439,10 @@ h2, p{
   background-color: #252729;
   border-radius: 5px;
   transition: 0.2s;
-  margin: 30px;
+  margin: 5px;
   width: 300px;
   padding: 30px;
+  
 }
 
 .example:hover{
@@ -542,7 +542,11 @@ h2, p{
     text-decoration: none;
     border-style: solid;
     border-radius: 3px;
-    bottom: 50px;
+    bottom: 10vh;
+  }
+
+  #back-to-top{
+    bottom: 10vh;
   }
 
   #logo h1{
@@ -578,7 +582,6 @@ h2, p{
   #about-me-article *{
     display: inline-block;
     text-align: left;
-    
     /* text-shadow: none; */
   }
 
@@ -586,7 +589,7 @@ h2, p{
     min-width: 480px;
     margin-top: 0vw;
     margin-right: 50vw;
-    background-color: rgba(37, 39, 41, 0.8);
+    background-color: rgba(37, 39, 41, 0.6);
     padding: 10px;
     border-radius: 5px;
     font-size: medium;
@@ -604,13 +607,12 @@ h2, p{
     flex-direction: column;
   }
 
-  .skills-info{
+  .container-info{
     text-align: center;
-    margin-bottom: 30px;
     display: block;
   }
   
-  .skills-info h1{
+  .container-info h1{
     margin-bottom: 20px;
   }
   
@@ -643,11 +645,12 @@ h2, p{
   }
 
   #examples{
-    padding-bottom: 0px;
+    padding-bottom: 100px;
   }
 
   .example{
     height: 400px;
+    margin: 30px;
   }
 
   #contact{
