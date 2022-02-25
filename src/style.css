@@ -252,14 +252,24 @@ body{
 }
 
 #logo h1{
-  position: initial;
+  position: absolute;
   z-index: 8;
+  opacity: 0;
   color: #EFEFEF;
-  animation-name: logoNameMove;
+  animation-name: respLogoNameMove;
   animation-duration: 2.5s;
+  animation-delay: 0.2s;
   animation-fill-mode: forwards;
   margin-top: 20vh;
   font-size: 50px;
+}
+
+#logo span{
+  opacity: 0;
+  animation-name: respLogoSpanMove;
+  animation-delay: 1.5s;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
 }
 
 #logo span:after{
@@ -277,9 +287,14 @@ body{
   transition: 0.5s;
 }
 
-@keyframes logoNameMove{
-  0%{left: 0%; opacity: 0;}
-  100%{left: 20%; opacity: 1;}
+@keyframes respLogoNameMove{
+  0%{top: 0%; opacity: 0;}
+  100%{top: 15%; opacity: 1;}
+}
+
+@keyframes respLogoSpanMove {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 @keyframes logoBtnMove{
@@ -391,7 +406,7 @@ h2, p{
   justify-content: center;
   align-items: center;
   text-align: center;
-  
+
   /* box-shadow: 2px 2px 10px #252729; */
 }
 
@@ -567,13 +582,39 @@ h2, p{
 
   #logo h1{
     position: absolute;
+    opacity: 0;
     font-size: 7.8vw;
     top: 35%;
     margin: 0;
+    animation-name: logoNameMove;
+    /*  */
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+  }
+
+  #logo span{
+    /* position: relative; */
+    opacity: 0;
+    /* font-weight: 900; */
+    /* font-size: 7.8vw; */
+    animation-name: logoSpanMove;
+    animation-delay: 1.5s;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
   }
 
   #logo span:after{
     content: none;
+  }
+
+  @keyframes logoNameMove {
+    0%{left: 0%; opacity: 0;}
+    100%{left: 20%; opacity: 1;}
+  }
+
+  @keyframes logoSpanMove {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
   }
 
   #thats-me{
