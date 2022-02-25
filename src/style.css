@@ -598,7 +598,7 @@ h2, p{
     /* font-weight: 900; */
     /* font-size: 7.8vw; */
     animation-name: logoSpanMove;
-    animation-delay: 1.5s;
+    animation-delay: 0s;
     animation-duration: 2.5s;
     animation-fill-mode: forwards;
   }
