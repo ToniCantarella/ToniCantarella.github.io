@@ -16,29 +16,36 @@
     <script src="./src/jqueryFunctions.js"></script>
   </head>
   <body>
+
+    <!-- Navigation -->
     <div class="navbar">
           <a href="" id="logo-btn">T <span>&nbsp;C</span></a>
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#examples">Examples</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#art">Art</a></li>
             <li><a href="#contact" id="contact-btn"><i class="fa fa-envelope"></i>&nbsp; Contact</a></li>
           </ul>
           <a id="drop-down-btn"><i class="fa fa-bars" id="icon"></i></a>
-          
     </div>
+
+    <!-- Responsive navigation -->
     <ul id="responsive-navbar">
       <li class="resp-navbar-item"><a href="#about">About</a></li>
-      <li class="resp-navbar-item"><a href="#skills">Skills</a></li>
       <li class="resp-navbar-item"><a href="#examples">Examples</a></li>
+      <li class="resp-navbar-item"><a href="#skills">Skills</a></li>
       <li class="resp-navbar-item"><a href="#art">Art</a></li>
       <li class="resp-navbar-item"><a href="#contact"><i class="fa fa-envelope"></i>&nbsp; Contact</a></li>
     </ul>
+
+    <!-- Logo -->
     <div class="container dark" id="logo">
       <h1><span style="color: #FB8B53;">Toni&nbsp;</span>Cantarella</h1>
       <a href="#about" class="transition-btn" id="about-me-btn">Learn more</a>
     </div>
+
+    <!-- About me -->
     <div class="container light main" id="about">
       <a id="thats-me">That's me! <i class="fa fa-arrow-right" ></i></a>
       <div class="article" id="about-me-article">
@@ -63,18 +70,11 @@
           I am currently looking for an internship and you can find my contact information <a href="#contact">here.</a>.
         </p>
       </div>
-      <a href="#skills" class="transition-btn">Skills</a>
-    </div>
-    <div class="container dark main" id="skills">
-      <div class="container-info">
-        <h1>Skills</h1>
-        <h4>Hover over each skill to view details</h4>
-      </div>
-      <div class="box-container" id="skill-box-container">
-      </div>
       <a href="#examples" class="transition-btn">Examples</a>
     </div>
-    <div class="container light main" id="examples">
+
+    <!-- Examples -->
+    <div class="container dark main" id="examples">
       <div class="container-info">
         <h1>Examples</h1>
         <h4>Here you can view my skills in action</h4>
@@ -90,13 +90,30 @@
           <h2>Coming soon...</h2>
         </div>
       </div>
+      <a href="#skills" class="transition-btn">Skills</a>
+    </div>
+
+    <!-- Skills -->
+    <div class="container light main" id="skills">
+      <div class="container-info">
+        <h1>Skills</h1>
+        <h4>These ratings are based on my own confidence level</h4>
+        <br>
+        <h4>Hover over each skill to view details</h4>
+      </div>
+      <div class="box-container" id="skill-box-container">
+      </div>
       <a href="#art" class="transition-btn">Art</a>
     </div>
+
+    <!-- Art -->
     <div class="container dark main" id="art">
       <h1>Coming in the future...</h1>
       <a href="#contact" class="transition-btn" id="skills-btn">Contact</a>
     </div>
-    <div class="container dark main" id="contact">
+
+    <!-- Contact -->
+    <div class="container light main" id="contact">
       <div class="article" id="contact-article">
         <h1 class = "article-title">Let's chat!</h1>
         <h4 class="article-intro">Contact me at:</h4>
@@ -109,7 +126,9 @@
         </ul>
         <h4 class="article-intro">All images used on this site were taken by my sister &nbsp;<span style="color: #FB8B53;"> Rosa!</span> </h4>
         <p class="article-paragraph"> You can check the rest of her work at: </p>
-        <a href="https://www.instagram.com/rosanvalokuvaus/?hl=fi" target="_blank"><i class="fa fa-instagram"></i></a>
+        <ul>
+          <li><a href="https://www.instagram.com/rosanvalokuvaus/?hl=fi" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        </ul>
       </div>
       <a href="#" class="transition-btn" id="back-to-top"><i class="fa fa-chevron-circle-up"></i></a>
     </div>
