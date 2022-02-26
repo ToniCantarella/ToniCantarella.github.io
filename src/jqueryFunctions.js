@@ -13,4 +13,28 @@ $(document).ready(function(){
         $("#icon").toggleClass("fa fa-bars");
         $("#icon").toggleClass("fa fa-close");
     });
+
+    /* Examples */
+    $(".example").click(function(){
+        $(".examples-menu").hide("fast", "linear");
+    });
+
+    /*  */
+    $(".fa-home").click(function(){
+        $(".example-component").hide("fast", "linear");
+        $(".examples-menu").show("fast", "linear");
+    });
+
+    /*  */
+    $("#navigation-examples").click(function(){
+        $("#navbars").show("fast", "linear");
+    });
+
+    $("#star-examples").click(function(){
+        $("#stars").show("fast", "linear");
+    });
+
+    $("#color-examples").click(function(){
+        $("#colors").show("fast", "linear");
+    });
 });

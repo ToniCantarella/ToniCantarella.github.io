@@ -454,6 +454,13 @@ h2, p{
   padding-bottom: 100px;
 }
 
+.examples-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .example{
   display: flex;
   justify-content: center;
@@ -470,6 +477,35 @@ h2, p{
 
 .example:hover{
   background-color: #161E1E;
+}
+
+.example-component{
+  display: none;
+}
+
+.example-component *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-home{
+  cursor: pointer;
+  position: absolute;
+  top: 15vh;
+  left: 20vw;
+}
+
+#home-btn{
+  font-size: xx-large;
+}
+
+#home-btn:hover{
+  font-size: 40px;
+}
+
+.example-title{
+  margin-bottom: 10vh;
 }
 
 

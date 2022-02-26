@@ -12,6 +12,12 @@
     <link rel="icon" href="./images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./src/skillStars.js" defer></script>
+    <script src="./src/components/navBarOne.js"></script>
+    <script src="./src/components/navBarTwo.js"></script>
+    <script src="./src/components/navBarThree.js"></script>
+    <script src="./src/components/navBarFour.js"></script>
+    <script src="./src/components/starRating.js" ></script>
+    <script src="./src/components/colorChanger.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./src/jqueryFunctions.js"></script>
   </head>
@@ -75,22 +81,52 @@
 
     <!-- Examples -->
     <div class="container dark main" id="examples">
-      <div class="container-info">
-        <h1>Examples</h1>
-        <h4>Here you can view my skills in action</h4>
+      <!-- Navbars component -->
+      <div class="example-component" id="navbars">
+        <i class="fa fa-home" id="home-btn"></i>
+        <h1 class="example-title">Navigation bars</h1>
+        <navbar-one></navbar-one>
+        <navbar-two></navbar-two>
+        <navbar-three></navbar-three>
+        <navbar-four></navbar-four>
       </div>
-      <div class="box-container">
-        <div class="example" id="navigation-examples">
-          <h2>Coming soon...</h2>
-        </div>
-        <div class="example" id="star-examples">
-          <h2>Coming soon...</h2>
-        </div>
-        <div class="example" id="color-examples">
-          <h2>Coming soon...</h2>
-        </div>
+
+      <!-- Stars component -->
+      <div class="example-component" id="stars">
+        <i class="fa fa-home" id="home-btn"></i>
+        <h1 class="example-title">Star rating system</h1>
+        <star-rating></star-rating>
       </div>
-      <a href="#skills" class="transition-btn">Skills</a>
+
+      <!-- Color changer component -->
+      <div class="example-component" id="colors">
+        <i class="fa fa-home" id="home-btn"></i>
+        <h1 class="example-title">Color theme changer</h1>
+      </div>
+      <div class="examples-menu">
+        <div class="container-info">
+          <h1>Examples</h1>
+          <h4>Here you can view my skills in action</h4>
+        </div>
+        <div class="box-container">
+          
+          <!-- Navbars -->
+          <div class="example" id="navigation-examples">
+            <h2>Navigation bars</h2>
+          </div>
+
+          <!-- Stars -->
+          <div class="example" id="star-examples">
+            <h2>Star rating system</h2>
+          </div>
+
+          <!-- Color changer -->
+          <div class="example" id="color-examples">
+            <h2>Color theme changer</h2>
+          </div>
+        </div>
+        <a href="#skills" class="transition-btn">Skills</a>
+      </div>
     </div>
 
     <!-- Skills -->
