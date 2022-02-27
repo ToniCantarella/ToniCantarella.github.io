@@ -489,6 +489,10 @@ h2, p{
   align-items: center;
 }
 
+.navbar-example{
+  margin-bottom: 30px;
+}
+
 .fa-home{
   cursor: pointer;
   position: absolute;
@@ -505,7 +509,7 @@ h2, p{
 }
 
 .example-title{
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 
 

@@ -13,8 +13,7 @@ starsTemplate.innerHTML = `
     }
     .star{
       font-size: xx-large;
-      color: #161E1E;
-      text-shadow: 0px 0px 10px #515A60;
+      color: #515A60;
     }
     a:hover{
       cursor: pointer;
@@ -73,8 +72,8 @@ function lightStars(element){
     stars[i].style.textShadow = "0px 0px 10px #FB8B53";
   }
   for(let j = 4; j > index; j--){
-    stars[j].style.color = "#161E1E";
-    stars[j].style.textShadow = "0px 0px 10px #515A60";
+    stars[j].style.color = "#515A60";
+    stars[j].style.textShadow = "none";
   }
 }
 
@@ -84,8 +83,8 @@ function resetStars(element){
     const prompt = element.parentElement.querySelector(".prompt");
     prompt.innerHTML = "Hey come on, give me a rating! &#128579;";
     for(let i = 0; i < 4 + 1; i++){
-        stars[i].style.color = "#161E1E";
-    stars[i].style.textShadow = "0px 0px 10px #515A60";
+        stars[i].style.color = "#515A60";
+        stars[i].style.textShadow = "none";
     }
     
 }
