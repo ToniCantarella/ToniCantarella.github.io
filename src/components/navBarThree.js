@@ -7,7 +7,7 @@ navBarThreeTemplate.innerHTML = `
   }
   .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     overflow: hidden;
@@ -52,7 +52,7 @@ navBarThreeTemplate.innerHTML = `
   }
   .navbar a{
     cursor: pointer;
-    padding: 0px 10px;
+    padding: 0px 5px;
     transition: 0.2s;
   }
   .navbar a:hover{
@@ -63,6 +63,11 @@ navBarThreeTemplate.innerHTML = `
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media only screen and (min-width: 1000px){
+    .navbar a {
+      padding: 0px 10px;
+    }
   }
 </style>
 

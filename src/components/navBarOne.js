@@ -36,12 +36,13 @@ navBarOneTemplate.innerHTML = `
     text-shadow: 0px 0px 10px #2E3409;
   }
   .navbar a{
+    position: relative;
     font-size: x-large;
     font-weight: 900;
     height: 0;
     color: white;
     cursor: pointer;
-    padding: 0px 10px;
+    padding: 0px 5px;
     transition: 0.4s;
   }
   .navbar a:hover:not(.logo){
@@ -50,8 +51,13 @@ navBarOneTemplate.innerHTML = `
   ul{
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+  }
+  @media only screen and (min-width: 1000px){
+    .navbar a {
+      padding: 0px 10px;
+    }
   }
 </style>
 

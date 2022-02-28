@@ -1,111 +1,63 @@
 const colorChangerTemplate = document.createElement('template');
 colorChangerTemplate.innerHTML = `
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
   *{
 
   }
+  .dark{
+    background-color: black;
+    color: #EFEFEF;
+  }
+  .light{
+    background-color: #EFEFEF;
+    color: #161E1E;
+  }
+  .orange{
+    background-color: orange;
+    color: light-blue;
+  }
   .main{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 400px;
-      max-width: 90vw;
-      height: 300px;
-      background-color: white;
+    width: 80vw;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  .page{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 90%;
-      width: 90%;
-      border-radius: 5px;
-      background-color: blue;
-      padding: 5px;
+  .toggle-btn{
+      float: right;
   }
-  .page *{
-    margin: 5px;
+  a{
+    
+    cursor: pointer;
+    font-size: x-large;
+    bottom: 200px;
   }
-  .search{
-      width: 100%;
-      display: flex;
-      flex-direction: row;
+  .fa{
+  
   }
-  .search-btn{
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: red;
+  h1{
+    
   }
-  .search-bar{
-      width: 80%;
-      height: 30px;
-      border-radius: 20px;
-      background-color: yellow;
+  .hidden{
+    display: none;
   }
-  .content{
-      height: 100%;
-      width: 100%;
-      background-color: white;
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-  }
-  .nav{
-      width: 50%;
-      height: 40px;
-      background-color: green;
-  }
-  .content-main{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-  }
-  .side-bar{
-      height: 65%;
-      width: 50px;
-      background-color: grey;
-  }
-  .article{
-    height: 70%;
-    width: 80px;
-    background-color: grey;
-  }
-  .footer{
-    width: 50%;
-    height: 20px;
-    background-color: green;
+  @media only screen and (min-width: 1000px){
+    .main{
+        width: 400px;
+    }
   }
 </style>
-<div class="main">
-  <div class="page">
-    <div class="search">
-        <div class="search-btn">
-        </div>
-        <div class="search-bar">
-        </div>
-    </div>
-    <div class="content">
-        <div class="nav">
-        </div>
-        <div class="content-main">
-            <div class="side-bar">
-            </div>
-            <div class="article">
-            </div>
-        </div>
-        <div class="footer">
-        </div>
-    </div>
-  </div>
+
+<div class="main light">
+    <a class="toggle-btn" onclick="toggleColor(this)"><i class="fa fa-toggle-off"></i></a>
+    <h1 class="light-text text">Light <br> &#127774;</h1>
+    <h1 class="dark-text text hidden">Dark <br> &#127761;</h1>
 </div>
+
 `;
 
 class ColorChanger extends HTMLElement{
@@ -116,7 +68,24 @@ class ColorChanger extends HTMLElement{
         this.shadowRoot.appendChild(colorChangerTemplate.content.cloneNode(true));
 
     }  
-
 }
 
 window.customElements.define('color-changer', ColorChanger);
+
+function toggleColor(element){
+  const btn = element.querySelector(".fa");
+  btn.classList.toggle("fa-toggle-on");
+
+  const main = element.parentElement;
+
+  main.classList.toggle("light");
+  main.classList.toggle("dark");
+    
+  main.querySelector(".light-text").classList.toggle("hidden");
+  main.querySelector(".dark-text").classList.toggle("hidden");
+  
+
+    
+    
+    
+}

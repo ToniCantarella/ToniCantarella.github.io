@@ -195,6 +195,11 @@ body{
   margin: 30px;
   justify-content: space-between;
   flex-direction: column;
+  
+}
+
+#examples .box-container{
+  margin-bottom: 100px;
 }
 
 .dark{
@@ -451,7 +456,7 @@ h2, p{
 /* Examples */
 
 #examples{
-  padding-bottom: 100px;
+  padding-bottom: 0px;
 }
 
 .examples-menu{
