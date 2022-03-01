@@ -74,7 +74,7 @@ colorChangerTemplate.innerHTML = `
     
   }
   h1{
-    
+
   }
   .hidden{
     display: none;
