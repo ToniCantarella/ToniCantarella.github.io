@@ -1,7 +1,6 @@
 const colorChangerTemplate = document.createElement('template');
 colorChangerTemplate.innerHTML = `
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
   *{
 
@@ -16,7 +15,7 @@ colorChangerTemplate.innerHTML = `
   }
   .orange{
     background-color: orange;
-    color: light-blue;
+    color: blue;
   }
   .main{
     width: 80vw;
@@ -26,6 +25,7 @@ colorChangerTemplate.innerHTML = `
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 10px;
   }
   .toggle-btn{
       float: right;
@@ -53,21 +53,21 @@ colorChangerTemplate.innerHTML = `
 </style>
 
 <div class="main light">
-    <a class="toggle-btn" onclick="toggleColor(this)"><i class="fa fa-toggle-off"></i></a>
-    <h1 class="light-text text">Light <br> &#127774;</h1>
-    <h1 class="dark-text text hidden">Dark <br> &#127761;</h1>
+  <a class="toggle-btn" onclick="toggleColor(this)"><i class="fa fa-toggle-off"></i></a>
+  <h1 class="light-text text">Light <br> &#127774;</h1>
+  <h1 class="dark-text text hidden">Dark <br> &#127761;</h1>
+  <h1 class="orange-text text hidden">Orange <br> &#10067;</h1>
 </div>
-
 `;
 
 class ColorChanger extends HTMLElement{
 
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(colorChangerTemplate.content.cloneNode(true));
+  constructor(){
+    super();
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.appendChild(colorChangerTemplate.content.cloneNode(true));
+  }  
 
-    }  
 }
 
 window.customElements.define('color-changer', ColorChanger);
@@ -78,14 +78,15 @@ function toggleColor(element){
 
   const main = element.parentElement;
 
+  const light = main.querySelector(".light-text");
+  const dark = main.querySelector(".dark-text");
+
+  /* Theme to use in the future */
+  const orange = main.querySelector(".orange-text");
+
   main.classList.toggle("light");
   main.classList.toggle("dark");
-    
-  main.querySelector(".light-text").classList.toggle("hidden");
-  main.querySelector(".dark-text").classList.toggle("hidden");
-  
+  light.classList.toggle("hidden");
+  dark.classList.toggle("hidden");
 
-    
-    
-    
 }

@@ -63,23 +63,22 @@ navBarTwoTemplate.innerHTML = `
 </style>
 
 <div class="navbar">
-<a class="logo"><i class="fa fa-plane" id="logo"></i></a>
-<ul>
-  <li><a>About</a></li>
-  <li><a>Flights</a></li>
-  <li><a>Contact</a></li>
-</ul>
+  <a class="logo"><i class="fa fa-plane" id="logo"></i></a>
+  <ul>
+    <li><a>About</a></li>
+    <li><a>Flights</a></li>
+    <li><a>Contact</a></li>
+  </ul>
 </div>
 `;
 
 class NavBarTwo extends HTMLElement{
 
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(navBarTwoTemplate.content.cloneNode(true));
-
-    }  
+  constructor(){
+    super();
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.appendChild(navBarTwoTemplate.content.cloneNode(true));
+  }  
 
 }
 

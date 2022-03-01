@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="https://tonicantarella.com/images/AboutMe.jpg" />
+    <title>Toni Cantarella</title>
+    <meta name="description" content="Front-end web-design portfolio website" />
+    <meta property="og:image" content="https://tonicantarella.com/images/favicon.svg" />
     <meta property="og:title" content="Toni Cantarella" />
     <meta property="og:description" content="Portfolio website" />
     <link rel="stylesheet" href="./src/style.css" />
@@ -105,6 +107,7 @@
         <color-changer></color-changer>
       </div>
 
+      <!-- Examples menu -->
       <div class="examples-menu">
         <div class="container-info">
           <h1>Examples</h1>
@@ -112,18 +115,24 @@
         </div>
         <div class="box-container">
           
-          <!-- Navbars -->
+          <!-- Navbars button -->
           <div class="example" id="navigation-examples">
+            <div class="example-background"></div>
+            <div class="overlay"></div>
             <h2>Navigation bars</h2>
           </div>
 
-          <!-- Stars -->
+          <!-- Stars button -->
           <div class="example" id="star-examples">
+            <div class="example-background"></div>
+            <div class="overlay"></div>
             <h2>Star rating system</h2>
           </div>
 
-          <!-- Color changer -->
+          <!-- Color changer button -->
           <div class="example" id="color-examples">
+            <div class="example-background"></div>
+            <div class="overlay"></div>
             <h2>Color theme changer</h2>
           </div>
         </div>
@@ -139,8 +148,11 @@
         <br>
         <h4>Hover over each skill to view details</h4>
       </div>
+
+      <!-- Skills will be rendered here through skillStars.js -->
       <div class="box-container" id="skill-box-container">
       </div>
+
       <a href="#art" class="transition-btn">Art</a>
     </div>
 
@@ -152,16 +164,20 @@
 
     <!-- Contact -->
     <div class="container light main" id="contact">
+
+      <!-- My contact-information -->
       <div class="article" id="contact-article">
         <h1 class = "article-title">Let's chat!</h1>
-        <h4 class="article-intro">Contact me at:</h4>
+        <!-- <h4 class="article-intro">Contact me at:</h4> -->
         <p class="article-paragraph e-mail">toni.cantarella@outlook.com</p>
-        <h4 class="article-intro">You can also find me at:</h4>
+        <!-- <h4 class="article-intro">You can also find me at:</h4> -->
         <ul>
           <li><a href="https://fi.linkedin.com/in/toni-cantarella-957077207" target="_blank"><i class="fa fa-linkedin"></i></a></li>
           <li><a href="https://github.com/ToniCantarella" target="_blank"><i class="fa fa-github"></i></a></li>
           <li><a href="https://codepen.io/ToniCant" target="_blank"><i class="fa fa-codepen"></i></a></li>
         </ul>
+
+        <!-- Photographer contact-information -->
         <h4 class="article-intro">All images used on this site were taken by my sister &nbsp;<span style="color: #FB8B53;"> Rosa!</span> </h4>
         <p class="article-paragraph"> You can check the rest of her work at: </p>
         <ul>

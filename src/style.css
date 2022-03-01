@@ -109,38 +109,6 @@ body{
 }
 
 
-/* Transition button */
-
-.transition-btn{
-  position: absolute;
-  font-size: 3vh;
-  padding: 5px;
-  opacity: 1;
-  text-decoration: none;
-  border-style: solid;
-  border-radius: 3px;
-  bottom: 13vh;
-  transition: 0.2s;
-}
-
-#back-to-top{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: none;
-  font-size: 40px;
-  background-color: unset;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  top: 10vh;
-}
-
-.transition-btn:hover{
-  background-color: #FB8B53;
-}
-
-
 /* Responsive navbar */
 
 #responsive-navbar{
@@ -198,16 +166,44 @@ body{
   
 }
 
-#examples .box-container{
-  margin-bottom: 100px;
-}
-
 .dark{
   background-color: #252729;
 }
 
 .light{
   background-color: #515A60;
+}
+
+
+/* Transition button */
+
+.transition-btn{
+  position: absolute;
+  font-size: 3vh;
+  padding: 5px;
+  opacity: 1;
+  text-decoration: none;
+  border-style: solid;
+  border-radius: 3px;
+  bottom: 13vh;
+  transition: 0.2s;
+}
+
+#back-to-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  font-size: 40px;
+  background-color: unset;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 10vh;
+}
+
+.transition-btn:hover{
+  background-color: #FB8B53;
 }
 
 
@@ -344,18 +340,119 @@ h2, p{
   display: none;
 }
 
+/* Examples */
+
+#examples{
+  padding-bottom: 0px;
+}
+
+#examples .box-container{
+  margin-bottom: 100px;
+}
+
+.examples-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.example{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #515A60;
+  border-radius: 5px;
+  transition: 0.2s;
+  margin: 5px;
+  width: 300px;
+  max-width: 90vw;
+  padding: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  
+}
+
+.overlay{
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(239, 239, 239, 0.2);
+  height: 100%;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.example-background{
+  height: 100%;
+  width: 100%;
+  filter: blur(3px);
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: 0.5s;
+}
+
+.example:hover .example-background{
+  margin: 0px;
+}
+
+.example:hover .overlay{
+  opacity: 1;
+}
+
+.example h2{
+  position: absolute;
+  text-shadow: 0px 0px 10px #252729;
+}
+
+#navigation-examples .example-background{
+  background-image: url("../images/navBarExamples.png");
+}
+
+#star-examples .example-background{
+  background-image: url("../images/starRatingExamples.png");
+}
+
+#color-examples .example-background{
+  background-image: url("../images/colorExamples.png");
+}
+
+.example-component{
+  display: none;
+}
+
+.example-component *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-example{
+  margin-bottom: 30px;
+}
+
+.fa-home{
+  cursor: pointer;
+  position: absolute;
+  top: 15vh;
+  left: 20vw;
+}
+
+#home-btn{
+  font-size: xx-large;
+}
+
+#home-btn:hover{
+  font-size: 40px;
+}
+
+.example-title{
+  margin-bottom: 5vh;
+}
+
 
 /* Skills */
-
-/*  Värimaailma:
-
-    #161E1E Tosi tumma
-    #252729 Tumma
-    #515A60 Harmaa
-    #EFEFEF Vaalean harmaa
-    #FB8B53 Oranssi
-
-*/
 
 #skills{
   padding-bottom: 100px;
@@ -411,7 +508,6 @@ h2, p{
   justify-content: center;
   align-items: center;
   text-align: center;
-
   /* box-shadow: 2px 2px 10px #252729; */
 }
 
@@ -450,71 +546,6 @@ h2, p{
   border-radius: 50%;
   margin: 5px;
   box-shadow: 0 0 5px #EFEFEF;
-}
-
-
-/* Examples */
-
-#examples{
-  padding-bottom: 0px;
-}
-
-.examples-menu{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.example{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #515A60;
-  border-radius: 5px;
-  transition: 0.2s;
-  margin: 5px;
-  width: 300px;
-  padding: 30px;
-  
-}
-
-.example:hover{
-  background-color: #161E1E;
-}
-
-.example-component{
-  display: none;
-}
-
-.example-component *{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar-example{
-  margin-bottom: 30px;
-}
-
-.fa-home{
-  cursor: pointer;
-  position: absolute;
-  top: 15vh;
-  left: 20vw;
-}
-
-#home-btn{
-  font-size: xx-large;
-}
-
-#home-btn:hover{
-  font-size: 40px;
-}
-
-.example-title{
-  margin-bottom: 5vh;
 }
 
 
@@ -580,6 +611,8 @@ h2, p{
 /* Media queries */
 
 @media only screen and (min-width: 1000px){
+
+  /* Navbar */
   .navbar ul{
     display: block;
   }
@@ -588,13 +621,24 @@ h2, p{
     display: none;
   }
 
+  /* Main */
+  .container-info{
+    text-align: center;
+    display: block;
+  }
+  
+  .container-info h1{
+    margin-bottom: 20px;
+  }
+
   .article{
     max-width: 25vw;
     font-size: medium;
   }
 
   .article-title{
-    color: #FB8B53;
+    /* color: #FB8B53; */
+    margin: 50px;
   }
 
   .article-intro{
@@ -608,6 +652,10 @@ h2, p{
   .article a {
     color: #FB8B53;
   }
+  
+  .article ul{
+    margin-bottom: 50px;
+  }
 
   .transition-btn{
     position: absolute;
@@ -620,11 +668,7 @@ h2, p{
     bottom: 10vh;
   }
 
-  #back-to-top{
-    top: auto;
-    bottom: 10vh;
-  }
-
+  /* Logo */
   #logo h1{
     position: absolute;
     opacity: 0;
@@ -662,6 +706,7 @@ h2, p{
     100%{opacity: 1;}
   }
 
+  /* About */
   #thats-me{
     position: absolute;
     display: none;
@@ -704,20 +749,28 @@ h2, p{
   .about-me-expanded {
     display: block;
   }
-  
+
+  /* Examples */
+  #examples{
+    padding-bottom: 100px;
+  }
+
+  .example{
+    background-color: unset;
+    height: 400px;
+    margin: 30px;
+    padding: 0;
+  }
+
+  .example-background{
+    margin: 30px;
+  }
+
   #skills, #examples{
     flex-direction: column;
   }
 
-  .container-info{
-    text-align: center;
-    display: block;
-  }
-  
-  .container-info h1{
-    margin-bottom: 20px;
-  }
-  
+  /* Skills */
   .skill-box{
     margin: 30px;
     padding: 10px;
@@ -746,15 +799,9 @@ h2, p{
     min-height: 50px;
   }
 
-  #examples{
-    padding-bottom: 100px;
-  }
+  /* Art */
 
-  .example{
-    height: 400px;
-    margin: 30px;
-  }
-
+  /* Contact */
   #contact{
     background-position-x: 0px;
   }
@@ -763,6 +810,11 @@ h2, p{
     margin-top: 0;
     max-width: none;
     font-size: medium;
+  }
+  
+  #back-to-top{
+    top: auto;
+    bottom: 10vh;
   }
 
 }

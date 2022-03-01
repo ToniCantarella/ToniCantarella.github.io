@@ -1,6 +1,6 @@
 const navBarOneTemplate = document.createElement('template');
 navBarOneTemplate.innerHTML = `
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
   *{
     font-family: 'Brush Script MT', cursive;
@@ -73,13 +73,12 @@ navBarOneTemplate.innerHTML = `
 
 class NavBarOne extends HTMLElement{
 
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(navBarOneTemplate.content.cloneNode(true));
-
-    }  
-
+  constructor(){
+    super();
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.appendChild(navBarOneTemplate.content.cloneNode(true));
+  }  
+  
 }
 
 window.customElements.define('navbar-one', NavBarOne);

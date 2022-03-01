@@ -72,24 +72,23 @@ navBarThreeTemplate.innerHTML = `
 </style>
 
 <div class="navbar">
-<a><i class="fa fa-coffee" id="logo"></i></a>
-<ul>
-  <li><a>About</a></li>
-  <li><a>Café</a></li>
-  <li><a>Contact</a></li>
-</ul>
+  <a><i class="fa fa-coffee" id="logo"></i></a>
+  <ul>
+    <li><a>About</a></li>
+    <li><a>Café</a></li>
+    <li><a>Contact</a></li>
+  </ul>
 </div>
 `;
 
 class NavBarThree extends HTMLElement{
 
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(navBarThreeTemplate.content.cloneNode(true));
-
-    }  
-
+  constructor(){
+    super();
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.appendChild(navBarThreeTemplate.content.cloneNode(true));
+  }  
+  
 }
 
 window.customElements.define('navbar-three', NavBarThree);

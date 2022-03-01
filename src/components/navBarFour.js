@@ -1,7 +1,7 @@
 const navBarFourTemplate = document.createElement('template');
 navBarFourTemplate.innerHTML = `
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
   *{
     font-family: 'Georgia', serif;
   }
@@ -68,28 +68,25 @@ navBarFourTemplate.innerHTML = `
   }
 </style>
 
- 
-  <div class="navbar">
-    <a class="logo"><i class="fa fa-globe" id="logo"></i></a>
-    <ul>
-      <li><a>About</a></li>
-      <li><a>News</a></li>
-      <li><a>Contact</a></li>
-    </ul>
-  </div>
+<div class="navbar">
+  <a class="logo"><i class="fa fa-globe" id="logo"></i></a>
+  <ul>
+    <li><a>About</a></li>
+    <li><a>News</a></li>
+    <li><a>Contact</a></li>
+  </ul>
+</div>
 
 `;
 
 class NavBarFour extends HTMLElement{
 
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(navBarFourTemplate.content.cloneNode(true));
-
-    }  
-
-
+  constructor(){
+    super();
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.appendChild(navBarFourTemplate.content.cloneNode(true));
+  }  
+  
 }
 
 window.customElements.define('navbar-four', NavBarFour);
