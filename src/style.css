@@ -754,8 +754,7 @@ h2, p{
 
   /* Examples */
   #examples{
-    padding-bottom: 0px;
-    /* display: flex; */
+
   }
 
   .example{
@@ -773,6 +772,7 @@ h2, p{
 
   #skills, #examples{
     flex-direction: column;
+    padding-bottom: 0px;
   }
 
   /* Skills */
