@@ -13,11 +13,42 @@ colorChangerTemplate.innerHTML = `
     background-color: #EFEFEF;
     color: #161E1E;
   }
-  .orange{
-    background-color: orange;
-    color: blue;
+  .special{
+    background: linear-gradient(
+      45deg, 
+      mediumturquoise, 
+      thistle, 
+      orange, 
+      crimson, 
+      teal
+      );
+    background-size: 400% 400%;
+    color: #FF6347;
+    animation: colorBackGround 7s linear infinite;
   }
-  .dark, .light, .orange, .text, .fa{
+  @keyframes colorBackGround{
+    0%{
+      background-position: 100% 100%;
+      color: teal;
+    }
+    20%{
+      background-position: 100% 0%;
+      color: mediumturquoise;
+    }
+    40%{
+      background-position: 0% 0%;
+      color: olive;
+    }
+    80%{
+      background-position: 0% 100%;
+      color: thistle;
+    }
+    100%{
+      background-position: 100% 100%;
+      color: teal;
+    }
+  }
+  .dark, .light, .special, .text, .fa{
     transition: 0.3s ease-out;
   }
   .main{
@@ -57,9 +88,7 @@ colorChangerTemplate.innerHTML = `
 
 <div class="main light">
   <a class="toggle-btn" onclick="toggleColor(this)"><i class="fa fa-toggle-off"></i></a>
-  <h1 class="light-text text">Light <br> &#127774;</h1>
-  <h1 class="dark-text text hidden">Dark <br> &#127761;</h1>
-  <h1 class="orange-text text hidden">Orange <br> &#10067;</h1>
+  <h1 class="text">Light <br> &#127774;</h1>
 </div>
 `;
 
@@ -80,16 +109,25 @@ function toggleColor(element){
   btn.classList.toggle("fa-toggle-on");
 
   const main = element.parentElement;
-
-  const light = main.querySelector(".light-text");
-  const dark = main.querySelector(".dark-text");
-
-  /* Theme to use in the future */
-  const orange = main.querySelector(".orange-text");
+  const message = main.querySelector("h1");
+  const random = Math.floor(Math.random() * 7);
 
   main.classList.toggle("light");
   main.classList.toggle("dark");
-  light.classList.toggle("hidden");
-  dark.classList.toggle("hidden");
+  main.classList.remove("special");
 
+  if(main.classList.contains("light")){
+    message.innerHTML = "Light <br> &#127774;";
+  }
+
+  if(main.classList.contains("dark")){
+    message.innerHTML = "Dark <br> &#127761;";
+  }
+
+  if(random === 1){
+    main.classList.add("special");
+    message.innerHTML = "Congratulations! <br> &#128048; <br> You found an easter egg!";
+  }
+  
+  //console.log(main.classList);
 }
