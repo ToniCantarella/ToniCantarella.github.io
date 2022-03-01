@@ -28,12 +28,13 @@ navBarOneTemplate.innerHTML = `
   }
   #logo{
     font-size: x-large;
+    color: #CBE432;
     transition: 0.2s;
     transform: rotate(70deg);
   }
   #logo:hover{
-    color: #CBE432;
-    text-shadow: 0px 0px 10px #2E3409;
+    color: white;
+    text-shadow: 0px 0px 10px #CBE432;
   }
   .navbar a{
     position: relative;
@@ -78,7 +79,7 @@ class NavBarOne extends HTMLElement{
     this.attachShadow({mode: 'open'});
     this.shadowRoot.appendChild(navBarOneTemplate.content.cloneNode(true));
   }  
-  
+
 }
 
 window.customElements.define('navbar-one', NavBarOne);
