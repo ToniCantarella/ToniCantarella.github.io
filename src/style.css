@@ -622,15 +622,11 @@ h2, p{
   }
 
   /* Main */
-  .container{
-    padding-top: 150px;
-  }
-
   .container-info{
     text-align: center;
     display: flex;
     flex-direction: column;
-    /* margin-top: 50px; */
+    margin-top: 50px;
   }
   
   .container-info h1{
@@ -758,7 +754,7 @@ h2, p{
 
   /* Examples */
   #examples{
-    padding-bottom: 100px;
+    padding-bottom: 0px;
     /* display: flex; */
   }
 
