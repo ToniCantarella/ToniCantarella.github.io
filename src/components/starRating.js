@@ -15,6 +15,9 @@ starsTemplate.innerHTML = `
     font-size: xx-large;
     color: #515A60;
   }
+  a{
+    transition: 0.2s;
+  }
   a:hover{
     cursor: pointer;
   }
@@ -69,10 +72,12 @@ function lightStars(element){
   
   for(let i = 0; i < index + 1; i++){
     stars[i].style.color = "white";
+    stars[i].style.fontSize = "40px";
     stars[i].style.textShadow = "0px 0px 10px #FB8B53";
   }
   for(let j = 4; j > index; j--){
     stars[j].style.color = "#515A60";
+    stars[j].style.fontSize = "xx-large";
     stars[j].style.textShadow = "none";
   }
 }
@@ -85,6 +90,7 @@ function resetStars(element){
     prompt.innerHTML = "Hey come on, give me a rating! &#128579;";
     for(let i = 0; i < 4 + 1; i++){
         stars[i].style.color = "#515A60";
+        stars[i].style.fontSize = "xx-large";
         stars[i].style.textShadow = "none";
     }
     

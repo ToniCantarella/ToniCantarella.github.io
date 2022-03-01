@@ -17,6 +17,9 @@ colorChangerTemplate.innerHTML = `
     background-color: orange;
     color: blue;
   }
+  .dark, .light, .orange, .text, .fa{
+    transition: 0.3s ease-out;
+  }
   .main{
     width: 80vw;
     height: 200px;
@@ -37,7 +40,7 @@ colorChangerTemplate.innerHTML = `
     bottom: 200px;
   }
   .fa{
-  
+    
   }
   h1{
     
