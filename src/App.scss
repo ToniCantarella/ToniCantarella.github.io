@@ -1,6 +1,9 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#app {
+  border: 1px solid green;
+  flex: 1;
+  height: 100%;
+
+  #navigation {
+    border: 1px solid blue;
+  }
 }
