@@ -1,9 +1,48 @@
+
+
 #app {
   border: 1px solid green;
   flex: 1;
-  height: 100%;
+  height: 100vh;
+  
+  --navigation-bg-light: pink;
+  --navigation-bg-dark: blue;
+
+  --button-bg-light: rgb(104, 104, 104); 
+  --button-bg-dark: rgb(235, 235, 235);
+    
+  --button-color-light: white;
+  --button-color-dark: black;
+
+  &.dark-theme {
+    background: black;
+    color: white;
+    --navigation-bg: var(--navigation-bg-dark);
+    --button-bg: var(--button-bg-dark);
+    --button-color: var(--button-color-dark);
+  }
+
+  &.light-theme {
+    background: white;
+    color: black;
+    --navigation-bg: var(--navigation-bg-light);
+    --button-bg: var(--button-bg-light);
+    --button-color: var(--button-color-light);
+  }
 
   #navigation {
-    border: 1px solid blue;
+    border: 10px solid var(--navigation-bg);
+  }
+
+  button {
+    padding: 16px;
+    color: var(--button-color);
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 16px;
+
+    &:hover {
+      filter: brightness(0.5);
+    }
   }
 }

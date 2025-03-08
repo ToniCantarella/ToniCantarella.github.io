@@ -1,10 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.scss'
+import { useState } from "react";
 
 function App() {
 
+  const [darkTheme, setDarkTheme] = useState<Boolean>(true)
+
   return (
-    <div id="app">
+    <div id="app" className={`${darkTheme ? "dark-theme" : "light-theme"}`}>
       <Router>
         <div
           id="navigation"
@@ -12,6 +15,9 @@ function App() {
           navigation
           <Link to="/">app</Link>
           <Link to="/test">test</Link>
+          <button onClick={() => setDarkTheme(!darkTheme)}>
+            theme switch 
+          </button>
         </div>
 
         <Routes>
