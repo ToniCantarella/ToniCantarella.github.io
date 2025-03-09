@@ -1,9 +1,10 @@
-
-
 #app {
   border: 1px solid green;
   flex: 1;
-  height: 100vh;
+
+  &, & * {
+    transition: all .3s;
+  }
   
   --navigation-bg-light: pink;
   --navigation-bg-dark: blue;
