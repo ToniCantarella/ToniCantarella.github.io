@@ -34,10 +34,6 @@
     --button-color: var(--button-color-light);
   }
 
-  #navigation {
-    border: 10px solid var(--navigation-bg);
-  }
-
   button {
     padding: 16px;
     color: var(--button-color);
@@ -48,12 +44,5 @@
     &:hover {
       filter: brightness(0.5);
     }
-  }
-
-  .page {
-    border: 2px solid orange;
-    display: flex;
-    transform: translate(0%);
-    flex: 1;
   }
 }

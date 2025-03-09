@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Navigation.scss"
 
 export const NavigationBar = () => {
 
@@ -12,8 +13,3 @@ export const NavigationBar = () => {
         </div>
     )
 }
-
-/*<button onClick={() => setDarkTheme(!darkTheme)}>
-theme switch
-</button>
-{`${darkTheme}`}*/
