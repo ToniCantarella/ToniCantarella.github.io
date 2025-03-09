@@ -1,6 +1,9 @@
 #app {
   border: 1px solid green;
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  overflow-x: hidden;
 
   &, & * {
     transition: all .3s;
@@ -49,5 +52,8 @@
 
   .page {
     border: 2px solid orange;
+    display: flex;
+    transform: translate(0%);
+    flex: 1;
   }
 }
