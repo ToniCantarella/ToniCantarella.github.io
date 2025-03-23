@@ -1,0 +1,9 @@
+{
+    "test": "Tämä on testi",
+    "navigation": {
+        "landing": "Etusivu",
+        "skills": "Osaaminen",
+        "examples": "Esimerkit",
+        "contact": "Yhteystiedot"
+    }
+}

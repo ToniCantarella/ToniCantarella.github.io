@@ -12,7 +12,7 @@ export const AnimatedRoutes = () => {
             <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
                     <Route
-                        path={Pathnames.APP}
+                        path={Pathnames.LANDING}
                         element={
                             <Page
                                 name={"Application"}
@@ -20,7 +20,7 @@ export const AnimatedRoutes = () => {
                         }
                     />
                     <Route
-                        path={Pathnames.TEST}
+                        path={Pathnames.SKILLS}
                         element={
                             <Page
                                 name={"Test"}
@@ -28,7 +28,7 @@ export const AnimatedRoutes = () => {
                         }
                     />
                     <Route
-                        path={Pathnames.TEST_SECOND}
+                        path={Pathnames.EXAMPLES}
                         element={
                             <Page
                                 name={"second test"}
@@ -36,7 +36,7 @@ export const AnimatedRoutes = () => {
                         }
                     />
                     <Route
-                        path={Pathnames.TEST_THIRD}
+                        path={Pathnames.CONTACT}
                         element={
                             <Page
                                 name={"third test"}

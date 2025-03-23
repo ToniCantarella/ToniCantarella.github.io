@@ -1,0 +1,9 @@
+{
+    "test": "This is a test",
+    "navigation": {
+        "landing": "Landing",
+        "skills": "Skills",
+        "examples": "examples",
+        "contact": "Contact"
+    }
+}

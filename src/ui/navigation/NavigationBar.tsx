@@ -4,28 +4,33 @@ import { createContext, ReactElement, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type Page = {
-  pathname: string
+  pathname: string,
+  title: string
 }
 
 export enum Pathnames {
-  APP = "/",
-  TEST="/test",
-  TEST_SECOND= "/test-second",
-  TEST_THIRD= "/test-third",
+  LANDING = "/",
+  SKILLS = "/test",
+  EXAMPLES = "/test-second",
+  CONTACT = "/test-third",
 }
 
 const Pages: Page[] = [
   {
-    pathname: Pathnames.APP
+    pathname: Pathnames.LANDING,
+    title: "landing"
   },
   {
-    pathname: Pathnames.TEST
+    pathname: Pathnames.SKILLS,
+    title: "skills"
   },
   {
-    pathname: Pathnames.TEST_SECOND
+    pathname: Pathnames.EXAMPLES,
+    title: "examples"
   },
   {
-    pathname: Pathnames.TEST_THIRD
+    pathname: Pathnames.CONTACT,
+    title: "contact"
   }
 ]
 
@@ -38,7 +43,7 @@ export const NavigationContext = createContext<NavigationContextType>({} as Navi
 
 export const NavigationBar = () => {
   const navContext = useContext(NavigationContext)
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <div
@@ -46,7 +51,13 @@ export const NavigationBar = () => {
     >
       {t("test")}
       {Pages.map(page =>
-        <Link key={page.pathname} onClick={() => navContext.onNavClick(page.pathname)} to={page.pathname}>{`${page.pathname}`}</Link>
+        <Link
+          key={page.pathname}
+          onClick={() => navContext.onNavClick(page.pathname)}
+          to={page.pathname}
+        >
+          {t(`navigation.${page.title}`)}
+        </Link>
       )}
     </div>
   )
