@@ -20,6 +20,7 @@ export const Page = (props: PageProps) => {
   return (
     <motion.div
       className="page"
+      key={props.name}
       initial={animateIn}
       animate={animateToShow}
       exit={animateOut}
