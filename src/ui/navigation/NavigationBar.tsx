@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navigation.scss"
 import { createContext, ReactElement, useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type Page = {
   pathname: string
@@ -37,11 +38,13 @@ export const NavigationContext = createContext<NavigationContextType>({} as Navi
 
 export const NavigationBar = () => {
   const navContext = useContext(NavigationContext)
+  const {t} = useTranslation()
 
   return (
     <div
       id="navigation-bar"
     >
+      {t("test")}
       {Pages.map(page =>
         <Link key={page.pathname} onClick={() => navContext.onNavClick(page.pathname)} to={page.pathname}>{`${page.pathname}`}</Link>
       )}
