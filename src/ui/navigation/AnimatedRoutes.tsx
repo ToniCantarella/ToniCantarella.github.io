@@ -1,19 +1,18 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { Page } from "../common/Page";
-import { Pathnames } from "./NavigationBar";
+import { Routes, Route, useLocation } from "react-router-dom"
+import { AnimatePresence } from "framer-motion"
+import { Pathnames } from "./NavigationBar"
 import "./AnimatedRoutes.scss"
-import { Landing } from "../Landing/Landing";
-import { Skills } from "../Skills/Skills";
-import { Examples } from "../Examples/Examples";
-import { Contact } from "../Contact/Contact";
+import { Landing } from "../Landing/Landing"
+import { Skills } from "../Skills/Skills"
+import { Examples } from "../Examples/Examples"
+import { Contact } from "../Contact/Contact"
 
 export const AnimatedRoutes = () => {
     const location = useLocation()
 
     return (
         <div id="animated-routes">
-            <AnimatePresence>
+            <AnimatePresence initial={false}>
                 <Routes location={location} key={location.pathname}>
                     <Route
                         path={Pathnames.LANDING}

@@ -4,6 +4,7 @@ import { TopBar } from "./ui/common/TopBar";
 import { AnimatedRoutes } from "./ui/navigation/AnimatedRoutes";
 import './App.scss'
 import { ThemeContext } from "./ui/theme-picker/ThemePicker";
+import { Intro } from "./ui/Intro/Intro";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
       <div id="app" className={theme}>
         <Router>
+          <Intro />
           <TopBar />
           <AnimatedRoutes />
         </Router>
