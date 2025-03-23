@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import "./Page.scss"
-import { useContext } from "react";
+import { ReactElement, useContext } from "react";
 import { NavigationContext } from "../navigation/NavigationBar";
 
 type PageProps = {
-  name: string
+  key: string,
+  children: ReactElement
 }
 
 export const Page = (props: PageProps) => {
@@ -20,13 +21,13 @@ export const Page = (props: PageProps) => {
   return (
     <motion.div
       className="page"
-      key={props.name}
+      key={props.key}
       initial={animateIn}
       animate={animateToShow}
       exit={animateOut}
       transition={{ duration: 3 }}
     >
-      {props.name}
+      {props.children}
     </motion.div>
   )
 }

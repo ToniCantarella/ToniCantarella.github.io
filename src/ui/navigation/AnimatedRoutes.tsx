@@ -3,6 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import { Page } from "../common/Page";
 import { Pathnames } from "./NavigationBar";
 import "./AnimatedRoutes.scss"
+import { Landing } from "../Landing/Landing";
+import { Skills } from "../Skills/Skills";
+import { Examples } from "../Examples/Examples";
+import { Contact } from "../Contact/Contact";
 
 export const AnimatedRoutes = () => {
     const location = useLocation()
@@ -14,33 +18,25 @@ export const AnimatedRoutes = () => {
                     <Route
                         path={Pathnames.LANDING}
                         element={
-                            <Page
-                                name={"Application"}
-                            />
+                            <Landing/>
                         }
                     />
                     <Route
                         path={Pathnames.SKILLS}
                         element={
-                            <Page
-                                name={"Test"}
-                            />
+                            <Skills />
                         }
                     />
                     <Route
                         path={Pathnames.EXAMPLES}
                         element={
-                            <Page
-                                name={"second test"}
-                            />
+                            <Examples />
                         }
                     />
                     <Route
                         path={Pathnames.CONTACT}
                         element={
-                            <Page
-                                name={"third test"}
-                            />
+                            <Contact />
                         }
                     />
                 </Routes>
