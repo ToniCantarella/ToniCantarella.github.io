@@ -10,9 +10,9 @@ type Page = {
 
 export enum Pathnames {
   LANDING = "/",
-  SKILLS = "/test",
-  EXAMPLES = "/test-second",
-  CONTACT = "/test-third",
+  SKILLS = "/skills",
+  EXAMPLES = "/examples",
+  CONTACT = "/contact",
 }
 
 const Pages: Page[] = [
