@@ -77,13 +77,13 @@ export const NavigationProvider = (props: NavigationProviderProps) => {
     setCurrentPage(pathName)
   }
 
-  const animatedRouteContext = {
+  const navigationContext = {
     onNavClick,
     direction
   }
 
   return (
-    <NavigationContext.Provider value={animatedRouteContext}>
+    <NavigationContext.Provider value={navigationContext}>
       {props.children}
     </NavigationContext.Provider>
   )
