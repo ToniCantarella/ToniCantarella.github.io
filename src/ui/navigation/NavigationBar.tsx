@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import "./Navigation.scss"
-import { createContext, ReactElement, useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { createContext, ReactElement, useContext, useState } from "react"
+import { useTranslation } from "react-i18next"
 
 type Page = {
   pathname: string,
@@ -49,7 +49,6 @@ export const NavigationBar = () => {
     <div
       id="navigation-bar"
     >
-      {t("test")}
       {Pages.map(page =>
         <Link
           key={page.pathname}

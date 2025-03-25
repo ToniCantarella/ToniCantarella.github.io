@@ -6,7 +6,7 @@ export const Intro = () => {
     const appContext = useContext(AppContext)
 
     const stopPlaying = (animationName: string) => {
-        if (animationName === "exitAnimation") {
+        if (animationName.includes("introExitAnimation")) {
             appContext.setIntroPlaying(false)
         }
     }

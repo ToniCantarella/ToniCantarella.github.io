@@ -1,65 +1,17 @@
 #intro {
-    --start-animation-duration: 3s;
-    --middle-animation-duration: 3s;
-    --exit-animation-duration: 3s;
-
-    --middle-animation-delay: var(--start-animation-duration);
-
-    --exit-animation-delay: calc(var(--middle-animation-delay) + var(--middle-animation-duration));
-
-    --start-animation: startAnimation var(--start-animation-duration) ease forwards;
-
-    --middle-animation: middleAnimation var(--middle-animation-duration) ease forwards;
-
-    --exit-animation: exitAnimation var(--exit-animation-duration) ease forwards;
-
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: blue;
+    background: var(--intro-bg);
     z-index: 100;
     animation:
-        var(--middle-animation),
-        var(--exit-animation) var(--middle-animation-duration);
+        var(--intro-middle-animation),
+        var(--intro-exit-animation) var(--intro-middle-animation-duration);
 
     &.with-start-animation {
         animation:
-            var(--start-animation),
-            var(--middle-animation) var(--middle-animation-delay),
-            var(--exit-animation) var(--exit-animation-delay);
-    }
-}
-
-@keyframes startAnimation {
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes middleAnimation {
-    from {
-        background-color: blue;
-    }
-
-    to {
-        background-color: orange;
-    }
-}
-
-@keyframes exitAnimation {
-    from {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    to {
-        opacity: 0;
-        visibility: hidden;
+            var(--intro-start-animation),
+            var(--intro-middle-animation) var(--intro-middle-animation-delay),
+            var(--intro-exit-animation) var(--intro-exit-animation-delay);
     }
 }
