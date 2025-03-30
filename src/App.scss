@@ -6,8 +6,9 @@
   overflow-x: hidden;
 
   &,
-  & * {
-    transition: all .3s;
+  & *,
+  & *::after {
+    transition: all .2s;
   }
 
   --intro-start-animation-duration: .5s;
@@ -24,7 +25,11 @@
 
   --top-bar-max-width: 1200px;
 
-  --top-bar-bg-dark: rgb(51, 44, 31);
+  --top-bar-bg-dark: transparent;
+
+  --bg-dark: #252729;
+
+  --color-dark: white;
 
   --intro-bg-light: green;
   --intro-bg-dark: blue;
@@ -39,8 +44,10 @@
   --button-color-dark: black;
 
   &.dark-theme {
-    background: black;
-    color: white;
+    background: var(--bg-dark);
+    color: var(--color-dark);
+    --color: var(--color-dark);
+    --background: var(--bg-dark);
     --top-bar-bg: var(--top-bar-bg-dark);
 
     --navigation-bg: var(--navigation-bg-dark);

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import "./Navigation.scss"
 import { createContext, ReactElement, useContext, useState } from "react"
 import { useTranslation } from "react-i18next"
+import { HomeButton } from "../home-button/HomeButton"
 
 type Page = {
   pathname: string,
@@ -42,11 +43,12 @@ export const NavigationBar = () => {
   const { t } = useTranslation()
 
   return (
-    <nav
-      id="navigation-bar"
-    >
+    <nav id="navigation-bar">
+      <HomeButton />
+
       {Pages.map(page =>
         <Link
+          className="navigation-item"
           key={page.pathname}
           onClick={() => navContext.onNavClick(page.pathname)}
           to={page.pathname}

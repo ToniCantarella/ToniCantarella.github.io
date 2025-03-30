@@ -18,9 +18,12 @@ export const HomeButton = () => {
             key={Pathnames.LANDING}
             onClick={onClick}
             to={Pathnames.LANDING}
-            className="home-button"
+            id="home-button"
+            className="navigation-item"
         >
-            {`TONI: ${appContext.introPlaying}`}
+            <div>
+                T C
+            </div>
         </Link>
     )
 }

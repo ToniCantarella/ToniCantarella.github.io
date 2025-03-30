@@ -8,17 +8,10 @@
         justify-content: space-between;
         flex: 0 1 var(--top-bar-max-width);
 
-        .sub-section {
+        .controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .navigation {
-            flex: 0 1 500px;
-        }
-
-        .controls {
             flex: 0 1 300px;
         }
     }

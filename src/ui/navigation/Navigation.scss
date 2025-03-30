@@ -1,3 +1,43 @@
 #navigation-bar {
-  border: 10px solid var(--navigation-bg);
+  display: flex;
+  flex: 0 1 500px;
+  justify-content: flex-end;
+  align-items: center;
+
+  #home-button {
+    margin-right: auto;
+  }
+
+  .navigation-item {
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0px var(--small-padding);
+    color: var(--color);
+
+    &::after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      opacity: 0;
+      width: 95%;
+      left: 50%;
+      right: 0;
+      height: 100%;
+      background: orange;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+
+      &::after {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
 }

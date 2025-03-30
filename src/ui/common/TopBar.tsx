@@ -1,4 +1,3 @@
-import { HomeButton } from "../home-button/HomeButton"
 import { LanguagePicker } from "../language-picker/LanguagePicker"
 import { NavigationBar } from "../navigation/NavigationBar"
 import { ThemePicker } from "../theme-picker/ThemePicker"
@@ -8,11 +7,8 @@ export const TopBar = () => {
     return (
         <div id="top-bar">
             <div className="inner">
-                <div className="sub-section navigation">
-                    <HomeButton />
-                    <NavigationBar />
-                </div>
-                <div className="sub-section controls">
+                <NavigationBar />
+                <div className="controls">
                     <LanguagePicker />
                     <ThemePicker />
                 </div>
