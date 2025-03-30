@@ -1,6 +1,5 @@
 #app {
   position: relative;
-  border: 1px solid green;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -18,6 +17,15 @@
   --intro-middle-animation-delay: var(--intro-start-animation-duration);
   --intro-exit-animation-delay: calc(var(--intro-middle-animation-delay) + var(--intro-middle-animation-duration));
 
+  --xtra-small-padding: 8px;
+  --small-padding: 16px;
+  --middle-padding: 24px;
+  --large-padding: 32px;
+
+  --top-bar-max-width: 1200px;
+
+  --top-bar-bg-dark: rgb(51, 44, 31);
+
   --intro-bg-light: green;
   --intro-bg-dark: blue;
 
@@ -33,6 +41,8 @@
   &.dark-theme {
     background: black;
     color: white;
+    --top-bar-bg: var(--top-bar-bg-dark);
+
     --navigation-bg: var(--navigation-bg-dark);
     --button-bg: var(--button-bg-dark);
     --button-color: var(--button-color-dark);

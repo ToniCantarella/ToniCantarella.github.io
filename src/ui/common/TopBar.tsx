@@ -7,10 +7,16 @@ import "./TopBar.scss"
 export const TopBar = () => {
     return (
         <div id="top-bar">
-            <HomeButton />
-            <NavigationBar />
-            <LanguagePicker />
-            <ThemePicker />
+            <div className="inner">
+                <div className="sub-section navigation">
+                    <HomeButton />
+                    <NavigationBar />
+                </div>
+                <div className="sub-section controls">
+                    <LanguagePicker />
+                    <ThemePicker />
+                </div>
+            </div>
         </div>
     )
 }

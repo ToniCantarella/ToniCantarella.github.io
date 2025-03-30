@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { NavigationContext, Pathnames } from "../navigation/NavigationBar"
 import { useContext } from "react"
 import { AppContext } from "../../App"
+import "./HomeButton.scss"
 
 export const HomeButton = () => {
     const appContext = useContext(AppContext)
@@ -17,6 +18,7 @@ export const HomeButton = () => {
             key={Pathnames.LANDING}
             onClick={onClick}
             to={Pathnames.LANDING}
+            className="home-button"
         >
             {`TONI: ${appContext.introPlaying}`}
         </Link>
