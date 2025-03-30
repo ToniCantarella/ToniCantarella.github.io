@@ -2,10 +2,10 @@ import { Routes, Route, useLocation } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 import { Pathnames } from "./NavigationBar"
 import "./AnimatedRoutes.scss"
-import { Landing } from "../Landing/Landing"
+import { Landing } from "../landing/Landing"
 import { Skills } from "../Skills/Skills"
-import { Examples } from "../Examples/Examples"
-import { Contact } from "../Contact/Contact"
+import { Examples } from "../examples/Examples"
+import { Contact } from "../contact/Contact"
 
 export const AnimatedRoutes = () => {
     const location = useLocation()

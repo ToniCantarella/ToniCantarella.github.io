@@ -41,8 +41,6 @@ function App() {
     <AppContext.Provider value={appContext}>
       <div id="app" className={theme}>
         <Router>
-          {`${introPlaying}`}
-          <button onClick={playIntro}>click</button>
           {introPlaying && <Intro />}
           <TopBar />
           <AnimatedRoutes />

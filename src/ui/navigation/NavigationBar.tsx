@@ -17,10 +17,6 @@ export enum Pathnames {
 
 const Pages: Page[] = [
   {
-    pathname: Pathnames.LANDING,
-    title: "landing"
-  },
-  {
     pathname: Pathnames.SKILLS,
     title: "skills"
   },
@@ -46,7 +42,7 @@ export const NavigationBar = () => {
   const { t } = useTranslation()
 
   return (
-    <div
+    <nav
       id="navigation-bar"
     >
       {Pages.map(page =>
@@ -58,7 +54,7 @@ export const NavigationBar = () => {
           {t(`navigation.${page.title}`)}
         </Link>
       )}
-    </div>
+    </nav>
   )
 }
 
