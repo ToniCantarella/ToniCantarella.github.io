@@ -1,6 +1,7 @@
 #top-bar {
     display: flex;
     justify-content: center;
+    height: 50px;
     background: var(--top-bar-bg);
 
     .inner {
@@ -10,6 +11,7 @@
 
         .controls {
             display: flex;
+            gap: var(--small-padding);
             justify-content: space-between;
             align-items: center;
             flex: 0 1 300px;

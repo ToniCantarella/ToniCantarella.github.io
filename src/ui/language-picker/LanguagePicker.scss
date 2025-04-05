@@ -1,5 +1,6 @@
 #language-picker {
     display: flex;
+    gap: var(--tiny-padding);
 
     .language {
         position: relative;

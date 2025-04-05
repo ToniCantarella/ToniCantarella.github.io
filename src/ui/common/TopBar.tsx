@@ -9,8 +9,8 @@ export const TopBar = () => {
             <div className="inner">
                 <NavigationBar />
                 <div className="controls">
-                    <LanguagePicker />
                     <ThemePicker />
+                    <LanguagePicker />
                 </div>
             </div>
         </div>
