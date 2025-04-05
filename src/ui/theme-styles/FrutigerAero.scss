@@ -8,7 +8,6 @@
             border-radius: 50%;
             bottom: -20%;
             border: 2px solid rgba(226, 248, 255, 0.774);
-            background: linear-gradient(10deg, rgba(255, 255, 255, 0.733), rgba(154, 255, 250, 0.226));
             animation: moveBubble 15s ease-out infinite,
                 swayBubble 2s ease-in-out infinite alternate;
 
@@ -41,12 +40,10 @@
 
 @keyframes swayBubble {
     0% {
-        margin-left: 15px;
-        margin-top: 10px;
+        margin-left: 25px;
     }
 
     100% {
-        margin-top: -10px;
-        margin-left: -15px;
+        margin-left: -25px;
     }
 }
