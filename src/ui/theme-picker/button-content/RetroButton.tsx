@@ -1,7 +1,6 @@
 import PointerIcon from "../../assets/pointer.svg?react"
 
-export const RetroTheme = () => {
-
+export const RetroButton = () => {
     return (
         <div>
             <PointerIcon />

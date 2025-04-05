@@ -1,14 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { TopBar } from "./ui/common/TopBar"
-import { AnimatedRoutes } from "./ui/navigation/AnimatedRoutes"
 import { ThemeContext } from "./ui/theme-picker/ThemePicker"
 import { Intro } from "./ui/Intro/Intro"
+import { Background } from "./ui/Background"
 import './App.scss'
 import "./ui/theme-styles/DarkTheme.scss"
 import "./ui/theme-styles/LightTheme.scss"
 import "./ui/theme-styles/FrutigerAero.scss"
-import { Background } from "./Background"
+import { AppContent } from "./ui/AppContent"
 
 type AppContextType = {
   firstRender: boolean,
@@ -50,7 +50,7 @@ function App() {
         <Router>
           {introPlaying && <Intro />}
           <TopBar />
-          <AnimatedRoutes />
+          <AppContent />
         </Router>
       </div>
     </AppContext.Provider>

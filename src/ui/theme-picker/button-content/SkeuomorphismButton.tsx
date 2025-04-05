@@ -1,5 +1,4 @@
-export const SkeuomorphismTheme = () => {
-
+export const SkeuomorphismButton = () => {
     return (
         <div>
         </div>

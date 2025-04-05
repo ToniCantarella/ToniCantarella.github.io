@@ -1,7 +1,6 @@
 import NatureIcon from "../../assets/nature.svg?react"
 
-export const NatureTheme = () => {
-
+export const NatureButton = () => {
     return (
         <div>
             <NatureIcon />

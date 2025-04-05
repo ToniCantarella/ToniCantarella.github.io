@@ -1,11 +1,11 @@
 import { useState, useContext, createContext, ReactElement, useEffect } from "react"
 import "./ThemePicker.scss"
-import { DarkTheme } from "./button-content/DarkTheme"
-import { LightTheme } from "./button-content/LightTheme"
-import { SkeuomorphismTheme } from "./button-content/SkeuomorphismTheme"
-import { NatureTheme } from "./button-content/NatureTheme"
-import { FrutigerAeroTheme } from "./button-content/FrutigerAero"
-import { RetroTheme } from "./button-content/RetroTheme"
+import { DarkButton } from "./button-content/DarkButton"
+import { LightButton } from "./button-content/LightButton"
+import { SkeuomorphismButton } from "./button-content/SkeuomorphismButton"
+import { FrutigerAeroButton } from "./button-content/FrutigerAeroButton"
+import { RetroButton } from "./button-content/RetroButton"
+import { NatureButton } from "./button-content/NatureButton"
 
 type Theme = {
     name: string,
@@ -15,27 +15,27 @@ type Theme = {
 export const themes: Theme[] = [
     {
         name: "dark-theme",
-        content: <DarkTheme/>
+        content: <DarkButton/>
     },
     {
         name: "light-theme",
-        content: <LightTheme/>
+        content: <LightButton/>
     },
     {
         name: "skeuomorphism",
-        content: <SkeuomorphismTheme/>
+        content: <SkeuomorphismButton/>
     },
     {
         name: "frutiger-aero",
-        content: <FrutigerAeroTheme/>
+        content: <FrutigerAeroButton/>
     },
     {
         name: "retro",
-        content: <RetroTheme/>
+        content: <RetroButton/>
     },
     {
         name: "nature",
-        content: <NatureTheme/>
+        content: <NatureButton/>
     }
 ]
 

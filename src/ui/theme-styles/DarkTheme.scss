@@ -1,13 +1,15 @@
 .dark-theme {
     --top-bar-bg-dark: transparent;
     --bg-dark: #252729;
-    --color-dark: white;
+    --color-dark: #d0d5e0;
     --intro-bg-dark: blue;
     --navigation-bg-dark: blue;
     --button-bg-dark: rgb(235, 235, 235);
     --button-color-dark: black;
 
-    
+    --primary-color: #ff6e4a;
+    --surface-color: rgb(52, 52, 58);
+
     --color: var(--color-dark);
     --background: var(--bg-dark);
     --top-bar-bg: var(--top-bar-bg-dark);
@@ -26,6 +28,32 @@
 
     #background {
         background: var(--background);
+    }
+
+    .navigation-item {
+        color: var(--color);
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            opacity: 0;
+            width: 95%;
+            left: 50%;
+            right: 0;
+            height: 100%;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        &:hover {
+            color: white;
+
+            &::after {
+                opacity: 1;
+                width: 100%;
+            }
+        }
     }
 }
 

@@ -1,5 +1,4 @@
-export const FrutigerAeroTheme = () => {
-
+export const FrutigerAeroButton = () => {
     return (
         <div>
         </div>

@@ -2,11 +2,17 @@ import React from "react"
 
 export const Background = (props: { theme: string }) => {
 
+    const background = () => {
+        switch (props.theme) {
+            case "frutiger-aero":
+                return <FrutigerAeroBackground />
+                break;
+        }
+    }
+
     return (
         <div id="background">
-            {props.theme === "frutiger-aero" &&
-                <FrutigerAeroBackground />
-            }
+            {background()}
         </div>
     )
 }
@@ -17,9 +23,7 @@ const FrutigerAeroBackground = () => {
     return (
         Array.from({ length: count }, (_, i) => (
             <React.Fragment key={i}>
-                <Bubble
-                    index={i}
-                />
+                <Bubble index={i} />
             </React.Fragment>
         ))
     )
