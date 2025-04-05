@@ -1,0 +1,60 @@
+.dark-theme {
+    --top-bar-bg-dark: transparent;
+    --bg-dark: #252729;
+    --color-dark: white;
+    --intro-bg-dark: blue;
+    --navigation-bg-dark: blue;
+    --button-bg-dark: rgb(235, 235, 235);
+    --button-color-dark: black;
+
+    background: var(--bg-dark);
+    color: var(--color-dark);
+    --color: var(--color-dark);
+    --background: var(--bg-dark);
+    --top-bar-bg: var(--top-bar-bg-dark);
+
+    --navigation-bg: var(--navigation-bg-dark);
+    --button-bg: var(--button-bg-dark);
+    --button-color: var(--button-color-dark);
+
+    --intro-start-animation: introStartAnimationDark var(--intro-start-animation-duration) ease forwards;
+    --intro-middle-animation: introMiddleAnimationDark var(--intro-middle-animation-duration) ease forwards;
+    --intro-exit-animation: introExitAnimationDark var(--intro-exit-animation-duration) ease forwards;
+
+    --intro-bg: var(--intro-bg-dark);
+}
+
+
+@keyframes introStartAnimationDark {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes introMiddleAnimationDark {
+    from {
+        background-color: var(--intro-bg-dark);
+    }
+
+    to {
+        background-color: orange;
+    }
+}
+
+@keyframes introExitAnimationDark {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

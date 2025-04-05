@@ -2,9 +2,11 @@ import { createContext, useContext, useEffect, useState } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { TopBar } from "./ui/common/TopBar"
 import { AnimatedRoutes } from "./ui/navigation/AnimatedRoutes"
-import './App.scss'
 import { ThemeContext } from "./ui/theme-picker/ThemePicker"
 import { Intro } from "./ui/Intro/Intro"
+import './App.scss'
+import "./ui/theme-styles/DarkTheme.scss"
+import "./ui/theme-styles/LightTheme.scss"
 
 type AppContextType = {
   firstRender: boolean,
