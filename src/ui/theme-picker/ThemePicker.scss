@@ -10,6 +10,10 @@
         justify-content: center;
         align-items: center;
 
+        div {
+            display: flex;
+        }
+
         svg {
             max-width: 30px;
             max-height: 30px;
@@ -19,22 +23,56 @@
             border: 2px solid white;
             background-color: black;
 
-            div {
-                display: flex;
 
-                svg {
-                    fill: white;
-                }
+
+            svg {
+                fill: white;
             }
         }
 
         &.light-theme {
             border: 2px solid black;
             background-color: white;
+        }
 
-            div {
-                display: flex;
+        &.skeuomorphism {
+            background: linear-gradient(145deg, #f0f0f0, #cacaca);
+            box-shadow: 5px 5px 30px #bebebe, -5px -5px 30px #ffffff;
+            transition: background 3s;
+
+            &:hover {
+                background: linear-gradient(145deg, #cacaca, #f0f0f0);
             }
+        }
+
+        &.nature {
+            background: white;
+            border: 2px solid green;
+
+            svg {
+                fill: green;
+            }
+        }
+
+        &.frutiger-aero {
+            position: relative;
+            background: linear-gradient(to bottom, rgba(1, 224, 240, 0.8), rgb(166, 252, 252));
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 4%;
+                left: 0.5em;
+                width: calc(100% - 1em);
+                height: 50%;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+                border-radius: 50%;
+                transition: background 400ms;
+            }
+        }
+
+        &.retro {
+            background: white;
         }
     }
 }
