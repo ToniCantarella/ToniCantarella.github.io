@@ -1,0 +1,52 @@
+.frutiger-aero {
+
+    #background {
+        background: rgb(171, 194, 194);
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            bottom: -20%;
+            border: 2px solid rgba(226, 248, 255, 0.774);
+            background: linear-gradient(10deg, rgba(255, 255, 255, 0.733), rgba(154, 255, 250, 0.226));
+            animation: moveBubble 15s ease-out infinite,
+                swayBubble 2s ease-in-out infinite alternate;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 4%;
+                right: 15%;
+                transform: rotate(-45deg);
+                width: 40%;
+                height: 50%;
+                background: linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+                border-radius: 50%;
+                transition: background 400ms;
+            }
+        }
+    }
+}
+
+@keyframes moveBubble {
+    0% {
+        bottom: -10%;
+        left: -10%;
+    }
+
+    100% {
+        bottom: 110%;
+    }
+}
+
+@keyframes swayBubble {
+    0% {
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    100% {
+        margin-top: -10px;
+        margin-left: -15px;
+    }
+}

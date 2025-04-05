@@ -4,7 +4,6 @@ import { ReactElement, useContext } from "react";
 import { NavigationContext } from "../navigation/NavigationBar";
 
 type PageProps = {
-  key: string,
   children: ReactElement
 }
 
@@ -21,7 +20,6 @@ export const Page = (props: PageProps) => {
   return (
     <motion.div
       className="page"
-      key={props.key}
       initial={animateIn}
       animate={animateToShow}
       exit={animateOut}

@@ -1,12 +1,9 @@
 import { Page } from "../common/Page"
-import { Pathnames } from "../navigation/NavigationBar"
 
 export const Examples = () => {
 
     return (
-        <Page
-            key={Pathnames.EXAMPLES}
-        >
+        <Page>
             <div>
                 exkmpls
             </div>

@@ -7,6 +7,8 @@ import { Intro } from "./ui/Intro/Intro"
 import './App.scss'
 import "./ui/theme-styles/DarkTheme.scss"
 import "./ui/theme-styles/LightTheme.scss"
+import "./ui/theme-styles/FrutigerAero.scss"
+import { Background } from "./Background"
 
 type AppContextType = {
   firstRender: boolean,
@@ -25,7 +27,7 @@ function App() {
   useEffect(() => {
     if (firstRender) {
       localStorage.setItem("first-render", JSON.stringify(false))
-    } 
+    }
   }, [])
 
   const playIntro = () => {
@@ -42,6 +44,9 @@ function App() {
   return (
     <AppContext.Provider value={appContext}>
       <div id="app" className={theme}>
+        <Background
+          theme={theme}
+        />
         <Router>
           {introPlaying && <Intro />}
           <TopBar />

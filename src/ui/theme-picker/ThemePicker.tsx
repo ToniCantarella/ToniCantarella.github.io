@@ -12,7 +12,7 @@ type Theme = {
     content: ReactElement
 }
 
-const themes: Theme[] = [
+export const themes: Theme[] = [
     {
         name: "dark-theme",
         content: <DarkTheme/>
