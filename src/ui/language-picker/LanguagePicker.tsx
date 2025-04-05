@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next"
 import { SupportedLanguages } from "../../localization/i18n"
+import "./LanguagePicker.scss"
 
 export const LanguagePicker = () => {
     const { t, i18n } = useTranslation()
 
     return (
-        <div>
+        <div className="language-picker">
             {SupportedLanguages.map(language =>
                 <button
                     key={language.lngCode}
