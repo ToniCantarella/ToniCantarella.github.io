@@ -1,20 +1,56 @@
 import { useState, useContext, createContext, ReactElement, useEffect } from "react"
+import "./ThemePicker.scss"
+import { DarkTheme } from "./button-content/DarkTheme"
+import { LightTheme } from "./button-content/LightTheme"
+import { SkeuomorphismTheme } from "./button-content/SkeuomorphismTheme"
+import { NatureTheme } from "./button-content/NatureTheme"
+import { FrutigerAeroTheme } from "./button-content/FrutigerAero"
+import { RetroTheme } from "./button-content/RetroTheme"
 
-const themes: string[] = [
-    "light-theme",
-    "dark-theme"
+type Theme = {
+    name: string,
+    content: ReactElement
+}
+
+const themes: Theme[] = [
+    {
+        name: "dark-theme",
+        content: <DarkTheme/>
+    },
+    {
+        name: "light-theme",
+        content: <LightTheme/>
+    },
+    {
+        name: "skeuomorphism",
+        content: <SkeuomorphismTheme/>
+    },
+    {
+        name: "nature",
+        content: <NatureTheme/>
+    },
+    {
+        name: "frutiger-aero",
+        content: <FrutigerAeroTheme/>
+    },
+    {
+        name: "retro",
+        content: <RetroTheme/>
+    }
 ]
 
 export const ThemePicker = () => {
     const themeContext = useContext(ThemeContext)
 
     return (
-        <div>
+        <div id="theme-picker">
             {themes.map(theme => (
-                <button key={theme} onClick={() => {
-                    themeContext.setTheme(theme)
-                }}>
-                    {theme}
+                <button
+                    key={theme.name}
+                    onClick={() => themeContext.setTheme(theme.name)}
+                    className={`theme-button ${theme.name} ${themeContext.theme === theme.name ? "selected" : ""}`}
+                >
+                    {theme.content}
                 </button>
             ))}
         </div>
@@ -34,7 +70,7 @@ type ThemeProviderProps = {
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
     const [theme, setTheme] = useState<string>(() =>
-        localStorage.getItem("theme") ?? themes[0]
+        localStorage.getItem("theme") ?? themes[0].name
     )
 
     useEffect(() => {

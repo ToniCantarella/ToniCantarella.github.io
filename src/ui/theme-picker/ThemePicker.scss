@@ -1,0 +1,40 @@
+#theme-picker {
+    display: flex;
+    gap: var(--tiny-padding);
+
+    .theme-button {
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            max-width: 30px;
+            max-height: 30px;
+        }
+
+        &.dark-theme {
+            border: 2px solid white;
+            background-color: black;
+
+            div {
+                display: flex;
+
+                svg {
+                    fill: white;
+                }
+            }
+        }
+
+        &.light-theme {
+            border: 2px solid black;
+            background-color: white;
+
+            div {
+                display: flex;
+            }
+        }
+    }
+}
