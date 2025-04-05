@@ -1,11 +1,13 @@
 #theme-picker {
+    --theme-button-size: 30px;
+
     display: flex;
     gap: var(--tiny-padding);
 
     .theme-button {
         border-radius: 50%;
-        height: 48px;
-        width: 48px;
+        height: var(--theme-button-size);
+        width: var(--theme-button-size);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,8 +17,8 @@
         }
 
         svg {
-            max-width: 30px;
-            max-height: 30px;
+            max-width: calc(var(--theme-button-size) - 10px);
+            max-height: calc(var(--theme-button-size) - 10px);
         }
 
         &.dark-theme {
