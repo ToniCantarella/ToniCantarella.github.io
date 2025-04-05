@@ -26,16 +26,16 @@ const themes: Theme[] = [
         content: <SkeuomorphismTheme/>
     },
     {
-        name: "nature",
-        content: <NatureTheme/>
-    },
-    {
         name: "frutiger-aero",
         content: <FrutigerAeroTheme/>
     },
     {
         name: "retro",
         content: <RetroTheme/>
+    },
+    {
+        name: "nature",
+        content: <NatureTheme/>
     }
 ]
 
