@@ -1,3 +1,20 @@
-.language-picker {
+#language-picker {
     display: flex;
+
+    .language {
+        position: relative;
+        padding: 0;
+        height: 30px;
+        width: 50px;
+        border-radius: var(--xtra-small-padding);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        svg {
+            max-width: 50px;
+            max-height: 50px;
+        }
+    }
 }

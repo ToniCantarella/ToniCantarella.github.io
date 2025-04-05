@@ -7,7 +7,9 @@
   justify-content: center;
   transform: translate(0%);
 
-  div {
+  .content {
+    border: 1px solid blue;
+    padding: var(--small-padding);
     max-width: var(--content-max-width);
     flex: 1;
   }

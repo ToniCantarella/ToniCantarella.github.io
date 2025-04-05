@@ -44,6 +44,17 @@
   --button-color-light: white;
   --button-color-dark: black;
 
+  button {
+    color: var(--button-color);
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &.dark-theme {
     background: var(--bg-dark);
     color: var(--color-dark);
@@ -74,18 +85,6 @@
     --intro-exit-animation: introExitAnimationLight var(--intro-exit-animation-duration) ease forwards;
 
     --intro-bg: var(--intro-bg-light);
-  }
-
-  button {
-    padding: 16px;
-    color: var(--button-color);
-    background-color: var(--button-bg);
-    border: none;
-    border-radius: 16px;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 

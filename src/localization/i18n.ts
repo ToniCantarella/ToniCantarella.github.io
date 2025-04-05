@@ -3,22 +3,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import en from '../locales/en/translation.json'
 import fi from '../locales/fi/translation.json'
-
-export type Language = {
-    lngCode: string,
-    flag: string
-}
-
-export const SupportedLanguages: Language[] = [
-    {
-        lngCode: "en",
-        flag: "-"
-    },
-    {
-        lngCode: "fi",
-        flag: "-"
-    }
-]
+import { SupportedLanguages } from '../ui/language-picker/LanguagePicker'
 
 i18n
     .use(LanguageDetector)
