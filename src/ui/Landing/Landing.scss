@@ -1,0 +1,15 @@
+#landing {
+    display: flex;
+    flex: 1;
+    gap: var(--small-padding);
+
+    .card {
+        flex: 1;
+        &:nth-child(2) {
+            height: 50%;
+            background-image: url("../assets/landing.jpg");
+            background-size: cover;
+            background-position: 50% 20%;
+        }
+    }
+}
