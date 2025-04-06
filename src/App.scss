@@ -1,9 +1,8 @@
 #app {
   position: relative;
   display: flex;
-  flex: 1;
   flex-direction: column;
-  overflow-x: hidden;
+  min-height: 100vh;
 
   &,
   & *,
@@ -26,6 +25,8 @@
 
   --content-max-width: 1200px;
 
+  --top-bar-height: 50px;
+
   button {
     color: var(--button-color);
     background-color: var(--button-bg);
@@ -46,6 +47,7 @@
   }
 
   #app-content {
+    margin-top: var(--top-bar-height);
     position: relative;
     flex: 1;
   }

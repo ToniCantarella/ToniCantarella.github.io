@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
 import { TopBar } from "./ui/top-bar/TopBar"
 import { ThemeContext } from "./ui/theme-picker/ThemePicker"
-import { Intro } from "./ui/Intro/Intro"
+import { Intro } from "./ui/intro/Intro"
 import { Background } from "./ui/Background"
 import './App.scss'
 import "./ui/theme-styles/DarkTheme.scss"

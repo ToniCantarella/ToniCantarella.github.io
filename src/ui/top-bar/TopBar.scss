@@ -1,7 +1,10 @@
 #top-bar {
     display: flex;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
     justify-content: center;
-    height: 50px;
+    height: var(--top-bar-height);
     background: var(--top-bar-bg);
 
     .inner {

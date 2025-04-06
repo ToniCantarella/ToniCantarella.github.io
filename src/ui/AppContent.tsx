@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion"
 import { Route, Routes, useLocation } from "react-router-dom"
 import { Pathnames } from "./navigation/NavigationBar"
 import { AboutMe } from "./about-me/AboutMe"
-import { Skills } from "./Skills/Skills"
+import { Skills } from "./skills/Skills"
 import { Examples } from "./examples/Examples"
 import { Contact } from "./contact/Contact"
 

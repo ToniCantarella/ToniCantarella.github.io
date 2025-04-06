@@ -1,0 +1,38 @@
+#skills {
+
+    .timeline {
+        //border: 1px dashed pink;
+
+        .timeperiod {
+            display: flex;
+            gap: 30px;
+            flex-direction: row;
+
+            .date {
+            }
+
+            .foo {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                margin-top: 33px;
+
+                .dot {
+                    height: 15px;
+                    width: 14px;
+                    background: var(--primary-color);
+                    border-radius: 50%;
+                }
+
+                .line {
+                    width: 4px;
+                    border-radius: 2px;
+                    height: 100%;
+                    background: white;
+                    opacity: .4;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 .dark-theme {
-    --top-bar-bg-dark: transparent;
+    --top-bar-bg-dark: var(--background);
     --bg-dark: #252729;
     --color-dark: #d0d5e0;
     --intro-bg-dark: blue;
@@ -25,6 +25,7 @@
     --intro-bg: var(--intro-bg-dark);
 
     color: var(--color);
+
 
     #background {
         background: var(--background);
