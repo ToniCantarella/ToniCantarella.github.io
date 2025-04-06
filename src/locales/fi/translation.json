@@ -9,5 +9,21 @@
     "about-me": {
         "title": "Moi",
         "about-me-intro": "Front-end kehittäjä Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sem erat. Aliquam sapien mi, aliquam eu auctor in, pellentesque vitae purus. Curabitur consequat accumsan metus in molestie. Suspendisse vestibulum vitae orci vel hendrerit. Cras at risus interdum, eleifend nulla sit amet, iaculis felis. Sed at cursus ligula. Mauris bibendum urna eget ullamcorper hendrerit. Morbi pellentesque semper iaculis. Nam quis dolor id lacus sagittis pulvinar eget non velit. Vestibulum ut erat imperdiet, ornare ligula ac, pulvinar ante. Nullam sit amet ante euismod, sodales urna id, condimentum sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque scelerisque dui at arcu pretium hendrerit."
+    },
+    "skills": {
+        "experience": "Kokemus",
+        "studies": "Opiskelu",
+        "karelia-amk": "Karelia-AMK",
+        "studies-article": "Ensikosketukseni koodaukseen tuli alan opiskelujen myötä. Kareliassa opin ohjelmointia, tietorakenteita, logiikkaa ja lorem ipsum.",
+        "internship": "Työharjoittelu",
+        "sensire": "Sensire Oy",
+        "internship-article": "Opiskelujen keskivaiheessa sain ensimmäisen työharjoittelupaikan Sensireltä. Lämpötilanseurantaan sekä laadunvalvontaan erikoistuneet palvelut toivat mukanaan koodauskokemusta.",
+        "employed": "Työllistyminen",
+        "employed-article": "Työharjoittelujakson päätteeksi sain Sensireltä työpaikan ja jatkoin siellä lorem ipsum.",
+        "graduation": "Valmistuminen",
+        "graduation-article": "Työn ohella valmistelin opinnäytetyötäni Kareliassa. Valmistuessa jatkoin työtä Sensirellä.",
+        "future": "Tulevaisuus",
+        "your-company": "Sinun yrityksesi?",
+        "future-article": "Mitäs jos tekisin töitä teille? Lorem"
     }
 }

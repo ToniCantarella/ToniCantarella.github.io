@@ -9,5 +9,21 @@
     "about-me": {
         "title": "About me",
         "about-me-intro": "Front-end developer Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sem erat. Aliquam sapien mi, aliquam eu auctor in, pellentesque vitae purus. Curabitur consequat accumsan metus in molestie. Suspendisse vestibulum vitae orci vel hendrerit. Cras at risus interdum, eleifend nulla sit amet, iaculis felis. Sed at cursus ligula. Mauris bibendum urna eget ullamcorper hendrerit. Morbi pellentesque semper iaculis. Nam quis dolor id lacus sagittis pulvinar eget non velit. Vestibulum ut erat imperdiet, ornare ligula ac, pulvinar ante. Nullam sit amet ante euismod, sodales urna id, condimentum sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque scelerisque dui at arcu pretium hendrerit."
+    },
+    "skills": {
+        "experience": "Experience",
+        "studies": "Studies",
+        "karelia-amk": "Karelia University of Applied Sciences",
+        "studies-article": "My first touch into coding came from applying to study in Karelia. There I learned programming, data structures, logic and lorem impsum",
+        "internship": "Internship",
+        "sensire": "Sensire Ltd",
+        "internship-article": "In the middle of my studies, I received an opportunity to intern for Sensire. Their services in temperature monitoring and quality control gave their way to coding experience.",
+        "employed": "Employment",
+        "employed-article": "After the internship ended, I was offered employment at Sensire.",
+        "graduation": "Graduation",
+        "graduation-article": "While working I was also finalizing my thesis.",
+        "future": "Future",
+        "your-company": "Your company?",
+        "future-article": "What if I worked for you? Lorem"
     }
 }
