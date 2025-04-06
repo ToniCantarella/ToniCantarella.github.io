@@ -1,15 +1,18 @@
 #skills {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    justify-content: space-between;
 
     .timeline {
-        //border: 1px dashed pink;
+        flex: 1;
 
         .timeperiod {
             display: flex;
             gap: 30px;
             flex-direction: row;
 
-            .date {
-            }
+            .date {}
 
             .foo {
                 display: flex;
@@ -20,7 +23,7 @@
 
                 .dot {
                     height: 15px;
-                    width: 14px;
+                    width: 12px;
                     background: var(--primary-color);
                     border-radius: 50%;
                 }
@@ -34,5 +37,23 @@
                 }
             }
         }
+    }
+
+    .skill-list {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        gap: 10px;
+        height: fit-content;
+
+        h1 {
+            width: 100%;
+        }
+
+        .card {
+            height: 150px;
+            width: calc(50% - 10px);
+        }
+
     }
 }
