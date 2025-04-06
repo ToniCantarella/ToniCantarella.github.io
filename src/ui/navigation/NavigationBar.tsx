@@ -35,11 +35,6 @@ const Pages: Page[] = [
   }
 ]
 
-type NavigationContextType = {
-  direction: boolean,
-  onNavClick: (pathname: string) => void
-}
-
 export const NavigationContext = createContext<NavigationContextType>({} as NavigationContextType)
 
 export const NavigationBar = () => {
@@ -52,7 +47,7 @@ export const NavigationBar = () => {
 
       {Pages.map(page =>
         <Link
-          className="navigation-item"
+          className={`navigation-item ${navContext.currentPage === page.pathname ? "selected" : ""}`}
           key={page.pathname}
           onClick={() => navContext.onNavClick(page.pathname)}
           to={page.pathname}
@@ -62,6 +57,12 @@ export const NavigationBar = () => {
       )}
     </nav>
   )
+}
+
+type NavigationContextType = {
+  direction: boolean,
+  currentPage: string,
+  onNavClick: (pathname: string) => void
 }
 
 type NavigationProviderProps = {
@@ -79,8 +80,9 @@ export const NavigationProvider = (props: NavigationProviderProps) => {
   }
 
   const navigationContext = {
-    onNavClick,
-    direction
+    direction,
+    currentPage,
+    onNavClick
   }
 
   return (
