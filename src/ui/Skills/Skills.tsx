@@ -1,6 +1,16 @@
 import { Page } from "../common/Page"
 import "./Skills.scss"
 import { Card } from "../common/Card"
+import { ReactElement } from "react"
+import TypeScriptIcon from "../assets/typescript.svg?react"
+import JavaScriptIcon from "../assets/javascript.svg?react"
+import ReactIcon from "../assets/react.svg?react"
+import CssIcon from "../assets/css.svg?react"
+import ScssIcon from "../assets/scss.svg?react"
+import AndroidIcon from "../assets/android.svg?react"
+import KotlinIcon from "../assets/kotlin.svg?react"
+import GitIcon from "../assets/git.svg?react"
+
 
 export const Skills = () => {
 
@@ -59,8 +69,10 @@ const TimePeriod = (props: TimePeriodProps) => {
             <div className="date">
                 <h2>{props.year}</h2>
             </div>
-            <div className="foo">
-                <div className="dot"></div>
+            <div className="path">
+                <div className="dot">
+                    <div></div>
+                </div>
                 <div className="line"></div>
             </div>
             <div className="article">
@@ -76,12 +88,60 @@ const SkillList = () => {
     return (
         <div className="skill-list">
             <h1>Skills</h1>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <SkillCard
+                label="React"
+                icon={<ReactIcon id="react"/>}
+            />
+            <SkillCard
+                label="JS & TS"
+                icon={
+                    <>
+                        <JavaScriptIcon />
+                        <TypeScriptIcon />
+                    </>
+                }
+            />
+            <SkillCard
+                label="Css & Scss"
+                icon={
+                    <>
+                        <CssIcon />
+                        <ScssIcon />
+                    </>
+                }
+            />
+            <SkillCard
+                label="Kotlin & Android"
+                icon={
+                    <>
+                        <KotlinIcon />
+                        <AndroidIcon />
+                    </>
+                }
+            />
+            <SkillCard
+                label="Git"
+                icon={<GitIcon />}
+            />
         </div>
+    )
+}
+
+type SkillCardProps = {
+    label: string,
+    icon: ReactElement
+}
+
+const SkillCard = (props: SkillCardProps) => {
+
+    return (
+        <Card>
+            <div className="skill-card">
+                <div className="logo">
+                    {props.icon}
+                </div>
+                <span>{props.label}</span>
+            </div>
+        </Card>
     )
 }
