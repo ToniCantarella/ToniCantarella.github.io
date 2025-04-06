@@ -9,6 +9,7 @@ import "./ui/theme-styles/DarkTheme.scss"
 import "./ui/theme-styles/LightTheme.scss"
 import "./ui/theme-styles/FrutigerAero.scss"
 import { AppContent } from "./ui/AppContent"
+import { BottomBar } from "./ui/bottom-bar/BottomBar"
 
 type AppContextType = {
   firstRender: boolean,
@@ -51,6 +52,7 @@ function App() {
           {introPlaying && <Intro />}
           <TopBar />
           <AppContent />
+          <BottomBar />
         </Router>
       </div>
     </AppContext.Provider>

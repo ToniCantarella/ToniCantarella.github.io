@@ -1,3 +1,5 @@
+@import '../../variables';
+
 #top-bar {
     display: flex;
     z-index: 2;
@@ -20,5 +22,11 @@
             align-items: center;
             flex: 0 1 300px;
         }
+    }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    #top-bar {
+        display: none;
     }
 }

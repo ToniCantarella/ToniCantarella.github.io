@@ -1,0 +1,42 @@
+@import '../../variables';
+
+#bottom-bar {
+    display: none;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    padding: 0 20px;
+    position: fixed;
+    height: $bottom-bar-height;
+    background: var(--top-bar-bg);
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    #bottom-bar {
+        display: flex;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        justify-content: space-around;
+
+        .bottom-bar-item {
+            background: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px;
+            color: white;
+            opacity: .4;
+
+            svg {
+
+                height: 50px;
+                width: 50px;
+            }
+
+            &.selected,
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

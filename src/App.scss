@@ -1,3 +1,5 @@
+@import './variables';
+
 #app {
   position: relative;
   display: flex;
@@ -50,5 +52,17 @@
     margin-top: var(--top-bar-height);
     position: relative;
     flex: 1;
+  }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  #app {
+    #app-content {
+      margin-top: 0;
+
+      .page .content {
+        margin-bottom: $bottom-bar-height;
+      }
+    }
   }
 }

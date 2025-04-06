@@ -3,9 +3,14 @@ import "./Navigation.scss"
 import { createContext, ReactElement, useContext, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { HomeButton } from "../home-button/HomeButton"
+import HomeIcon from "../assets/home.svg?react"
+import PathIcon from "../assets/path.svg?react"
+import StarIcon from "../assets/star.svg?react"
+import ContactIcon from "../assets/message.svg?react"
 
 type Page = {
   pathname: string,
+  icon: ReactElement,
   title: string
 }
 
@@ -16,21 +21,25 @@ export enum Pathnames {
   CONTACT = "/contact",
 }
 
-const Pages: Page[] = [
+export const Pages: Page[] = [
   {
     pathname: Pathnames.ABOUT_ME,
+    icon: <HomeIcon />,
     title: "about-me"
   },
   {
     pathname: Pathnames.SKILLS,
+    icon: <PathIcon />,
     title: "skills"
   },
   {
     pathname: Pathnames.EXAMPLES,
+    icon: <StarIcon />,
     title: "examples"
   },
   {
     pathname: Pathnames.CONTACT,
+    icon: <ContactIcon />,
     title: "contact"
   }
 ]
