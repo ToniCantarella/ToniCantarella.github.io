@@ -1,12 +1,12 @@
 {
     "test": "This is a test",
     "navigation": {
-        "landing": "Landing",
+        "about-me": "About",
         "skills": "Skills",
         "examples": "examples",
         "contact": "Contact"
     },
-    "landing": {
+    "about-me": {
         "title": "About me",
         "about-me-intro": "Front-end developer Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sem erat. Aliquam sapien mi, aliquam eu auctor in, pellentesque vitae purus. Curabitur consequat accumsan metus in molestie. Suspendisse vestibulum vitae orci vel hendrerit. Cras at risus interdum, eleifend nulla sit amet, iaculis felis. Sed at cursus ligula. Mauris bibendum urna eget ullamcorper hendrerit. Morbi pellentesque semper iaculis. Nam quis dolor id lacus sagittis pulvinar eget non velit. Vestibulum ut erat imperdiet, ornare ligula ac, pulvinar ante. Nullam sit amet ante euismod, sodales urna id, condimentum sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque scelerisque dui at arcu pretium hendrerit."
     }

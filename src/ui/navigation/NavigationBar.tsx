@@ -10,13 +10,17 @@ type Page = {
 }
 
 export enum Pathnames {
-  LANDING = "/",
+  ABOUT_ME = "/",
   SKILLS = "/skills",
   EXAMPLES = "/examples",
   CONTACT = "/contact",
 }
 
 const Pages: Page[] = [
+  {
+    pathname: Pathnames.ABOUT_ME,
+    title: "about-me"
+  },
   {
     pathname: Pathnames.SKILLS,
     title: "skills"

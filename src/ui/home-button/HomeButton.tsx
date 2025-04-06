@@ -9,15 +9,15 @@ export const HomeButton = () => {
     const navContext = useContext(NavigationContext)
 
     const onClick = () => {
-        navContext.onNavClick(Pathnames.LANDING)
+        navContext.onNavClick(Pathnames.ABOUT_ME)
         appContext.playIntro()
     }
 
     return (
         <Link 
-            key={Pathnames.LANDING}
+            key={Pathnames.ABOUT_ME}
             onClick={onClick}
-            to={Pathnames.LANDING}
+            to={Pathnames.ABOUT_ME}
             id="home-button"
             className="navigation-item"
         >
