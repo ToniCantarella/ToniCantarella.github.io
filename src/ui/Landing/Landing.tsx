@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 import { Page } from "../common/Page"
+import landingImage from "../assets/landing.jpg"
 import "./Landing.scss"
-import { Card } from "../common/Card"
 
 export const Landing = () => {
     const { t } = useTranslation()
@@ -9,10 +9,17 @@ export const Landing = () => {
     return (
         <Page>
             <div id="landing">
-                <Card>
-                    {t("landing.about-me")}
-                </Card>
-                <Card />
+
+                <div id="about-me">
+                    <h2>
+                        {t("landing.title")}
+                    </h2>
+                    <p>
+                        {t("landing.about-me-intro")}
+                    </p>
+                </div>
+
+                <img src={landingImage} alt="about-me"/>
             </div>
         </Page>
     )

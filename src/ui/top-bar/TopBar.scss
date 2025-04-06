@@ -8,6 +8,7 @@
         display: flex;
         justify-content: space-between;
         flex: 0 1 var(--content-max-width);
+        padding: 0 var(--small-padding);
 
         .controls {
             display: flex;
