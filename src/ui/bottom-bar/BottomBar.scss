@@ -8,6 +8,10 @@
     position: fixed;
     height: $bottom-bar-height;
     background: var(--top-bar-bg);
+
+    #settings-drawer {
+        background: var(--top-bar-bg);
+    }
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
@@ -42,6 +46,25 @@
             &.selected,
             &:hover {
                 opacity: 1;
+            }
+        }
+
+        #settings-drawer {
+            position: absolute;
+            overflow: hidden;
+            bottom: $bottom-bar-height;
+            right: 0;
+            height: 0px;
+
+
+            &.open {
+                border-top: 1px solid rgba(255, 255, 255, 0.4);
+                border-left: 1px solid rgba(255, 255, 255, 0.4);
+                height: 200px;
+
+                #content {
+                    padding: 13px;
+                }
             }
         }
     }
