@@ -3,32 +3,34 @@ import { NavigationContext, Pages } from "../navigation/NavigationBar"
 import SettingsIcon from "../assets/settings.svg?react"
 import { useTranslation } from "react-i18next"
 import { useContext } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const BottomBar = () => {
     const navContext = useContext(NavigationContext)
-    const navigate = useNavigate()
     const { t } = useTranslation()
 
     return (
-        <div id="bottom-bar">
+        <nav id="bottom-bar">
             {Pages.map(page =>
-                <button
+                <Link
                     className={`bottom-bar-item ${navContext.currentPage === page.pathname ? "selected" : ""}`}
                     key={page.pathname}
-                    onClick={() => {
-                        navigate(page.pathname)
-                        navContext.onNavClick(page.pathname)
-                    }}
+                    onClick={() => { navContext.onNavClick(page.pathname) }}
+                    to={page.pathname}
                 >
                     {page.icon}
-                    {t(`navigation.${page.title}`)}
-                </button>
+                    <span>
+                        {t(`navigation.${page.title}`)}
+                    </span>
+
+                </Link>
             )}
-            <button className="bottom-bar-item">
+            <button className="bottom-bar-item settings">
                 <SettingsIcon />
-                {t("settings")}
+                <span>
+                    {t("settings")}
+                </span>
             </button>
-        </div>
+        </nav>
     )
 }

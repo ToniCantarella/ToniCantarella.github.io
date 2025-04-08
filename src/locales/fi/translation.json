@@ -1,5 +1,6 @@
 {
     "test": "Tämä on testi",
+    "settings": "Asetukset",
     "navigation": {
         "about-me": "Tietoja",
         "skills": "Osaaminen",

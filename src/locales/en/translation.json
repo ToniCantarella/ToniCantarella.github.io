@@ -1,5 +1,6 @@
 {
     "test": "This is a test",
+    "settings": "Settings",
     "navigation": {
         "about-me": "About",
         "skills": "Skills",

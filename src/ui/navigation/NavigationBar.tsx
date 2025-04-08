@@ -61,7 +61,9 @@ export const NavigationBar = () => {
           onClick={() => navContext.onNavClick(page.pathname)}
           to={page.pathname}
         >
-          {t(`navigation.${page.title}`)}
+          <span>
+            {t(`navigation.${page.title}`)}
+          </span>
         </Link>
       )}
     </nav>

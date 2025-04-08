@@ -5,7 +5,6 @@
     z-index: 2;
     bottom: 0;
     width: 100%;
-    padding: 0 20px;
     position: fixed;
     height: $bottom-bar-height;
     background: var(--top-bar-bg);
@@ -18,19 +17,26 @@
         justify-content: space-around;
 
         .bottom-bar-item {
-            background: none;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 13px;
+            border-radius: unset;
+            line-height: 23px;
+            background: none;
+            text-decoration: none;
             color: white;
             opacity: .4;
 
-            svg {
+            span {
+                font-size: medium;
+            }
 
-                height: 50px;
-                width: 50px;
+            svg {
+                min-height: 20px;
+                min-width: 20px;
+                max-height: 50px;
+                max-width: 50px;
             }
 
             &.selected,
