@@ -51,6 +51,8 @@
   #app-content {
     margin-top: var(--top-bar-height);
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
     flex: 1;
   }
 }
@@ -59,10 +61,7 @@
   #app {
     #app-content {
       margin-top: 0;
-
-      .page .content {
-        margin-bottom: $bottom-bar-height;
-      }
+      margin-bottom: $bottom-bar-height;
     }
   }
 }
