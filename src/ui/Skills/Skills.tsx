@@ -110,7 +110,7 @@ const SkillList = () => {
                 label="JS & TS"
                 icon={
                     <>
-                        <JavaScriptIcon />
+                        <JavaScriptIcon style={{borderRadius: "5px"}}/>
                         <TypeScriptIcon />
                     </>
                 }
