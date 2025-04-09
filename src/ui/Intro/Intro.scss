@@ -1,9 +1,11 @@
+@import '../../variables';
+
 #intro {
     position: absolute;
     height: 100%;
     width: 100%;
     background: var(--intro-bg);
-    z-index: 100;
+    z-index: $intro-animation-z-index;
     animation:
         var(--intro-middle-animation),
         var(--intro-exit-animation) var(--intro-middle-animation-duration);

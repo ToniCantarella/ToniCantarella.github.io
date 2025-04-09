@@ -2,7 +2,7 @@
 
 #top-bar {
     display: flex;
-    z-index: 2;
+    z-index: $app-bar-z-index;
     position: fixed;
     width: 100%;
     justify-content: center;
