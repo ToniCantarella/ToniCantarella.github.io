@@ -8,10 +8,11 @@
     position: fixed;
     height: $bottom-bar-height;
     background: var(--top-bar-bg);
+}
 
-    #settings-drawer {
-        background: var(--top-bar-bg);
-    }
+#settings-drawer {
+    background: var(--top-bar-bg);
+    display: none;
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
@@ -51,6 +52,7 @@
     }
 
     #settings-drawer {
+        display: block;
         position: absolute;
         overflow: hidden;
         top: 100vh;
