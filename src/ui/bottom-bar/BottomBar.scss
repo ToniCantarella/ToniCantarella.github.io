@@ -48,24 +48,23 @@
                 opacity: 1;
             }
         }
+    }
 
-        #settings-drawer {
-            position: absolute;
-            overflow: hidden;
-            bottom: $bottom-bar-height;
-            right: 0;
-            height: 0px;
+    #settings-drawer {
+        position: absolute;
+        overflow: hidden;
+        top: 100vh;
+        transform: translateY(0);
+        right: 0;
+        padding: 13px;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
 
 
-            &.open {
-                border-top: 1px solid rgba(255, 255, 255, 0.4);
-                border-left: 1px solid rgba(255, 255, 255, 0.4);
-                height: 200px;
+        &.open {
+            transform: translateY( calc(-100% - $bottom-bar-height));
 
-                #content {
-                    padding: 13px;
-                }
-            }
+            #content {}
         }
     }
 }

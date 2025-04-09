@@ -4,7 +4,6 @@ import SettingsIcon from "../assets/settings.svg?react"
 import { useTranslation } from "react-i18next"
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
-import { div } from "framer-motion/client"
 import { LanguagePicker } from "../language-picker/LanguagePicker"
 import { ThemePicker } from "../theme-picker/ThemePicker"
 
@@ -14,10 +13,8 @@ export const BottomBar = () => {
     const { t } = useTranslation()
 
     return (
+        <>
         <nav id="bottom-bar">
-            <SettingsDrawer
-                open={settingsOpen}
-            />
             {Pages.map(page =>
                 <Link
                     className={`bottom-bar-item ${navContext.currentPage === page.pathname ? "selected" : ""}`}
@@ -42,7 +39,12 @@ export const BottomBar = () => {
                     {t("settings")}
                 </span>
             </button>
+            
         </nav>
+        <SettingsDrawer
+                open={settingsOpen}
+            />
+        </>
     )
 }
 
