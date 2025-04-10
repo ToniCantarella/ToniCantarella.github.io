@@ -3,43 +3,53 @@
     flex-direction: column;
     flex: 1;
 
-    .content {
-        display: flex;
-        flex: 1;
-        border: 1px dashed;
+    h1 {
+        margin-bottom: 0;
+    }
 
-        .card {
-            position: relative;
-            overflow: hidden;
-            padding: 0;
-            height: 400px;
-            width: 200px;
+    .examples-content {
+        padding: var(--small-padding);
 
-            .card-content {
-                position: absolute;
+        .examples-section {
+
+            .examples-grid {
                 display: flex;
-                align-items: end;
-                justify-content: center;
-                inset: 0;
-                height: 100%;
-                width: 100%;
-                padding: var(--small-padding);
+                gap: var(--small-padding);
 
-                span {
-                    font-size: x-large;
-                }
-            }
+                .card {
+                    position: relative;
+                    overflow: hidden;
+                    padding: 0;
+                    height: 100px;
+                    width: 100px;
 
-            .image {
-                height: 100%;
-                width: 100%;
-                background-size: cover;
-                opacity: .5;
-            }
+                    .card-content {
+                        position: absolute;
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        inset: 0;
+                        height: 100%;
+                        width: 100%;
+                        padding: var(--small-padding);
 
-            &:hover{
-                .image {
-                    transform: scale(2);
+                        span {
+                            font-size: x-large;
+                        }
+                    }
+
+                    .image {
+                        height: 100%;
+                        width: 100%;
+                        background-size: cover;
+                        opacity: .5;
+                    }
+
+                    &:hover {
+                        .image {
+                            transform: scale(2);
+                        }
+                    }
                 }
             }
         }
