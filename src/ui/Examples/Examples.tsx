@@ -7,10 +7,23 @@ import { Dialog } from "../common/Dialog"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+    const [dialogTitle, setDialogTitle] = useState<string>("")
+    const [dialogContent, setDialogContent] = useState<React.ReactNode>(null)
     const { t } = useTranslation()
 
+    const openDialog = (title: string, content: React.ReactNode) => {
+        setDialogTitle(title)
+        setDialogContent(content)
+        setDialogOpen(true)
+    }
+
+    const closeDialog = () => {
+        setDialogTitle("")
+        setDialogContent(null)
+        setDialogOpen(false)
+    }
+
     return (
-        <>
             <Page>
                 <>
                     <div id="examples">
@@ -23,17 +36,32 @@ export const Examples = () => {
                                 <ExampleCard
                                     label={t("examples.loading")}
                                     image={""}
-                                    onClick={() => setDialogOpen(true)}
+                                    onClick={() => 
+                                        openDialog(
+                                            t("examples.loading"),
+                                            null
+                                        )
+                                    }
                                 />
                                 <ExampleCard
-                                    label={t("examples.loading")}
+                                    label={t("examples.")}
                                     image={""}
-                                    onClick={() => setDialogOpen(true)}
+                                    onClick={() => 
+                                        openDialog(
+                                            "",
+                                            null
+                                        )
+                                    }
                                 />
                                 <ExampleCard
-                                    label={t("examples.loading")}
+                                    label={t("examples.")}
                                     image={""}
-                                    onClick={() => setDialogOpen(true)}
+                                    onClick={() => 
+                                        openDialog(
+                                            "",
+                                            null
+                                        )
+                                    }
                                 />
                             </ExampleSection>
 
@@ -41,26 +69,30 @@ export const Examples = () => {
                                 title={t("examples.games")}
                             >
                                 <ExampleCard
-                                    label={t("examples.loading")}
+                                    label={t("examples.")}
                                     image={""}
-                                    onClick={() => setDialogOpen(true)}
+                                    onClick={() => 
+                                        openDialog(
+                                            "",
+                                            null
+                                        )
+                                    }
                                 />
                             </ExampleSection>
                         </div>
                     </div>
                     {dialogOpen &&
                         <Dialog
-                            title={t("examples.loading")}
-                            onClose={() => setDialogOpen(false)}
+                            title={dialogTitle}
+                            onClose={() => closeDialog()}
                         >
                             <div>
-                                {t("examples.loading")}
+                                {dialogContent}
                             </div>
                         </Dialog>
                     }
                 </>
             </Page>
-        </>
     )
 }
 
