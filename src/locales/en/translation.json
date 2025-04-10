@@ -26,5 +26,8 @@
         "future": "Future",
         "your-company": "Your company?",
         "future-article": "What if I worked for you? Lorem"
+    },
+    "examples": {
+        "ui-elements": "UI Elements"
     }
 }

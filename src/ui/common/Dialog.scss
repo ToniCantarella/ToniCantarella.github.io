@@ -1,0 +1,87 @@
+#dialog {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    animation: dialogOpen;
+    animation-fill-mode: forwards;
+
+    #inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+
+        #dialog-content {
+            position: absolute;
+            height: 100%;
+            width: var(--content-max-width);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+
+                #card-content {
+                    position: relative;
+                    flex: 1;
+                    display: flex;
+                    width: 600px;
+                    min-height: 600px;
+                }
+
+                #header {
+                    display: flex;
+                    justify-content: space-between;
+
+                    h1 {
+                        margin-top: 0;
+                    }
+
+                    #close-button {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        #dialog-background {
+            height: 100%;
+            width: 100%;
+            background: black;
+            opacity: .5;
+
+        }
+    }
+
+    &.closing {
+        animation: dialogClose;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes dialogOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dialogClose {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
