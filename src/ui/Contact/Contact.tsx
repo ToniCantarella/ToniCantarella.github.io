@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next"
 import { Page } from "../common/Page"
 
 export const Contact = () => {
+    const {t} = useTranslation()
 
     return (
         <Page>
             <div>
-                cntct
+                {t("navigation.contact")}
             </div>
         </Page>
     )
