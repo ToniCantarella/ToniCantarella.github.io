@@ -56,7 +56,8 @@ const Bubble = (props: { index: number }) => {
                 transform: `translateX(${position * .8}vw)`,
                 animationDelay: `${animationDelaySecond}.${animationDelayMillis}s, ${animationDelaySecond}.${animationDelayMillis}s`,
                 animationDuration: `${movementDuration}s, ${swayDuration}s`,
-                background: `linear-gradient(10deg, rgba(255, 255, 255, 0.733), rgba(${red}, ${green}, 255, 0.226))`
+                background: `linear-gradient(10deg, rgba(255, 255, 255, 0.733), rgba(${red}, ${green}, 255, 0.226))`,
+                filter: `blur(${(50 / size)}px)`
             }}
         >
         </div>
