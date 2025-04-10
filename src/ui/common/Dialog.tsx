@@ -29,7 +29,7 @@ export const Dialog = (props: DialogProps) => {
             }}
         >
             <div id="inner">
-                <div id="dialog-background" />
+                <div id="dialog-background" onClick={onClose}/>
                 <div id="dialog-content">
                     <Card>
                         <>
