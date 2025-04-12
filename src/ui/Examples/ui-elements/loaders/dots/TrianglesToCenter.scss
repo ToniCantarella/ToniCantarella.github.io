@@ -8,13 +8,13 @@
         bottom: calc(100% - 20px);
         left: 0;
         opacity: 0;
-        animation: moveGridToCenter 3s ease infinite;
+        animation: moveGridToCenter var(--loader-duration) ease infinite;
         width: 0;
         height: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
 
-        border-right: 20px solid orange;
+        border-right: 20px solid var(--dot-color);
     }
 }
 

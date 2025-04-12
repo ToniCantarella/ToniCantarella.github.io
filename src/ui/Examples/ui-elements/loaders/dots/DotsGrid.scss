@@ -9,9 +9,9 @@
         opacity: 0;
         height: 20px;
         width: 20px;
-        background: #ff7003;
+        background: var(--dot-color);
         border-radius: 50%;
-        animation: dots 3s ease infinite;
+        animation: dots var(--loader-duration) ease infinite;
     }
 }
 
@@ -24,7 +24,6 @@
     50% {
         opacity: 1;
         transform: scale(1);
-        background: #ff9d52;
     }
 
     100% {

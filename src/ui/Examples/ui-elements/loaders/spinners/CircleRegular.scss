@@ -2,13 +2,13 @@
     animation: circleRegularSpin 2s linear infinite;
     flex: 1;
 
-    & circle {
+    circle {
         fill: none;
-        stroke: rgb(0, 145, 200);
+        stroke: var(--spinner-color);
         stroke-width: 15px;
         stroke-dasharray: 314;
         stroke-dashoffset: 314;
-        animation: circleRegularStrokeOffset 3s ease infinite;
+        animation: circleRegularStrokeOffset var(--loader-duration) ease infinite;
     }
 }
 

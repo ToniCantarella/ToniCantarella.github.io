@@ -5,6 +5,7 @@ import { CircleRegular } from "./spinners/CircleRegular"
 import { CircleSpiral } from "./spinners/CircleSpiral"
 import { TrianglesToCenter } from "./dots/TrianglesToCenter"
 import { ProgressBar } from "./bars/ProgressBar"
+import { CircleProgress } from "./spinners/CircleProgress"
 
 export const LoadingElements = () => {
     return (
@@ -12,6 +13,7 @@ export const LoadingElements = () => {
             <UIElementRow>
                 <CircleRegular />
                 <CircleSpiral />
+                <CircleProgress />
             </UIElementRow>
 
             <UIElementRow>

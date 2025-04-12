@@ -10,7 +10,7 @@
 
     .bar {
         height: 10px;
-        background: pink;
+        background: var(--bar-color);
         border-radius: var(--small-padding);
     }
 }

@@ -17,9 +17,9 @@
             left: 0;
             top: 0;
             transform: scale(.5);
-            background: pink;
+            background: var(--spinner-color);
             border-radius: 50%;
-            animation: circleSpiralMove 3s infinite;
+            animation: circleSpiralMove var(--loader-duration) infinite;
         }
     }
 }
