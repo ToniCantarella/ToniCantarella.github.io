@@ -1,0 +1,93 @@
+#criss-cross {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    --full-duration: 5s;
+    --sub-duration: calc(var(--full-duration) / 3);
+    animation: crissCrossRotate var(--full-duration) linear infinite;
+
+    #criss {
+        position: absolute;
+        height: 10px;
+        width: 0;
+        left: 0;
+        bottom: calc(50% - 5px);
+        background: var(--bar-color);
+        animation: criss var(--sub-duration) ease infinite;
+    }
+
+    #cross {
+        position: absolute;
+        height: 10px;
+        width: 0;
+        right: 0;
+        bottom: calc(50% + 5px);
+        background: var(--bar-color);
+        animation: cross var(--sub-duration) ease infinite;
+    }
+}
+
+@keyframes crissCrossRotate {
+    0% {
+        rotate: 0deg;
+    }
+
+    32% {
+        rotate: 0deg;
+    }
+
+    33% {
+        rotate: 90deg;
+    }
+
+    62% {
+        rotate: 90deg;
+    }
+
+    66% {
+        rotate: 45deg;
+    }
+
+    99% {
+        rotate: 45deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+}
+
+@keyframes criss {
+    0% {
+        width: 0;
+        left: -10%;
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 110%;
+    }
+}
+
+@keyframes cross {
+    0% {
+        width: 0;
+        right: -10%;
+    }
+
+    50% {
+        width: 100%;
+        right: 0;
+    }
+
+    100% {
+        width: 0;
+        right: 110%;
+    }
+}

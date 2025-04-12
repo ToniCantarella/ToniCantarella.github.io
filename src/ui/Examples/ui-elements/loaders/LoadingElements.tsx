@@ -7,7 +7,7 @@ import { TrianglesToCenter } from "./dots/TrianglesToCenter"
 import { ProgressBar } from "./bars/ProgressBar"
 import { CircleProgress } from "./spinners/CircleProgress"
 import { ColumnBar } from "./bars/ColumnBar"
-import { Loader } from "./Loader"
+import { CrissCross } from "./bars/CrissCross"
 
 export const LoadingElements = () => {
     return (
@@ -21,9 +21,7 @@ export const LoadingElements = () => {
             <UIElementRow>
                 <ProgressBar />
                 <ColumnBar />
-                <Loader>
-                    <div></div>
-                </Loader>
+                <CrissCross />
             </UIElementRow>
 
             <UIElementRow>
