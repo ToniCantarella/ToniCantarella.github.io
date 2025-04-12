@@ -26,14 +26,6 @@
 
   --app-background-z-index: -1;
 
-  --intro-start-animation-duration: .5s;
-  --intro-middle-animation-duration: .5s;
-  --intro-exit-animation-duration: .5s;
-
-  --intro-animation-z-index: 100;
-  --intro-middle-animation-delay: var(--intro-start-animation-duration);
-  --intro-exit-animation-delay: calc(var(--intro-middle-animation-delay) + var(--intro-middle-animation-duration));
-
   button {
     border: none;
 

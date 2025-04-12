@@ -1,24 +1,17 @@
 .dark-theme {
     /* Common */
     --primary-color: #ff6e4a;
-    --surface-color: rgb(52, 52, 58);
+    --surface-color: #34343a;
     --text-color: var(--color-dark);
 
     --app-background: var(--background-dark);
     --app-bar-background: var(--app-bar-background-dark);
-
-    --intro-start-animation: introStartAnimationDark var(--intro-start-animation-duration) ease forwards;
-    --intro-middle-animation: introMiddleAnimationDark var(--intro-middle-animation-duration) ease forwards;
-    --intro-exit-animation: introExitAnimationDark var(--intro-exit-animation-duration) ease forwards;
-
-    --intro-bg: var(--intro-background-dark);
 
     /* Theme specific */
 
     --app-bar-background-dark: var(--app-background);
     --background-dark: #252729;
     --color-dark: #d0d5e0;
-    --intro-background-dark: blue;
     --button-background-dark: rgb(235, 235, 235);
     --button-color-dark: black;
 
@@ -55,39 +48,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes introStartAnimationDark {
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes introMiddleAnimationDark {
-    from {
-        background-color: var(--intro-background-dark);
-    }
-
-    to {
-        background-color: orange;
-    }
-}
-
-@keyframes introExitAnimationDark {
-    from {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    to {
-        opacity: 0;
-        visibility: hidden;
     }
 }

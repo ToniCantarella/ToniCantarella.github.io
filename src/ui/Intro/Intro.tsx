@@ -4,20 +4,33 @@ import { useContext } from "react"
 
 export const Intro = () => {
     const appContext = useContext(AppContext)
-
-    const stopPlaying = (animationName: string) => {
-        if (animationName.includes("introExitAnimation")) {
-            appContext.setIntroPlaying(false)
-        }
-    }
+    const amountOfSwipes = 6
 
     return (
-        <div
-            id="intro"
-            className={`${appContext.firstRender ? "" : "with-start-animation"}`}
-            onAnimationEnd={e => stopPlaying(e.animationName)}
-        >
+        <div id="intro">
+            <div id="intro-content">
+                <div
+                    id="intro-logo"
+                    onAnimationEnd={() => appContext.setIntroPlaying(false)}
+                >
+                    <h1>Toni Cantarella</h1>
+                </div>
+                {appContext.firstRender &&
+                    <div id="start-buffer" />
+                }
+                {Array.from({ length: amountOfSwipes }, (_, i) => (
+                    <div
+                        key={i}
+                        className="color-swipe"
+                        style={{
+                            animationDelay: `.${i}s`,
+                            filter: `brightness(${(1 / amountOfSwipes) * (i + 1)})`
+                        }}
+                    >
+                    </div>
+                ))}
 
+            </div>
         </div>
     )
 }

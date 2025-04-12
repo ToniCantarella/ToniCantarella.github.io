@@ -1,17 +1,95 @@
 #intro {
     position: absolute;
+    overflow: hidden;
     height: 100%;
     width: 100%;
-    background: var(--intro-bg);
-    z-index: var(--intro-animation-z-index);
-    animation:
-        var(--intro-middle-animation),
-        var(--intro-exit-animation) var(--intro-middle-animation-duration);
+    z-index: 100;
 
-    &.with-start-animation {
-        animation:
-            var(--intro-start-animation),
-            var(--intro-middle-animation) var(--intro-middle-animation-delay),
-            var(--intro-exit-animation) var(--intro-exit-animation-delay);
+    --start-buffer-duration: .5s;
+    --color-swipe-duration: 2s;
+    --intro-logo-duration: 3s;
+
+    #start-buffer {
+        background-color: var(--app-background);
+        height: 100%;
+        width: 100%;
+        visibility: visible;
+        animation: startBufferRemove var(--start-buffer-duration) linear forwards;
+        animation-delay: var(--start-buffer-duration);
+    }
+
+    #intro-content {
+        position: relative;
+        display: flex;
+        height: 100%;
+
+        .color-swipe {
+            position: absolute;
+            left: -50%;
+            width: 0;
+            height: 100%;
+            transform: skewX(-30deg);
+            background: var(--primary-color);
+            animation: colorSwipe var(--color-swipe-duration) ease-in forwards;
+        }
+
+        #intro-logo {
+            position: absolute;
+            visibility: hidden;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.5);
+            animation: introLogoAppear var(--intro-logo-duration) ease forwards;
+            animation-delay: 1s;
+        }
+    }
+}
+
+@keyframes startBufferRemove {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes colorSwipe {
+    0% {
+        left: -50%;
+        width: 0;
+    }
+
+    50% {
+        left: -50%;
+        width: 200%;
+    }
+
+    100% {
+        left: 150%;
+        width: 0;
+    }
+}
+
+@keyframes introLogoAppear {
+    0% {
+        visibility: hidden;
+    }
+
+    10% {
+        visibility: visible;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
