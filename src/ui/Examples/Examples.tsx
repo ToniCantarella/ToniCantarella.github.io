@@ -119,21 +119,19 @@ type ExampleCardProps = {
 
 const ExampleCard = (props: ExampleCardProps) => {
     return (
-        <Card >
-            <>
-                <div
-                    className="image"
-                    style={{
-                        backgroundImage: `url(${props.image})`
-                    }}
-                />
-                <div
-                    className="card-content"
-                    onClick={props.onClick}
-                >
-                    <span>{props.label}</span>
-                </div>
-            </>
+        <Card>
+            <div
+                className="image"
+                style={{
+                    backgroundImage: `url(${props.image})`
+                }}
+            />
+            <div
+                className="card-content"
+                onClick={props.onClick}
+            >
+                <span>{props.label}</span>
+            </div>
         </Card>
     )
 }

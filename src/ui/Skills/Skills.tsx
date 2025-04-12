@@ -1,7 +1,6 @@
 import { Page } from "../common/Page"
 import "./Skills.scss"
 import { Card } from "../common/Card"
-import { ReactElement } from "react"
 import TypeScriptIcon from "../assets/typescript.svg?react"
 import JavaScriptIcon from "../assets/javascript.svg?react"
 import ReactIcon from "../assets/react.svg?react"
@@ -34,30 +33,35 @@ const TimeLine = () => {
     return (
         <div className="timeline">
             <h1>{t("skills.experience")}</h1>
+
             <TimePeriod
                 year="8/2020"
                 title={t("skills.studies")}
                 subtitle={t("skills.karelia-amk")}
                 paragraph={t("skills.studies-article")}
             />
+
             <TimePeriod
                 year="5/2022"
                 title={t("skills.internship")}
                 subtitle={t("skills.sensire")}
                 paragraph={t("skills.internship-article")}
             />
+
             <TimePeriod
                 year="12/2022"
                 title={t("skills.employed")}
                 subtitle={t("skills.sensire")}
                 paragraph={t("skills.employed-article")}
             />
+
             <TimePeriod
                 year="6/2024"
                 title={t("skills.graduation")}
                 subtitle={t("skills.karelia-amk")}
                 paragraph={t("skills.graduation-article")}
             />
+
             <TimePeriod
                 year={currentFormatted}
                 title={t("skills.future")}
@@ -102,10 +106,12 @@ const SkillList = () => {
     return (
         <div className="skill-list">
             <h1>{t("navigation.skills")}</h1>
+
             <SkillCard
                 label="React"
                 icon={<ReactIcon id="react" />}
             />
+
             <SkillCard
                 label="JS & TS"
                 icon={
@@ -115,6 +121,7 @@ const SkillList = () => {
                     </>
                 }
             />
+
             <SkillCard
                 label="Css & Scss"
                 icon={
@@ -124,6 +131,7 @@ const SkillList = () => {
                     </>
                 }
             />
+
             <SkillCard
                 label="Kotlin & Android"
                 icon={
@@ -133,6 +141,7 @@ const SkillList = () => {
                     </>
                 }
             />
+            
             <SkillCard
                 label="Git"
                 icon={<GitIcon />}
@@ -143,7 +152,7 @@ const SkillList = () => {
 
 type SkillCardProps = {
     label: string,
-    icon: ReactElement
+    icon: React.ReactNode
 }
 
 const SkillCard = (props: SkillCardProps) => {
