@@ -1,3 +1,5 @@
+@import '../../variables';
+
 #bottom-bar {
     display: none;
     z-index: var(--app-bar-z-index);
@@ -63,6 +65,8 @@
 
         &.open {
             transform: translateY( calc(-100% - var(--bottom-bar-height)));
+
+            #content {}
         }
     }
 }
