@@ -1,0 +1,16 @@
+#progress-bar {
+    width: 100%;
+
+    span {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: x-large;
+    }
+
+    .bar {
+        height: 10px;
+        background: pink;
+        border-radius: var(--small-padding);
+    }
+}

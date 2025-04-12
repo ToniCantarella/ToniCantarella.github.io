@@ -4,6 +4,7 @@ import { Ellipsis } from "./dots/Ellipsis"
 import { CircleRegular } from "./spinners/CircleRegular"
 import { CircleSpiral } from "./spinners/CircleSpiral"
 import { TrianglesToCenter } from "./dots/TrianglesToCenter"
+import { ProgressBar } from "./bars/ProgressBar"
 
 export const LoadingElements = () => {
     return (
@@ -14,7 +15,7 @@ export const LoadingElements = () => {
             </UIElementRow>
 
             <UIElementRow>
-                <></>
+                <ProgressBar />
             </UIElementRow>
 
             <UIElementRow>
