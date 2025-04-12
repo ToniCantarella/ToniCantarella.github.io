@@ -28,28 +28,31 @@
         background: var(--app-background);
     }
 
-    .navigation-item {
-        color: var(--text-color);
+    #navigation-bar {
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            opacity: 0;
-            width: 0%;
-            left: 50%;
-            height: 100%;
-            background: var(--primary-color);
-            transform: translateX(-50%);
-        }
-
-        &:hover,
-        &.selected {
-            color: white;
+        .navigation-item {
+            color: var(--text-color);
 
             &::after {
-                opacity: 1;
-                width: 100%;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                opacity: 0;
+                width: 0%;
+                left: 50%;
+                height: 100%;
+                background: var(--primary-color);
+                transform: translateX(-50%);
+            }
+
+            &:hover,
+            &.selected {
+                color: white;
+
+                &::after {
+                    opacity: 1;
+                    width: 100%;
+                }
             }
         }
     }

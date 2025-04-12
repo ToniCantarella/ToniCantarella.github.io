@@ -47,26 +47,30 @@ export const Pages: Page[] = [
 export const NavigationContext = createContext<NavigationContextType>({} as NavigationContextType)
 
 export const NavigationBar = () => {
-  const navContext = useContext(NavigationContext)
-  const { t } = useTranslation()
-
   return (
     <nav id="navigation-bar">
       <HomeButton />
-
-      {Pages.map(page =>
-        <Link
-          className={`navigation-item ${navContext.currentPage === page.pathname ? "selected" : ""}`}
-          key={page.pathname}
-          onClick={() => navContext.onNavClick(page.pathname)}
-          to={page.pathname}
-        >
-          <span>
-            {t(`navigation.${page.title}`)}
-          </span>
-        </Link>
-      )}
+      <NavigationItems />
     </nav>
+  )
+}
+
+export const NavigationItems = (props: { icons?: boolean }) => {
+  const navContext = useContext(NavigationContext)
+  const { t } = useTranslation()
+
+  return Pages.map(page =>
+    <Link
+      className={`navigation-item ${navContext.currentPage === page.pathname ? "selected" : ""}`}
+      key={page.pathname}
+      onClick={() => navContext.onNavClick(page.pathname)}
+      to={page.pathname}
+    >
+      {props.icons && page.icon}
+      <span>
+        {t(`navigation.${page.title}`)}
+      </span>
+    </Link>
   )
 }
 

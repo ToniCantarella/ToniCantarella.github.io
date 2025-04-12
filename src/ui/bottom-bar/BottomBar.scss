@@ -21,6 +21,7 @@
         border-top: 1px solid rgba(255, 255, 255, 0.4);
         justify-content: space-around;
 
+        .navigation-item,
         .bottom-bar-item {
             display: flex;
             flex-direction: column;
@@ -64,7 +65,7 @@
 
 
         &.open {
-            transform: translateY( calc(-100% - var(--bottom-bar-height)));
+            transform: translateY(calc(-100% - var(--bottom-bar-height)));
         }
     }
 }
