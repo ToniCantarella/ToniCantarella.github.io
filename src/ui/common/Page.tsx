@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import "./Page.scss"
-import { ReactElement, useContext } from "react";
+import React, { useContext } from "react";
 import { NavigationContext } from "../navigation/NavigationBar";
 
 type PageProps = {
-  children: ReactElement
+  children: React.ReactNode
 }
 
 export const Page = (props: PageProps) => {
