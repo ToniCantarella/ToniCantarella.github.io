@@ -10,7 +10,7 @@
         transform: translateY(-20px);
         background: var(--dot-color);
         border-radius: 5px;
-        animation: ellipsis 1s ease alternate infinite;
+        animation: ellipsis .5s ease alternate infinite;
     }
 }
 

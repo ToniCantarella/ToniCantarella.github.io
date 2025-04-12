@@ -2,8 +2,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0 var(--extra-large-padding);
+    gap: var(--extra-large-padding);
 
     .ui-element-row {
         display: flex;
+        gap: var(--extra-large-padding);
     }
 }
