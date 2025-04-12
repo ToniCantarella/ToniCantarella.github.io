@@ -12,13 +12,6 @@
     transition: all .2s;
   }
 
-  --intro-start-animation-duration: .5s;
-  --intro-middle-animation-duration: .5s;
-  --intro-exit-animation-duration: .5s;
-
-  --intro-middle-animation-delay: var(--intro-start-animation-duration);
-  --intro-exit-animation-delay: calc(var(--intro-middle-animation-delay) + var(--intro-middle-animation-duration));
-
   --tiny-padding: 4px;
   --xtra-small-padding: 8px;
   --small-padding: 16px;
@@ -28,12 +21,18 @@
   --content-max-width: 1200px;
 
   --top-bar-height: 50px;
-
-  --intro-animation-z-index: 100;
+  --bottom-bar-height: 100px;
   --app-bar-z-index: 2;
+
   --app-background-z-index: -1;
 
-  --bottom-bar-height: 100px;
+  --intro-start-animation-duration: .5s;
+  --intro-middle-animation-duration: .5s;
+  --intro-exit-animation-duration: .5s;
+
+  --intro-animation-z-index: 100;
+  --intro-middle-animation-delay: var(--intro-start-animation-duration);
+  --intro-exit-animation-delay: calc(var(--intro-middle-animation-delay) + var(--intro-middle-animation-duration));
 
   button {
     color: var(--button-color);
