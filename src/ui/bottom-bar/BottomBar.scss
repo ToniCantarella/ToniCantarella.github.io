@@ -2,11 +2,11 @@
 
 #bottom-bar {
     display: none;
-    z-index: $app-bar-z-index;
+    z-index: var(--app-bar-z-index);
     bottom: 0;
     width: 100%;
     position: fixed;
-    height: $bottom-bar-height;
+    height: var(--bottom-bar-height);
     background: var(--top-bar-bg);
 }
 
@@ -64,7 +64,7 @@
 
 
         &.open {
-            transform: translateY( calc(-100% - $bottom-bar-height));
+            transform: translateY( calc(-100% - var(--bottom-bar-height)));
 
             #content {}
         }
