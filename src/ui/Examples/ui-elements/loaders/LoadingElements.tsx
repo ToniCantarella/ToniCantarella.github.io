@@ -6,6 +6,8 @@ import { CircleSpiral } from "./spinners/CircleSpiral"
 import { TrianglesToCenter } from "./dots/TrianglesToCenter"
 import { ProgressBar } from "./bars/ProgressBar"
 import { CircleProgress } from "./spinners/CircleProgress"
+import { ColumnBar } from "./bars/ColumnBar"
+import { Loader } from "./Loader"
 
 export const LoadingElements = () => {
     return (
@@ -18,6 +20,10 @@ export const LoadingElements = () => {
 
             <UIElementRow>
                 <ProgressBar />
+                <ColumnBar />
+                <Loader>
+                    <div></div>
+                </Loader>
             </UIElementRow>
 
             <UIElementRow>
