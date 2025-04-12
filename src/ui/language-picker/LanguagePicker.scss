@@ -1,13 +1,13 @@
 #language-picker {
     display: flex;
-    gap: var(--tiny-padding);
+    gap: var(--small-padding);
 
     .language {
         position: relative;
         padding: 0;
         height: 30px;
         width: 50px;
-        border-radius: var(--xtra-small-padding);
+        border-radius: var(--small-padding);
         display: flex;
         justify-content: center;
         align-items: center;

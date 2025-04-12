@@ -12,11 +12,11 @@
     transition: all .2s;
   }
 
-  --tiny-padding: 4px;
-  --xtra-small-padding: 8px;
-  --small-padding: 16px;
-  --middle-padding: 24px;
-  --large-padding: 32px;
+  --extra-small-padding: 4px;
+  --small-padding: 8px;
+  --medium-padding: 16px;
+  --large-padding: 24px;
+  --extra-large-padding: 32px;
 
   --content-max-width: 1200px;
 
@@ -35,17 +35,14 @@
   --intro-exit-animation-delay: calc(var(--intro-middle-animation-delay) + var(--intro-middle-animation-duration));
 
   button {
-    color: var(--button-color);
-    background-color: var(--button-bg);
     border: none;
-    border-radius: 16px;
 
     &:hover {
       cursor: pointer;
     }
   }
 
-  #background {
+  #app-background {
     overflow: hidden;
     z-index: var(--app-background-z-index);
     position: fixed;

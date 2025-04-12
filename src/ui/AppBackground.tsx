@@ -11,7 +11,7 @@ export const Background = (props: { theme: string }) => {
     }
 
     return (
-        <div id="background">
+        <div id="app-background">
             {background()}
         </div>
     )

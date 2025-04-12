@@ -1,38 +1,35 @@
 .dark-theme {
-    --top-bar-bg-dark: var(--background);
-    --bg-dark: #252729;
-    --color-dark: #d0d5e0;
-    --intro-bg-dark: blue;
-    --navigation-bg-dark: blue;
-    --button-bg-dark: rgb(235, 235, 235);
-    --button-color-dark: black;
-
+    /* Common */
     --primary-color: #ff6e4a;
     --surface-color: rgb(52, 52, 58);
+    --text-color: var(--color-dark);
 
-    --color: var(--color-dark);
-    --background: var(--bg-dark);
-    --top-bar-bg: var(--top-bar-bg-dark);
-
-    --navigation-bg: var(--navigation-bg-dark);
-    --button-bg: var(--button-bg-dark);
-    --button-color: var(--button-color-dark);
+    --app-background: var(--background-dark);
+    --app-bar-background: var(--app-bar-background-dark);
 
     --intro-start-animation: introStartAnimationDark var(--intro-start-animation-duration) ease forwards;
     --intro-middle-animation: introMiddleAnimationDark var(--intro-middle-animation-duration) ease forwards;
     --intro-exit-animation: introExitAnimationDark var(--intro-exit-animation-duration) ease forwards;
 
-    --intro-bg: var(--intro-bg-dark);
+    --intro-bg: var(--intro-background-dark);
 
-    color: var(--color);
+    /* Theme specific */
 
+    --app-bar-background-dark: var(--app-background);
+    --background-dark: #252729;
+    --color-dark: #d0d5e0;
+    --intro-background-dark: blue;
+    --button-background-dark: rgb(235, 235, 235);
+    --button-color-dark: black;
 
-    #background {
-        background: var(--background);
+    color: var(--text-color);
+
+    #app-background {
+        background: var(--app-background);
     }
 
     .navigation-item {
-        color: var(--color);
+        color: var(--text-color);
 
         &::after {
             content: "";
@@ -46,7 +43,8 @@
             transform: translateX(-50%);
         }
 
-        &:hover, &.selected {
+        &:hover,
+        &.selected {
             color: white;
 
             &::after {
@@ -71,7 +69,7 @@
 
 @keyframes introMiddleAnimationDark {
     from {
-        background-color: var(--intro-bg-dark);
+        background-color: var(--intro-background-dark);
     }
 
     to {

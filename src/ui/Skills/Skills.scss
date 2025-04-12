@@ -3,7 +3,6 @@
     flex: 1;
     gap: 30px;
     justify-content: space-between;
-    padding-bottom: var(--large-padding);
 
     --path-line-color: white;
 
@@ -12,7 +11,7 @@
 
         .timeperiod {
             display: flex;
-            gap: 30px;
+            gap: var(--medium-padding);
             flex-direction: row;
 
             .date {
@@ -28,8 +27,8 @@
                 align-items: center;
 
                 .dot {
-                    padding-top: 33px;
-                    padding-bottom: 10px;
+                    padding-top: var(--extra-large-padding);
+                    padding-bottom: var(--extra-large-padding);
 
                     div {
                         height: 14px;
@@ -71,7 +70,7 @@
         display: flex;
         flex: 1;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: var(--medium-padding);
         height: fit-content;
 
         h1 {
@@ -80,7 +79,7 @@
 
         .card {
             display: flex;
-            padding: var(--middle-padding) var(--large-padding);
+            padding: var(--medium-padding) var(--large-padding);
             width: calc(50% - 10px);
 
             .skill-card {
@@ -93,7 +92,7 @@
 
                 .logo {
                     display: flex;
-                    gap: var(--middle-padding);
+                    gap: var(--medium-padding);
                     justify-content: center;
 
                     svg {

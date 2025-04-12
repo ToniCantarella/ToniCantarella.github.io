@@ -13,11 +13,11 @@
         display: flex;
         justify-content: space-between;
         flex: 0 1 var(--content-max-width);
-        padding: 0 var(--small-padding);
+        padding: 0 var(--medium-padding);
 
         .controls {
             display: flex;
-            gap: var(--small-padding);
+            gap: var(--medium-padding);
             justify-content: space-between;
             align-items: center;
             flex: 0 1 300px;
