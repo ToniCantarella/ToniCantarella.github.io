@@ -28,6 +28,7 @@
         "future-article": "What if I worked for you? Lorem"
     },
     "examples": {
-        "ui-elements": "UI Elements"
+        "ui-elements": "UI Elements",
+        "loaders": "Loaders"
     }
 }

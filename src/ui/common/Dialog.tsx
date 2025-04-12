@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react"
+import { useState } from "react"
 import "./Dialog.scss"
 import { Card } from "./Card"
 import CloseIcon from "../assets/close.svg?react"
@@ -6,7 +6,7 @@ import CloseIcon from "../assets/close.svg?react"
 type DialogProps = {
     title?: string,
     onClose: () => void,
-    children: ReactElement
+    children: React.ReactNode
 }
 
 export const Dialog = (props: DialogProps) => {

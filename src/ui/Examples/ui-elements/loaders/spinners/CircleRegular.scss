@@ -1,0 +1,37 @@
+#circle-regular {
+    animation: circleRegularSpin 2s linear infinite;
+    flex: 1;
+
+    & circle {
+        fill: none;
+        stroke: rgb(0, 145, 200);
+        stroke-width: 15px;
+        stroke-dasharray: 314;
+        stroke-dashoffset: 314;
+        animation: circleRegularStrokeOffset 3s ease infinite;
+    }
+}
+
+@keyframes circleRegularSpin {
+    0% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes circleRegularStrokeOffset {
+    0% {
+        stroke-dashoffset: 314;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -314;
+    }
+}

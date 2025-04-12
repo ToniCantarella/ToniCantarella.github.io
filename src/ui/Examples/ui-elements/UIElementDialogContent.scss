@@ -1,0 +1,9 @@
+.ui-element-dialog-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .ui-element-row {
+        display: flex;
+    }
+}

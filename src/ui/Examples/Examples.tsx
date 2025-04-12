@@ -4,6 +4,7 @@ import "./Examples.scss"
 import { Card } from "../common/Card"
 import React, { useState } from "react"
 import { Dialog } from "../common/Dialog"
+import { LoadingElements } from "./ui-elements/loaders/LoadingElements"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
@@ -24,75 +25,75 @@ export const Examples = () => {
     }
 
     return (
-            <Page>
-                <>
-                    <div id="examples">
-                        <h1>{t("navigation.examples")}</h1>
-                        <div className="examples-content">
+        <Page>
+            <>
+                <div id="examples">
+                    <h1>{t("navigation.examples")}</h1>
+                    <div className="examples-content">
 
-                            <ExampleSection
-                                title={t("examples.ui-elements")}
-                            >
-                                <ExampleCard
-                                    label={t("examples.loading")}
-                                    image={""}
-                                    onClick={() => 
-                                        openDialog(
-                                            t("examples.loading"),
-                                            null
-                                        )
-                                    }
-                                />
-                                <ExampleCard
-                                    label={t("examples.")}
-                                    image={""}
-                                    onClick={() => 
-                                        openDialog(
-                                            "",
-                                            null
-                                        )
-                                    }
-                                />
-                                <ExampleCard
-                                    label={t("examples.")}
-                                    image={""}
-                                    onClick={() => 
-                                        openDialog(
-                                            "",
-                                            null
-                                        )
-                                    }
-                                />
-                            </ExampleSection>
-
-                            <ExampleSection
-                                title={t("examples.games")}
-                            >
-                                <ExampleCard
-                                    label={t("examples.")}
-                                    image={""}
-                                    onClick={() => 
-                                        openDialog(
-                                            "",
-                                            null
-                                        )
-                                    }
-                                />
-                            </ExampleSection>
-                        </div>
-                    </div>
-                    {dialogOpen &&
-                        <Dialog
-                            title={dialogTitle}
-                            onClose={() => closeDialog()}
+                        <ExampleSection
+                            title={t("examples.ui-elements")}
                         >
-                            <div>
-                                {dialogContent}
-                            </div>
-                        </Dialog>
-                    }
-                </>
-            </Page>
+                            <ExampleCard
+                                label={t("examples.loaders")}
+                                image={""}
+                                onClick={() =>
+                                    openDialog(
+                                        t("examples.loaders"),
+                                        <LoadingElements />
+                                    )
+                                }
+                            />
+
+                            <ExampleCard
+                                label={t("examples.")}
+                                image={""}
+                                onClick={() =>
+                                    openDialog(
+                                        "",
+                                        null
+                                    )
+                                }
+                            />
+                            
+                            <ExampleCard
+                                label={t("examples.")}
+                                image={""}
+                                onClick={() =>
+                                    openDialog(
+                                        "",
+                                        null
+                                    )
+                                }
+                            />
+                        </ExampleSection>
+
+                        <ExampleSection
+                            title={t("examples.games")}
+                        >
+                            <ExampleCard
+                                label={t("examples.")}
+                                image={""}
+                                onClick={() =>
+                                    openDialog(
+                                        "",
+                                        null
+                                    )
+                                }
+                            />
+                        </ExampleSection>
+                    </div>
+                </div>
+                {dialogOpen &&
+                    <Dialog
+                        title={dialogTitle}
+                        onClose={() => closeDialog()}
+                    >
+                        {dialogContent}
+                    </Dialog>
+                }
+            </>
+        </Page>
     )
 }
 
@@ -119,7 +120,6 @@ type ExampleCardProps = {
 }
 
 const ExampleCard = (props: ExampleCardProps) => {
-
     return (
         <Card >
             <>

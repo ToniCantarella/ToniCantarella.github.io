@@ -1,0 +1,70 @@
+#grid-to-center {
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    >div {
+        position: absolute;
+        bottom: calc(100% - 20px);
+        left: 0;
+        opacity: 0;
+        animation: moveGridToCenter 3s ease infinite;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+
+        border-right: 20px solid orange;
+    }
+}
+
+@keyframes moveGridToCenter {
+    0% {
+        left: 0;
+        bottom: calc(100% - 20px);
+        transform: rotate(90deg);
+        scale: 1;
+    }
+
+    15% {
+        scale: 1;
+        left: calc(100% - 20px);
+        bottom: calc(100% - 20px);
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+
+    30% {
+        left: calc(100% - 20px);
+        bottom: 0;
+        transform: rotate(270deg);
+    }
+
+    45% {
+        left: 0;
+        bottom: 0;
+        transform: rotate(360deg);
+    }
+
+    60% {
+        left: 0;
+        bottom: calc(50% - 10px);
+        transform: rotate(430deg);
+
+    }
+
+    85% {
+        left: calc(50% - 10px);
+        bottom: calc(50% - 10px);
+        scale: 1;
+        transform: rotate(520deg);
+    }
+
+    100% {
+        left: calc(50% - 10px);
+        bottom: calc(50% - 10px);
+        transform: rotate(520deg);
+        opacity: 1;
+        scale: 0;
+    }
+}
