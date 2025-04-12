@@ -12,29 +12,38 @@ type Theme = {
     content: ReactElement
 }
 
+export enum ThemeNames {
+    DARK = "dark-theme",
+    LIGHT = "light-theme",
+    SKEUOMORPHISM = "skeuomorphism",
+    FRUTIGER_AERO = "frutiger-aero",
+    RETRO = "retro",
+    NATURE = "nature"
+}
+
 export const themes: Theme[] = [
     {
-        name: "dark-theme",
+        name: ThemeNames.DARK,
         content: <DarkButton/>
     },
     {
-        name: "light-theme",
+        name: ThemeNames.LIGHT,
         content: <LightButton/>
     },
     {
-        name: "skeuomorphism",
+        name: ThemeNames.SKEUOMORPHISM,
         content: <SkeuomorphismButton/>
     },
     {
-        name: "frutiger-aero",
+        name: ThemeNames.FRUTIGER_AERO,
         content: <FrutigerAeroButton/>
     },
     {
-        name: "retro",
+        name: ThemeNames.RETRO,
         content: <RetroButton/>
     },
     {
-        name: "nature",
+        name: ThemeNames.NATURE,
         content: <NatureButton/>
     }
 ]
