@@ -2,18 +2,14 @@
     /* Common */
     --primary-color: #ff6e4a;
     --surface-color: #34343a;
-    --text-color: var(--color-dark);
+    --text-color: #d0d5e0;
+    --shadow-color: #161311;
+    --icon-color: var(--text-color);
 
-    --app-background: var(--background-dark);
-    --app-bar-background: var(--app-bar-background-dark);
+    --app-background: #252729;
+    --app-bar-background: var(--app-background);
 
     /* Theme specific */
-
-    --app-bar-background-dark: var(--app-background);
-    --background-dark: #252729;
-    --color-dark: #d0d5e0;
-    --button-background-dark: rgb(235, 235, 235);
-    --button-color-dark: black;
 
     color: var(--text-color);
 

@@ -2,4 +2,13 @@
     background: var(--surface-color);
     padding: var(--medium-padding);
     border-radius: var(--medium-padding);
+
+    &.clickable {
+        box-shadow: 0px 6px 6px var(--shadow-color);
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0px 2px 2px var(--shadow-color);
+        }
+    }
 }

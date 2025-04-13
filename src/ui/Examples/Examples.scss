@@ -1,3 +1,5 @@
+@import '../../variables';
+
 #examples {
     display: flex;
     flex-direction: column;
@@ -14,41 +16,50 @@
 
             .examples-grid {
                 display: flex;
+                flex-wrap: wrap;
                 gap: var(--medium-padding);
 
                 .card {
-                    position: relative;
                     overflow: hidden;
-                    padding: 0;
-                    height: 100px;
-                    width: 100px;
+                    min-height: 100px;
+                    min-width: 200px;
 
                     .card-content {
-                        position: absolute;
                         display: flex;
-                        align-items: end;
+                        flex-direction: column;
+                        align-items: center;
                         justify-content: center;
-                        inset: 0;
+                        gap: var(--medium-padding);
                         height: 100%;
                         width: 100%;
-                        padding: var(--small-padding);
+
+                        svg {
+                            max-height: 50px;
+                            * {
+                                fill: var(--icon-color);
+                            }
+                        }
 
                         span {
                             font-size: x-large;
                         }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    .image {
-                        height: 100%;
-                        width: 100%;
-                        background-size: cover;
-                        opacity: .5;
-                    }
+@media only screen and (max-width: $mobile-breakpoint) {
+    #examples {
+        .examples-content {
 
-                    &:hover {
-                        .image {
-                            transform: scale(2);
-                        }
+            .examples-section {
+
+                .examples-grid {
+
+                    .card {
+                        flex: 1;
                     }
                 }
             }

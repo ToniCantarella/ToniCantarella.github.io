@@ -31,5 +31,13 @@
         "future-article": "Onko yrityksessäsi tai tiimissäsi tarvetta työntekijälle? Sanat kertovat paljon, mutta",
         "visual-examples": " visuaaliset esimerkit ",
         "much-more": "paljon enemmän."
+    },
+    "examples": {
+        "ui-elements": "UI-elementit",
+        "loaders": "Lataajat",
+        "buttons": "Painikkeet",
+        "input": "Syöte",
+        "games": "Pelit",
+        "clicker-game": "Klikkaaja"
     }
 }

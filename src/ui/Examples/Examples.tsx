@@ -5,6 +5,10 @@ import { Card } from "../common/Card"
 import React, { useState } from "react"
 import { Dialog } from "../common/Dialog"
 import { LoadingElements } from "./ui-elements/loaders/LoadingElements"
+import LoaderIcon from "../assets/loader.svg?react"
+import ButtonIcon from "../assets/button.svg?react"
+import InputIcon from "../assets/input.svg?react"
+import ClickerIcon from "../assets/clicker.svg?react"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
@@ -34,8 +38,8 @@ export const Examples = () => {
                         title={t("examples.ui-elements")}
                     >
                         <ExampleCard
+                            icon={<LoaderIcon />}
                             label={t("examples.loaders")}
-                            image={""}
                             onClick={() =>
                                 openDialog(
                                     t("examples.loaders"),
@@ -45,22 +49,22 @@ export const Examples = () => {
                         />
 
                         <ExampleCard
-                            label={t("examples.")}
-                            image={""}
+                            icon={<ButtonIcon />}
+                            label={t("examples.buttons")}
                             onClick={() =>
                                 openDialog(
-                                    "",
+                                    t("examples.buttons"),
                                     null
                                 )
                             }
                         />
 
                         <ExampleCard
-                            label={t("examples.")}
-                            image={""}
+                            icon={<InputIcon />}
+                            label={t("examples.input")}
                             onClick={() =>
                                 openDialog(
-                                    "",
+                                    t("examples.input"),
                                     null
                                 )
                             }
@@ -71,11 +75,11 @@ export const Examples = () => {
                         title={t("examples.games")}
                     >
                         <ExampleCard
-                            label={t("examples.")}
-                            image={""}
+                            icon={<ClickerIcon />}
+                            label={t("examples.clicker-game")}
                             onClick={() =>
                                 openDialog(
-                                    "",
+                                    t("examples.clicker-game"),
                                     null
                                 )
                             }
@@ -112,24 +116,20 @@ const ExampleSection = (props: ExampleSectionProps) => {
 }
 
 type ExampleCardProps = {
+    icon: React.ReactNode,
     label: string,
-    image: string,
     onClick: () => void
 }
 
 const ExampleCard = (props: ExampleCardProps) => {
     return (
-        <Card>
-            <div
-                className="image"
-                style={{
-                    backgroundImage: `url(${props.image})`
-                }}
-            />
+        <Card
+            onClick={props.onClick}
+        >
             <div
                 className="card-content"
-                onClick={props.onClick}
             >
+                {props.icon}
                 <span>{props.label}</span>
             </div>
         </Card>
