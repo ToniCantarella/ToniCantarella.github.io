@@ -14,7 +14,7 @@ type Page = {
   title: string
 }
 
-export enum Pathnames {
+export enum Paths {
   ABOUT_ME = "/",
   SKILLS = "/skills",
   EXAMPLES = "/examples",
@@ -23,22 +23,22 @@ export enum Pathnames {
 
 export const Pages: Page[] = [
   {
-    pathname: Pathnames.ABOUT_ME,
+    pathname: Paths.ABOUT_ME,
     icon: <HomeIcon />,
     title: "about-me"
   },
   {
-    pathname: Pathnames.SKILLS,
+    pathname: Paths.SKILLS,
     icon: <PathIcon />,
     title: "skills"
   },
   {
-    pathname: Pathnames.EXAMPLES,
+    pathname: Paths.EXAMPLES,
     icon: <StarIcon />,
     title: "examples"
   },
   {
-    pathname: Pathnames.CONTACT,
+    pathname: Paths.CONTACT,
     icon: <ContactIcon />,
     title: "contact"
   }

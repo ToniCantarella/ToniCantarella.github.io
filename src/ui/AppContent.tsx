@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion"
 import { Route, Routes, useLocation } from "react-router-dom"
-import { Pathnames } from "./navigation/NavigationBar"
+import { Paths } from "./navigation/NavigationBar"
 import { AboutMe } from "./about-me/AboutMe"
 import { Skills } from "./skills/Skills"
 import { Examples } from "./examples/Examples"
@@ -14,19 +14,19 @@ export const AppContent = () => {
             <AnimatePresence initial={false}>
                 <Routes location={location} key={location.pathname}>
                     <Route
-                        path={Pathnames.ABOUT_ME}
+                        path={Paths.ABOUT_ME}
                         element={<AboutMe />}
                     />
                     <Route
-                        path={Pathnames.SKILLS}
+                        path={Paths.SKILLS}
                         element={<Skills />}
                     />
                     <Route
-                        path={Pathnames.EXAMPLES}
+                        path={Paths.EXAMPLES}
                         element={<Examples />}
                     />
                     <Route
-                        path={Pathnames.CONTACT}
+                        path={Paths.CONTACT}
                         element={<Contact />}
                     />
                 </Routes>

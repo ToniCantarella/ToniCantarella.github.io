@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { NavigationContext, Pathnames } from "../navigation/NavigationBar"
+import { NavigationContext, Paths } from "../navigation/NavigationBar"
 import { useContext } from "react"
 import { AppContext } from "../../App"
 import "./HomeButton.scss"
@@ -9,15 +9,15 @@ export const HomeButton = () => {
     const navContext = useContext(NavigationContext)
 
     const onClick = () => {
-        navContext.onNavClick(Pathnames.ABOUT_ME)
+        navContext.onNavClick(Paths.ABOUT_ME)
         appContext.playIntro()
     }
 
     return (
         <Link 
-            key={Pathnames.ABOUT_ME}
+            key={Paths.ABOUT_ME}
             onClick={onClick}
-            to={Pathnames.ABOUT_ME}
+            to={Paths.ABOUT_ME}
             id="home-button"
             className="navigation-item"
         >
