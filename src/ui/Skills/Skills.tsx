@@ -32,7 +32,7 @@ const TimeLine = () => {
     const { t } = useTranslation()
 
     const currentDate = new Date()
-    const currentFormatted = `${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`
+    const currentDateFormatted = `${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`
 
     return (
         <div id="timeline">
@@ -67,7 +67,7 @@ const TimeLine = () => {
             />
 
             <TimePeriod
-                year={currentFormatted}
+                year={currentDateFormatted}
                 title={t("skills.future")}
                 subtitle={t("skills.your-company")}
                 paragraph={
