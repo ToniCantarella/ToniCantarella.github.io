@@ -1,5 +1,4 @@
 {
-    "test": "Tämä on testi",
     "settings": "Asetukset",
     "navigation": {
         "about-me": "Tietoja",
@@ -19,16 +18,18 @@
         "experience": "Kokemus",
         "studies": "Opiskelu",
         "karelia-amk": "Karelia-AMK",
-        "studies-article": "Ensikosketukseni koodaukseen tuli alan opiskelujen myötä. Kareliassa opin ohjelmointia, tietorakenteita, logiikkaa ja lorem ipsum.",
+        "studies-article": "Pitkän tehdastyöputken jälkeen päätin tehdä uramuutoksen ja lähdin opiskelemaan ohjelmointia. Kareliassa opin tietorakenteita, logiikkaa ja paljon erilaisia teknologioita, sekä työkaluja ohjelmistokehityksessä.",
         "internship": "Työharjoittelu",
         "sensire": "Sensire Oy",
-        "internship-article": "Opiskelujen keskivaiheessa sain ensimmäisen työharjoittelupaikan Sensireltä. Lämpötilanseurantaan sekä laadunvalvontaan erikoistuneet palvelut toivat mukanaan koodauskokemusta.",
+        "internship-article": "Opiskelujen keskivaiheessa sain ensimmäisen työharjoittelupaikan Sensireltä. Joensuulainen lämpötilanseurantaan ja laadunvalvontaan erikoistunut yritys toi mukanaan paljon hahmotuskykyä siihen, mitä ohjelmistokehitys ja tiimityö on arjen työelämässä.",
         "employed": "Työllistyminen",
-        "employed-article": "Työharjoittelujakson päätteeksi sain Sensireltä työpaikan ja jatkoin siellä lorem ipsum.",
+        "employed-article": "Työharjoittelujakson päätteeksi sain tarjouksen jatkaa työtä Sensirellä. Opiskelujen rinnalla tämä oli upea mahdollisuus harjaannuttaa taitoja sekä laittaa käytäntöön opinnoista saatua tietoa.",
         "graduation": "Valmistuminen",
-        "graduation-article": "Työn ohella valmistelin opinnäytetyötäni Kareliassa. Valmistuessa jatkoin työtä Sensirellä.",
+        "graduation-article": "Työn ohella viimeistelin opintojani ja valmistuessani koin itseni onnekkaaksi siitä, miten pienellä aikavälillä olenkaan saanut opiskeluani itselleni uuden uravalmiuden ja samalla kerryttänyt työkokemusta.",
         "future": "Tulevaisuus",
         "your-company": "Sinun yrityksesi?",
-        "future-article": "Mitäs jos tekisin töitä teille? Lorem"
+        "future-article": "Onko yrityksessäsi tai tiimissäsi tarvetta työntekijälle? Sanat kertovat paljon, mutta",
+        "visual-examples": " visuaaliset esimerkit ",
+        "much-more": "paljon enemmän."
     }
 }

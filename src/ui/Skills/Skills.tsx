@@ -10,6 +10,9 @@ import AndroidIcon from "../assets/android.svg?react"
 import KotlinIcon from "../assets/kotlin.svg?react"
 import GitIcon from "../assets/git.svg?react"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
+import { NavigationContext, Paths } from "../navigation/NavigationBar"
+import { useContext } from "react"
 
 
 export const Skills = () => {
@@ -25,13 +28,14 @@ export const Skills = () => {
 }
 
 const TimeLine = () => {
+    const navContext = useContext(NavigationContext)
     const { t } = useTranslation()
 
     const currentDate = new Date()
     const currentFormatted = `${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`
 
     return (
-        <div className="timeline">
+        <div id="timeline">
             <h1>{t("skills.experience")}</h1>
 
             <TimePeriod
@@ -66,7 +70,18 @@ const TimeLine = () => {
                 year={currentFormatted}
                 title={t("skills.future")}
                 subtitle={t("skills.your-company")}
-                paragraph={t("skills.future-article")}
+                paragraph={
+                    <>
+                        {t("skills.future-article")}
+                        <Link
+                            onClick={() => navContext.onNavClick(Paths.EXAMPLES)}
+                            to={Paths.EXAMPLES}
+                        >
+                            {t("skills.visual-examples")}
+                        </Link>
+                        {t("skills.much-more")}
+                    </>
+                }
             />
         </div>
     )
@@ -76,7 +91,7 @@ type TimePeriodProps = {
     year: string,
     title: string,
     subtitle: string,
-    paragraph: string
+    paragraph: string | React.ReactNode
 }
 
 const TimePeriod = (props: TimePeriodProps) => {
@@ -93,7 +108,7 @@ const TimePeriod = (props: TimePeriodProps) => {
             </div>
             <div className="article">
                 <h2>{props.title}</h2>
-                <h5>{props.subtitle}</h5>
+                <h4>{props.subtitle}</h4>
                 <p>{props.paragraph}</p>
             </div>
         </div>
@@ -104,48 +119,50 @@ const SkillList = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="skill-list">
+        <div id="skill-list">
             <h1>{t("navigation.skills")}</h1>
 
-            <SkillCard
-                label="React"
-                icon={<ReactIcon id="react" />}
-            />
+            <div id="skill-grid">
+                <SkillCard
+                    label="React"
+                    icon={<ReactIcon id="react" />}
+                />
 
-            <SkillCard
-                label="JS & TS"
-                icon={
-                    <>
-                        <JavaScriptIcon style={{borderRadius: "5px"}}/>
-                        <TypeScriptIcon />
-                    </>
-                }
-            />
+                <SkillCard
+                    label="JS & TS"
+                    icon={
+                        <>
+                            <JavaScriptIcon id="javascript" />
+                            <TypeScriptIcon id="typescript" />
+                        </>
+                    }
+                />
 
-            <SkillCard
-                label="Css & Scss"
-                icon={
-                    <>
-                        <CssIcon />
-                        <ScssIcon />
-                    </>
-                }
-            />
+                <SkillCard
+                    label="Css & Scss"
+                    icon={
+                        <>
+                            <CssIcon />
+                            <ScssIcon />
+                        </>
+                    }
+                />
 
-            <SkillCard
-                label="Kotlin & Android"
-                icon={
-                    <>
-                        <KotlinIcon />
-                        <AndroidIcon />
-                    </>
-                }
-            />
-            
-            <SkillCard
-                label="Git"
-                icon={<GitIcon />}
-            />
+                <SkillCard
+                    label="Kotlin & Android"
+                    icon={
+                        <>
+                            <KotlinIcon />
+                            <AndroidIcon />
+                        </>
+                    }
+                />
+
+                <SkillCard
+                    label="Git"
+                    icon={<GitIcon />}
+                />
+            </div>
         </div>
     )
 }
