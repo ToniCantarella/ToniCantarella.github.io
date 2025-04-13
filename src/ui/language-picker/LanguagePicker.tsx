@@ -21,7 +21,7 @@ export const SupportedLanguages: Language[] = [
 ]
 
 export const LanguagePicker = () => {
-    const { t, i18n } = useTranslation()
+    const { i18n } = useTranslation()
 
     return (
         <div id="language-picker">

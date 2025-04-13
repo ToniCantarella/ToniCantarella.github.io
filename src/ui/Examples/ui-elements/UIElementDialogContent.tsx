@@ -6,7 +6,7 @@ type UIElementDialogContentProps = {
 
 export const UIElementDialogContent = (props: UIElementDialogContentProps) => {
     return (
-        <div className="ui-element-dialog-content">
+        <div id="ui-element-dialog-content">
             {props.children}
         </div>
     )
