@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./Dialog.scss"
 import { Card } from "./Card"
-import CloseIcon from "../assets/close.svg?react"
+import CloseIcon from "../../assets/close.svg?react"
 
 type DialogProps = {
     title?: string,

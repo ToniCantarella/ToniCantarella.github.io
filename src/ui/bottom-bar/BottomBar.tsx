@@ -1,6 +1,6 @@
 import "./BottomBar.scss"
 import { NavigationItems } from "../navigation/NavigationBar"
-import SettingsIcon from "../assets/settings.svg?react"
+import SettingsIcon from "../../assets/settings.svg?react"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
 import { LanguagePicker } from "../language-picker/LanguagePicker"

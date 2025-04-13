@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { Page } from "../common/Page"
-import landingImage from "../assets/landing.jpg"
+import landingImage from "../../assets/landing.jpg"
 import "./AboutMe.scss"
 import { Link } from "react-router-dom"
 import { NavigationContext, Paths } from "../navigation/NavigationBar"

@@ -5,10 +5,10 @@ import { Card } from "../common/Card"
 import React, { useState } from "react"
 import { Dialog } from "../common/Dialog"
 import { LoadingElements } from "./ui-elements/loaders/LoadingElements"
-import LoaderIcon from "../assets/loader.svg?react"
-import ButtonIcon from "../assets/button.svg?react"
-import InputIcon from "../assets/input.svg?react"
-import ClickerIcon from "../assets/clicker.svg?react"
+import LoaderIcon from "../../assets/loader.svg?react"
+import ButtonIcon from "../../assets/button.svg?react"
+import InputIcon from "../../assets/input.svg?react"
+import ClickerIcon from "../../assets/clicker.svg?react"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
