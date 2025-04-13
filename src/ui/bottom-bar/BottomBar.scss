@@ -7,65 +7,65 @@
     width: 100%;
     position: fixed;
     height: var(--bottom-bar-height);
-    background: var(--app-bar-background);
-}
-
-#settings-drawer {
-    background: var(--app-bar-background);
-    display: none;
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
     #bottom-bar {
         display: flex;
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
-        justify-content: space-around;
 
-        .navigation-item,
-        .bottom-bar-item {
+        nav {
+            flex: 1;
+            position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: unset;
-            line-height: 23px;
-            background: none;
-            text-decoration: none;
-            color: white;
-            opacity: .4;
+            background: var(--app-bar-background);
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            justify-content: space-around;
 
-            span {
-                font-size: medium;
-            }
+            .navigation-item,
+            .bottom-bar-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: unset;
+                line-height: 23px;
+                background: none;
+                text-decoration: none;
+                color: white;
+                opacity: .4;
 
-            svg {
-                min-height: 20px;
-                min-width: 20px;
-                max-height: 50px;
-                max-width: 50px;
-            }
+                span {
+                    font-size: medium;
+                }
 
-            &.selected,
-            &:hover {
-                opacity: 1;
+                svg {
+                    min-height: 20px;
+                    min-width: 20px;
+                    max-height: 50px;
+                    max-width: 50px;
+                }
+
+                &.selected,
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
-    }
 
-    #settings-drawer {
-        display: block;
-        position: absolute;
-        overflow: hidden;
-        top: 100vh;
-        transform: translateY(0);
-        right: 0;
-        padding: 13px;
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
-        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        #settings-drawer {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            height: 200px;
+            padding: 13px;
+            background: var(--app-bar-background);
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
 
-
-        &.open {
-            transform: translateY(calc(-100% - var(--bottom-bar-height)));
+            &.open {
+                transform: translateY(-100%);
+            }
         }
     }
 }

@@ -11,12 +11,14 @@ export const BottomBar = () => {
     const { t } = useTranslation()
 
     return (
-        <>
-            <nav id="bottom-bar">
-                <NavigationItems 
+        <div id="bottom-bar">
+            <SettingsDrawer
+                open={settingsOpen}
+            />
+            <nav>
+                <NavigationItems
                     icons
                 />
-
                 <button
                     className="bottom-bar-item settings"
                     onClick={() => setSettingsOpen(!settingsOpen)}
@@ -27,21 +29,19 @@ export const BottomBar = () => {
                         {t("settings")}
                     </span>
                 </button>
+
             </nav>
-            <SettingsDrawer
-                open={settingsOpen}
-            />
-        </>
+            
+        </div>
     )
 }
 
 const SettingsDrawer = (props: { open: boolean }) => {
     return (
-        <div
-            id="settings-drawer"
-            className={`${props.open ? "open" : ""}`}
-        >
-            <div id="content">
+        <div id="settings-drawer" className={`${props.open ? "open" : ""}`}>
+            <div
+                id="drawer-content"
+            >
                 <ThemePicker />
                 <LanguagePicker />
             </div>
