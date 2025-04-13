@@ -25,7 +25,7 @@
 
         .color-swipe {
             position: absolute;
-            left: -50%;
+            left: -80%;
             width: 0;
             height: 100%;
             transform: skewX(-30deg);
@@ -61,17 +61,17 @@
 
 @keyframes colorSwipe {
     0% {
-        left: -50%;
+        left: -80%;
         width: 0;
     }
 
     50% {
-        left: -50%;
-        width: 200%;
+        left: -80%;
+        width: 250%;
     }
 
     100% {
-        left: 150%;
+        left: 200%;
         width: 0;
     }
 }
