@@ -38,6 +38,7 @@
         "buttons": "Painikkeet",
         "input": "Syöte",
         "games": "Pelit",
-        "clicker-game": "Klikkaaja"
+        "clicker-game": "Klikkaaja",
+        "rock-paper-scissors": "Kivi sakset paperi"
     }
 }

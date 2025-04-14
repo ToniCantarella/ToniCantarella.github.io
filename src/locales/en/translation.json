@@ -18,20 +18,27 @@
         "experience": "Experience",
         "studies": "Studies",
         "karelia-amk": "Karelia University of Applied Sciences",
-        "studies-article": "My first touch into coding came from applying to study in Karelia. There I learned programming, data structures, logic and lorem impsum",
+        "studies-article": "After a long line of assembly jobs, I decided to make a career change and go study programming. In Karelia I learned datastructures, logic, a variety of technologies and tools used in software development.",
         "internship": "Internship",
         "sensire": "Sensire Ltd",
-        "internship-article": "In the middle of my studies, I received an opportunity to intern for Sensire. Their services in temperature monitoring and quality control gave their way to coding experience.",
+        "internship-article": "In the middle of my studies, I received an opportunity to intern for Sensire. Company in Joensuu that specializes in temperature monitoring and quality control gave their way to understanding what software development and teamwork meant outside of theoretical studies.",
         "employed": "Employment",
-        "employed-article": "After the internship ended, I was offered employment at Sensire.",
+        "employed-article": "At the end of the internship, I was offered to continue employment at Sensire. Continuing my studies on the side, this was a great opportunity to develope skills and apply learned information from my studies.",
         "graduation": "Graduation",
-        "graduation-article": "While working I was also finalizing my thesis.",
+        "graduation-article": "While working I was finalising my studies and at graduation I felt myself lucky, how I was able to create a career and working experience in such a small timespan.",
         "future": "Future",
         "your-company": "Your company?",
-        "future-article": "What if I worked for you? Lorem"
+        "future-article": "Does your company or team have the need for a new member? Words tell a lot, but",
+        "visual-examples": " visual examples ",
+        "much-more": "that much more."
     },
     "examples": {
         "ui-elements": "UI Elements",
-        "loaders": "Loaders"
+        "loaders": "Loaders",
+        "buttons": "Buttons",
+        "input": "Input",
+        "games": "Games",
+        "clicker-game": "Clicker",
+        "rock-paper-scissors": "Rock paper scissors"
     }
 }
