@@ -6,6 +6,7 @@ import { SkeuomorphismButton } from "./button-content/SkeuomorphismButton"
 import { FrutigerAeroButton } from "./button-content/FrutigerAeroButton"
 import { RetroButton } from "./button-content/RetroButton"
 import { NatureButton } from "./button-content/NatureButton"
+import { AppContext } from "../../App"
 
 type Theme = {
     name: string,
@@ -24,40 +25,47 @@ export enum ThemeNames {
 export const themes: Theme[] = [
     {
         name: ThemeNames.DARK,
-        content: <DarkButton/>
+        content: <DarkButton />
     },
     {
         name: ThemeNames.LIGHT,
-        content: <LightButton/>
+        content: <LightButton />
     },
     {
         name: ThemeNames.SKEUOMORPHISM,
-        content: <SkeuomorphismButton/>
+        content: <SkeuomorphismButton />
     },
     {
         name: ThemeNames.FRUTIGER_AERO,
-        content: <FrutigerAeroButton/>
+        content: <FrutigerAeroButton />
     },
     {
         name: ThemeNames.RETRO,
-        content: <RetroButton/>
+        content: <RetroButton />
     },
     {
         name: ThemeNames.NATURE,
-        content: <NatureButton/>
+        content: <NatureButton />
     }
 ]
 
 export const ThemePicker = () => {
     const themeContext = useContext(ThemeContext)
+    const appContext = useContext(AppContext)
 
     return (
-        <div id="theme-picker">
-            {themes.map(theme => (
+        <div
+            id="theme-picker"
+            className={`${appContext.introPlaying ? "hide" : ""}`}
+        >
+            {themes.map((theme, index) => (
                 <button
                     key={theme.name}
                     onClick={() => themeContext.setTheme(theme.name)}
                     className={`theme-button ${theme.name} ${themeContext.theme === theme.name ? "selected" : ""}`}
+                    style={{
+                        animation: `${appContext.introPlaying ? "" : `themeButton 1s ease .${index}s forwards`}`,
+                    }}
                 >
                     {theme.content}
                 </button>

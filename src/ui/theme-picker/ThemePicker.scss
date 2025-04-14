@@ -1,8 +1,11 @@
 #theme-picker {
     --theme-button-size: 30px;
+    --button-start-position: 50px;
 
     display: flex;
     align-items: center;
+    height: 100%;
+    overflow: hidden;
     gap: var(--small-padding);
 
     .theme-button {
@@ -13,6 +16,7 @@
         justify-content: center;
         align-items: center;
         opacity: .5;
+        transform: translateY(var(--button-start-position));
 
         div {
             display: flex;
@@ -23,7 +27,8 @@
             max-height: calc(var(--theme-button-size) - 10px);
         }
 
-        &.selected, &:hover {
+        &.selected,
+        &:hover {
             opacity: 1;
         }
 
@@ -85,5 +90,19 @@
         &.retro {
             background: white;
         }
+    }
+}
+
+@keyframes themeButton {
+    0% {
+        transform: translateY(var(--button-start-position));
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
     }
 }
