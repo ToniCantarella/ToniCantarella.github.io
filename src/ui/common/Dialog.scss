@@ -48,7 +48,12 @@
                         width: 40px;
                         height: 40px;
                         border-radius: 50%;
+                        background: transparent;
                         padding: 0;
+
+                        svg * {
+                            fill: var(--close-button-color);
+                        }
                     }
                 }
             }
