@@ -29,14 +29,17 @@
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        gap: var(--medium-padding);
+                        gap: var(--small-padding);
                         height: 100%;
                         width: 100%;
 
-                        svg {
-                            max-height: 50px;
-                            * {
-                                fill: var(--icon-color);
+                        .example-icon {
+                            svg {
+                                height: 50px;
+
+                                * {
+                                    fill: var(--icon-color);
+                                }
                             }
                         }
 

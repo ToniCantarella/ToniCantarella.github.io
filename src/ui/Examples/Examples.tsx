@@ -9,6 +9,9 @@ import LoaderIcon from "../../assets/loader.svg?react"
 import ButtonIcon from "../../assets/button.svg?react"
 import InputIcon from "../../assets/input.svg?react"
 import ClickerIcon from "../../assets/clicker.svg?react"
+import RockIcon from "../../assets/rock.svg?react"
+import PaperIcon from "../../assets/paper.svg?react"
+import ScissorsIcon from "../../assets/scissors.svg?react"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
@@ -84,6 +87,23 @@ export const Examples = () => {
                                 )
                             }
                         />
+
+                        <ExampleCard
+                            icon={
+                                <>
+                                    <RockIcon />
+                                    <PaperIcon />
+                                    <ScissorsIcon />
+                                </>
+                            }
+                            label={t("examples.rock-paper-scissors")}
+                            onClick={() =>
+                                openDialog(
+                                    "examples.rock-paper-scissors",
+                                    null
+                                )
+                            }
+                        />
                     </ExampleSection>
                 </div>
             </div>
@@ -129,7 +149,9 @@ const ExampleCard = (props: ExampleCardProps) => {
             <div
                 className="card-content"
             >
-                {props.icon}
+                <div className="example-icon">
+                    {props.icon}
+                </div>
                 <span>{props.label}</span>
             </div>
         </Card>
