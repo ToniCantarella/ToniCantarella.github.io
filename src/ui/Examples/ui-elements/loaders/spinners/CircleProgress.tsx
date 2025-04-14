@@ -20,9 +20,9 @@ export const CircleProgress = () => {
         <Loader>
             <div id="circle-progress">
                 <span>{`${progress}%`}</span>
-                <svg >
+                <svg viewBox="0 0 100 100">
                     <circle
-                        cx="50%" cy="50%" r="50"
+                        cx="50%" cy="50%" r="45"
                         style={{
                             strokeDashoffset: `${fullCirlce - (progress * (fullCirlce / 100))}`
                         }}

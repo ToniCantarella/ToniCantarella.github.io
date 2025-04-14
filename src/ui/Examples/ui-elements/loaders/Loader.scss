@@ -1,3 +1,5 @@
+@import '../../../../variables';
+
 .loader {
     width: 120px;
     height: 120px;
@@ -10,4 +12,11 @@
     --dot-color: rgb(255, 111, 15);
 
     --loader-duration: 3s;
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .loader {
+        width: 80px;
+        height: 80px;
+    }
 }
