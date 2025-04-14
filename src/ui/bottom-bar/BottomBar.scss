@@ -33,21 +33,30 @@
                 text-decoration: none;
                 color: white;
                 opacity: .4;
+                padding: 0;
 
                 span {
-                    font-size: medium;
+                    font-size: small;
                 }
 
                 svg {
-                    min-height: 20px;
-                    min-width: 20px;
-                    max-height: 50px;
-                    max-width: 50px;
+                    height: 40px;
+                    width: 40px;
+
+                    * {
+                        fill: none;
+                        stroke: var(--text-color);
+                    }
                 }
 
                 &.selected,
                 &:hover {
                     opacity: 1;
+
+                    * {
+                        fill: var(--text-color);
+                        stroke: none;
+                    }
                 }
             }
         }
