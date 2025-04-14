@@ -28,7 +28,7 @@ export const LanguagePicker = () => {
             {SupportedLanguages.map(language =>
                 <button
                     key={language.lngCode}
-                    className="language"
+                    className={`language ${i18n.language === language.lngCode ? "selected" : ""}`}
                     onClick={() => i18n.changeLanguage(language.lngCode)}
                 >
                     {language.flag}

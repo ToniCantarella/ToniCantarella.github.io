@@ -12,6 +12,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: .5;
 
         div {
             display: flex;
@@ -20,6 +21,10 @@
         svg {
             max-width: calc(var(--theme-button-size) - 10px);
             max-height: calc(var(--theme-button-size) - 10px);
+        }
+
+        &.selected, &:hover {
+            opacity: 1;
         }
 
         &.dark-theme {
@@ -45,7 +50,7 @@
 
             background: linear-gradient(145deg, var(--highlight-color), var(--shadow-color));
             box-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur) var(--shadow-color),
-             var(--shadow-negative-offset) var(--shadow-negative-offset) var(--shadow-blur) var(--highlight-color);
+                var(--shadow-negative-offset) var(--shadow-negative-offset) var(--shadow-blur) var(--highlight-color);
 
             &:hover {
                 background: linear-gradient(145deg, var(--shadow-color), var(--highlight-color));

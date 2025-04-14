@@ -12,6 +12,11 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        opacity: .5;
+
+        &.selected, &:hover {
+            opacity: 1;
+        }
 
         svg {
             max-width: 50px;
