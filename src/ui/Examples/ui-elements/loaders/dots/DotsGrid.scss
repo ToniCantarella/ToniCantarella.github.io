@@ -1,9 +1,8 @@
 #dots-grid {
-    display: flex;
-    gap: 10px;
-    width: 80px;
-    height: 80px;
-    flex-wrap: wrap;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: auto auto auto;
 
     .dot {
         opacity: 0;

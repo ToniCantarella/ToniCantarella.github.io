@@ -1,10 +1,9 @@
 #ellipsis {
     display: flex;
     flex: 1;
-    justify-content: space-around;
+    justify-content: space-between;
 
     >div {
-        transform: scale(0);
         height: 20px;
         width: 20px;
         transform: translateY(-20px);
@@ -16,10 +15,10 @@
 
 @keyframes ellipsis {
     from {
-        transform: scale(0) translateY(-20px);
+        transform: translateY(-20px);
     }
 
     to {
-        transform: scale(1) translateY(0px);
+        transform: translateY(0px);
     }
 }
