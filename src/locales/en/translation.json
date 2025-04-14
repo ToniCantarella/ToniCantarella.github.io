@@ -39,6 +39,7 @@
         "input": "Input",
         "games": "Games",
         "clicker-game": "Clicker",
-        "rock-paper-scissors": "Rock paper scissors"
+        "rock-paper-scissors": "Rock paper scissors",
+        "multiselect-sample-text": "Style me!"
     }
 }

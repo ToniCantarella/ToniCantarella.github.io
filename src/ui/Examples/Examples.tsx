@@ -12,6 +12,7 @@ import ClickerIcon from "../../assets/clicker.svg?react"
 import RockIcon from "../../assets/rock.svg?react"
 import PaperIcon from "../../assets/paper.svg?react"
 import ScissorsIcon from "../../assets/scissors.svg?react"
+import { ButtonElements } from "./ui-elements/buttons/ButtonElements"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
@@ -57,7 +58,7 @@ export const Examples = () => {
                             onClick={() =>
                                 openDialog(
                                     "examples.buttons",
-                                    null
+                                    <ButtonElements />
                                 )
                             }
                         />

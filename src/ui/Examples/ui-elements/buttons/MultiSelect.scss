@@ -1,0 +1,46 @@
+#multiselect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    --multiselect-color: #004e97;
+
+    #buttons {
+        border: 2px solid var(--multiselect-color);
+        border-radius: 10px;
+        width: fit-content;
+        overflow: hidden;
+
+        button {
+            height: 100%;
+            background: var(--text-color);
+            color: var(--multiselect-color);
+            width: 40px;
+            border-left: 2px solid var(--multiselect-color);
+
+            &.selected {
+                background: #77CDFF;
+            }
+
+            span {
+                font-size: x-large;
+            }
+
+            &#bold {
+                font-weight: bolder;
+            }
+
+            &#italics {
+                font-style: italic;
+            }
+
+            &#underline {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    span {
+        font-size: x-large;
+    }
+}
