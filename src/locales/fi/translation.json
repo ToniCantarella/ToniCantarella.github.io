@@ -40,6 +40,8 @@
         "games": "Pelit",
         "clicker-game": "Klikkaaja",
         "rock-paper-scissors": "Kivi paperi sakset",
-        "multiselect-sample-text": "Aseta muotoilu!"
+        "multiselect-sample-text": "Aseta muotoilu!",
+        "switch-on": "On",
+        "switch-off": "Off"
     }
 }
