@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./Dialog.scss"
 import { Card } from "./Card"
 import CloseIcon from "../../assets/close.svg?react"
+import { createPortal } from "react-dom"
 
 type DialogProps = {
     title?: string,
@@ -20,16 +21,17 @@ export const Dialog = (props: DialogProps) => {
         }, outAnimationDelay)
     }
 
-    return (
+    return createPortal(
         <div
             id="dialog"
             className={`${isClosing ? "closing" : ""}`}
             style={{
                 animationDuration: `.${outAnimationDelay / 100}s`
-            }}
+            }
+            }
         >
             <div id="inner">
-                <div id="dialog-background" onClick={onClose}/>
+                <div id="dialog-background" onClick={onClose} />
                 <div id="dialog-content">
                     <Card>
                         <>
@@ -50,6 +52,7 @@ export const Dialog = (props: DialogProps) => {
                     </Card>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.getElementById("app")!
     )
 }
