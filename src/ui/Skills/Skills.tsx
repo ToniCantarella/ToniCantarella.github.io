@@ -139,7 +139,7 @@ const SkillList = () => {
                 />
 
                 <SkillCard
-                    label="Css & Scss"
+                    label="CSS & Sass"
                     icon={
                         <>
                             <CssIcon />
