@@ -42,7 +42,7 @@ export const Examples = () => {
                             label={t("examples.loaders")}
                             onClick={() =>
                                 openDialog(
-                                    t("examples.loaders"),
+                                    "examples.loaders",
                                     <LoadingElements />
                                 )
                             }
@@ -53,7 +53,7 @@ export const Examples = () => {
                             label={t("examples.buttons")}
                             onClick={() =>
                                 openDialog(
-                                    t("examples.buttons"),
+                                    "examples.buttons",
                                     null
                                 )
                             }
@@ -64,7 +64,7 @@ export const Examples = () => {
                             label={t("examples.input")}
                             onClick={() =>
                                 openDialog(
-                                    t("examples.input"),
+                                    "examples.input",
                                     null
                                 )
                             }
@@ -79,7 +79,7 @@ export const Examples = () => {
                             label={t("examples.clicker-game")}
                             onClick={() =>
                                 openDialog(
-                                    t("examples.clicker-game"),
+                                    "examples.clicker-game",
                                     null
                                 )
                             }
