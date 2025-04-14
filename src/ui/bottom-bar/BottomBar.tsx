@@ -42,8 +42,8 @@ const SettingsDrawer = (props: { open: boolean }) => {
             <div
                 id="drawer-content"
             >
-                <ThemePicker />
                 <LanguagePicker />
+                <ThemePicker />
             </div>
         </div>
     )
