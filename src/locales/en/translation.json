@@ -42,6 +42,7 @@
         "rock-paper-scissors": "Rock paper scissors",
         "multiselect-sample-text": "Style me!",
         "switch-on": "On",
-        "switch-off": "Off"
+        "switch-off": "Off",
+        "button-sample-text": "Press"
     }
 }

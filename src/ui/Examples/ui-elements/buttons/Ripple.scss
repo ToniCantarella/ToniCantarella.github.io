@@ -1,0 +1,29 @@
+#ripple-button {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgb(0, 211, 211);
+    padding: 10px 30px;
+    box-shadow: inset 5px 5px 5px rgb(249, 255, 255), inset -5px -5px 5px rgb(2, 112, 112);
+
+    span {
+        font-size: x-large;
+        font-weight: bold;
+        color: rgb(252, 252, 252);
+    }
+
+    .ripple-effect {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        background: white;
+        animation: ripple 1s ease;
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

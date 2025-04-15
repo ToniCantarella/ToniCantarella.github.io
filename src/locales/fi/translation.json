@@ -42,6 +42,7 @@
         "rock-paper-scissors": "Kivi paperi sakset",
         "multiselect-sample-text": "Aseta muotoilu!",
         "switch-on": "On",
-        "switch-off": "Off"
+        "switch-off": "Off",
+        "button-sample-text": "Paina"
     }
 }
