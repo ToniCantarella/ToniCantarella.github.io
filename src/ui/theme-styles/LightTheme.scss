@@ -1,52 +1,53 @@
 .light-theme {
-    --intro-bg-light: green;
-    --navigation-bg-light: pink;
-    --button-bg-light: rgb(104, 104, 104);
-    --button-color-light: white;
+    /* Common */
+    --primary-color: #F2613F;
+    --surface-color: #817f7b;
+    --on-surface-color: var(--app-background);
+    --blur-surface-color: rgba(34, 33, 32, 0.5);
+    --text-color: #39393a;
+    --shadow-color: #161311;
+    --icon-color: var(--text-color);
+    --close-button-color: var(--on-surface-color);
 
-    background: white;
-    color: black;
-    --navigation-bg: var(--navigation-bg-light);
-    --button-bg: var(--button-bg-light);
-    --button-color: var(--button-color-light);
+    --app-background: #FAF1E6;
+    --app-bar-background: var(--app-background);
 
-    --intro-start-animation: introStartAnimationLight var(--intro-start-animation-duration) ease forwards;
-    --intro-middle-animation: introMiddleAnimationLight var(--intro-middle-animation-duration) ease forwards;
-    --intro-exit-animation: introExitAnimationLight var(--intro-exit-animation-duration) ease forwards;
+    --surface-border-radius: var(--medium-padding);
 
-    --intro-bg: var(--intro-bg-light);
-}
+    /* Theme specific */
 
-@keyframes introStartAnimationLight {
-    from {
-        opacity: 0;
-        visibility: hidden;
+    color: var(--text-color);
+
+    #app-background {
+        background: var(--app-background);
     }
 
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
-}
+    #navigation-bar {
 
-@keyframes introMiddleAnimationLight {
-    from {
-        background-color: var(--intro-bg-light);
-    }
+        .navigation-item {
+            color: var(--text-color);
 
-    to {
-        background-color: red;
-    }
-}
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                opacity: 0;
+                width: 0%;
+                left: 50%;
+                height: 100%;
+                background: var(--primary-color);
+                transform: translateX(-50%);
+            }
 
-@keyframes introExitAnimationLight {
-    from {
-        opacity: 1;
-        visibility: visible;
-    }
+            &:hover,
+            &.selected {
+                color: white;
 
-    to {
-        opacity: 0;
-        visibility: hidden;
+                &::after {
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
+        }
     }
 }

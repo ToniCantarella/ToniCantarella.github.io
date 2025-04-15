@@ -1,7 +1,8 @@
 .card {
     background: var(--surface-color);
     padding: var(--medium-padding);
-    border-radius: var(--medium-padding);
+    border-radius: var(--surface-border-radius);
+    color: var(--on-surface-color);
 
     &.clickable {
         border: 1px solid var(--primary-color);

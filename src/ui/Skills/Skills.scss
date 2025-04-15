@@ -7,7 +7,7 @@
     justify-content: space-between;
     padding-bottom: var(--extra-large-padding);
 
-    --path-line-color: white;
+    --path-line-color: var(--text-color);
 
     #timeline {
         flex: 1;

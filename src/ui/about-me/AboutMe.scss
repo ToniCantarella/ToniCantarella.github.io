@@ -4,7 +4,7 @@
     display: flex;
     flex: 1;
 
-    --article-background: rgba(0, 0, 0, .5);
+    --article-background: var(--blur-surface-color);
 
     #article {
         z-index: 1;
@@ -13,9 +13,10 @@
         backdrop-filter: blur(10px);
         background: var(--article-background);
         box-shadow: 0 0 10px 5px var(--article-background);
-        border-radius: 10px;
+        border-radius: var(--surface-border-radius);
         padding: var(--medium-padding);
         margin-top: 100px;
+        color: var(--on-surface-color);
 
         h2 {
             text-align: center;
