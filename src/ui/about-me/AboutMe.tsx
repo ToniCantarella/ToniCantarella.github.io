@@ -15,9 +15,9 @@ export const AboutMe = () => {
         <Page>
             <div id="about-me">
                 <div id="article">
-                    <h2>
+                    <h1>
                         {t("about-me.title")}
-                    </h2>
+                    </h1>
                     <p>
                         {t("about-me.intro", { year: year })}
 

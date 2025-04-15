@@ -108,7 +108,7 @@ const TimePeriod = (props: TimePeriodProps) => {
             </div>
             <div className="article">
                 <h2>{props.title}</h2>
-                <h4>{props.subtitle}</h4>
+                <h3>{props.subtitle}</h3>
                 <p>{props.paragraph}</p>
             </div>
         </div>

@@ -34,6 +34,10 @@
     }
   }
 
+  p {
+    font-weight: bold;
+  }
+
   #app-background {
     overflow: hidden;
     z-index: var(--app-background-z-index);
@@ -48,6 +52,11 @@
     overflow-y: auto;
     overflow-x: hidden;
     flex: 1;
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
   }
 }
 
