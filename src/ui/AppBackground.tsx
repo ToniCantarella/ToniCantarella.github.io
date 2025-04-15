@@ -1,20 +1,44 @@
 import { FrutigerAeroBackground } from "./theme-background/FrutigerAeroBackground";
 import { ThemeNames } from "./theme-picker/ThemePicker";
 
+type Background = {
+    name: string,
+    content: React.ReactNode
+}
+
+const Backgrounds: Background[] = [
+    {
+        name: ThemeNames.DARK,
+        content: <></>
+    },
+    {
+        name: ThemeNames.LIGHT,
+        content: <></>
+    },
+    {
+        name: ThemeNames.SKEUOMORPHISM,
+        content: <></>
+    },
+    {
+        name: ThemeNames.FRUTIGER_AERO,
+        content: <FrutigerAeroBackground />
+    },
+    {
+        name: ThemeNames.RETRO,
+        content: <></>
+    },
+    {
+        name: ThemeNames.NATURE,
+        content: <></>
+    },
+]
 
 export const Background = (props: { theme: string }) => {
-
-    const background = () => {
-        switch (props.theme) {
-            case ThemeNames.FRUTIGER_AERO:
-                return <FrutigerAeroBackground />
-                break;
-        }
-    }
+    const background = Backgrounds.find(background => props.theme === background.name)?.content
 
     return (
         <div id="app-background">
-            {background()}
+            {background}
         </div>
     )
 }
