@@ -3,33 +3,54 @@
 #about-me {
     display: flex;
     flex: 1;
+    flex-direction: column;
 
     --article-background: var(--blur-surface-color);
 
     #article {
+        flex: 2;
         z-index: 1;
-        max-width: 40%;
         height: fit-content;
-        backdrop-filter: blur(10px);
-        background: var(--article-background);
-        box-shadow: 0 0 10px 5px var(--article-background);
-        border-radius: var(--surface-border-radius);
         padding: var(--medium-padding);
-        margin-top: 100px;
-        color: var(--on-surface-color);
-
-        h1 {
-            text-align: center;
-        }
+        color: var(--text-color);
     }
 
-    img {
-        position: absolute;
-        inset: 0;
-        max-width: 2000px;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    #image-carousel {
+        display: flex;
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+        --image-fade: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        mask-image: var(--image-fade);
+
+        img {
+            position: absolute;
+            left: 100%;
+            max-width: 100%;
+            animation-name: imageCarousel;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            mask-image: var(--image-fade);
+        }
+    }
+}
+
+@keyframes imageCarousel {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    10%{
+        left: 0;
+        opacity: 1;
+    }
+    90% {
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        left: -100%;
+        opacity: 0;
     }
 }
 
