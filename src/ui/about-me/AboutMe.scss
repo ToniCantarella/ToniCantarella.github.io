@@ -4,12 +4,14 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    align-items: center;
 
     --article-background: var(--blur-surface-color);
 
     #article {
         flex: 2;
         z-index: 1;
+        max-width: 50%;
         height: fit-content;
         padding: var(--medium-padding);
         color: var(--text-color);
