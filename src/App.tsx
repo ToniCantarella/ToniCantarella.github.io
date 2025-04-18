@@ -6,6 +6,7 @@ import './App.scss'
 import "./ui/theme/theme-styles/DarkTheme.scss"
 import "./ui/theme/theme-styles/LightTheme.scss"
 import "./ui/theme/theme-styles/FrutigerAero.scss"
+import "./ui/theme/theme-styles/Neumorphism.scss"
 import { AppContent } from "./ui/AppContent"
 import { BottomBar } from "./ui/navigation/bottom-bar/BottomBar"
 import { ThemeContext } from "./ui/theme/theme-picker/ThemePicker"

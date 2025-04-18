@@ -1,4 +1,4 @@
-export const SkeuomorphismButton = () => {
+export const NeumorphismButton = () => {
     return (
         <div>
         </div>

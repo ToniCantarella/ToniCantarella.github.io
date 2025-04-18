@@ -2,7 +2,7 @@ import { useState, useContext, createContext, ReactElement, useEffect } from "re
 import "./ThemePicker.scss"
 import { DarkButton } from "./button-content/DarkButton"
 import { LightButton } from "./button-content/LightButton"
-import { SkeuomorphismButton } from "./button-content/SkeuomorphismButton"
+import { NeumorphismButton } from "./button-content/Neumorphism"
 import { FrutigerAeroButton } from "./button-content/FrutigerAeroButton"
 import { RetroButton } from "./button-content/RetroButton"
 import { NatureButton } from "./button-content/NatureButton"
@@ -16,7 +16,7 @@ type Theme = {
 export enum ThemeNames {
     DARK = "dark-theme",
     LIGHT = "light-theme",
-    SKEUOMORPHISM = "skeuomorphism",
+    NEUMORPHISM = "neumorphism",
     FRUTIGER_AERO = "frutiger-aero",
     RETRO = "retro",
     NATURE = "nature"
@@ -32,8 +32,8 @@ export const themes: Theme[] = [
         content: <LightButton />
     },
     {
-        name: ThemeNames.SKEUOMORPHISM,
-        content: <SkeuomorphismButton />
+        name: ThemeNames.NEUMORPHISM,
+        content: <NeumorphismButton />
     },
     {
         name: ThemeNames.FRUTIGER_AERO,

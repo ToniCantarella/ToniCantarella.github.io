@@ -16,7 +16,7 @@ const Backgrounds: Background[] = [
         content: <></>
     },
     {
-        name: ThemeNames.SKEUOMORPHISM,
+        name: ThemeNames.NEUMORPHISM,
         content: <></>
     },
     {

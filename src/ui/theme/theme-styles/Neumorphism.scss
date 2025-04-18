@@ -1,0 +1,19 @@
+.neumorphism {
+    //--primary-color: #F2613F;
+    //--surface-color: #3a3734;
+    //--on-surface-color: var(--text-color);
+    //--blur-surface-color: rgba(34, 33, 32, 0.5);
+    //--text-color: #d0d5e0;
+    --shadow-color: #161311;
+    //--icon-color: var(--text-color);
+    //--close-button-color: var(--icon-color);
+
+    //--app-background: #292725;
+    //--app-bar-background: var(--app-background);
+
+    --surface-border-radius: var(--medium-padding);
+
+    .card {
+        box-shadow: inset 10px 10px 10px var(--shadow-color), inset -10px -10px 10px rgb(51, 51, 51);
+    }
+}
