@@ -44,5 +44,8 @@
         "switch-on": "On",
         "switch-off": "Off",
         "button-sample-text": "Paina"
+    },
+    "contact": {
+        "image-credits": "Kaikki kuvat tällä sivulla on ottanut siskoni "
     }
 }

@@ -44,5 +44,8 @@
         "switch-on": "On",
         "switch-off": "Off",
         "button-sample-text": "Press"
+    },
+    "contact": {
+        "image-credits": "All the images on this site were taken by my sister "
     }
 }
