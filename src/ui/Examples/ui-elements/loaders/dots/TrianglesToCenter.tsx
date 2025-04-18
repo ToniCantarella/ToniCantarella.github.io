@@ -7,6 +7,7 @@ export const TrianglesToCenter = () => {
             <div id="grid-to-center">
                 {Array.from({ length: 3 }, (_, i) => (
                     <div
+                        key={i}
                         style={{
                             animationDelay: `${i}s`
                         }}

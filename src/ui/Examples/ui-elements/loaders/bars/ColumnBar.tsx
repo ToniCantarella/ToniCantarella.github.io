@@ -7,6 +7,7 @@ export const ColumnBar = () => {
             <div id="column-bar">
                 {Array.from({ length: 6 }, (_, i) => (
                     <div
+                        key={i}
                         style={{
                             animationDelay: `.${i}s`
                         }}

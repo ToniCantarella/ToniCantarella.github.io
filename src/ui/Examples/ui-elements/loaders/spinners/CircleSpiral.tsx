@@ -7,13 +7,16 @@ export const CircleSpiral = () => {
             <div id="circle-spiral">
                 {Array.from({ length: 10 }, (_, i) => (
                     <div
+                        key={i}
                         style={{
                             animationDelay: `.${i}s`
                         }}
                     >
-                        <div style={{
-                            animationDelay: `.${i}s`
-                        }}></div>
+                        <div
+                            style={{
+                                animationDelay: `.${i}s`
+                            }}
+                        />
                     </div>
                 ))}
             </div>
