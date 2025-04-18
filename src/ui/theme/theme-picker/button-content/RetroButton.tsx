@@ -1,4 +1,4 @@
-import PointerIcon from "../../../assets/pointer.svg?react"
+import PointerIcon from "../../../../assets/pointer.svg?react"
 
 export const RetroButton = () => {
     return (

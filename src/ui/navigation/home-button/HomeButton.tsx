@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-import { NavigationContext, Paths } from "../navigation/NavigationBar"
 import { useContext } from "react"
-import { AppContext } from "../../App"
 import "./HomeButton.scss"
+import { AppContext } from "../../../App"
+import { NavigationContext, Paths } from "../NavigationBar"
 
 export const HomeButton = () => {
     const appContext = useContext(AppContext)

@@ -1,15 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
-import { TopBar } from "./ui/top-bar/TopBar"
-import { ThemeContext } from "./ui/theme-picker/ThemePicker"
 import { Intro } from "./ui/intro/Intro"
 import { Background } from "./ui/AppBackground"
 import './App.scss'
-import "./ui/theme-styles/DarkTheme.scss"
-import "./ui/theme-styles/LightTheme.scss"
-import "./ui/theme-styles/FrutigerAero.scss"
+import "./ui/theme/theme-styles/DarkTheme.scss"
+import "./ui/theme/theme-styles/LightTheme.scss"
+import "./ui/theme/theme-styles/FrutigerAero.scss"
 import { AppContent } from "./ui/AppContent"
-import { BottomBar } from "./ui/bottom-bar/BottomBar"
+import { BottomBar } from "./ui/navigation/bottom-bar/BottomBar"
+import { ThemeContext } from "./ui/theme/theme-picker/ThemePicker"
+import { TopBar } from "./ui/navigation/top-bar/TopBar"
 
 type AppContextType = {
   firstRender: boolean,

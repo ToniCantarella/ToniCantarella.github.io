@@ -2,11 +2,11 @@ import { Link } from "react-router-dom"
 import "./Navigation.scss"
 import { createContext, ReactElement, useContext, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { HomeButton } from "../home-button/HomeButton"
 import HomeIcon from "../../assets/home.svg?react"
 import PathIcon from "../../assets/path.svg?react"
 import StarIcon from "../../assets/star.svg?react"
 import ContactIcon from "../../assets/message.svg?react"
+import { HomeButton } from "./home-button/HomeButton"
 
 type Page = {
   pathname: string,

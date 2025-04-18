@@ -1,4 +1,4 @@
-import NatureIcon from "../../../assets/nature.svg?react"
+import NatureIcon from "../../../../assets/nature.svg?react"
 
 export const NatureButton = () => {
     return (

@@ -1,10 +1,10 @@
 import "./BottomBar.scss"
-import { NavigationItems } from "../navigation/NavigationBar"
-import SettingsIcon from "../../assets/settings.svg?react"
+import { NavigationItems } from "../NavigationBar"
+import SettingsIcon from "../../../assets/settings.svg?react"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
-import { LanguagePicker } from "../language-picker/LanguagePicker"
-import { ThemePicker } from "../theme-picker/ThemePicker"
+import { LanguagePicker } from "../../language-picker/LanguagePicker"
+import { ThemePicker } from "../../theme/theme-picker/ThemePicker"
 
 export const BottomBar = () => {
     const [settingsOpen, setSettingsOpen] = useState<boolean>(false)

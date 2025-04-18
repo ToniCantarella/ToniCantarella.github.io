@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Page } from "../common/Page"
+import { Page } from "../Page"
 
 export const Contact = () => {
     const {t} = useTranslation()

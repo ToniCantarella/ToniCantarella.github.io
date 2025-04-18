@@ -1,5 +1,5 @@
-import { FrutigerAeroBackground } from "./theme-background/FrutigerAeroBackground";
-import { ThemeNames } from "./theme-picker/ThemePicker";
+import { FrutigerAeroBackground } from "./theme/theme-background/FrutigerAeroBackground";
+import { ThemeNames } from "./theme/theme-picker/ThemePicker";
 
 type Background = {
     name: string,

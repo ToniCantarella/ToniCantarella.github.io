@@ -1,6 +1,6 @@
-import { LanguagePicker } from "../language-picker/LanguagePicker"
-import { NavigationBar } from "../navigation/NavigationBar"
-import { ThemePicker } from "../theme-picker/ThemePicker"
+import { LanguagePicker } from "../../language-picker/LanguagePicker"
+import { ThemePicker } from "../../theme/theme-picker/ThemePicker"
+import { NavigationBar } from "../NavigationBar"
 import "./TopBar.scss"
 
 export const TopBar = () => {

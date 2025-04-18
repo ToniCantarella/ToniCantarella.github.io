@@ -6,7 +6,7 @@ import { SkeuomorphismButton } from "./button-content/SkeuomorphismButton"
 import { FrutigerAeroButton } from "./button-content/FrutigerAeroButton"
 import { RetroButton } from "./button-content/RetroButton"
 import { NatureButton } from "./button-content/NatureButton"
-import { AppContext } from "../../App"
+import { AppContext } from "../../../App"
 
 type Theme = {
     name: string,

@@ -1,10 +1,10 @@
 import { AnimatePresence } from "framer-motion"
 import { Route, Routes, useLocation } from "react-router-dom"
 import { Paths } from "./navigation/NavigationBar"
-import { AboutMe } from "./about-me/AboutMe"
-import { Skills } from "./skills/Skills"
-import { Examples } from "./examples/Examples"
-import { Contact } from "./contact/Contact"
+import { AboutMe } from "./pages/about-me/AboutMe"
+import { Skills } from "./pages/skills/Skills"
+import { Examples } from "./pages/examples/Examples"
+import { Contact } from "./pages/contact/Contact"
 
 export const AppContent = () => {
     const location = useLocation()

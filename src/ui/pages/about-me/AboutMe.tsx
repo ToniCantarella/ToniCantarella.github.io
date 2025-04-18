@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next"
-import { Page } from "../common/Page"
+import { Page } from "../Page"
 import "./AboutMe.scss"
 import { Link } from "react-router-dom"
-import { NavigationContext, Paths } from "../navigation/NavigationBar"
+import { NavigationContext, Paths } from "../../navigation/NavigationBar"
 import { useContext, useEffect, useState } from "react"
-import winterImage from "../../assets/winter.jpg"
-import motorbikeImage from "../../assets/motorbike.jpg"
-import torchImage from "../../assets/torch.jpg"
+import winterImage from "../../../assets/winter.jpg"
+import motorbikeImage from "../../../assets/motorbike.jpg"
+import torchImage from "../../../assets/torch.jpg"
 
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
