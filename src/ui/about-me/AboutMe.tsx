@@ -7,7 +7,6 @@ import { useContext, useEffect, useState } from "react"
 import winterImage from "../../assets/winter.jpg"
 import motorbikeImage from "../../assets/motorbike.jpg"
 import torchImage from "../../assets/torch.jpg"
-import { image, pre } from "framer-motion/client"
 
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
@@ -51,8 +50,8 @@ const ImageCarousel = () => {
 
     const images = [
         winterImage,
-        torchImage,
-        motorbikeImage
+        motorbikeImage,
+        torchImage
     ]
 
     useEffect(() => {
@@ -64,14 +63,40 @@ const ImageCarousel = () => {
 
     return (
         <div id="image-carousel">
-                <img
-                    key={currentImage}
-                    src={images[currentImage]}
-                    alt="about-me"
-                    style={{
-                        animationDuration: `${animationDuration / 1000}s`
-                    }}
+            <img
+                key={currentImage}
+                src={images[currentImage]}
+                alt="about-me"
+                style={{
+                    animationDuration: `${animationDuration / 1000}s`
+                }}
+            />
+
+            <Indicator
+                length={images.length}
+                currentIndex={currentImage}
+            />
+        </div>
+    )
+}
+
+const Indicator = (props: { length: number, currentIndex: number }) => {
+
+    return (
+        <div id="image-indicator">
+            <div
+                id="current"
+                className="indicator"
+                style={{
+                    left: `calc(${props.currentIndex} * var(--indicator-size) * 2)`
+                }}
+            />
+            {Array.from({ length: props.length }, (_, indicator) => (
+                <div
+                    key={indicator}
+                    className="indicator"
                 />
+            ))}
         </div>
     )
 }

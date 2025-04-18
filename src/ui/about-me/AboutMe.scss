@@ -18,6 +18,8 @@
     #image-carousel {
         display: flex;
         position: relative;
+        justify-content: center;
+        align-items: end;
         width: 100%;
         flex: 1;
         overflow: hidden;
@@ -28,10 +30,35 @@
             position: absolute;
             left: 100%;
             height: 200%;
+            top: 0%;
             animation-name: imageCarousel;
             animation-timing-function: ease;
             animation-fill-mode: forwards;
             mask-image: var(--image-fade);
+        }
+
+        #image-indicator {
+            z-index: 1;
+            display: flex;
+            position: relative;
+
+            --indicator-size: 10px;
+
+            gap: var(--indicator-size);
+            padding-bottom: var(--indicator-size);
+
+            .indicator {
+                border-radius: 50%;
+                height: var(--indicator-size);
+                width: var(--indicator-size);
+                background: white;
+                opacity: .5;
+            }
+
+            #current {
+                position: absolute;
+                opacity: 1;
+            }
         }
     }
 }
@@ -43,14 +70,12 @@
     }
 
     10% {
-        top: 0%;
         left: 50%;
         transform: translate(-50%, -0%);
         opacity: 1;
     }
 
     90% {
-        top: 0%;
         left: 50%;
         transform: translate(-50%, -0%);
         opacity: 1;
