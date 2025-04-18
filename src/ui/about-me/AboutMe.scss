@@ -1,4 +1,4 @@
-@import '../../variables';
+@use '../../breakpoints';
 
 #about-me {
     display: flex;
@@ -116,7 +116,7 @@
     }
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #about-me {
         align-items: center;
         justify-content: center;

@@ -1,4 +1,4 @@
-@import '../../variables';
+@use '../../breakpoints';
 
 #skills {
     display: flex;
@@ -219,7 +219,7 @@
     }
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #skills {
         flex-direction: column-reverse;
         gap: 0;

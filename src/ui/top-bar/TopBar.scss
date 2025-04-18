@@ -1,4 +1,4 @@
-@import '../../variables';
+@use '../../breakpoints';
 
 #top-bar {
     display: flex;
@@ -25,7 +25,7 @@
     }
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #top-bar {
         display: none;
     }

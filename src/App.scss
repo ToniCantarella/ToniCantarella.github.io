@@ -1,16 +1,10 @@
-@import './variables';
+@use './breakpoints';
 
 #app {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  &,
-  & *,
-  & *::after {
-    transition: all .2s;
-  }
 
   --extra-small-padding: 4px;
   --small-padding: 8px;
@@ -25,6 +19,12 @@
   --app-bar-z-index: 2;
 
   --app-background-z-index: -1;
+
+  &,
+  & *,
+  & *::after {
+    transition: all .2s;
+  }
 
   button {
     border: none;
@@ -60,7 +60,7 @@
   }
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
   #app {
     #app-content {
       margin-top: 0;

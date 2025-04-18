@@ -1,4 +1,4 @@
-@import '../../variables';
+@use '../../breakpoints';
 
 #bottom-bar {
     display: none;
@@ -9,7 +9,7 @@
     height: var(--bottom-bar-height);
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #bottom-bar {
         display: flex;
 

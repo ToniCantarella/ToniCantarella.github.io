@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@use '../../../../breakpoints';
 
 .loader {
     width: 120px;
@@ -14,7 +14,7 @@
     --loader-duration: 3s;
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     .loader {
         width: 80px;
         height: 80px;
