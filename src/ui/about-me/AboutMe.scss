@@ -19,9 +19,10 @@
 
     #image-carousel {
         display: flex;
+        flex-direction: column;
         position: relative;
-        justify-content: center;
-        align-items: end;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
         flex: 1;
         overflow: hidden;
@@ -39,6 +40,23 @@
             mask-image: var(--image-fade);
         }
 
+        #image-loading {
+            height: 4px;
+            width: 100%;
+            z-index: 1;
+            position: relative;
+            
+            #loader {
+                position: absolute;
+                height: 100%;
+                width: 0;
+                background: var(--text-color);
+                animation-name: imageLoader;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+        }
+
         #image-indicator {
             z-index: 1;
             display: flex;
@@ -53,7 +71,7 @@
                 border-radius: 50%;
                 height: var(--indicator-size);
                 width: var(--indicator-size);
-                background: white;
+                background: var(--text-color);
                 opacity: .5;
             }
 
@@ -62,6 +80,15 @@
                 opacity: 1;
             }
         }
+    }
+}
+
+@keyframes imageLoader {
+    0% {
+        width: 0%;
+    }
+    97%{
+        width: 100%;
     }
 }
 

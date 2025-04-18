@@ -72,6 +72,9 @@ const ImageCarousel = () => {
                 }}
             />
 
+            <ImageLoading 
+                animationDuration={animationDuration / 1000}
+            />
             <Indicator
                 length={images.length}
                 currentIndex={currentImage}
@@ -97,6 +100,21 @@ const Indicator = (props: { length: number, currentIndex: number }) => {
                     className="indicator"
                 />
             ))}
+        </div>
+    )
+}
+
+const ImageLoading = (props: { animationDuration: number }) => {
+    return (
+        <div
+            id="image-loading"
+        >
+            <div 
+                id="loader"
+                style={{
+                    animationDuration: `${props.animationDuration}s`
+                }}
+            />
         </div>
     )
 }
