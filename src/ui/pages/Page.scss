@@ -1,3 +1,5 @@
+@use '../breakpoints';
+
 .page {
   position: absolute;
   min-height: 100%;
@@ -12,5 +14,15 @@
     padding: var(--medium-padding);
     max-width: var(--content-max-width);
     flex: 1;
+  }
+}
+
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
+  .page {
+    .content {
+       h1{
+        margin-top: 0;
+      }
+    }
   }
 }

@@ -222,6 +222,48 @@
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #skills {
         flex-direction: column-reverse;
-        gap: 0;
+
+        #skill-list {
+
+            #skill-grid {
+                gap: var(--small-padding);
+                .card {
+                    .skill-card {
+
+                        gap: 0;
+
+                        .logo {
+                            svg {
+                                height: 30px;
+                                width: 30px;
+                            }
+                        }
+
+                        span {
+                            font-size: small;
+                        }
+                    }
+                }
+            }
+        }
+
+        #timeline {
+
+            .timeperiod {
+
+                .date {
+                    min-width: 65px;
+
+                    h2 {
+                        margin-top: 25px;
+                        font-size: medium;
+                    }
+                }
+
+                .article {
+                    flex: 2;
+                }
+            }
+        }
     }
 }
