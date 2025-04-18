@@ -87,7 +87,7 @@ type NavigationProviderProps = {
 export const NavigationProvider = (props: NavigationProviderProps) => {
   const [previousPage, setPreviousPage] = useState<string>(location.pathname)
   const [currentPage, setCurrentPage] = useState<string>(location.pathname)
-  const direction = (Pages.findIndex(page => page.pathname === currentPage) ?? Pages[0]) < (Pages.findIndex(page => page.pathname === previousPage) ?? Pages[0])
+  const direction = (Pages.findIndex(page => page.pathname === currentPage)) < (Pages.findIndex(page => page.pathname === previousPage))
 
   const onNavClick = (pathName: string) => {
     setPreviousPage(currentPage)
