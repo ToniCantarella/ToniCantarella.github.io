@@ -29,9 +29,7 @@ export const BottomBar = () => {
                         {t("settings")}
                     </span>
                 </button>
-
             </nav>
-            
         </div>
     )
 }
