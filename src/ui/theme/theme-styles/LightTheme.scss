@@ -41,7 +41,7 @@
 
             &:hover,
             &.selected {
-                color: white;
+                color: var(--app-background);
 
                 &::after {
                     opacity: 1;
