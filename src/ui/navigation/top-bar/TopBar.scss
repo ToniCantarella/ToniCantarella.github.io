@@ -2,6 +2,7 @@
 
 #top-bar {
     display: flex;
+    overflow: hidden;
     z-index: var(--app-bar-z-index);
     position: fixed;
     width: 100%;

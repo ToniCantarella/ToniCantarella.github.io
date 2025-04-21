@@ -1,7 +1,25 @@
 .frutiger-aero {
+    /* Common */
+    --primary-color: #3fd7f2;
+    --surface-color: rgb(43, 194, 231);
+    --on-surface-color: var(--text-color);
+    //--blur-surface-color: rgba(34, 33, 32, 0.5);
+    --text-color: #ffffff;
+    //--shadow-color: #a3afb3;
+    //--icon-color: var(--text-color);
+    //--close-button-color: var(--icon-color);
+
+    --app-background: #abc2c2;
+    --app-bar-background: transparent;
+
+    --surface-border-radius: var(--medium-padding);
+
+    /* Theme specific */
+
+    color: var(--text-color);
 
     #app-background {
-        background: rgb(171, 194, 194);
+        background: linear-gradient(to bottom left, rgb(203, 236, 236), rgb(121, 201, 201));
 
         .bubble {
             position: absolute;
@@ -21,9 +39,63 @@
                 height: 50%;
                 background: linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
                 border-radius: 50%;
-                transition: background 400ms;
             }
         }
+    }
+
+    #top-bar,
+    #bottom-bar {
+        background: linear-gradient(to bottom, rgba(1, 144, 240, 0.5), rgba(166, 252, 252, .5));
+    }
+
+    #navigation-bar {
+
+        .navigation-item {
+            color: var(--text-color);
+            scale: .9;
+
+            &::before {
+                content: "";
+                position: absolute;
+                box-shadow: 0px 5px 10px rgb(58, 78, 107);
+                background: rgba(1, 224, 240, 0.5);
+                border-radius: var(--small-padding);
+                height: 90%;
+                z-index: -2;
+                width: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 4%;
+                width: calc(100% - 1em);
+                left: 50%;
+                transform: translateX(-50%);
+                height: 30%;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+                border-radius: 999px;
+            }
+
+            &:hover,
+            &.selected {
+                scale: 1;
+            }
+        }
+    }
+
+    .page {
+
+        .content {
+            position: relative;
+            background: linear-gradient(to bottom, rgba(1, 224, 240, .5), rgba(166, 252, 252, .5));
+            backdrop-filter: blur(2px);
+        }
+    }
+
+    .card {
     }
 }
 
