@@ -1,0 +1,45 @@
+#rock-paper-scissors-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    --card-width: 100px;
+
+    .winner-title {
+        height: 50px;
+    }
+
+    .game-board {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .hand {
+            position: relative;
+            border: 1px dashed;
+            width: 200px;
+            height: 100px;
+
+            .play-card {
+                position: absolute;
+                border: 1px solid blue;
+                top: 0;
+                left: 0;
+                width: var(--card-width);
+                height: 100%;
+
+                &.player-play {
+                    top: -150px;
+                }
+
+                &.computer-play {
+                    top: 150px;
+                }
+            }
+        }
+    }
+}
