@@ -67,7 +67,7 @@ export const ClickerGame = () => {
                 {t("examples.clicker-game-button")}
             </button>
             <div id="clicker-upgrades">
-                {upgradesList.map(upgrade => (
+                {upgradesList.slice(0, 10).map(upgrade => (
                     <button
                         key={upgrade.id}
                         className={`upgrade ${upgrade.cost <= clicks ? "can-buy" : ""}`}
