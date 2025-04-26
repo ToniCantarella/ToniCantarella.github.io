@@ -1,4 +1,5 @@
 import { UIElementDialogContent, UIElementRow } from "../UIElementDialogContent"
+import { SearchAndSort } from "./SearchAndSort"
 import { Slider } from "./Slider"
 
 export const InputElements = () => {
@@ -6,6 +7,7 @@ export const InputElements = () => {
         <UIElementDialogContent>
             <UIElementRow>
                 <Slider />
+                <SearchAndSort />
             </UIElementRow>
         </UIElementDialogContent>
     )
