@@ -15,6 +15,7 @@ import { Dialog } from "../../common/Dialog"
 import { Card } from "../../common/Card"
 import { ClickerGame } from "./games/clicker/Clicker"
 import { RockPaperScissorsGame } from "./games/rock-paper-scissors/RockPaperScissors"
+import { InputElements } from "./ui-elements/input/InputElements"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
@@ -71,7 +72,7 @@ export const Examples = () => {
                             onClick={() =>
                                 openDialog(
                                     "examples.input",
-                                    null
+                                    <InputElements />
                                 )
                             }
                         />
