@@ -13,6 +13,7 @@ import { ButtonElements } from "./ui-elements/buttons/ButtonElements"
 import { Page } from "../Page"
 import { Dialog } from "../../common/Dialog"
 import { Card } from "../../common/Card"
+import { ClickerGame } from "./games/clicker/Clicker"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
@@ -84,7 +85,7 @@ export const Examples = () => {
                             onClick={() =>
                                 openDialog(
                                     "examples.clicker-game",
-                                    null
+                                    <ClickerGame />
                                 )
                             }
                         />
