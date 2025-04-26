@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import RockIcon from "../../../../../assets/rock.svg?react"
+import PaperIcon from "../../../../../assets/paper.svg?react"
+import ScissorsIcon from "../../../../../assets/scissors.svg?react"
 import "./RockPaperScissors.scss"
 
 enum Hand {
@@ -7,12 +10,25 @@ enum Hand {
     SCISSORS = 2
 }
 
+const getIcon = (hand: Hand) => {
+    switch (hand) {
+        case Hand.ROCK:
+            return <RockIcon />
+        case Hand.PAPER:
+            return <PaperIcon />
+        case Hand.SCISSORS:
+            return <ScissorsIcon />
+        default:
+            return null
+    }
+}
+
 export const RockPaperScissorsGame = () => {
     const [computerCards, setComputerCards] = useState<number[] | null>(null)
     const [playerCards, setPlayerCards] = useState<Hand[] | null>(null)
     const [playerPlay, setPlayerPlay] = useState<number | null>(null)
     const [computerPlay, setComputerPlay] = useState<Hand | null>(null)
-    const [computerPlayIndex, setComputerPlayIndex] = useState<number>(0)
+    const [computerPlayIndex, setComputerPlayIndex] = useState<number | null>(null)
     const [winnerTitle, setWinnerTitle] = useState<string | null>(null)
 
     const dealCards = () => {
@@ -54,6 +70,14 @@ export const RockPaperScissorsGame = () => {
         }
     }
 
+    const redo = () => {
+        setComputerPlay(null)
+        setComputerPlayIndex(null)
+        setPlayerPlay(null)
+        setComputerCards(computerCards!.filter((_, i) => computerPlayIndex !== i))
+        setPlayerCards(playerCards!.filter((_, i) => playerPlay !== i))
+    }
+
     useEffect(() => {
         dealCards()
     }, [])
@@ -65,19 +89,35 @@ export const RockPaperScissorsGame = () => {
                     {winnerTitle}
                 </span>
             }
+            {winnerTitle &&
+                <button
+                    className=""
+                    onClick={() => redo()}
+                >
+                    retry
+                </button>
+            }
+            {playerCards?.length === 0 &&
+                <button
+                    onClick={() => dealCards()}
+                >
+                    start over
+                </button>
+            }
             <div className="game-board">
                 <div className="hand computer-hand">
-                    {computerCards?.map((card, index) => {
+                    {computerCards?.map((_, index) => {
                         const isPlayedCard = computerPlay != null && index === computerPlayIndex
                         return (
                             <div
                                 key={index}
-                                className={`play-card ${isPlayedCard ? "computer-play" : ""}`}
+                                className={`game-card ${isPlayedCard ? "computer-play" : ""}`}
                                 style={{
-                                    marginLeft: `${isPlayedCard ? "var(--card-width)" : `calc(${index} * var(--card-width))`}`
+                                    marginLeft: `${isPlayedCard ? "var(--card-width)" : `calc(${index} * var(--card-width))`}`,
+                                    rotate: `${isPlayedCard ? "15deg" : `${15 + (index * (computerCards.length > 2 ? -15 : -30))}deg`}`
                                 }}
                             >
-                                {isPlayedCard ? Hand[computerPlay] : card}
+                                {isPlayedCard && getIcon(computerPlay!)}
                             </div>
                         )
                     })}
@@ -88,13 +128,14 @@ export const RockPaperScissorsGame = () => {
                         return (
                             <button
                                 key={index}
-                                className={`play-card ${isPlayedCard ? "player-play" : ""}`}
+                                className={`game-card ${isPlayedCard ? "player-play" : ""}`}
                                 onClick={() => playCard(card, index)}
                                 style={{
-                                    marginLeft: `${isPlayedCard ? "0px" : `calc(${index} * var(--card-width))`}`
+                                    marginLeft: `${isPlayedCard ? "0px" : `calc(${index} * var(--card-width))`}`,
+                                    rotate: `${isPlayedCard ? "-15deg" : `${-15 + (index * (playerCards.length > 2 ? 15 : 30))}deg`}`
                                 }}
                             >
-                                {Hand[card]}
+                                {getIcon(card)}
                             </button>
                         )
                     })}

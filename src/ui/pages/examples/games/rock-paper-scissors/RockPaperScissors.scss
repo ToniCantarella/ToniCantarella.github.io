@@ -4,7 +4,8 @@
     align-items: center;
     width: 100%;
 
-    --card-width: 100px;
+    --card-width: 70px;
+    --card-height: 100px;
 
     .winner-title {
         height: 50px;
@@ -21,16 +22,30 @@
         .hand {
             position: relative;
             border: 1px dashed;
-            width: 200px;
-            height: 100px;
+            width: calc(2 * var(--card-width));
+            height: var(--card-height);
 
-            .play-card {
+            .game-card {
                 position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgb(49, 37, 18);
                 border: 1px solid blue;
+                border-radius: 8px;
                 top: 0;
                 left: 0;
                 width: var(--card-width);
                 height: 100%;
+
+                svg {
+                    height: 40px;
+                    width: 40px;
+
+                    & * {
+                        fill: white;
+                    }
+                }
 
                 &.player-play {
                     top: -150px;
