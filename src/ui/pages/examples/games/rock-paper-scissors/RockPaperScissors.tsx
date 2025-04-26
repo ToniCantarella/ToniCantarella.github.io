@@ -12,11 +12,12 @@ export const RockPaperScissorsGame = () => {
     const [playerCards, setPlayerCards] = useState<Hand[] | null>(null)
     const [playerPlay, setPlayerPlay] = useState<number | null>(null)
     const [computerPlay, setComputerPlay] = useState<Hand | null>(null)
+    const [computerPlayIndex, setComputerPlayIndex] = useState<number>(0)
     const [winnerTitle, setWinnerTitle] = useState<string | null>(null)
 
     const dealCards = () => {
         const newPlayerCards = generateDeck()
-        setComputerCards([1, 2])
+        setComputerCards([0, 1])
         setPlayerCards(newPlayerCards)
     }
 
@@ -37,6 +38,7 @@ export const RockPaperScissorsGame = () => {
         setPlayerPlay(index)
         const newComputerPlay = getCard()
         setComputerPlay(newComputerPlay)
+        setComputerPlayIndex(Math.floor(Math.random() * computerCards!.length))
         evaluateWinner(card, newComputerPlay)
     }
 
@@ -66,7 +68,7 @@ export const RockPaperScissorsGame = () => {
             <div className="game-board">
                 <div className="hand computer-hand">
                     {computerCards?.map((card, index) => {
-                        const isPlayedCard = index === computerPlay || (index === 1 && computerPlay === 2)
+                        const isPlayedCard = computerPlay != null && index === computerPlayIndex
                         return (
                             <div
                                 key={index}
