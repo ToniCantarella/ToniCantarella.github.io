@@ -20,8 +20,10 @@ export const Contact = () => {
                             <GithubIcon />
                         </a>
                     </div>
-                    <p>{t("contact.image-credits")}<a href="https://www.valokuvaajarosabianca.fi/" target="_blank">Rosa</a></p>
-                    <a href="/old/">old</a>
+                    <div>
+                        <p>{t("contact.image-credits")}<a href="https://www.valokuvaajarosabianca.fi/" target="_blank">Rosa</a></p>
+                        <p>{t("contact.old-site-text")}<a href="/old/">{t("contact.old-site-link")}</a></p>
+                    </div>
                 </div>
             </div>
         </Page>

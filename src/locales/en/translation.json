@@ -10,7 +10,7 @@
         "title": "Who?",
         "intro": "I'm a front-end focused software developer with {{year}} years of work experience in modern web and mobile development. My specialties lie in user-friendly products, where clarity, simplicity, and a pleasant user experience are most important.",
         "middle": "I put emphasis on responsiveness and visually deliberate user interfaces that serve the user intuitively. Technical skills coupled with a visual eye make me a developer who can not only build functional, but also beautiful experiences.",
-        "outro": "See in more detail what type of", 
+        "outro": "See in more detail what type of",
         "to-skills": " experience and skills ",
         "can-offer": "I can offer to your team."
     },
@@ -43,9 +43,27 @@
         "multiselect-sample-text": "Style me!",
         "switch-on": "On",
         "switch-off": "Off",
-        "button-sample-text": "Press"
+        "button-sample-text": "Press",
+        "searchbar-placeholder": "Search your shopping list...",
+        "apple": "Apple",
+        "orange": "Orange",
+        "grape": "Grape",
+        "pear": "Pear",
+        "banana": "Banana",
+        "sushi": "Sushi",
+        "fish": "Fish",
+        "bread": "Bread",
+        "clicker-game-button": "Click me!",
+        "clicker-upgrade": "Upgrade",
+        "rps-game-winner-player": "You won!",
+        "rps-game-winner-computer": "You lost!",
+        "rps-game-winner-tie": "Tie!",
+        "outro-article": "Did you like what you saw? Get in",
+        "to-contact": " contact!"
     },
     "contact": {
-        "image-credits": "All the images on this site were taken by my sister "
+        "image-credits": "All the images on this site were taken by my sister ",
+        "old-site-text": "Old version of this site is accessible",
+        "old-site-link": " here"
     }
 }

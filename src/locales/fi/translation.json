@@ -43,9 +43,27 @@
         "multiselect-sample-text": "Aseta muotoilu!",
         "switch-on": "On",
         "switch-off": "Off",
-        "button-sample-text": "Paina"
+        "button-sample-text": "Paina",
+        "searchbar-placeholder": "Hae ostoslistastasi...",
+        "apple": "Omena",
+        "orange": "Appelsiini",
+        "grape": "Rypäle",
+        "pear": "Päärynä",
+        "banana": "Banaani",
+        "sushi": "Sushi",
+        "fish": "Kala",
+        "bread": "Leipä",
+        "clicker-game-button": "Klikkaa minua!",
+        "clicker-upgrade": "Päivitys",
+        "rps-game-winner-player": "Sinä voitit!",
+        "rps-game-winner-computer": "Sinä hävisit!",
+        "rps-game-winner-tie": "Tasapeli!",
+        "outro-article": "Piditkö näkemästäsi? Ota",
+        "to-contact": " yhteyttä!"
     },
     "contact": {
-        "image-credits": "Kaikki kuvat tällä sivulla on ottanut siskoni "
+        "image-credits": "Kaikki kuvat tällä sivulla on ottanut siskoni ",
+        "old-site-text": "Vanha versio tästä sivustosta on saatavilla",
+        "old-site-link": " täällä"
     }
 }

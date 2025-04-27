@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import SearchIcon from "../../../../../assets/search.svg?react"
 import "./SearchAndFilter.scss"
+import { useTranslation } from "react-i18next"
 
 const FoodItems = [
     "apple",
@@ -31,21 +32,23 @@ enum Sort {
 }
 
 export const SearchAndSort = () => {
+    const { t } = useTranslation()
+    const localizedItems = SearchItems.map(item => ({ ...item, name: t(`examples.${item.name}`) }))
     const [searchQuery, setSearchQuery] = useState<string>("")
-    const [searchResults, setSearchResults] = useState<SearchItem[]>(SearchItems)
+    const [searchResults, setSearchResults] = useState<SearchItem[]>(localizedItems)
     const [costSort, setCostSort] = useState<Sort | null>(null)
     const [nameSort, setNameSort] = useState<Sort | null>(null)
 
     useEffect(() => {
         if (searchQuery.length > 2) {
             const timeout = setTimeout(() => {
-                const results = SearchItems.filter(item => item.name.includes(searchQuery.toLowerCase()))
+                const results = localizedItems.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
                 setSearchResults(results);
             }, 300)
 
             return () => clearTimeout(timeout);
         } else {
-            setSearchResults(SearchItems)
+            setSearchResults(localizedItems)
         }
     }, [searchQuery])
 
@@ -67,7 +70,7 @@ export const SearchAndSort = () => {
         setSearchQuery("")
         setCostSort(null)
         setNameSort(null)
-        setSearchResults(SearchItems)
+        setSearchResults(localizedItems)
     }
 
     return (
@@ -95,7 +98,7 @@ export const SearchAndSort = () => {
                         type="text"
                         value={searchQuery}
                         onChange={event => setSearchQuery(event.target.value)}
-                        placeholder="placehodler"
+                        placeholder={t("examples.searchbar-placeholder")}
                     />
                     <button
                         className="search-button"

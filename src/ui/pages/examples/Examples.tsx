@@ -112,8 +112,8 @@ export const Examples = () => {
                         />
                     </ExampleSection>
 
-                    <p>
-                        {t("examples.article")}
+                    <p className="outro-article">
+                        {t("examples.outro-article")}
                         <Link
                             onClick={() => navContext.onNavClick(Paths.CONTACT)}
                             to={Paths.CONTACT}

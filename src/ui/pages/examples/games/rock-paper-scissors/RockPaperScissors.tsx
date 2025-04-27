@@ -3,6 +3,7 @@ import RockIcon from "../../../../../assets/rock.svg?react"
 import PaperIcon from "../../../../../assets/paper.svg?react"
 import ScissorsIcon from "../../../../../assets/scissors.svg?react"
 import "./RockPaperScissors.scss"
+import { useTranslation } from "react-i18next"
 
 enum Hand {
     ROCK = 0,
@@ -30,6 +31,7 @@ export const RockPaperScissorsGame = () => {
     const [computerPlay, setComputerPlay] = useState<Hand | null>(null)
     const [computerPlayIndex, setComputerPlayIndex] = useState<number | null>(null)
     const [winnerTitle, setWinnerTitle] = useState<string | null>(null)
+    const {t} = useTranslation()
 
     const dealCards = () => {
         const newPlayerCards = generateDeck()
@@ -60,13 +62,14 @@ export const RockPaperScissorsGame = () => {
 
     const evaluateWinner = (player: Hand, computer: Hand) => {
         const playerWin = (player - computer + 3) % 3 === 1
+        const textBase = "examples.rps-game-winner-"
 
         if (player === computer) {
-            setWinnerTitle("tie")
+            setWinnerTitle(`${textBase}tie`)
         } else if (playerWin) {
-            setWinnerTitle("player")
+            setWinnerTitle(`${textBase}player`)
         } else {
-            setWinnerTitle("computer")
+            setWinnerTitle(`${textBase}computer`)
         }
     }
 
@@ -86,7 +89,7 @@ export const RockPaperScissorsGame = () => {
         <div id="rock-paper-scissors-game">
             {winnerTitle &&
                 <span className="winner-title">
-                    {winnerTitle}
+                    {t(winnerTitle)}
                 </span>
             }
             {winnerTitle &&
