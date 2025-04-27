@@ -49,7 +49,7 @@ function App() {
         <Background
           theme={theme}
         />
-        <Router>
+        <Router basename="/">
           {introPlaying && <Intro />}
           <TopBar />
           <AppContent />
