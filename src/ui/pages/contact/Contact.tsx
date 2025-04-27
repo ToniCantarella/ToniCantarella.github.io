@@ -21,6 +21,7 @@ export const Contact = () => {
                         </a>
                     </div>
                     <p>{t("contact.image-credits")}<a href="https://www.valokuvaajarosabianca.fi/" target="_blank">Rosa</a></p>
+                    <a href="/old/">old</a>
                 </div>
             </div>
         </Page>
