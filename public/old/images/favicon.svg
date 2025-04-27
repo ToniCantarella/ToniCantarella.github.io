@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="63.906384mm"
+   height="36.372799mm"
+   viewBox="0 0 63.906384 36.372799"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.72070006"
+     inkscape:cx="18.038017"
+     inkscape:cy="126.95989"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Taso 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-75.381003,-115.0324)">
+    <g
+       aria-label="TC"
+       id="text957"
+       style="font-size:50.8px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=500';font-variation-settings:'wght' 500;fill:#fb8b53;stroke-width:0.264583">
+      <path
+         d="M 87.573003,150.99879 V 119.8584 h -12.192 v -4.4196 H 104.7942 v 4.4196 H 92.602203 v 31.14039 z"
+         id="path246" />
+      <path
+         d="m 125.72379,151.40519 q -4.064,0 -7.5184,-1.3208 -3.4036,-1.3716 -5.9436,-3.81 -2.4892,-2.4892 -3.9116,-5.7912 -1.4224,-3.302 -1.4224,-7.2644 0,-3.9624 1.4224,-7.2644 1.4224,-3.302 3.9624,-5.74039 2.54,-2.4892 5.9436,-3.81 3.4544,-1.3716 7.5184,-1.3716 4.1148,0 7.5692,1.4224 3.5052,1.3716 5.9436,4.1148 l -3.302,3.20039 q -2.032,-2.1336 -4.572,-3.14959 -2.54,-1.0668 -5.4356,-1.0668 -2.9972,0 -5.588,1.016 -2.54,1.01599 -4.4196,2.84479 -1.8796,1.8288 -2.9464,4.3688 -1.016,2.4892 -1.016,5.4356 0,2.9464 1.016,5.4864 1.0668,2.4892 2.9464,4.318 1.8796,1.8288 4.4196,2.8448 2.5908,1.016 5.588,1.016 2.8956,0 5.4356,-1.016 2.54,-1.0668 4.572,-3.2512 l 3.302,3.2004 q -2.4384,2.7432 -5.9436,4.1656 -3.4544,1.4224 -7.62,1.4224 z"
+         id="path248" />
+    </g>
+  </g>
+</svg>
