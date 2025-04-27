@@ -2,6 +2,8 @@
 
 #skills {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 1;
     gap: 30px;
     justify-content: space-between;
@@ -11,6 +13,7 @@
 
     #timeline {
         flex: 1;
+        max-width: 50%;
 
         .timeperiod {
             display: flex;
@@ -102,8 +105,8 @@
                         min-width: 100px;
 
                         svg {
-                            height: 50px;
-                            width: 50px;
+                            height: 30px;
+                            width: 30px;
 
                             &#react {
                                 animation: react 4s linear infinite;
@@ -125,7 +128,7 @@
                     span {
                         width: 100%;
                         text-align: center;
-                        font-size: x-large;
+                        font-size: small;
                     }
                 }
             }
@@ -145,7 +148,7 @@
 
 @keyframes javascript {
     0% {
-        left: -10%;
+        left: 10%;
         rotate: -15deg;
         z-index: 1;
         opacity: 1;
@@ -163,7 +166,7 @@
     }
 
     50% {
-        left: calc(110% - 50px);
+        left: calc(90% - 30px);
         rotate: 15deg;
         z-index: 2;
         transform: scale(1);
@@ -174,7 +177,7 @@
     }
 
     100% {
-        left: -10%;
+        left: 10%;
         rotate: -15deg;
         z-index: 2;
         transform: scale(1);
@@ -183,7 +186,7 @@
 
 @keyframes typescript {
     0% {
-        right: -10%;
+        right: 10%;
         rotate: 15deg;
         z-index: 2;
         transform: scale(1);
@@ -198,7 +201,7 @@
     }
 
     50% {
-        right: calc(110% - 50px);
+        right: calc(90% - 30px);
         rotate: -15deg;
         z-index: 1;
         opacity: 1;
@@ -211,7 +214,7 @@
     }
 
     100% {
-        right: -10%;
+        right: 10%;
         rotate: 15deg;
         z-index: 1;
         opacity: 1;
@@ -221,7 +224,7 @@
 
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #skills {
-        flex-direction: column-reverse;
+        align-items: start;
 
         #skill-list {
 
@@ -230,24 +233,18 @@
                 .card {
                     .skill-card {
 
-                        gap: 0;
-
                         .logo {
                             svg {
-                                height: 30px;
-                                width: 30px;
                             }
                         }
 
-                        span {
-                            font-size: small;
-                        }
                     }
                 }
             }
         }
 
         #timeline {
+            max-width: 100%;
 
             .timeperiod {
 

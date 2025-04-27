@@ -19,9 +19,6 @@ export const AboutMe = () => {
                 <ImageCarousel />
 
                 <div id="article">
-                    <h1>
-                        {t("about-me.title")}
-                    </h1>
                     <p>
                         {t("about-me.intro", { year: year })}
                     </p>

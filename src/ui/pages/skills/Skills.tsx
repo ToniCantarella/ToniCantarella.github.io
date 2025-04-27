@@ -20,8 +20,8 @@ export const Skills = () => {
     return (
         <Page>
             <div id="skills">
-                <TimeLine />
                 <SkillList />
+                <TimeLine />
             </div>
         </Page>
     )
@@ -36,8 +36,6 @@ const TimeLine = () => {
 
     return (
         <div id="timeline">
-            <h1>{t("skills.experience")}</h1>
-
             <TimePeriod
                 year="8/2020"
                 title={t("skills.studies")}
@@ -116,12 +114,8 @@ const TimePeriod = (props: TimePeriodProps) => {
 }
 
 const SkillList = () => {
-    const { t } = useTranslation()
-
     return (
         <div id="skill-list">
-            <h1>{t("navigation.skills")}</h1>
-
             <div id="skill-grid">
                 <SkillCard
                     label="React"

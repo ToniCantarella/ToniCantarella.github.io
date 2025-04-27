@@ -1,5 +1,8 @@
+@use '../../breakpoints';
+
 #theme-picker {
-    --theme-button-size: 30px;
+    --theme-button-size: 25px;
+    --theme-button-size-mobile: 30px;
     --button-start-position: 50px;
 
     display: flex;
@@ -103,5 +106,21 @@
 
     100% {
         transform: translateY(0px);
+    }
+}
+
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
+    #theme-picker {
+
+        .theme-button {
+            border-radius: 50%;
+            height: var(--theme-button-size-mobile);
+            width: var(--theme-button-size-mobile);
+
+            svg {
+                max-width: calc(var(--theme-button-size-mobile) - 10px);
+                max-height: calc(var(--theme-button-size-mobile) - 10px);
+            }
+        }
     }
 }

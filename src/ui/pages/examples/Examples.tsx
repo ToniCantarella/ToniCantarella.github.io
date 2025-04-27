@@ -38,7 +38,6 @@ export const Examples = () => {
     return (
         <Page>
             <div id="examples">
-                <h1>{t("navigation.examples")}</h1>
                 <div className="examples-content">
 
                     <ExampleSection

@@ -10,9 +10,6 @@ export const Contact = () => {
     return (
         <Page>
             <div id="contact">
-                <h1>
-                    {t("navigation.contact")}
-                </h1>
                 <div id="contact-info">
                     <p>toni.cantarella@outlook.com</p>
                     <div id="socials">

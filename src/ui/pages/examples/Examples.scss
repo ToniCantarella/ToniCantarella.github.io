@@ -3,6 +3,7 @@
 #examples {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex: 1;
 
     h1 {
@@ -21,8 +22,8 @@
 
                 .card {
                     overflow: hidden;
-                    min-height: 100px;
-                    min-width: 200px;
+                    min-height: 70px;
+                    min-width: 150px;
 
                     .card-content {
                         display: flex;
@@ -35,7 +36,7 @@
 
                         .example-icon {
                             svg {
-                                height: 50px;
+                                height: 40px;
 
                                 * {
                                     fill: var(--on-surface-color);
@@ -44,7 +45,7 @@
                         }
 
                         span {
-                            font-size: x-large;
+                            font-size: medium;
                         }
                     }
                 }
