@@ -11,7 +11,7 @@ import torchImage from "../../../assets/torch.jpg"
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
     const { t } = useTranslation()
-    const year = new Date().getFullYear() - new Date("2022-05-30").getFullYear()
+    const yearsOfExperience = new Date().getFullYear() - new Date("2022-05-30").getFullYear()
 
     return (
         <Page>
@@ -20,7 +20,7 @@ export const AboutMe = () => {
 
                 <div id="article">
                     <p>
-                        {t("about-me.intro", { year: year })}
+                        {t("about-me.intro", { year: yearsOfExperience })}
                     </p>
                     <p>
                         {t("about-me.middle")}

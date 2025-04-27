@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import "./Examples.scss"
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { LoadingElements } from "./ui-elements/loaders/LoadingElements"
 import LoaderIcon from "../../../assets/loader.svg?react"
 import ButtonIcon from "../../../assets/button.svg?react"
@@ -16,12 +16,15 @@ import { Card } from "../../common/Card"
 import { ClickerGame } from "./games/clicker/Clicker"
 import { RockPaperScissorsGame } from "./games/rock-paper-scissors/RockPaperScissors"
 import { InputElements } from "./ui-elements/input/InputElements"
+import { Link } from "react-router-dom"
+import { NavigationContext, Paths } from "../../navigation/NavigationBar"
 
 export const Examples = () => {
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
     const [dialogTitle, setDialogTitle] = useState<string>("")
     const [dialogContent, setDialogContent] = useState<React.ReactNode>(null)
     const { t } = useTranslation()
+    const navContext = useContext(NavigationContext)
 
     const openDialog = (title: string, content: React.ReactNode) => {
         setDialogTitle(title)
@@ -108,6 +111,16 @@ export const Examples = () => {
                             }
                         />
                     </ExampleSection>
+
+                    <p>
+                        {t("examples.article")}
+                        <Link
+                            onClick={() => navContext.onNavClick(Paths.CONTACT)}
+                            to={Paths.CONTACT}
+                        >
+                            {`${t("examples.to-contact")}`}
+                        </Link>
+                    </p>
                 </div>
             </div>
             {dialogOpen &&
