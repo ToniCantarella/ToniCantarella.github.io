@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import { BrowserRouter as Router } from "react-router-dom"
-import { Intro } from "./ui/intro/Intro"
+import { BrowserRouter as Router } from "react-router-dom" 
 import { Background } from "./ui/AppBackground"
 import './App.scss'
 import "./ui/theme/theme-styles/DarkTheme.scss"
@@ -11,6 +10,7 @@ import { AppContent } from "./ui/AppContent"
 import { BottomBar } from "./ui/navigation/bottom-bar/BottomBar"
 import { ThemeContext } from "./ui/theme/theme-picker/ThemePicker"
 import { TopBar } from "./ui/navigation/top-bar/TopBar"
+import { Intro } from "./ui/intro/Intro"
 
 type AppContextType = {
   firstRender: boolean,
