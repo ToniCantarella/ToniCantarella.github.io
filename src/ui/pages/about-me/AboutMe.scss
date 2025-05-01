@@ -24,7 +24,8 @@
         flex-direction: column;
         position: absolute;
         top: 0;
-        left: 35%;;
+        left: 35%;
+        ;
         justify-content: space-between;
         align-items: center;
         width: 60%;
@@ -159,14 +160,21 @@
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #about-me {
         align-items: center;
-        justify-content: center;
+        gap: var(--medium-padding);
+        justify-content: end;
 
         #image-carousel {
+            position: relative;
+            inset: 0;
+            height: 50%;
             width: 100%;
         }
 
-        #article {
+        .card {
             max-width: 100%;
+            #article {
+                
+            }
         }
     }
 }

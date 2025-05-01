@@ -115,7 +115,8 @@ export const Examples = () => {
                                     )
                                 }
                             />
-                        </ExampleSection>}
+                        </ExampleSection>
+                    }
 
                     <p className="outro-article">
                         {t("examples.outro-article")}
