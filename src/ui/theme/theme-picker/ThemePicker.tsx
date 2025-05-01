@@ -23,15 +23,7 @@ export enum ThemeNames {
     NATURE = "nature"
 }
 
-export const themes: Theme[] = [
-    {
-        name: ThemeNames.DARK,
-        content: <DarkButton />
-    },
-    {
-        name: ThemeNames.LIGHT,
-        content: <LightButton />
-    },
+const onlyDevModeThemes: Theme[] = [
     {
         name: ThemeNames.NEUMORPHISM,
         content: <NeumorphismButton />,
@@ -54,6 +46,18 @@ export const themes: Theme[] = [
     }
 ]
 
+export const themes: Theme[] = [
+    {
+        name: ThemeNames.DARK,
+        content: <DarkButton />
+    },
+    {
+        name: ThemeNames.LIGHT,
+        content: <LightButton />
+    },
+    ...(import.meta.env.MODE === "development" ? onlyDevModeThemes : [])
+]
+
 export const ThemePicker = () => {
     const themeContext = useContext(ThemeContext)
     const appContext = useContext(AppContext)
@@ -64,7 +68,7 @@ export const ThemePicker = () => {
             className={`${appContext.introPlaying ? "hide" : ""}`}
         >
             {themes.map((theme, index) => (
-                (import.meta.env.MODE === 'development' && !theme.devOnly) && <button
+                <button
                     key={theme.name}
                     onClick={() => themeContext.setTheme(theme.name)}
                     className={`theme-button ${theme.name} ${themeContext.theme === theme.name ? "selected" : ""}`}
