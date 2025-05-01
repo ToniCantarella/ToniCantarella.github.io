@@ -10,6 +10,9 @@ export const Contact = () => {
     return (
         <Page>
             <div id="contact">
+                <div id="background-image-container">
+                    <div id="background-image"/>
+                </div>
                 <div id="contact-info">
                     <p>toni.cantarella@outlook.com</p>
                     <div id="socials">
@@ -22,7 +25,7 @@ export const Contact = () => {
                     </div>
                     <div>
                         <p>{t("contact.image-credits")}<a href="https://www.valokuvaajarosabianca.fi/" target="_blank">Rosa</a></p>
-                        <p>{t("contact.old-site-text")}<a href="/old/">{t("contact.old-site-link")}</a></p>
+                        <p id="old-site-text">{t("contact.old-site-text")}<a href="/old/">{t("contact.old-site-link")}</a></p>
                     </div>
                 </div>
             </div>
