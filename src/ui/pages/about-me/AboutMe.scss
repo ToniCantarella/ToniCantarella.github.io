@@ -32,6 +32,7 @@
         flex: 1;
         overflow: hidden;
         --image-fade: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        --indicator-shadow: 0 0 10px 2px var(--shadow-color);
         mask-image: var(--image-fade);
 
         img {
@@ -53,6 +54,7 @@
                 height: 100%;
                 width: 0;
                 background: var(--text-color);
+                box-shadow: var(--indicator-shadow);
             }
         }
 
@@ -71,6 +73,7 @@
                 height: var(--indicator-size);
                 width: var(--indicator-size);
                 background: var(--text-color);
+                box-shadow: var(--indicator-shadow);
                 opacity: .5;
             }
 
@@ -94,7 +97,7 @@
                 opacity: 0;
 
                 &:hover {
-                    opacity: .8;
+                    opacity: .5;
                 }
             }
         }
