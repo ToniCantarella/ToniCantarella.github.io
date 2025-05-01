@@ -166,15 +166,14 @@
         #image-carousel {
             position: relative;
             inset: 0;
-            height: 50%;
             width: 100%;
+            min-height: 200px;
+            flex: 1;
         }
 
         .card {
             max-width: 100%;
-            #article {
-                
-            }
+            flex: 2;
         }
     }
 }
