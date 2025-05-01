@@ -57,60 +57,65 @@ export const Examples = () => {
                             }
                         />
 
-                        <ExampleCard
-                            icon={<ButtonIcon />}
-                            label={t("examples.buttons")}
-                            onClick={() =>
-                                openDialog(
-                                    "examples.buttons",
-                                    <ButtonElements />
-                                )
-                            }
-                        />
+                        {import.meta.env.MODE === "development" &&
+                            <>
+                                <ExampleCard
+                                    icon={<ButtonIcon />}
+                                    label={t("examples.buttons")}
+                                    onClick={() =>
+                                        openDialog(
+                                            "examples.buttons",
+                                            <ButtonElements />
+                                        )
+                                    }
+                                />
 
-                        <ExampleCard
-                            icon={<InputIcon />}
-                            label={t("examples.input")}
-                            onClick={() =>
-                                openDialog(
-                                    "examples.input",
-                                    <InputElements />
-                                )
-                            }
-                        />
+                                <ExampleCard
+                                    icon={<InputIcon />}
+                                    label={t("examples.input")}
+                                    onClick={() =>
+                                        openDialog(
+                                            "examples.input",
+                                            <InputElements />
+                                        )
+                                    }
+                                />
+                            </>
+                        }
                     </ExampleSection>
 
-                    <ExampleSection
-                        title={t("examples.games")}
-                    >
-                        <ExampleCard
-                            icon={<ClickerIcon />}
-                            label={t("examples.clicker-game")}
-                            onClick={() =>
-                                openDialog(
-                                    "examples.clicker-game",
-                                    <ClickerGame />
-                                )
-                            }
-                        />
+                    {import.meta.env.MODE === "development" &&
+                        <ExampleSection
+                            title={t("examples.games")}
+                        >
+                            <ExampleCard
+                                icon={<ClickerIcon />}
+                                label={t("examples.clicker-game")}
+                                onClick={() =>
+                                    openDialog(
+                                        "examples.clicker-game",
+                                        <ClickerGame />
+                                    )
+                                }
+                            />
 
-                        <ExampleCard
-                            icon={
-                                <>
-                                    <RockIcon />
-                                    <PaperIcon />
-                                    <ScissorsIcon />
-                                </>
-                            }
-                            label={t("examples.rock-paper-scissors")}
-                            onClick={() =>
-                                openDialog(
-                                    "examples.rock-paper-scissors",
-                                    <RockPaperScissorsGame />
-                                )
-                            }
-                        />
-                    </ExampleSection>
+                            <ExampleCard
+                                icon={
+                                    <>
+                                        <RockIcon />
+                                        <PaperIcon />
+                                        <ScissorsIcon />
+                                    </>
+                                }
+                                label={t("examples.rock-paper-scissors")}
+                                onClick={() =>
+                                    openDialog(
+                                        "examples.rock-paper-scissors",
+                                        <RockPaperScissorsGame />
+                                    )
+                                }
+                            />
+                        </ExampleSection>}
 
                     <p className="outro-article">
                         {t("examples.outro-article")}
