@@ -1,6 +1,6 @@
 .dark-theme {
     /* Common */
-    --primary-color: #F2613F;
+    --primary-color: #FB8B53;
     --surface-color: #3a3734;
     --on-surface-color: var(--text-color);
     --blur-surface-color: rgba(34, 33, 32, 0.5);
@@ -10,7 +10,7 @@
     --close-button-color: var(--icon-color);
 
     --app-background: #292725;
-    --app-bar-background: var(--app-background);
+    --app-bar-background: var(--primary-color);
 
     --surface-border-radius: var(--medium-padding);
 
@@ -25,13 +25,26 @@
     #navigation-bar {
 
         .navigation-item {
-            color: var(--text-color);
-            opacity: .5;
+            color: white;
+
+            &::after {
+                content: " ";
+                opacity: 0;
+                position: absolute;
+                inset: 0;
+                width: 30%;
+                height: 100%;
+                background: var(--app-background);
+            }
 
             &:hover,
             &.selected {
-                color: white;
-                opacity: 1;
+
+                &::after {
+                    opacity: 1;
+                    width: 100%;
+                }
+
             }
         }
     }

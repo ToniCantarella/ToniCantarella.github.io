@@ -7,6 +7,7 @@ import { useContext, useEffect, useRef, useState } from "react"
 import winterImage from "../../../assets/winter.jpg"
 import motorbikeImage from "../../../assets/motorbike.jpg"
 import torchImage from "../../../assets/torch.jpg"
+import { Card } from "../../common/Card"
 
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
@@ -18,24 +19,26 @@ export const AboutMe = () => {
             <div id="about-me">
                 <ImageCarousel />
 
-                <div id="article">
-                    <p>
-                        {t("about-me.intro", { year: yearsOfExperience })}
-                    </p>
-                    <p>
-                        {t("about-me.middle")}
-                    </p>
-                    <p>
-                        {t("about-me.outro")}
-                        <Link
-                            onClick={() => navContext.onNavClick(Paths.SKILLS)}
-                            to={Paths.SKILLS}
-                        >
-                            {`${t("about-me.to-skills")}`}
-                        </Link>
-                        {t("about-me.can-offer")}
-                    </p>
-                </div>
+                <Card>
+                    <div id="article">
+                        <p>
+                            {t("about-me.intro", { year: yearsOfExperience })}
+                        </p>
+                        <p>
+                            {t("about-me.middle")}
+                        </p>
+                        <p>
+                            {t("about-me.outro")}
+                            <Link
+                                onClick={() => navContext.onNavClick(Paths.SKILLS)}
+                                to={Paths.SKILLS}
+                            >
+                                {`${t("about-me.to-skills")}`}
+                            </Link>
+                            {t("about-me.can-offer")}
+                        </p>
+                    </div>
+                </Card>
             </div>
         </Page>
     )
