@@ -10,7 +10,8 @@ import { AppContext } from "../../../App"
 
 type Theme = {
     name: string,
-    content: ReactElement
+    content: ReactElement,
+    devOnly?: boolean
 }
 
 export enum ThemeNames {
@@ -33,19 +34,23 @@ export const themes: Theme[] = [
     },
     {
         name: ThemeNames.NEUMORPHISM,
-        content: <NeumorphismButton />
+        content: <NeumorphismButton />,
+        devOnly: true
     },
     {
         name: ThemeNames.FRUTIGER_AERO,
-        content: <FrutigerAeroButton />
+        content: <FrutigerAeroButton />,
+        devOnly: true
     },
     {
         name: ThemeNames.RETRO,
-        content: <RetroButton />
+        content: <RetroButton />,
+        devOnly: true
     },
     {
         name: ThemeNames.NATURE,
-        content: <NatureButton />
+        content: <NatureButton />,
+        devOnly: true
     }
 ]
 
@@ -59,7 +64,7 @@ export const ThemePicker = () => {
             className={`${appContext.introPlaying ? "hide" : ""}`}
         >
             {themes.map((theme, index) => (
-                <button
+                (import.meta.env.MODE === 'development' && !theme.devOnly) && <button
                     key={theme.name}
                     onClick={() => themeContext.setTheme(theme.name)}
                     className={`theme-button ${theme.name} ${themeContext.theme === theme.name ? "selected" : ""}`}
