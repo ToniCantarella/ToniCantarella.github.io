@@ -7,7 +7,6 @@
 
     --start-buffer-duration: .5s;
     --color-swipe-duration: 2s;
-    --intro-logo-duration: 3s;
 
     #start-buffer {
         background-color: var(--app-background);
@@ -33,9 +32,8 @@
             animation: colorSwipe var(--color-swipe-duration) ease-in forwards;
         }
 
-        #intro-logo {
+        #intro-logo-wrapper {
             position: absolute;
-            visibility: hidden;
             height: 100%;
             width: 100%;
             display: flex;
@@ -44,8 +42,20 @@
             backdrop-filter: blur(10px);
             color: var(--on-surface-color);
             background: var(--blur-surface-color);
-            animation: introLogoAppear var(--intro-logo-duration) ease forwards;
-            animation-delay: 1s;
+            opacity: 0;
+
+            h1 {
+                span {
+                    display: inline-block;
+                    opacity: 0;
+                    font-size: 100px;
+                    animation: logoCharacter 1s ease forwards;
+
+                    &.first-name {
+                        color: var(--primary-color);
+                    }
+                }
+            }
         }
     }
 }
@@ -77,20 +87,34 @@
     }
 }
 
-@keyframes introLogoAppear {
+@keyframes introLogoAdd {
     0% {
-        visibility: hidden;
+        opacity: 0;
     }
 
-    10% {
-        visibility: visible;
+    100% {
+        opacity: 1;
     }
+}
 
-    90% {
+@keyframes introLogoRemove {
+    0% {
         opacity: 1;
     }
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes logoCharacter {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-15deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
     }
 }
