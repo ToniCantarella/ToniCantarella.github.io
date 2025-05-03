@@ -122,15 +122,34 @@
                         &#CSS {
                             z-index: 1;
                             position: absolute;
-                            animation: CSS 4s ease infinite;
+                            animation: CSS 3s ease infinite;
                         }
 
                         &#Scss {
                             z-index: 0;
                             position: absolute;
-                            animation: Scss 4s ease infinite;
+                            animation: Scss 3s ease infinite;
+                        }
+
+                        &#Kotlin {
+                            position: absolute;
+                            animation: Kotlin 2s ease infinite;
+                        }
+
+                        &#Android {
+                            position: absolute;
+                            animation: Android 2s ease infinite;
+                        }
+
+                        &#Git {
+                            animation: Git 4s ease infinite;
                         }
                     }
+                }
+
+                #heart {
+                    position: absolute;
+                    animation: heart 2s ease infinite;
                 }
 
                 span {
@@ -240,32 +259,32 @@
         transform: translateX(-50%);
     }
 
-    52% {
+    53% {
         left: 50%;
         transform: translateX(-50%) translateY(10%);
-    }
-
-    54% {
-        left: 50%;
-        transform: translateX(-50%) translateY(-10%);
     }
 
     56% {
         left: 50%;
-        transform: translateX(-50%) translateY(10%);
-    }
-
-    58% {
-        left: 50%;
         transform: translateX(-50%) translateY(-10%);
     }
 
-    60% {
+    59% {
         left: 50%;
         transform: translateX(-50%) translateY(10%);
     }
 
     62% {
+        left: 50%;
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    65% {
+        left: 50%;
+        transform: translateX(-50%) translateY(10%);
+    }
+
+    68% {
         left: 50%;
         transform: translateX(-50%) translateY(0);
     }
@@ -299,7 +318,7 @@
         filter: grayscale(1);
     }
 
-    62% {
+    68% {
         opacity: 0;
         right: 50%;
         transform: translateX(50%) translateY(0);
@@ -309,6 +328,109 @@
         opacity: 1;
         right: 10%;
         transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes Kotlin {
+    0% {
+        left: 10%;
+        transform: translateX(0);
+    }
+
+    50% {
+        left: 30%;
+        transform: translateX(-30%) rotate(10deg);
+    }
+
+    53% {
+        left: 30%;
+        transform: translateX(-30%) rotate(5deg);
+    }
+
+    56% {
+        left: 30%;
+        transform: translateX(-30%) rotate(10deg);
+    }
+
+    59% {
+        left: 30%;
+        transform: translateX(-30%) rotate(5deg);
+    }
+
+    62% {
+        left: 30%;
+        transform: translateX(-30%) rotate(10deg);
+    }
+
+    65% {
+        left: 30%;
+        transform: translateX(-30%) rotate(10deg);
+    }
+
+    100% {
+        left: 10%;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes Android {
+    0% {
+        right: 10%;
+        transform: translateX(0);
+    }
+
+    50% {
+        right: 30%;
+        transform: translateX(30%) rotate(-10deg);
+    }
+
+    53% {
+        right: 30%;
+        transform: translateX(30%) rotate(-5deg);
+    }
+
+    56% {
+        right: 30%;
+        transform: translateX(30%) rotate(-10deg);
+    }
+
+    59% {
+        right: 30%;
+        transform: translateX(30%) rotate(-5deg);
+    }
+
+    62% {
+        right: 30%;
+        transform: translateX(30%) rotate(-10deg);
+    }
+
+    65% {
+        right: 30%;
+        transform: translateX(30%) rotate(-10deg);
+    }
+
+    100% {
+        right: 10%;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes heart {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-150%);
     }
 }
 

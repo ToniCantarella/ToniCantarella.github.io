@@ -146,15 +146,16 @@ const SkillList = () => {
                     label="Kotlin & Android"
                     icon={
                         <>
-                            <KotlinIcon />
-                            <AndroidIcon />
+                            <KotlinIcon id="Kotlin"/>
+                            <span id="heart">❤️</span>
+                            <AndroidIcon id="Android"/>
                         </>
                     }
                 />
 
                 <SkillCard
                     label="Git"
-                    icon={<GitIcon />}
+                    icon={<GitIcon id="Git"/>}
                 />
             </div>
         </div>
