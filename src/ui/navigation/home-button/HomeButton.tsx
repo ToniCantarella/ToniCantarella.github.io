@@ -21,9 +21,7 @@ export const HomeButton = () => {
             id="home-button"
             className="navigation-item"
         >
-            <div>
-                T C
-            </div>
+            <span>T</span>{`\u00A0`}<span>C</span>
         </Link>
     )
 }

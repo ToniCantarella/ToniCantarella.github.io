@@ -1,2 +1,11 @@
 #home-button {
+
+    &:hover {
+        span {
+
+            &:first-child{
+                color: var(--primary-color);
+            }
+        }
+    }
 }
