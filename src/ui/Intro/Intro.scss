@@ -1,3 +1,5 @@
+@use '../breakpoints';
+
 #intro {
     position: absolute;
     overflow: hidden;
@@ -116,5 +118,22 @@
     100% {
         opacity: 1;
         transform: translateX(0) rotate(0deg);
+    }
+}
+
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
+    #intro {
+
+        #intro-content {
+
+            #intro-logo-wrapper {
+
+                h1 {
+                    span {
+                        font-size: unset;
+                    }
+                }
+            }
+        }
     }
 }
