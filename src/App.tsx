@@ -23,12 +23,14 @@ export const AppContext = createContext<AppContextType>({} as AppContextType)
 
 function App() {
   const { theme } = useContext(ThemeContext)
-  const firstRender: boolean = JSON.parse(localStorage.getItem("first-render") ?? "true")
+  const firstRenderKey = "first-time-render"
+  const firstRender: boolean = JSON.parse(localStorage.getItem(firstRenderKey) ?? "true")
   const [introPlaying, setIntroPlaying] = useState<boolean>(firstRender)
 
   useEffect(() => {
     if (firstRender) {
-      localStorage.setItem("first-render", JSON.stringify(false))
+      localStorage.clear()
+      localStorage.setItem(firstRenderKey, JSON.stringify(false))
     }
   }, [])
 
