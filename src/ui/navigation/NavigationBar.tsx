@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import "./Navigation.scss"
 import { createContext, ReactElement, useContext, useState } from "react"
 import { useTranslation } from "react-i18next"
@@ -9,100 +9,101 @@ import ContactIcon from "../../assets/message.svg?react"
 import { HomeButton } from "./home-button/HomeButton"
 
 type Page = {
-  pathname: string,
-  icon: ReactElement,
-  title: string
+	pathname: string,
+	icon: ReactElement,
+	title: string
 }
 
 export enum Paths {
-  ABOUT_ME = "/",
-  SKILLS = "/skills",
-  EXAMPLES = "/examples",
-  CONTACT = "/contact",
+	ABOUT_ME = "/",
+	SKILLS = "/skills",
+	EXAMPLES = "/examples",
+	CONTACT = "/contact",
 }
 
 export const Pages: Page[] = [
-  {
-    pathname: Paths.ABOUT_ME,
-    icon: <HomeIcon />,
-    title: "about-me"
-  },
-  {
-    pathname: Paths.SKILLS,
-    icon: <PathIcon />,
-    title: "skills"
-  },
-  {
-    pathname: Paths.EXAMPLES,
-    icon: <StarIcon />,
-    title: "examples"
-  },
-  {
-    pathname: Paths.CONTACT,
-    icon: <ContactIcon />,
-    title: "contact"
-  }
+	{
+		pathname: Paths.ABOUT_ME,
+		icon: <HomeIcon />,
+		title: "about-me"
+	},
+	{
+		pathname: Paths.SKILLS,
+		icon: <PathIcon />,
+		title: "skills"
+	},
+	{
+		pathname: Paths.EXAMPLES,
+		icon: <StarIcon />,
+		title: "examples"
+	},
+	{
+		pathname: Paths.CONTACT,
+		icon: <ContactIcon />,
+		title: "contact"
+	}
 ]
 
 export const NavigationContext = createContext<NavigationContextType>({} as NavigationContextType)
 
 export const NavigationBar = () => {
-  return (
-    <nav id="navigation-bar">
-      <HomeButton />
-      <NavigationItems />
-    </nav>
-  )
+	return (
+		<nav id="navigation-bar">
+			<HomeButton />
+			<NavigationItems />
+		</nav>
+	)
 }
 
 export const NavigationItems = (props: { icons?: boolean }) => {
-  const navContext = useContext(NavigationContext)
-  const { t } = useTranslation()
+	const location = useLocation()
+	const navContext = useContext(NavigationContext)
+	const { t } = useTranslation()
 
-  return Pages.map(page =>
-    <Link
-      className={`navigation-item ${navContext.currentPage === page.pathname ? "selected" : ""}`}
-      key={page.pathname}
-      onClick={() => navContext.onNavClick(page.pathname)}
-      to={page.pathname}
-    >
-      {props.icons && page.icon}
-      <span>
-        {t(`navigation.${page.title}`)}
-      </span>
-    </Link>
-  )
+	return Pages.map(page =>
+		<Link
+			className={`navigation-item ${location.pathname === page.pathname ? "selected" : ""}`}
+			key={page.pathname}
+			onClick={() => navContext.onNavClick(page.pathname)}
+			to={page.pathname}
+		>
+			{props.icons && page.icon}
+			<span>
+				{t(`navigation.${page.title}`)}
+			</span>
+		</Link>
+	)
 }
 
 type NavigationContextType = {
-  direction: boolean,
-  currentPage: string,
-  onNavClick: (pathname: string) => void
+	direction: boolean,
+	currentPage: string,
+	onNavClick: (pathname: string) => void
 }
 
 type NavigationProviderProps = {
-  children: ReactElement
+	children: ReactElement
 }
 
 export const NavigationProvider = (props: NavigationProviderProps) => {
-  const [previousPage, setPreviousPage] = useState<string>(location.pathname)
-  const [currentPage, setCurrentPage] = useState<string>(location.pathname)
-  const direction = (Pages.findIndex(page => page.pathname === currentPage)) < (Pages.findIndex(page => page.pathname === previousPage))
+	const [previousPage, setPreviousPage] = useState<string>(location.pathname)
+	const [currentPage, setCurrentPage] = useState<string>(location.pathname)
+	const direction = (Pages.findIndex(page => page.pathname === currentPage)) < (Pages.findIndex(page => page.pathname === previousPage))
 
-  const onNavClick = (pathName: string) => {
-    setPreviousPage(currentPage)
-    setCurrentPage(pathName)
-  }
+	const onNavClick = (pathName: string) => {
+		setPreviousPage(currentPage)
+		setCurrentPage(pathName)
+	}
 
-  const navigationContext = {
-    direction,
-    currentPage,
-    onNavClick
-  }
+	const navigationContext = {
+		direction,
+		currentPage,
+		onNavClick
+	}
 
-  return (
-    <NavigationContext.Provider value={navigationContext}>
-      {props.children}
-    </NavigationContext.Provider>
-  )
+	return (
+		<NavigationContext.Provider value={navigationContext}>
+			{props.children}
+		</NavigationContext.Provider>
+	)
 }
