@@ -5,7 +5,6 @@
     flex: 1;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
 
     --article-background: var(--blur-surface-color);
 
@@ -25,7 +24,6 @@
         align-items: center;
         width: 60%;
         height: 100%;
-        flex: 1;
         overflow: hidden;
         --image-fade: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
         --indicator-shadow: 0 0 10px 2px var(--shadow-color);
@@ -160,14 +158,14 @@
             position: relative;
             inset: 0;
             width: 100%;
-            min-height: 200px;
+            min-height: 300px;
             flex: 1;
         }
 
         .card {
-            flex: 1;
+            border: 1px dashed pink;
             max-width: 100%;
-            min-height: 100px;
+            flex: 2;
         }
     }
 }
