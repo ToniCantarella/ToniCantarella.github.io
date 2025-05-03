@@ -38,6 +38,13 @@
     font-weight: bold;
   }
 
+  #app-banner{
+    display: flex;
+    justify-content: center;
+    background: rgb(65, 82, 82);
+    color: white;
+  }
+
   #app-background {
     overflow: hidden;
     z-index: var(--app-background-z-index);

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import { BrowserRouter as Router } from "react-router-dom" 
+import { BrowserRouter as Router } from "react-router-dom"
 import { Background } from "./ui/AppBackground"
 import './App.scss'
 import "./ui/theme/theme-styles/DarkTheme.scss"
@@ -11,6 +11,7 @@ import { BottomBar } from "./ui/navigation/bottom-bar/BottomBar"
 import { ThemeContext } from "./ui/theme/theme-picker/ThemePicker"
 import { TopBar } from "./ui/navigation/top-bar/TopBar"
 import { Intro } from "./ui/intro/Intro"
+import { useTranslation } from "react-i18next"
 
 type AppContextType = {
   firstRender: boolean,
@@ -23,6 +24,7 @@ export const AppContext = createContext<AppContextType>({} as AppContextType)
 
 function App() {
   const { theme } = useContext(ThemeContext)
+  const {t} = useTranslation()
   const firstRenderKey = "first-time-render"
   const firstRender: boolean = JSON.parse(localStorage.getItem(firstRenderKey) ?? "true")
   const [introPlaying, setIntroPlaying] = useState<boolean>(firstRender)
@@ -53,7 +55,10 @@ function App() {
         />
         <Router basename="/">
           {introPlaying && <Intro />}
-          <TopBar />
+          <div>
+            <div id="app-banner">🚧 {t("under-construction")} 🚧</div>
+            <TopBar />
+          </div>
           <AppContent />
           <BottomBar />
         </Router>
