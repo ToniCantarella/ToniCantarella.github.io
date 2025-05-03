@@ -32,8 +32,8 @@
                 background: none;
                 text-decoration: none;
                 color: var(--text-color);
-                opacity: .4;
                 padding: 0;
+                scale: .9;
 
                 span {
                     font-size: small;
@@ -51,7 +51,7 @@
 
                 &.selected,
                 &:hover {
-                    opacity: 1;
+                    scale: 1;
 
                     * {
                         fill: var(--text-color);
