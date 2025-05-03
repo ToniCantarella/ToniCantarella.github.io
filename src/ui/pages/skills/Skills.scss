@@ -9,6 +9,7 @@
     justify-content: space-between;
 
     --path-line-color: var(--text-color);
+    --icon-size: 30px;
 
     #timeline {
         flex: 1;
@@ -81,55 +82,61 @@
         #skill-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--medium-padding);
+            gap: var(--small-padding);
 
             .card {
                 display: flex;
                 padding: var(--medium-padding) var(--large-padding);
                 flex: 1;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
 
-                .skill-card {
+                .logo {
                     display: flex;
-                    flex-direction: column;
-                    gap: var(--small-padding);
-                    align-items: center;
-                    justify-content: space-between;
-                    flex: 1;
+                    gap: var(--medium-padding);
+                    justify-content: center;
+                    position: relative;
+                    min-height: 50px;
+                    min-width: 100px;
 
-                    .logo {
-                        display: flex;
-                        gap: var(--medium-padding);
-                        justify-content: center;
-                        position: relative;
-                        min-height: 50px;
-                        min-width: 100px;
+                    svg {
+                        height: var(--icon-size);
+                        width: var(--icon-size);
 
-                        svg {
-                            height: 30px;
-                            width: 30px;
+                        &#react {
+                            animation: react 4s linear infinite;
+                        }
 
-                            &#react {
-                                animation: react 4s linear infinite;
-                            }
+                        &#javascript {
+                            border-radius: 2px;
+                            position: absolute;
+                            animation: javascript 2s ease-in-out infinite;
+                        }
 
-                            &#javascript {
-                                border-radius: 5px;
-                                position: absolute;
-                                animation: javascript 2s ease-in-out infinite;
-                            }
+                        &#typescript {
+                            position: absolute;
+                            animation: typescript 2s ease-in-out infinite;
+                        }
 
-                            &#typescript {
-                                position: absolute;
-                                animation: typescript 2s ease-in-out infinite;
-                            }
+                        &#CSS {
+                            z-index: 1;
+                            position: absolute;
+                            animation: CSS 4s ease infinite;
+                        }
+
+                        &#Scss {
+                            z-index: 0;
+                            position: absolute;
+                            animation: Scss 4s ease infinite;
                         }
                     }
+                }
 
-                    span {
-                        width: 100%;
-                        text-align: center;
-                        font-size: small;
-                    }
+                span {
+                    width: 100%;
+                    text-align: center;
+                    font-size: small;
                 }
             }
         }
@@ -166,7 +173,7 @@
     }
 
     50% {
-        left: calc(90% - 30px);
+        left: calc(90% - var(--icon-size));
         rotate: 15deg;
         z-index: 2;
         transform: scale(1);
@@ -201,7 +208,7 @@
     }
 
     50% {
-        right: calc(90% - 30px);
+        right: calc(90% - var(--icon-size));
         rotate: -15deg;
         z-index: 1;
         opacity: 1;
@@ -222,16 +229,92 @@
     }
 }
 
+@keyframes CSS {
+    0% {
+        left: 10%;
+        transform: translateX(0);
+    }
+
+    50% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    52% {
+        left: 50%;
+        transform: translateX(-50%) translateY(10%);
+    }
+
+    54% {
+        left: 50%;
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    56% {
+        left: 50%;
+        transform: translateX(-50%) translateY(10%);
+    }
+
+    58% {
+        left: 50%;
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    60% {
+        left: 50%;
+        transform: translateX(-50%) translateY(10%);
+    }
+
+    62% {
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        left: 10%;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes Scss {
+    0% {
+        right: 10%;
+        transform: translateX(0);
+        filter: grayscale(1);
+    }
+
+    25% {
+        scale: 1;
+    }
+
+    50% {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    52% {
+        right: 50%;
+        scale: .2;
+        opacity: 0;
+        filter: grayscale(1);
+    }
+
+    62% {
+        opacity: 0;
+        right: 50%;
+        transform: translateX(50%) translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        right: 10%;
+        transform: translateX(0) translateY(0);
+    }
+}
+
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #skills {
         align-items: start;
-
-        #skill-list {
-
-            #skill-grid {
-                gap: var(--small-padding);
-            }
-        }
 
         #timeline {
             max-width: 100%;

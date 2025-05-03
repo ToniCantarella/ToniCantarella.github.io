@@ -136,8 +136,8 @@ const SkillList = () => {
                     label="CSS & Sass"
                     icon={
                         <>
-                            <CssIcon />
-                            <ScssIcon />
+                            <CssIcon id="CSS"/>
+                            <ScssIcon id="Scss"/>
                         </>
                     }
                 />
@@ -170,12 +170,10 @@ const SkillCard = (props: SkillCardProps) => {
 
     return (
         <Card>
-            <div className="skill-card">
-                <div className="logo">
-                    {props.icon}
-                </div>
-                <span>{props.label}</span>
+            <div className="logo">
+                {props.icon}
             </div>
+            <span>{props.label}</span>
         </Card>
     )
 }
