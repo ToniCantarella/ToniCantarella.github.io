@@ -136,8 +136,8 @@ const SkillList = () => {
                     label="CSS & Sass"
                     icon={
                         <>
-                            <CssIcon id="CSS"/>
-                            <ScssIcon id="Scss"/>
+                            <CssIcon id="CSS" />
+                            <ScssIcon id="Scss" />
                         </>
                     }
                 />
@@ -146,17 +146,18 @@ const SkillList = () => {
                     label="Kotlin & Android"
                     icon={
                         <>
-                            <KotlinIcon id="Kotlin"/>
+                            <KotlinIcon id="Kotlin" />
                             <span id="heart">❤️</span>
-                            <AndroidIcon id="Android"/>
+                            <AndroidIcon id="Android" />
                         </>
                     }
                 />
-
-                <SkillCard
-                    label="Git"
-                    icon={<GitIcon id="Git"/>}
-                />
+                {import.meta.env.MODE === "development" &&
+                    <SkillCard
+                        label="Git"
+                        icon={<GitIcon id="Git" />}
+                    />
+                }
             </div>
         </div>
     )
