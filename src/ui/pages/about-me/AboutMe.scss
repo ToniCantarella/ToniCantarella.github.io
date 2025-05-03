@@ -21,7 +21,6 @@
         position: absolute;
         top: 0;
         left: 35%;
-        ;
         justify-content: space-between;
         align-items: center;
         width: 60%;
@@ -155,9 +154,7 @@
 
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
     #about-me {
-        align-items: center;
         gap: var(--medium-padding);
-        justify-content: end;
 
         #image-carousel {
             position: relative;
@@ -168,8 +165,9 @@
         }
 
         .card {
+            flex: 1;
             max-width: 100%;
-            flex: 2;
+            min-height: 100px;
         }
     }
 }
