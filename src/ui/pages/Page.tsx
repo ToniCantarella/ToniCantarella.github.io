@@ -25,8 +25,10 @@ export const Page = (props: PageProps) => {
       exit={animateOut}
       transition={{ duration: .3 }}
     >
-      <div className="content">
-        {props.children}
+      <div className="page-inner">
+        <div className="content">
+          {props.children}
+        </div>
       </div>
     </motion.div>
   )

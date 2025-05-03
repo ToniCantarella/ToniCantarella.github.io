@@ -7,13 +7,13 @@
     flex: 1;
     gap: 30px;
     justify-content: space-between;
-    padding-bottom: var(--extra-large-padding);
 
     --path-line-color: var(--text-color);
 
     #timeline {
         flex: 1;
         max-width: 50%;
+        padding-bottom: var(--extra-large-padding);
 
         .timeperiod {
             display: flex;
@@ -230,16 +230,6 @@
 
             #skill-grid {
                 gap: var(--small-padding);
-                .card {
-                    .skill-card {
-
-                        .logo {
-                            svg {
-                            }
-                        }
-
-                    }
-                }
             }
         }
 
