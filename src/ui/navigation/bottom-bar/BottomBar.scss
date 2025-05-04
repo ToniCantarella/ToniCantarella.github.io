@@ -18,7 +18,7 @@
             position: relative;
             display: flex;
             background: var(--app-bar-background);
-            border-top: 1px solid var(--text-color);
+            border-top: 1px solid var(--on-surface-color);
             justify-content: space-around;
 
             .navigation-item,
@@ -31,31 +31,36 @@
                 line-height: 23px;
                 background: none;
                 text-decoration: none;
-                color: var(--text-color);
+                color: var(--on-surface-color);
                 padding: 0;
-                scale: .9;
 
                 span {
                     font-size: small;
                 }
 
                 svg {
+                    scale: .8;
+                    opacity: .8;
                     height: 40px;
                     width: 40px;
 
                     * {
                         fill: none;
-                        stroke: var(--text-color);
+                        stroke: var(--on-surface-color);
                     }
                 }
 
                 &.selected,
                 &:hover {
-                    scale: 1;
+                    svg {
+                        scale: 1.2;
+                        opacity: 1;
 
-                    * {
-                        fill: var(--text-color);
-                        stroke: none;
+                        & * {
+                            fill: var(--on-surface-color);
+                            stroke: none;
+
+                        }
                     }
                 }
             }
@@ -67,8 +72,8 @@
             top: 0;
             right: 0;
             background: var(--app-bar-background);
-            border-top: 1px solid var(--text-color);
-            border-left: 1px solid var(--text-color);
+            border-top: 1px solid var(--on-surface-color);
+            border-left: 1px solid var(--on-surface-color);
             border-top-left-radius: var(--medium-padding);
 
             &.open {
