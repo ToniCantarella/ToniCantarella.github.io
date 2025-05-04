@@ -91,6 +91,22 @@
                 background: var(--text-color);
                 opacity: 0;
 
+                svg * {
+                    fill: var(--app-background);
+                }
+
+                &#previous-image {
+                    svg {
+                        rotate: -90deg;
+                    }
+                }
+
+                &#next-image {
+                    svg {
+                        rotate: 90deg;
+                    }
+                }
+
                 &:hover {
                     opacity: .5;
                 }

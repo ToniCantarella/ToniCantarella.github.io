@@ -7,6 +7,7 @@ import { useContext, useEffect, useRef, useState } from "react"
 import winterImage from "../../../assets/winter.jpg"
 import motorbikeImage from "../../../assets/motorbike.jpg"
 import torchImage from "../../../assets/torch.jpg"
+import ArrowIcon from "../../../assets/arrow.svg?react"
 import { Card } from "../../common/Card"
 
 export const AboutMe = () => {
@@ -133,11 +134,17 @@ const ImageCarousel = () => {
 
             <div id="image-controls">
                 <button
+                    id="previous-image"
                     onClick={() => previousImage()}
-                >{'<'}</button>
+                >
+                    <ArrowIcon />
+                </button>
                 <button
+                    id="next-image"
                     onClick={() => nextImage()}
-                >{'>'}</button>
+                >
+                    <ArrowIcon />
+                </button>
             </div>
         </div>
     )
