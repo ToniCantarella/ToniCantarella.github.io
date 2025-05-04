@@ -1,76 +1,79 @@
 @use './ui/breakpoints';
 
 #app {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 
-  --extra-small-padding: 4px;
-  --small-padding: 8px;
-  --medium-padding: 16px;
-  --large-padding: 24px;
-  --extra-large-padding: 32px;
+	--extra-small-padding: 4px;
+	--small-padding: 8px;
+	--medium-padding: 16px;
+	--large-padding: 24px;
+	--extra-large-padding: 32px;
 
-  --content-max-width: 1200px;
+	--content-max-width: 1200px;
 
-  --top-bar-height: 50px;
-  --bottom-bar-height: 100px;
-  --app-bar-z-index: 2;
+	--top-bar-height: 50px;
+	--bottom-bar-height: 100px;
+	--app-bar-z-index: 2;
 
-  --app-background-z-index: -1;
+	--app-background-z-index: -1;
 
-  &,
-  & *,
-  & *::after {
-    transition: all .2s;
-  }
+	&,
+	& *,
+	& *::after {
+		transition: all .2s;
+	}
 
-  button {
-    border: none;
+	button {
+		border: none;
 
-    &:hover {
-      cursor: pointer;
-    }
-  }
+		&:hover {
+			cursor: pointer;
+		}
+	}
 
-  p {
-    font-weight: bold;
-  }
+	p {
+		font-weight: bold;
+	}
 
-  #app-banner{
-    display: flex;
-    justify-content: center;
-    background: rgb(65, 82, 82);
-    color: white;
-  }
+	#app-bar {
+		z-index: var(--app-bar-z-index);
+		#app-banner {
+			display: flex;
+			justify-content: center;
+			background: rgb(65, 82, 82);
+			color: white;
+		}
+	}
 
-  #app-background {
-    overflow: hidden;
-    z-index: var(--app-background-z-index);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
+	#app-background {
+		overflow: hidden;
+		z-index: var(--app-background-z-index);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
 
-  #app-content {
-    margin-top: var(--top-bar-height);
-    position: relative;
-    overflow-x: hidden;
-    flex: 1;
+	#app-content {
+		margin-top: var(--top-bar-height);
+		position: relative;
+		overflow-x: hidden;
+		flex: 1;
 
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-  }
+		a {
+			color: var(--primary-color);
+			text-decoration: none;
+		}
+	}
 }
 
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
-  #app {
-    #app-content {
-      margin-top: 0;
-      margin-bottom: var(--bottom-bar-height);
-    }
-  }
+	#app {
+		#app-content {
+			margin-top: 0;
+			margin-bottom: var(--bottom-bar-height);
+		}
+	}
 }

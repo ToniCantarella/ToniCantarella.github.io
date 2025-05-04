@@ -14,57 +14,57 @@ import { Intro } from "./ui/intro/Intro"
 import { useTranslation } from "react-i18next"
 
 type AppContextType = {
-  firstRender: boolean,
-  introPlaying: boolean,
-  setIntroPlaying: (introPlaying: boolean) => void,
-  playIntro: () => void
+	firstRender: boolean,
+	introPlaying: boolean,
+	setIntroPlaying: (introPlaying: boolean) => void,
+	playIntro: () => void
 }
 
 export const AppContext = createContext<AppContextType>({} as AppContextType)
 
 function App() {
-  const { theme } = useContext(ThemeContext)
-  const {t} = useTranslation()
-  const firstRenderKey = "first-time-render"
-  const firstRender: boolean = JSON.parse(localStorage.getItem(firstRenderKey) ?? "true")
-  const [introPlaying, setIntroPlaying] = useState<boolean>(firstRender)
+	const { theme } = useContext(ThemeContext)
+	const { t } = useTranslation()
+	const firstRenderKey = "first-time-render"
+	const firstRender: boolean = JSON.parse(localStorage.getItem(firstRenderKey) ?? "true")
+	const [introPlaying, setIntroPlaying] = useState<boolean>(firstRender)
 
-  useEffect(() => {
-    if (firstRender) {
-      localStorage.clear()
-      localStorage.setItem(firstRenderKey, JSON.stringify(false))
-    }
-  }, [])
+	useEffect(() => {
+		if (firstRender) {
+			localStorage.clear()
+			localStorage.setItem(firstRenderKey, JSON.stringify(false))
+		}
+	}, [])
 
-  const playIntro = () => {
-    setIntroPlaying(true)
-  }
+	const playIntro = () => {
+		setIntroPlaying(true)
+	}
 
-  const appContext = {
-    firstRender,
-    introPlaying,
-    setIntroPlaying,
-    playIntro
-  }
+	const appContext = {
+		firstRender,
+		introPlaying,
+		setIntroPlaying,
+		playIntro
+	}
 
-  return (
-    <AppContext.Provider value={appContext}>
-      <div id="app" className={theme}>
-        <Background
-          theme={theme}
-        />
-        <Router basename="/">
-          {introPlaying && <Intro />}
-          <div>
-            <div id="app-banner">🚧 {t("under-construction")} 🚧</div>
-            <TopBar />
-          </div>
-          <AppContent />
-          <BottomBar />
-        </Router>
-      </div>
-    </AppContext.Provider>
-  )
+	return (
+		<AppContext.Provider value={appContext}>
+			<div id="app" className={theme}>
+				<Background
+					theme={theme}
+				/>
+				<Router basename="/">
+					{introPlaying && <Intro />}
+					<div id="app-bar">
+						<div id="app-banner">🚧 {t("under-construction")} 🚧</div>
+						<TopBar />
+					</div>
+					<AppContent />
+					<BottomBar />
+				</Router>
+			</div>
+		</AppContext.Provider>
+	)
 }
 
 export default App
