@@ -11,14 +11,39 @@ import ArrowIcon from "../../../assets/arrow.svg?react"
 import { Card } from "../../common/Card"
 
 export const AboutMe = () => {
+    const [loadingImages, setLoadingImages] = useState<boolean>(true)
     const navContext = useContext(NavigationContext)
     const { t } = useTranslation()
     const yearsOfExperience = new Date().getFullYear() - new Date("2022-05-30").getFullYear()
 
+    const images = [
+        winterImage,
+        motorbikeImage,
+        torchImage
+    ]
+
+    const loadImages = () => {
+        images.forEach((source, index) => {
+            const img = new Image()
+            img.src = source
+            if (index === 0) {
+                setLoadingImages(false)
+            }
+        })
+    }
+
+    useEffect(() => {
+        loadImages()
+    }, [])
+
     return (
         <Page>
             <div id="about-me">
-                <ImageCarousel />
+                {!loadingImages &&
+                    <ImageCarousel
+                        images={images}
+                    />
+                }
 
                 <Card>
                     <div id="article">
@@ -45,7 +70,7 @@ export const AboutMe = () => {
     )
 }
 
-const ImageCarousel = () => {
+const ImageCarousel = (props: { images: string[] }) => {
     const [currentImage, setCurrentImage] = useState<number>(0)
     const [animateIn, setAnimateIn] = useState<boolean>(true)
     const [direction, setDirection] = useState<boolean>(true)
@@ -53,12 +78,6 @@ const ImageCarousel = () => {
     const intervalRef = useRef<number | null>(null)
     const stayDuration = 10000
     const animationDuration = 500
-
-    const images = [
-        winterImage,
-        motorbikeImage,
-        torchImage
-    ]
 
     const handleInterval = () => {
         setProgress(0)
@@ -74,7 +93,7 @@ const ImageCarousel = () => {
         setDirection(true)
         setTimeout(() => {
             setAnimateIn(true)
-            setCurrentImage(prev => (prev + 1) % images.length)
+            setCurrentImage(prev => (prev + 1) % props.images.length)
             handleInterval()
         }, animationDuration)
     }
@@ -85,7 +104,7 @@ const ImageCarousel = () => {
         setAnimateIn(false)
         setTimeout(() => {
             setAnimateIn(true)
-            setCurrentImage(prev => (prev - 1 + images.length) % images.length)
+            setCurrentImage(prev => (prev - 1 + props.images.length) % props.images.length)
             handleInterval()
         }, animationDuration)
     }
@@ -114,7 +133,7 @@ const ImageCarousel = () => {
         <div id="image-carousel">
             <img
                 key={currentImage}
-                src={images[currentImage]}
+                src={props.images[currentImage]}
                 alt="about-me"
                 style={{
                     animationDuration: `${animationDuration / 1000}s`,
@@ -128,7 +147,7 @@ const ImageCarousel = () => {
                 progress={progress}
             />
             <Indicator
-                length={images.length}
+                length={props.images.length}
                 currentIndex={currentImage}
             />
 
