@@ -1,8 +1,10 @@
 .light-theme {
     /* Common */
     --primary-color: #FB8B53;
-    --surface-color: #8d887b;
-    --on-surface-color: var(--app-background);
+    --on-primary-color: var(--app-background);
+    --surface-color: #fffefc;
+    --on-surface-color: var(--text-color);
+    --dialog-color: var(--app-background);
     --blur-surface-color: rgba(34, 33, 32, 0.6);
     --text-color: #39393a;
     --shadow-color: #948b76;
@@ -25,7 +27,7 @@
     #navigation-bar {
 
         .navigation-item {
-            color: var(--app-background);
+            color: var(--on-primary-color);
 
             &::after {
                 content: " ";
