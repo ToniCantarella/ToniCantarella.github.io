@@ -29,30 +29,25 @@ export const Dialog = (props: DialogProps) => {
             className={`${isClosing ? "closing" : ""}`}
             style={{
                 animationDuration: `.${outAnimationDelay / 100}s`
-            }
-            }
+            }}
         >
             <div id="inner">
                 <div id="dialog-background" onClick={onClose} />
-                <div id="dialog-content">
                     <Card>
-                        <>
-                            <div id="header">
-                                {props.title &&
-                                    <h1>{t(props.title)}</h1>
-                                }
-                                <button
-                                    id="close-button"
-                                    onClick={onClose}>
-                                    <CloseIcon />
-                                </button>
-                            </div>
-                            <div id="card-content">
-                                {props.children}
-                            </div>
-                        </>
+                        <div id="header">
+                            {props.title &&
+                                <h1>{t(props.title)}</h1>
+                            }
+                            <button
+                                id="close-button"
+                                onClick={onClose}>
+                                <CloseIcon />
+                            </button>
+                        </div>
+                        <div id="card-content">
+                            {props.children}
+                        </div>
                     </Card>
-                </div>
             </div>
         </div>,
         document.getElementById("app")!
