@@ -1,17 +1,33 @@
+import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Page } from "../Page"
-import "./Contact.scss"
+import CupImage from "../../../assets/cup.jpg"
 import GithubIcon from "../../../assets/github.svg?react"
 import LinkedInIcon from "../../../assets/linkedin.svg?react"
+import { Page } from "../Page"
+import "./Contact.scss"
 
 export const Contact = () => {
+    const [imageLoading, setImageLoading] = useState<boolean>(true)
     const { t } = useTranslation()
+
+    useEffect(() => {
+        const img = new Image()
+        img.src = CupImage
+        img.onload = () => setImageLoading(false)
+    }, [])
 
     return (
         <Page>
             <div id="contact">
                 <div id="background-image-container">
-                    <div id="background-image"/>
+                    {!imageLoading &&
+                        <div
+                            id="background-image"
+                            style={{
+                                backgroundImage: `url(${CupImage})`
+                            }}
+                        />
+                    }
                 </div>
                 <div id="contact-info">
                     <p>toni.cantarella@outlook.com</p>
