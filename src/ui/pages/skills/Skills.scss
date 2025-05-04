@@ -46,9 +46,11 @@
                 }
 
                 .line {
+                    position: absolute;
+                    margin-top: 55px;
                     width: 4px;
                     border-radius: 2px;
-                    height: 100%;
+                    height: 85%;
                     border: 2px solid var(--path-line-color);
                     opacity: .5;
                 }
@@ -60,15 +62,14 @@
                         border-right: none;
                         border-left: 5px dotted var(--path-line-color);
 
-
                         &::after {
                             position: absolute;
                             content: " ";
                             border-left: 10px solid transparent;
                             border-right: 10px solid transparent;
                             border-top: 20px solid var(--path-line-color);
-                            bottom: -3px;
-                            left: -3px;
+                            bottom: -7px;
+                            left: -12px;
                         }
                     }
                 }

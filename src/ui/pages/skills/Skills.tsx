@@ -100,7 +100,7 @@ const TimePeriod = (props: TimePeriodProps) => {
             </div>
             <div className="path">
                 <div className="dot">
-                    <div></div>
+                    <div/>
                 </div>
                 <div className="line"></div>
             </div>
