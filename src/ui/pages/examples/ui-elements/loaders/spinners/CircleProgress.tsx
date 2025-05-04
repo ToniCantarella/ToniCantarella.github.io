@@ -18,7 +18,7 @@ export const CircleProgress = () => {
 
     return (
         <Loader>
-            <div id="circle-progress">
+            <div className="circle-progress">
                 <span>{`${progress}%`}</span>
                 <svg viewBox="0 0 100 100">
                     <circle

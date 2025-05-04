@@ -1,14 +1,15 @@
-import { useTranslation } from "react-i18next"
-import { Page } from "../Page"
-import "./AboutMe.scss"
-import { Link } from "react-router-dom"
-import { NavigationContext, Paths } from "../../navigation/NavigationBar"
 import { useContext, useEffect, useRef, useState } from "react"
-import winterImage from "../../../assets/winter.jpg"
+import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
+import ArrowIcon from "../../../assets/arrow.svg?react"
 import motorbikeImage from "../../../assets/motorbike.jpg"
 import torchImage from "../../../assets/torch.jpg"
-import ArrowIcon from "../../../assets/arrow.svg?react"
+import winterImage from "../../../assets/winter.jpg"
 import { Card } from "../../common/Card"
+import { IndexIndicator } from "../../common/IndexIndicator"
+import { NavigationContext, Paths } from "../../navigation/NavigationBar"
+import { Page } from "../Page"
+import "./AboutMe.scss"
 
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
@@ -165,26 +166,6 @@ const ImageCarousel = (props: { images: string[] }) => {
                     <ArrowIcon />
                 </button>
             </div>
-        </div>
-    )
-}
-
-const IndexIndicator = (props: { length: number, currentIndex: number }) => {
-    return (
-        <div id="image-indicator">
-            <div
-                id="current"
-                className="indicator"
-                style={{
-                    left: `calc(${props.currentIndex} * var(--indicator-size) * 2)`
-                }}
-            />
-            {Array.from({ length: props.length }, (_, indicator) => (
-                <div
-                    key={indicator}
-                    className="indicator"
-                />
-            ))}
         </div>
     )
 }

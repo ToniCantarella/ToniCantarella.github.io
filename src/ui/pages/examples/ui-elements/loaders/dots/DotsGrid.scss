@@ -1,8 +1,10 @@
-#dots-grid {
+.dots-grid {
     display: grid;
     height: 100%;
     width: 100%;
     grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    align-items: center;
 
     .dot {
         opacity: 0;

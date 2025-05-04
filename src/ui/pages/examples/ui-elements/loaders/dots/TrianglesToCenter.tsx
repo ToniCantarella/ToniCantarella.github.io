@@ -4,7 +4,7 @@ import "./TrianglesToCenter.scss"
 export const TrianglesToCenter = () => {
     return (
         <Loader>
-            <div id="grid-to-center">
+            <div className="grid-to-center">
                 {Array.from({ length: 3 }, (_, i) => (
                     <div
                         key={i}

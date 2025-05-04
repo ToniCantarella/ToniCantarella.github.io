@@ -1,12 +1,85 @@
+@use '../../../breakpoints';
+
 #ui-element-dialog-content {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: var(--extra-large-padding);
-    gap: var(--extra-large-padding);
+    overflow: hidden;
 
-    .ui-element-row {
-        display: flex;
+    #ui-element-dialog-inner {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
         gap: var(--extra-large-padding);
+        position: relative;
+        padding: var(--extra-large-padding);
+
+        .ui-element {}
+    }
+
+    .controls {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: breakpoints.$mobile-breakpoint) {
+    #ui-element-dialog-content {
+        display: flex;
+        height: 60vh;
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+
+        #ui-element-dialog-inner {
+            flex: 1;
+            padding: 0;
+
+            .ui-element {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                top: 0%;
+                transform: translateX(-50%);
+                position: absolute;
+                opacity: 0;
+            }
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: var(--medium-padding);
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: transparent;
+
+                    svg {
+                        height: 40px;
+
+                        & * {
+                            fill: var(--on-surface-color)
+                        }
+                    }
+
+                    &.previous-button {
+                        svg {
+                            rotate: -90deg;
+                        }
+                    }
+
+                    &.next-button {
+                        svg {
+                            rotate: 90deg;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

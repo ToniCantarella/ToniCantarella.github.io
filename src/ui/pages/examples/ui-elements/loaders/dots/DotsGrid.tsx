@@ -4,7 +4,7 @@ import "./DotsGrid.scss"
 export const DotsGrid = () => {
     return (
         <Loader>
-            <div id="dots-grid">
+            <div className="dots-grid">
                 {Array.from({ length: 9 }, (_, i) => (
                     <div
                         key={i}

@@ -4,7 +4,7 @@ import "./Ellipsis.scss"
 export const Ellipsis = () => {
     return (
         <Loader>
-            <div id="ellipsis">
+            <div className="ellipsis">
                 {Array.from({ length: 3 }, (_, i) => (
                     <div
                         key={i}

@@ -1,34 +1,28 @@
-import { UIElementDialogContent, UIElementRow } from "../UIElementDialogContent"
-import { DotsGrid } from "./dots/DotsGrid"
-import { Ellipsis } from "./dots/Ellipsis"
-import { CircleRegular } from "./spinners/CircleRegular"
-import { CircleSpiral } from "./spinners/CircleSpiral"
-import { TrianglesToCenter } from "./dots/TrianglesToCenter"
-import { ProgressBar } from "./bars/ProgressBar"
-import { CircleProgress } from "./spinners/CircleProgress"
+import { UIElementDialogContent } from "../UIElementDialogContent"
 import { ColumnBar } from "./bars/ColumnBar"
 import { CrissCross } from "./bars/CrissCross"
+import { ProgressBar } from "./bars/ProgressBar"
+import { DotsGrid } from "./dots/DotsGrid"
+import { Ellipsis } from "./dots/Ellipsis"
+import { TrianglesToCenter } from "./dots/TrianglesToCenter"
+import { CircleProgress } from "./spinners/CircleProgress"
+import { CircleRegular } from "./spinners/CircleRegular"
+import { CircleSpiral } from "./spinners/CircleSpiral"
 
 export const LoadingElements = () => {
     return (
         <UIElementDialogContent>
-            <UIElementRow>
-                <CircleRegular />
-                <CircleSpiral />
-                <CircleProgress />
-            </UIElementRow>
+            <CircleRegular />
+            <CircleSpiral />
+            <CircleProgress />
 
-            <UIElementRow>
-                <ProgressBar />
-                <ColumnBar />
-                <CrissCross />
-            </UIElementRow>
+            <ProgressBar />
+            <ColumnBar />
+            <CrissCross />
 
-            <UIElementRow>
-                <DotsGrid />
-                <Ellipsis />
-                <TrianglesToCenter />
-            </UIElementRow>
+            <DotsGrid />
+            <Ellipsis />
+            <TrianglesToCenter />
         </UIElementDialogContent>
     )
 }

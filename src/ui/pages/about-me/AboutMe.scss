@@ -53,31 +53,6 @@
             }
         }
 
-        #image-indicator {
-            z-index: 1;
-            display: flex;
-            position: relative;
-
-            --indicator-size: 10px;
-
-            gap: var(--indicator-size);
-            padding-bottom: var(--indicator-size);
-
-            .indicator {
-                border-radius: 50%;
-                height: var(--indicator-size);
-                width: var(--indicator-size);
-                background: var(--text-color);
-                box-shadow: var(--indicator-shadow);
-                opacity: .5;
-            }
-
-            #current {
-                position: absolute;
-                opacity: 1;
-            }
-        }
-
         #image-controls {
             position: absolute;
             width: 100%;

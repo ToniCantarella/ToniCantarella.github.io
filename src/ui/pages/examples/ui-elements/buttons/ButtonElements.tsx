@@ -1,4 +1,4 @@
-import { UIElementDialogContent, UIElementRow } from "../UIElementDialogContent"
+import { UIElementDialogContent } from "../UIElementDialogContent"
 import { MultiSelectButton } from "./MultiSelect"
 import { RippleButton } from "./Ripple"
 import { Switch } from "./Switch"
@@ -6,11 +6,9 @@ import { Switch } from "./Switch"
 export const ButtonElements = () => {
     return (
         <UIElementDialogContent>
-            <UIElementRow>
-                <MultiSelectButton />
-                <RippleButton />
-                <Switch />
-            </UIElementRow>
+            <MultiSelectButton />
+            <RippleButton />
+            <Switch />
         </UIElementDialogContent>
     )
 }
