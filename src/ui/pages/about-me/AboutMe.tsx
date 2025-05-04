@@ -11,7 +11,6 @@ import ArrowIcon from "../../../assets/arrow.svg?react"
 import { Card } from "../../common/Card"
 
 export const AboutMe = () => {
-    const [loadingImages, setLoadingImages] = useState<boolean>(true)
     const navContext = useContext(NavigationContext)
     const { t } = useTranslation()
     const yearsOfExperience = new Date().getFullYear() - new Date("2022-05-30").getFullYear()
@@ -22,28 +21,12 @@ export const AboutMe = () => {
         torchImage
     ]
 
-    const loadImages = () => {
-        images.forEach((source, index) => {
-            const img = new Image()
-            img.src = source
-            if (index === 0) {
-                setLoadingImages(false)
-            }
-        })
-    }
-
-    useEffect(() => {
-        loadImages()
-    }, [])
-
     return (
         <Page>
             <div id="about-me">
-                {!loadingImages &&
-                    <ImageCarousel
-                        images={images}
-                    />
-                }
+                <ImageCarousel
+                    images={images}
+                />
 
                 <Card>
                     <div id="article">
@@ -71,6 +54,7 @@ export const AboutMe = () => {
 }
 
 const ImageCarousel = (props: { images: string[] }) => {
+    const [loadingImages, setLoadingImages] = useState<boolean>(true)
     const [currentImage, setCurrentImage] = useState<number>(0)
     const [animateIn, setAnimateIn] = useState<boolean>(true)
     const [direction, setDirection] = useState<boolean>(true)
@@ -78,6 +62,16 @@ const ImageCarousel = (props: { images: string[] }) => {
     const intervalRef = useRef<number | null>(null)
     const stayDuration = 10000
     const animationDuration = 500
+
+    const loadImages = () => {
+        props.images.forEach((source, index) => {
+            const img = new Image()
+            img.src = source
+            if (index === 0) {
+                setLoadingImages(false)
+            }
+        })
+    }
 
     const handleInterval = () => {
         setProgress(0)
@@ -110,6 +104,10 @@ const ImageCarousel = (props: { images: string[] }) => {
     }
 
     useEffect(() => {
+        loadImages()
+    }, [])
+
+    useEffect(() => {
         handleInterval()
         return () => clearInterval(intervalRef.current!)
     }, [])
@@ -131,22 +129,24 @@ const ImageCarousel = (props: { images: string[] }) => {
 
     return (
         <div id="image-carousel">
-            <img
-                key={currentImage}
-                src={props.images[currentImage]}
-                alt="about-me"
-                style={{
-                    animationDuration: `${animationDuration / 1000}s`,
-                    animationName: animationName(),
-                    animationTimingFunction: "ease",
-                    animationFillMode: "forwards",
-                }}
-            />
+            {!loadingImages &&
+                <img
+                    key={currentImage}
+                    src={props.images[currentImage]}
+                    alt="about-me"
+                    style={{
+                        animationDuration: `${animationDuration / 1000}s`,
+                        animationName: animationName(),
+                        animationTimingFunction: "ease",
+                        animationFillMode: "forwards",
+                    }}
+                />
+            }
 
-            <ImageLoading
+            <ImageProgressBar
                 progress={progress}
             />
-            <Indicator
+            <IndexIndicator
                 length={props.images.length}
                 currentIndex={currentImage}
             />
@@ -169,8 +169,7 @@ const ImageCarousel = (props: { images: string[] }) => {
     )
 }
 
-const Indicator = (props: { length: number, currentIndex: number }) => {
-
+const IndexIndicator = (props: { length: number, currentIndex: number }) => {
     return (
         <div id="image-indicator">
             <div
@@ -190,7 +189,7 @@ const Indicator = (props: { length: number, currentIndex: number }) => {
     )
 }
 
-const ImageLoading = (props: { progress: number }) => {
+const ImageProgressBar = (props: { progress: number }) => {
     return (
         <div
             id="image-loading"
