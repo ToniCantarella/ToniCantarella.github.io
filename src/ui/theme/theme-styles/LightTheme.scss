@@ -1,16 +1,16 @@
 .light-theme {
     /* Common */
     --primary-color: #F2613F;
-    --surface-color: #b3ae9f;
+    --surface-color: #8d887b;
     --on-surface-color: var(--app-background);
-    --blur-surface-color: rgba(34, 33, 32, 0.5);
+    --blur-surface-color: rgba(34, 33, 32, 0.6);
     --text-color: #39393a;
     --shadow-color: #948b76;
     --icon-color: var(--text-color);
     --close-button-color: var(--on-surface-color);
 
     --app-background: #FAF1E6;
-    --app-bar-background: var(--app-background);
+    --app-bar-background: var(--primary-color);
 
     --surface-border-radius: var(--medium-padding);
 
@@ -25,28 +25,27 @@
     #navigation-bar {
 
         .navigation-item {
-            color: var(--text-color);
+            color: var(--app-background);
 
             &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
+                content: " ";
                 opacity: 0;
-                width: 0%;
-                left: 50%;
+                position: absolute;
+                inset: 0;
+                width: 30%;
                 height: 100%;
-                background: var(--primary-color);
-                transform: translateX(-50%);
+                background: var(--app-background);
             }
 
             &:hover,
             &.selected {
-                color: var(--app-background);
+                color: var(--text-color);
 
                 &::after {
                     opacity: 1;
                     width: 100%;
                 }
+
             }
         }
     }
