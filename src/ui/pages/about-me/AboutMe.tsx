@@ -29,26 +29,24 @@ export const AboutMe = () => {
                     images={images}
                 />
 
-                <Card>
-                    <div id="article">
-                        <p>
-                            {t("about-me.intro", { year: yearsOfExperience })}
-                        </p>
-                        <p>
-                            {t("about-me.middle")}
-                        </p>
-                        <p>
-                            {t("about-me.outro")}
-                            <Link
-                                onClick={() => navContext.onNavClick(Paths.SKILLS)}
-                                to={Paths.SKILLS}
-                            >
-                                {`${t("about-me.to-skills")}`}
-                            </Link>
-                            {t("about-me.can-offer")}
-                        </p>
-                    </div>
-                </Card>
+                <div id="article">
+                    <p>
+                        {t("about-me.intro", { year: yearsOfExperience })}
+                    </p>
+                    <p>
+                        {t("about-me.middle")}
+                    </p>
+                    <p>
+                        {t("about-me.outro")}
+                        <Link
+                            onClick={() => navContext.onNavClick(Paths.SKILLS)}
+                            to={Paths.SKILLS}
+                        >
+                            {`${t("about-me.to-skills")}`}
+                        </Link>
+                        {t("about-me.can-offer")}
+                    </p>
+                </div>
             </div>
         </Page>
     )

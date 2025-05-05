@@ -7,10 +7,9 @@
     align-items: start;
     justify-content: center;
 
-    .card {
+    #article {
         z-index: 1;
         max-width: 40%;
-        background: var(--surface-color);
     }
 
     #image-carousel {
@@ -25,7 +24,6 @@
         height: 100%;
         overflow: hidden;
         --image-fade: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-        --indicator-shadow: 0 0 10px 2px var(--shadow-color);
         mask-image: var(--image-fade);
 
         img {
@@ -46,7 +44,7 @@
                 position: absolute;
                 height: 100%;
                 width: 0;
-                background: var(--on-surface-color);
+                background: var(--light-color);
                 box-shadow: var(--indicator-shadow);
             }
         }
@@ -152,7 +150,7 @@
             flex: 1;
         }
 
-        .card {
+        #article {
             max-width: 100%;
             flex: 2;
         }
