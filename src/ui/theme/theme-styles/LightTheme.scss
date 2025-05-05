@@ -1,22 +1,15 @@
 .light-theme {
-    /* Common */
-    --primary-color: #FB8B53;
-    --on-primary-color: var(--app-background);
     --surface-color: #fffefc;
     --on-surface-color: var(--text-color);
-    --dialog-color: var(--app-background);
-    --blur-surface-color: rgba(34, 33, 32, 0.6);
     --text-color: #39393a;
     --shadow-color: #948b76;
     --icon-color: var(--text-color);
     --close-button-color: var(--on-surface-color);
 
-    --app-background: #FAF1E6;
+    --app-background: var(--light-color);
     --app-bar-background: var(--primary-color);
 
     --surface-border-radius: var(--medium-padding);
-
-    /* Theme specific */
 
     color: var(--text-color);
 
@@ -47,7 +40,6 @@
                     opacity: 1;
                     width: 100%;
                 }
-
             }
         }
     }

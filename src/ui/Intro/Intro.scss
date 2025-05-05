@@ -43,7 +43,7 @@
             align-items: center;
             backdrop-filter: blur(10px);
             color: var(--on-surface-color);
-            background: var(--blur-surface-color);
+            background: var(--overlay-color);
             opacity: 0;
 
             h1 {
@@ -52,6 +52,7 @@
                     opacity: 0;
                     font-size: 100px;
                     animation: logoCharacter 1s ease forwards;
+                    color: var(--light-color);
 
                     &.first-name {
                         color: var(--primary-color);

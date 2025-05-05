@@ -20,7 +20,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            background: var(--dialog-color);
+            background: var(--surface-color);
             transform: translate(-50%, -50%);
             max-width: var(--content-max-width);
             display: flex;
@@ -60,7 +60,7 @@
         #dialog-background {
             height: 100%;
             width: 100%;
-            background: var(--shadow-color);
+            background: var(--overlay-color);
             opacity: .5;
 
         }

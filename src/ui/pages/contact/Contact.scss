@@ -4,7 +4,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    color: var(--on-surface-color);
+    color: var(--on-primary-color);
 
     #background-image-container {
         position: absolute;
@@ -47,7 +47,7 @@
                     width: 40px;
 
                     & * {
-                        fill: var(--on-surface-color);
+                        fill: var(--on-primary-color);
                     }
                 }
 

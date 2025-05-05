@@ -7,12 +7,10 @@
     align-items: start;
     justify-content: center;
 
-    --article-background: var(--blur-surface-color);
-
     .card {
         z-index: 1;
         max-width: 40%;
-        background: var(--blur-surface-color);
+        background: var(--surface-color);
     }
 
     #image-carousel {

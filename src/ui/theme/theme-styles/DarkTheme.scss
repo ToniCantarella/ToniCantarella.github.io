@@ -1,12 +1,7 @@
 .dark-theme {
-    /* Common */
-    --primary-color: #FB8B53;
-    --on-primary-color: var(--text-color);
     --surface-color: #3a3734;
     --on-surface-color: var(--text-color);
-    --dialog-color: var(--surface-color);
-    --blur-surface-color: rgba(34, 33, 32, 0.5);
-    --text-color: #FAF1E6;
+    --text-color: var(--light-color);
     --shadow-color: #161311;
     --icon-color: var(--text-color);
     --close-button-color: var(--icon-color);
@@ -15,8 +10,6 @@
     --app-bar-background: var(--primary-color);
 
     --surface-border-radius: var(--medium-padding);
-
-    /* Theme specific */
 
     color: var(--text-color);
 
@@ -46,7 +39,6 @@
                     opacity: 1;
                     width: 100%;
                 }
-
             }
         }
     }
