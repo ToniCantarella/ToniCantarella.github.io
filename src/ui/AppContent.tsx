@@ -5,6 +5,7 @@ import { AboutMe } from "./pages/about-me/AboutMe"
 import { Skills } from "./pages/skills/Skills"
 import { Examples } from "./pages/examples/Examples"
 import { Contact } from "./pages/contact/Contact"
+import { Carousel } from "./common/Carousel"
 
 export const AppContent = () => {
     const location = useLocation()
@@ -15,7 +16,13 @@ export const AppContent = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route
                         path={Paths.ABOUT_ME}
-                        element={<AboutMe />}
+                        element={
+                        <Carousel>
+                            <div>a</div>
+                            <div>b</div>
+                            <div>c</div>
+                        </Carousel>
+                        }
                     />
                     <Route
                         path={Paths.SKILLS}
