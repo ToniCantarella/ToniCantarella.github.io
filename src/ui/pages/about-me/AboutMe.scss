@@ -8,6 +8,7 @@
     justify-content: center;
 
     #article {
+        pointer-events: none;
         z-index: 1;
         max-width: 40%;
     }
