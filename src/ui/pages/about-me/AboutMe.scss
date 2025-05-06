@@ -24,9 +24,17 @@
         --image-fade: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
         mask-image: var(--image-fade);
 
-        img {
-            height: 100%;
+        .carousel-item {
             mask-image: var(--image-fade);
+        }
+
+        img {
+            position: absolute;
+            inset: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            
         }
 
         button {
@@ -51,6 +59,10 @@
             inset: 0;
             height: 300px;
             width: 100%;
+
+            img {
+                height: 200%;
+            }
 
             button {
                 display: none;
