@@ -1,13 +1,8 @@
 .carousel {
-    margin-top: 10px;
-    border: 2px dashed pink;
-    height: 400px;
-    width: 100%;
-    position: relative;
-
     .carousel-container {
         height: 100%;
         display: flex;
+        overflow-y: hidden;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
@@ -27,6 +22,11 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
+            position: relative;
+
+            > * {
+                
+            }
         }
     }
 
@@ -43,6 +43,7 @@
     }
 
     button {
+        z-index: 12;
         top: 50%;
         transform: translateY(-50%);
         position: absolute;

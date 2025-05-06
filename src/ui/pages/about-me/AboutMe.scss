@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
+    overflow: hidden;
 
     #article {
         pointer-events: none;
@@ -13,14 +14,10 @@
         max-width: 40%;
     }
 
-    #image-carousel {
-        display: flex;
-        flex-direction: column;
+    .carousel {
         position: absolute;
         top: 0;
         left: 35%;
-        justify-content: space-between;
-        align-items: center;
         width: 60%;
         height: 100%;
         overflow: hidden;
@@ -28,99 +25,20 @@
         mask-image: var(--image-fade);
 
         img {
-            position: absolute;
-            left: 100%;
             height: 100%;
-            top: 0%;
             mask-image: var(--image-fade);
         }
 
-        #image-controls {
-            position: absolute;
-            width: 100%;
+        button {
+            background: rgba(255, 255, 255, 0.5);
             height: 100%;
-            display: flex;
-            justify-content: space-between;
+            width: 20%;
+            opacity: 0;
 
-            button {
-                height: 100%;
-                width: 20%;
-                background: var(--text-color);
-                opacity: 0;
-
-                svg * {
-                    fill: var(--app-background);
-                }
-
-                &#previous-image {
-                    svg {
-                        rotate: -90deg;
-                    }
-                }
-
-                &#next-image {
-                    svg {
-                        rotate: 90deg;
-                    }
-                }
-
-                &:hover {
-                    opacity: .5;
-                }
+            &:hover {
+                opacity: 1;
             }
         }
-    }
-}
-
-@keyframes imageCarouselIn {
-    0% {
-        left: 100%;
-        opacity: 0;
-    }
-
-    100% {
-        left: 50%;
-        transform: translate(-50%, -0%);
-        opacity: 1;
-    }
-}
-
-@keyframes imageCarouselOut {
-    0% {
-        left: 50%;
-        transform: translate(-50%, -0%);
-        opacity: 1;
-    }
-
-    100% {
-        left: -100%;
-        opacity: 0;
-    }
-}
-
-@keyframes imageCarouselPrevOut {
-    0% {
-        left: 50%;
-        transform: translate(-50%, -0%);
-        opacity: 1;
-    }
-
-    100% {
-        left: 100%;
-        opacity: 0;
-    }
-}
-
-@keyframes imageCarouselPrevIn {
-    0% {
-        left: -100%;
-        opacity: 0;
-    }
-
-    100% {
-        left: 50%;
-        transform: translate(-50%, -0%);
-        opacity: 1;
     }
 }
 
@@ -128,12 +46,15 @@
     #about-me {
         gap: var(--medium-padding);
 
-        #image-carousel {
+        .carousel {
             position: relative;
             inset: 0;
+            height: 300px;
             width: 100%;
-            min-height: 300px;
-            flex: 1;
+
+            button {
+                display: none;
+            }
         }
 
         #article {

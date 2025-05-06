@@ -2,10 +2,9 @@ import { AnimatePresence } from "framer-motion"
 import { Route, Routes, useLocation } from "react-router-dom"
 import { Paths } from "./navigation/NavigationBar"
 import { AboutMe } from "./pages/about-me/AboutMe"
-import { Skills } from "./pages/skills/Skills"
-import { Examples } from "./pages/examples/Examples"
 import { Contact } from "./pages/contact/Contact"
-import { Carousel } from "./common/Carousel"
+import { Examples } from "./pages/examples/Examples"
+import { Skills } from "./pages/skills/Skills"
 
 export const AppContent = () => {
     const location = useLocation()
@@ -16,15 +15,7 @@ export const AppContent = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route
                         path={Paths.ABOUT_ME}
-                        element={
-                        <Carousel
-                        stayDuration={7000}
-                        >
-                            <div>a</div>
-                            <div>b</div>
-                            <div>c</div>
-                        </Carousel>
-                        }
+                        element={<AboutMe />}
                     />
                     <Route
                         path={Paths.SKILLS}
