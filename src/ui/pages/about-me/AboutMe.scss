@@ -9,7 +9,6 @@
     overflow: hidden;
 
     #article {
-        pointer-events: none;
         z-index: 1;
         max-width: 40%;
     }
@@ -34,7 +33,7 @@
             left: 50%;
             transform: translateX(-50%);
             height: 100%;
-            
+            mask-image: var(--image-fade);
         }
 
         button {
