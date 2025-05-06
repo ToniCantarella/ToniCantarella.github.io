@@ -17,7 +17,9 @@ export const AppContent = () => {
                     <Route
                         path={Paths.ABOUT_ME}
                         element={
-                        <Carousel>
+                        <Carousel
+                        stayDuration={7000}
+                        >
                             <div>a</div>
                             <div>b</div>
                             <div>c</div>

@@ -5,7 +5,6 @@
     width: 100%;
     position: relative;
 
-
     .carousel-container {
         height: 100%;
         display: flex;
@@ -14,6 +13,11 @@
         scroll-behavior: smooth;
         scroll-padding: 0;
         padding: 0;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         .carousel-item {
             flex: 0 0 100%;
@@ -26,20 +30,31 @@
         }
     }
 
+    .progress-indicator {
+        position: absolute;
+        inset: 0;
+    }
+
     .index-indicator {
-        justify-self: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     button {
         top: 50%;
         transform: translateY(-50%);
         position: absolute;
-        min-width: 40px;
-        width: 20%;
         background: transparent;
 
-        svg * {
-            fill: var(--on-surface-color);
+        svg {
+            width: 40px;
+            height: 40px;
+
+            & * {
+                fill: var(--on-surface-color);
+            }
         }
 
         &.previous-button {
@@ -50,6 +65,7 @@
 
         &.next-button {
             right: 0;
+
             svg {
                 rotate: 90deg;
             }

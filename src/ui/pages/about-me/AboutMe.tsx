@@ -6,6 +6,7 @@ import motorbikeImage from "../../../assets/motorbike.jpg"
 import torchImage from "../../../assets/torch.jpg"
 import winterImage from "../../../assets/winter.jpg"
 import { IndexIndicator } from "../../common/IndexIndicator"
+import { ProgressIndicator } from "../../common/ProgressIndicator"
 import { NavigationContext, Paths } from "../../navigation/NavigationBar"
 import { Page } from "../Page"
 import "./AboutMe.scss"
@@ -141,7 +142,7 @@ const ImageCarousel = (props: { images: string[] }) => {
                 />
             }
 
-            <ImageProgressBar
+            <ProgressIndicator
                 progress={progress}
             />
             <IndexIndicator
@@ -163,21 +164,6 @@ const ImageCarousel = (props: { images: string[] }) => {
                     <ArrowIcon />
                 </button>
             </div>
-        </div>
-    )
-}
-
-const ImageProgressBar = (props: { progress: number }) => {
-    return (
-        <div
-            id="image-loading"
-        >
-            <div
-                id="loader"
-                style={{
-                    width: `${props.progress}%`
-                }}
-            />
         </div>
     )
 }

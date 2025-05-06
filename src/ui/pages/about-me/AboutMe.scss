@@ -35,21 +35,6 @@
             mask-image: var(--image-fade);
         }
 
-        #image-loading {
-            height: 4px;
-            width: 100%;
-            z-index: 1;
-            position: relative;
-
-            #loader {
-                position: absolute;
-                height: 100%;
-                width: 0;
-                background: var(--light-color);
-                box-shadow: var(--indicator-shadow);
-            }
-        }
-
         #image-controls {
             position: absolute;
             width: 100%;
