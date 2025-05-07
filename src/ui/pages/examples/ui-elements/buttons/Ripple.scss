@@ -1,15 +1,14 @@
 #ripple-button {
     position: relative;
-    border-radius: 10px;
+    border-radius: var(--small-padding);
     overflow: hidden;
-    background: rgb(0, 211, 211);
+    background: var(--primary-color);
     padding: 10px 30px;
-    box-shadow: inset 5px 5px 5px rgb(249, 255, 255), inset -5px -5px 5px rgb(2, 112, 112);
 
     span {
         font-size: x-large;
         font-weight: bold;
-        color: rgb(252, 252, 252);
+        color: var(--surface-color);
     }
 
     .ripple-effect {
