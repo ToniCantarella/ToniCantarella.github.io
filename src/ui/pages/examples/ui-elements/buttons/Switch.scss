@@ -5,36 +5,44 @@
     --handle-size: 30px;
     --track-padding: 10px;
     border-radius: var(--border-radius);
+    filter: grayscale(1);
 
     #track {
         border-radius: var(--border-radius);
         position: relative;
-        box-shadow: inset 5px 5px 10px rgb(25, 25, 26);
-        background: rgb(90, 136, 136);
+        background: var(--primary-color);
         padding: var(--track-padding);
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        border: 2px solid;
 
         #handle {
             position: absolute;
-            background: rgb(194, 194, 194);
+            background: var(--on-primary-color);
             border-radius: 50%;
-            box-shadow: inset 2px 2px 0px rgb(255, 255, 255), inset -2px -2px 0px rgb(63, 63, 63);
             height: var(--handle-size);
             width: var(--handle-size);
             left: calc(var(--track-padding) / 2);
-
-            &.on {
-                left: calc((100% - var(--handle-size)) - (var(--track-padding) / 2));
-            }
         }
 
         span {
             font-weight: bold;
             font-size: medium;
+            color: var(--on-primary-color)
+        }
+    }
+
+    &.on {
+        filter: grayscale(0);
+
+        #track {
+
+            #handle {
+                left: calc((100% - var(--handle-size)) - (var(--track-padding) / 2));
+            }
+
+            span {}
         }
     }
 }

@@ -9,6 +9,7 @@ export const Switch = () => {
     return (
         <button
             id="switch"
+            className={`${on ? "on" : ""}`}
             onClick={() => setOn(!on)}
         >
             <div id="track">
@@ -20,7 +21,6 @@ export const Switch = () => {
                 </span>
                 <div
                     id="handle"
-                    className={`${on ? "on" : ""}`}
                 />
             </div>
         </button>
