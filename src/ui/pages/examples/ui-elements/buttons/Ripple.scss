@@ -26,3 +26,47 @@
         opacity: 0;
     }
 }
+
+.snackbar {
+    z-index: var(--snackbar-z-index);
+    position: absolute;
+    max-height: 100%;
+    width: 300px;
+
+    --snackbar-height: 40px;
+    --snackbar-width: 200px;
+    --snackbar-padding: 10px;
+
+    .snack {
+        inset: 0;
+        margin-top: var(--snackbar-padding);
+        margin-left: var(--snackbar-padding);
+        position: absolute;
+        border-radius: var(--small-padding);
+        width: var(--snackbar-width);
+        height: fit-content;
+        background: var(--primary-color);
+        padding: var(--extra-small-padding) var(--small-padding);
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes snackIn {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes snackOut {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}

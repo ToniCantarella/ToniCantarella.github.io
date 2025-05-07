@@ -6,9 +6,9 @@ import { Switch } from "./Switch"
 export const ButtonElements = () => {
     return (
         <UIElementDialogContent>
-            <MultiSelectButton />
             <RippleButton />
             <Switch />
+            <MultiSelectButton />
         </UIElementDialogContent>
     )
 }
