@@ -18,6 +18,7 @@ export const MultiSelectButton = () => {
                 >
                     <span>B</span>
                 </button>
+                <div className="divider"/>
                 <button
                     id="italics"
                     className={`${italics ? "selected" : ""}`}
@@ -25,6 +26,7 @@ export const MultiSelectButton = () => {
                 >
                     <span>i</span>
                 </button>
+                <div className="divider"/>
                 <button
                     id="underline"
                     className={`${underline ? "selected" : ""}`}

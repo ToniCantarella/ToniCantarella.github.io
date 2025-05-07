@@ -8,6 +8,12 @@
 
     .carousel {
         height: 100%;
+
+        .index-indicator {
+            .indicator {
+                background: var(--on-surface-color);
+            }
+        }
     }
 }
 

@@ -2,24 +2,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    --multiselect-color: #004e97;
+    gap: var(--medium-padding);
 
     #buttons {
-        border: 2px solid var(--multiselect-color);
+        border: 2px solid var(--on-surface-color);
         border-radius: 10px;
-        width: fit-content;
+        display: flex;
         overflow: hidden;
+        height: 40px;
+
+        .divider {
+            width: 2px;
+            height: 100%;
+            background: var(--on-surface-color);
+        }
 
         button {
             height: 100%;
-            background: var(--text-color);
-            color: var(--multiselect-color);
             width: 40px;
-            border-left: 2px solid var(--multiselect-color);
+            background: var(--surface-color);
+            color: var(--on-surface-color);
 
             &.selected {
-                background: #77CDFF;
+                background: var(--primary-color);
+                color: var(--surface-color);
             }
 
             span {
