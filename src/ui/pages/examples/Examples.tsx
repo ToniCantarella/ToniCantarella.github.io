@@ -57,30 +57,28 @@ export const Examples = () => {
                             }
                         />
 
-                        {import.meta.env.MODE === "development" &&
-                            <>
-                                <ExampleCard
-                                    icon={<ButtonIcon />}
-                                    label={t("examples.buttons")}
-                                    onClick={() =>
-                                        openDialog(
-                                            "examples.buttons",
-                                            <ButtonElements />
-                                        )
-                                    }
-                                />
+                        <ExampleCard
+                            icon={<ButtonIcon />}
+                            label={t("examples.buttons")}
+                            onClick={() =>
+                                openDialog(
+                                    "examples.buttons",
+                                    <ButtonElements />
+                                )
+                            }
+                        />
 
-                                <ExampleCard
-                                    icon={<InputIcon />}
-                                    label={t("examples.input")}
-                                    onClick={() =>
-                                        openDialog(
-                                            "examples.input",
-                                            <InputElements />
-                                        )
-                                    }
-                                />
-                            </>
+                        {import.meta.env.MODE === "development" &&
+                            <ExampleCard
+                                icon={<InputIcon />}
+                                label={t("examples.input")}
+                                onClick={() =>
+                                    openDialog(
+                                        "examples.input",
+                                        <InputElements />
+                                    )
+                                }
+                            />
                         }
                     </ExampleSection>
 
