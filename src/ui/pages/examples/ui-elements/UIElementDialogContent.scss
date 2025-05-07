@@ -2,86 +2,15 @@
 
 #ui-element-dialog-content {
     width: 100%;
-    overflow: hidden;
+    padding: 0 var(--extra-large-padding);
+    min-height: 500px;
+    width: 600px;
 
-    #ui-element-dialog-inner {
-        width: 100%;
-        display: grid;
-        grid-template-columns: auto auto auto;
-        gap: var(--extra-large-padding);
-        position: relative;
-        padding: var(--extra-large-padding);
-    }
-
-    .controls {
-        display: none;
+    .carousel {
+        height: 100%;
     }
 }
 
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
-    #ui-element-dialog-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--medium-padding);
-
-        #ui-element-dialog-inner {
-            flex: 1;
-            padding: 0;
-
-            .ui-element {
-                display: flex;
-                height: 100%;
-                align-items: center;
-                top: 0%;
-                transform: translateX(-50%);
-                position: absolute;
-                opacity: 0;
-            }
-        }
-
-        .controls {
-            min-width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: var(--medium-padding);
-
-            .index-indicator {
-                align-self: center;
-            }
-
-            .buttons {
-                display: flex;
-                justify-content: space-between;
-
-                button {
-                    padding: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: transparent;
-
-                    svg {
-                        height: 40px;
-
-                        & * {
-                            fill: var(--on-surface-color)
-                        }
-                    }
-
-                    &.previous-button {
-                        svg {
-                            rotate: -90deg;
-                        }
-                    }
-
-                    &.next-button {
-                        svg {
-                            rotate: 90deg;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
 }

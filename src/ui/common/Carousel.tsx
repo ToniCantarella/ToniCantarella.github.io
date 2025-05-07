@@ -101,13 +101,13 @@ export const Carousel = (props: CarouselProps) => {
 
             <button
                 onClick={previousElement}
-                className="previous-button"
+                className="carousel-button previous-button"
             >
                 <ArrowIcon />
             </button>
             <button
                 onClick={nextElement}
-                className="next-button"
+                className="carousel-button next-button"
             >
                 <ArrowIcon />
             </button>
