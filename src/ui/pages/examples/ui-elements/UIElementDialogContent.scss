@@ -12,5 +12,10 @@
 }
 
 @media only screen and (max-width: breakpoints.$mobile-breakpoint) {
-    
+    #ui-element-dialog-content {
+        width: 100%;
+        padding: 0 var(--extra-large-padding);
+        height: 100%;
+        width: 100%;
+    }
 }
