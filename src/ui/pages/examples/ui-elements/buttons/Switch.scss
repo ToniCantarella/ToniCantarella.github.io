@@ -46,3 +46,26 @@
         }
     }
 }
+
+.confetti {
+    position: absolute;
+    top: -10%;
+    animation: confetti 5s ease-in infinite;
+}
+
+@keyframes confetti {
+    0% {
+        top: -10%;
+        rotate: -0deg;
+        transform: translateX(-10%);
+    }
+
+    50% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        top: 100%;
+        rotate: 1000deg;
+    }
+}
