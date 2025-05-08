@@ -34,7 +34,7 @@ export const Switch = () => {
 }
 
 const Confetti = () => {
-    const amount = 20
+    const amount = 10
 
     const confettis = [
         "🌸",
@@ -51,7 +51,7 @@ const Confetti = () => {
                     key={index}
                     className="confetti"
                     style={{
-                        left: `${index * 5}%`,
+                        left: `${(index / amount) * 100}%`,
                         animationDelay: `${Math.random() * index}s`
                     }}
                 >
