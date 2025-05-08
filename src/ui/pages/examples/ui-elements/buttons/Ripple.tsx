@@ -4,7 +4,18 @@ import { createPortal } from "react-dom"
 import { useEffect, useState } from "react"
 
 export const RippleButton = () => {
-    const [snack, setSnack] = useState<number>(0)
+    const messages = [
+        "❤️",
+        "🩷",
+        "🧡",
+        "💛",
+        "💚",
+        "💙",
+        "🩵"
+    ]
+    const maxSnacks = messages.length
+    const snackTimeout = 2000
+    const [snack, setSnack] = useState<number>(-1)
     const { t } = useTranslation()
 
     const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -34,16 +45,26 @@ export const RippleButton = () => {
         rippleEffect.classList.add("ripple-effect")
     }
 
+    useEffect(() => {
+        if (snack >= maxSnacks) {
+            setTimeout(() => {
+                setSnack(-1)
+            }, snack * snackTimeout)
+        }
+    }, [snack])
+
     return (
         <>
-            {import.meta.env.MODE === "development" &&
-                <Snackbar
-                    snack={`${snack}`}
-                />
-            }
+            <Snackbar
+                snack={messages[snack]}
+                maxSnacks={maxSnacks}
+                snackTimeout={snackTimeout}
+            />
+
             <button
                 id="ripple-button"
                 onClick={onClick}
+                disabled={snack >= maxSnacks}
             >
                 <span>{t("examples.button-sample-text")}</span>
             </button>
@@ -51,14 +72,14 @@ export const RippleButton = () => {
     )
 }
 
-const Snackbar = (props: { snack: string }) => {
-    const maxSnacks = 10
+const Snackbar = (props: { snack?: string, snackTimeout?: number, maxSnacks?: number }) => {
+    const maxSnacks = props.maxSnacks ?? 10
     const [indexToRemove, setIndexToRemove] = useState<number>(-1)
     const [visibleSnacks, setVisibleSnacks] = useState<string[]>([])
 
     useEffect(() => {
         setVisibleSnacks(prev =>
-            prev.length < maxSnacks
+            prev.length < maxSnacks && props.snack
                 ? [...prev, props.snack]
                 : prev
         )
@@ -67,17 +88,17 @@ const Snackbar = (props: { snack: string }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndexToRemove(prev =>
-                prev < visibleSnacks.length - 1 ? prev + 1 : prev
+                prev < visibleSnacks.length - 1
+                    ? prev + 1
+                    : prev
             )
-            //setVisibleSnacks(prev => prev.slice(1))
-        }, 2000)
+        }, props.snackTimeout ?? 2000)
         return () => clearInterval(interval)
     }, [visibleSnacks.length])
 
     const remove = (animationName: string) => {
         if (animationName === "snackOut") {
             if (indexToRemove === maxSnacks - 1) {
-                console.log("reset")
                 setVisibleSnacks([])
                 setIndexToRemove(-1)
             }
@@ -86,7 +107,6 @@ const Snackbar = (props: { snack: string }) => {
 
     return createPortal(
         <div className="snackbar">
-            {indexToRemove}
             {visibleSnacks.map((snack, index) => (
                 <div
                     key={index}
@@ -97,7 +117,7 @@ const Snackbar = (props: { snack: string }) => {
                         animationName: `${index <= indexToRemove ? "snackOut" : "snackIn"}`
                     }}
                 >
-                    {snack} {index} {indexToRemove}
+                    <span>{snack}</span>
                 </div>
             ))}
         </div>,

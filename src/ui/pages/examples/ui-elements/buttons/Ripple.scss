@@ -5,6 +5,10 @@
     background: var(--primary-color);
     padding: 10px 30px;
 
+    &:disabled {
+        filter: grayscale(1);
+    }
+
     span {
         font-size: x-large;
         font-weight: bold;
@@ -33,7 +37,7 @@
     max-height: 100%;
     width: 300px;
 
-    --snackbar-height: 40px;
+    --snackbar-height: 50px;
     --snackbar-width: 200px;
     --snackbar-padding: 10px;
     --snackbar-gap: calc(var(--snackbar-height) + 10px);
@@ -46,12 +50,15 @@
         border-radius: var(--small-padding);
         width: var(--snackbar-width);
         height: var(--snackbar-height);
-        background: var(--primary-color);
+        background: var(--surface-color);
         padding: var(--extra-small-padding) var(--small-padding);
         animation-duration: 1s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
-        border: 2px dashed;
+        border: 1px solid var(--on-surface-color);
+        box-shadow: 2px 2px 20px var(--shadow-color);
+        display: flex;
+        align-items: center;
     }
 }
 
