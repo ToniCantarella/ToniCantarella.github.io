@@ -52,36 +52,49 @@ export const RippleButton = () => {
 }
 
 const Snackbar = (props: { snack: string }) => {
+    const maxSnacks = 10
     const [indexToRemove, setIndexToRemove] = useState<number>(-1)
     const [visibleSnacks, setVisibleSnacks] = useState<string[]>([])
 
     useEffect(() => {
-        setVisibleSnacks(prev => [...prev, props.snack])
+        setVisibleSnacks(prev =>
+            prev.length < maxSnacks
+                ? [...prev, props.snack]
+                : prev
+        )
     }, [props.snack])
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndexToRemove(visibleSnacks.length - 1)
+            setIndexToRemove(prev =>
+                prev < visibleSnacks.length - 1 ? prev + 1 : prev
+            )
+            //setVisibleSnacks(prev => prev.slice(1))
         }, 2000)
         return () => clearInterval(interval)
     }, [visibleSnacks.length])
 
     const remove = (animationName: string) => {
         if (animationName === "snackOut") {
-            setVisibleSnacks(prev => prev.filter((_, index) => index !== indexToRemove))
+            if (indexToRemove === maxSnacks - 1) {
+                console.log("reset")
+                setVisibleSnacks([])
+                setIndexToRemove(-1)
+            }
         }
     }
 
     return createPortal(
         <div className="snackbar">
+            {indexToRemove}
             {visibleSnacks.map((snack, index) => (
                 <div
                     key={index}
                     className="snack"
                     onAnimationEnd={e => remove(e.animationName)}
                     style={{
-                        top: `calc(${visibleSnacks.length - (index + 1)} * var(--snackbar-height))`,
-                        animationName: `${index === indexToRemove ? "snackOut" : "snackIn"}`
+                        top: `calc(${visibleSnacks.length - (index + 1)} * var(--snackbar-gap))`,
+                        animationName: `${index <= indexToRemove ? "snackOut" : "snackIn"}`
                     }}
                 >
                     {snack} {index} {indexToRemove}
