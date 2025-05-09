@@ -50,6 +50,7 @@
 .confetti {
     position: absolute;
     top: -10%;
+    opacity: 0;
     animation: confetti 5s ease-in infinite;
 }
 
@@ -58,13 +59,24 @@
         top: -10%;
         rotate: -0deg;
         transform: translateX(-10%);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
     }
 
     50% {
+        opacity: 1;
         transform: translateX(10%);
     }
 
+    95% {
+        opacity: 0;
+    }
+
     100% {
+        opacity: 0;
         top: 100%;
         rotate: 1000deg;
     }

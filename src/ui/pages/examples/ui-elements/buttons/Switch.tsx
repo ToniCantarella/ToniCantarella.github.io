@@ -42,7 +42,6 @@ const Confetti = () => {
         "💮",
         "🌺"
     ]
-    const confettiIndex = Math.floor(Math.random() * confettis.length)
 
     return (
         <>
@@ -55,7 +54,7 @@ const Confetti = () => {
                         animationDelay: `${Math.random() * index}s`
                     }}
                 >
-                    {confettis[confettiIndex]}
+                    {confettis[Math.floor(Math.random() * confettis.length)]}
                 </span>
             ))}
         </>
