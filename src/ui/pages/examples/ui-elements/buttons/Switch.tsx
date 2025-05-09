@@ -60,5 +60,3 @@ const Confetti = () => {
         </>
     )
 }
-
-//Math.random() * (100 - index) + index
