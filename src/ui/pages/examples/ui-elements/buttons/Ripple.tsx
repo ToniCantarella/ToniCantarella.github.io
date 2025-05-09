@@ -1,25 +1,19 @@
+import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
 import { useTranslation } from "react-i18next"
 import "./Ripple.scss"
-import { createPortal } from "react-dom"
-import { useEffect, useState } from "react"
 
 export const RippleButton = () => {
-    const messages = [
-        "❤️",
-        "🩷",
-        "🧡",
-        "💛",
-        "💚",
-        "💙",
-        "🩵"
-    ]
-    const maxSnacks = messages.length
-    const snackTimeout = 2000
     const [snack, setSnack] = useState<number>(-1)
     const { t } = useTranslation()
 
+    const messages = Array.from({length: 7}).map((_, index) => (
+        t(`examples.snackbar-message-${index}`)
+    ))
+
     const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setSnack(prev => prev + 1)
+        console.log(messages)
+        setSnack(Math.floor(Math.random() * messages.length))
 
         const button = event.currentTarget
 
@@ -45,26 +39,15 @@ export const RippleButton = () => {
         rippleEffect.classList.add("ripple-effect")
     }
 
-    useEffect(() => {
-        if (snack >= maxSnacks) {
-            setTimeout(() => {
-                setSnack(-1)
-            }, snack * snackTimeout)
-        }
-    }, [snack])
-
     return (
         <>
             <Snackbar
                 snack={messages[snack]}
-                maxSnacks={maxSnacks}
-                snackTimeout={snackTimeout}
             />
 
             <button
                 id="ripple-button"
                 onClick={onClick}
-                disabled={snack >= maxSnacks}
             >
                 <span>{t("examples.button-sample-text")}</span>
             </button>
@@ -72,52 +55,55 @@ export const RippleButton = () => {
     )
 }
 
-const Snackbar = (props: { snack?: string, snackTimeout?: number, maxSnacks?: number }) => {
-    const maxSnacks = props.maxSnacks ?? 10
-    const [indexToRemove, setIndexToRemove] = useState<number>(-1)
-    const [visibleSnacks, setVisibleSnacks] = useState<string[]>([])
+type Snack = { id: number; message: string };
+
+const Snackbar = (props: { snack?: string }) => {
+    const maxSnacks = 3
+    const [visibleSnacks, setVisibleSnacks] = useState<Snack[]>([])
+    const [idToRemove, setIdToRemove] = useState<number>(0)
 
     useEffect(() => {
-        setVisibleSnacks(prev =>
-            prev.length < maxSnacks && props.snack
-                ? [...prev, props.snack]
-                : prev
-        )
+        if (props.snack) {
+            setVisibleSnacks(prev => {
+                if (visibleSnacks.length === maxSnacks) {
+                    const [firstSnack] = visibleSnacks
+                    setIdToRemove(firstSnack.id)
+                    return prev
+                } else
+                    return [...prev, { id: Date.now(), message: props.snack! }]
+            })
+        }
     }, [props.snack])
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndexToRemove(prev =>
-                prev < visibleSnacks.length - 1
-                    ? prev + 1
-                    : prev
-            )
-        }, props.snackTimeout ?? 2000)
-        return () => clearInterval(interval)
+            if (visibleSnacks.length > 0) {
+                const [firstSnack] = visibleSnacks
+                setIdToRemove(firstSnack.id)
+            }
+        }, 4000);
+        return () => clearInterval(interval);
     }, [visibleSnacks.length])
 
-    const remove = (animationName: string) => {
-        if (animationName === "snackOut") {
-            if (indexToRemove === maxSnacks - 1) {
-                setVisibleSnacks([])
-                setIndexToRemove(-1)
-            }
-        }
-    }
+    const removeSnack = (idToRemove: number) => {
+        setVisibleSnacks(prev => prev.filter(snack => snack.id !== idToRemove))
+    };
 
     return createPortal(
         <div className="snackbar">
             {visibleSnacks.map((snack, index) => (
                 <div
-                    key={index}
+                    key={snack.id}
                     className="snack"
-                    onAnimationEnd={e => remove(e.animationName)}
+                    onAnimationEnd={e => {
+                        if (e.animationName === "snackOut") removeSnack(snack.id);
+                    }}
                     style={{
                         top: `calc(${visibleSnacks.length - (index + 1)} * var(--snackbar-gap))`,
-                        animationName: `${index <= indexToRemove ? "snackOut" : "snackIn"}`
+                        animationName: snack.id === idToRemove ? "snackOut" : "snackIn"
                     }}
                 >
-                    <span>{snack}</span>
+                    <span>{snack.message}</span>
                 </div>
             ))}
         </div>,

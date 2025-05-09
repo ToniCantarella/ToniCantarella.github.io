@@ -48,7 +48,8 @@
         margin-left: var(--snackbar-padding);
         position: absolute;
         border-radius: var(--small-padding);
-        width: var(--snackbar-width);
+        min-width: var(--snackbar-width);
+        max-width: fit-content;
         height: var(--snackbar-height);
         background: var(--surface-color);
         padding: var(--extra-small-padding) var(--small-padding);
@@ -58,6 +59,7 @@
         border: 1px solid var(--on-surface-color);
         box-shadow: 2px 2px 20px var(--shadow-color);
         display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 }

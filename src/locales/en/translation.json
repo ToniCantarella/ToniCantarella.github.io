@@ -1,5 +1,5 @@
 {
-    "under-construction": "This site is under construction", 
+    "under-construction": "This site is under construction",
     "settings": "Settings",
     "navigation": {
         "about-me": "About",
@@ -45,6 +45,13 @@
         "switch-on": "On",
         "switch-off": "Off",
         "button-sample-text": "Press",
+        "snackbar-message-0": "Something went wrong! 😬",
+        "snackbar-message-1": "Button pressed successfully! 🎉",
+        "snackbar-message-2": "Press saved! (not really) 🤫",
+        "snackbar-message-3": "Almost there! ⏳",
+        "snackbar-message-4": "Try again later! 🔄",
+        "snackbar-message-5": "Contact support! (on vacation) 🌴",
+        "snackbar-message-6": "Error! ⚠️",
         "searchbar-placeholder": "Search your shopping list...",
         "apple": "Apple",
         "orange": "Orange",
