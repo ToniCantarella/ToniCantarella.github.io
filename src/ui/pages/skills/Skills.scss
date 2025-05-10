@@ -106,7 +106,7 @@
                         width: var(--icon-size);
 
                         &#react {
-                            animation: react 4s linear infinite;
+                            animation: react 4s linear infinite, reactBounce 4s ease infinite;
                         }
 
                         &#javascript {
@@ -170,6 +170,36 @@
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes reactBounce {
+    0% {
+        scale: 1;
+    }
+
+    40% {
+        scale: 1;
+    }
+
+    45% {
+        scale: 1.2;
+    }
+
+    50% {
+        scale: .8;
+    }
+
+    55% {
+        scale: 1.2;
+    }
+
+    60% {
+        scale: 1
+    }
+
+    100% {
+        scale: 1;
     }
 }
 
@@ -257,23 +287,23 @@
     }
 
     53% {
-        transform: translateY(10%);
+        transform: translateY(10%)  scaleX(1);
     }
 
     56% {
-        transform: translateY(-10%);
+        transform: translateY(-10%) scaleX(.8);
     }
 
     59% {
-        transform: translateY(10%);
+        transform: translateY(10%) scaleX(1.2);
     }
 
     62% {
-        transform: translateY(-10%);
+        transform: translateY(-10%) scaleX(.8);
     }
 
     65% {
-        transform: translateY(10%);
+        transform: translateY(10%)  scaleX(1);
     }
 
     68% {
