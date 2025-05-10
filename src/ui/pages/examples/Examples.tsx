@@ -68,18 +68,16 @@ export const Examples = () => {
                             }
                         />
 
-                        {import.meta.env.MODE === "development" &&
-                            <ExampleCard
-                                icon={<InputIcon />}
-                                label={t("examples.input")}
-                                onClick={() =>
-                                    openDialog(
-                                        "examples.input",
-                                        <InputElements />
-                                    )
-                                }
-                            />
-                        }
+                        <ExampleCard
+                            icon={<InputIcon />}
+                            label={t("examples.input")}
+                            onClick={() =>
+                                openDialog(
+                                    "examples.input",
+                                    <InputElements />
+                                )
+                            }
+                        />
                     </ExampleSection>
 
                     {import.meta.env.MODE === "development" &&
