@@ -50,6 +50,6 @@ export const Dialog = (props: DialogProps) => {
                     </Card>
             </div>
         </div>,
-        document.getElementById("app")!
+        document.getElementById("app-content")!
     )
 }

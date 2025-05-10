@@ -96,9 +96,9 @@
     #dialog {
         #inner {
             .card {
-                top: 25px;
+                top: 0;
                 transform: translate(-50%, 0%);
-                height: calc(95% - var(--bottom-bar-height));
+                height: 100%;
                 width: 100%;
             }
         }
