@@ -43,11 +43,7 @@
                     opacity: .8;
                     height: 40px;
                     width: 40px;
-
-                    * {
-                        fill: none;
-                        stroke: var(--on-primary-color);
-                    }
+                    color: var(--on-primary-color);
                 }
 
                 &.selected,
@@ -55,12 +51,6 @@
                     svg {
                         scale: 1.2;
                         opacity: 1;
-
-                        & * {
-                            fill: var(--on-primary-color);
-                            stroke: none;
-
-                        }
                     }
                 }
             }

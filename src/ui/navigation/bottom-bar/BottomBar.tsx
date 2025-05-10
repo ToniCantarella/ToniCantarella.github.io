@@ -1,6 +1,7 @@
 import "./BottomBar.scss"
 import { NavigationItems } from "../NavigationBar"
 import SettingsIcon from "../../../assets/settings.svg?react"
+import SettingsIconOutlined from "../../../assets/settingsoutlined.svg?react"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
 import { LanguagePicker } from "../../language-picker/LanguagePicker"
@@ -25,7 +26,10 @@ export const BottomBar = () => {
                     onClick={() => setSettingsOpen(!settingsOpen)}
                     onBlur={() => setSettingsOpen(false)}
                 >
-                    <SettingsIcon />
+                    {settingsOpen
+                        ? <SettingsIcon />
+                        : <SettingsIconOutlined />
+                    }
                     <span>
                         {t("settings")}
                     </span>
@@ -41,7 +45,7 @@ const SettingsDrawer = (props: { open: boolean }) => {
             <div
                 id="drawer-content"
             >
-                {import.meta.env.MODE === "development" && <HomeButton/>}
+                {import.meta.env.MODE === "development" && <HomeButton />}
                 <LanguagePicker />
                 <ThemePicker />
             </div>
