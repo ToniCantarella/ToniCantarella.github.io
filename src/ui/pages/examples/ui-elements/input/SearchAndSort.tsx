@@ -2,6 +2,11 @@ import { useEffect, useState } from "react"
 import SearchIcon from "../../../../../assets/search.svg?react"
 import "./SearchAndFilter.scss"
 import { useTranslation } from "react-i18next"
+import NameAscIcon from "../../../../../assets/namesortasc.svg?react"
+import NameDescIcon from "../../../../../assets/namesordesc.svg?react"
+import AmountAscIcon from "../../../../../assets/numbersortasc.svg?react"
+import AmountDescIcon from "../../../../../assets/numbersortdesc.svg?react"
+import TrashIcon from "../../../../../assets/trash.svg?react"
 
 const FoodItems = [
     "apple",
@@ -15,13 +20,13 @@ const FoodItems = [
 ]
 
 type SearchItem = {
-    cost: number,
+    amount: number,
     name: string
 }
 
 const SearchItems: SearchItem[] = FoodItems.map(food => (
     {
-        cost: Math.floor(Math.random() * 10),
+        amount: Math.floor(Math.random() * (10 - 1) + 1),
         name: food
     }
 ))
@@ -36,8 +41,8 @@ export const SearchAndSort = () => {
     const localizedItems = SearchItems.map(item => ({ ...item, name: t(`examples.${item.name}`) }))
     const [searchQuery, setSearchQuery] = useState<string>("")
     const [searchResults, setSearchResults] = useState<SearchItem[]>(localizedItems)
-    const [costSort, setCostSort] = useState<Sort | null>(null)
-    const [nameSort, setNameSort] = useState<Sort | null>(null)
+    const [amountSort, setAmountSort] = useState<Sort>(Sort.ASC)
+    const [nameSort, setNameSort] = useState<Sort>(Sort.ASC)
 
     useEffect(() => {
         if (searchQuery.length > 2) {
@@ -52,10 +57,10 @@ export const SearchAndSort = () => {
         }
     }, [searchQuery])
 
-    const onCostSortChange = () => {
-        const newFilter = costSort === Sort.ASC ? Sort.DESC : Sort.ASC
-        setCostSort(newFilter)
-        const results = searchResults.sort((a, b) => newFilter === Sort.ASC ? a.cost - b.cost : b.cost - a.cost)
+    const onAmountSortChange = () => {
+        const newFilter = amountSort === Sort.ASC ? Sort.DESC : Sort.ASC
+        setAmountSort(newFilter)
+        const results = searchResults.sort((a, b) => newFilter === Sort.ASC ? a.amount - b.amount : b.amount - a.amount)
         setSearchResults(results)
     }
 
@@ -68,31 +73,14 @@ export const SearchAndSort = () => {
 
     const onClearAll = () => {
         setSearchQuery("")
-        setCostSort(null)
-        setNameSort(null)
+        setAmountSort(Sort.ASC)
+        setNameSort(Sort.ASC)
         setSearchResults(localizedItems)
     }
 
     return (
         <div className="search-and-filter">
-            <div>
-                <div className="sorting">
-                    <button
-                        onClick={() => onCostSortChange()}
-                    >
-                        cost
-                    </button>
-                    <button
-                        onClick={() => onNameSortChange()}
-                    >
-                        name
-                    </button>
-                    <button
-                        onClick={() => onClearAll()}
-                    >
-                        clear
-                    </button>
-                </div>
+            <div className="search-controls">
                 <div className="search">
                     <input
                         type="text"
@@ -106,6 +94,32 @@ export const SearchAndSort = () => {
                         <SearchIcon />
                     </button>
                 </div>
+
+                <div className="sorting">
+                    <button
+                        onClick={() => onAmountSortChange()}
+                        className={`${amountSort === Sort.DESC ? "selected" : ""}`}
+                    >
+                        {amountSort === Sort.ASC
+                            ? <AmountAscIcon />
+                            : <AmountDescIcon />
+                        }
+                    </button>
+                    <button
+                        onClick={() => onNameSortChange()}
+                        className={`${nameSort === Sort.DESC ? "selected" : ""}`}
+                    >
+                        {nameSort === Sort.ASC
+                            ? <NameAscIcon />
+                            : <NameDescIcon />
+                        }
+                    </button>
+                    <button
+                        onClick={() => onClearAll()}
+                    >
+                        <TrashIcon />
+                    </button>
+                </div>
             </div>
             <div className="results">
                 {searchResults.map((item, index) => (
@@ -113,7 +127,8 @@ export const SearchAndSort = () => {
                         key={index}
                         className="result"
                     >
-                        {item.cost} / {item.name}
+                        <span>{item.name}</span>
+                        <span>{item.amount}</span>
                     </div>
                 ))}
             </div>
