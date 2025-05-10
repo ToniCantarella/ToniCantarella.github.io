@@ -6,9 +6,7 @@ export const InputElements = () => {
     return (
         <UIElementDialogContent>
             <Slider />
-            {import.meta.env.MODE === "development" &&
-                <SearchAndSort />
-            }
+            <SearchAndSort />
         </UIElementDialogContent>
     )
 }
