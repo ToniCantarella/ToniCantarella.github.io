@@ -8,6 +8,7 @@
     backdrop-filter: blur(2px);
     animation: dialogOpen;
     animation-fill-mode: forwards;
+    z-index: var(--dialog-z-index);
 
     #inner {
         position: relative;
