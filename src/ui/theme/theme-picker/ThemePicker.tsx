@@ -7,16 +7,17 @@ import { FrutigerAeroButton } from "./button-content/FrutigerAeroButton"
 import { RetroButton } from "./button-content/RetroButton"
 import { NatureButton } from "./button-content/NatureButton"
 import { AppContext } from "../../../App"
+import { DorficButton } from "./button-content/DorficButton"
 
 type Theme = {
     name: string,
-    content: ReactElement,
-    devOnly?: boolean
+    content: ReactElement
 }
 
 export enum ThemeNames {
     DARK = "dark-theme",
     LIGHT = "light-theme",
+    DORFIC = "dorfic",
     NEUMORPHISM = "neumorphism",
     FRUTIGER_AERO = "frutiger-aero",
     RETRO = "retro",
@@ -25,24 +26,24 @@ export enum ThemeNames {
 
 const onlyDevModeThemes: Theme[] = [
     {
+        name: ThemeNames.DORFIC,
+        content: <DorficButton />
+    },
+    {
         name: ThemeNames.NEUMORPHISM,
-        content: <NeumorphismButton />,
-        devOnly: true
+        content: <NeumorphismButton />
     },
     {
         name: ThemeNames.FRUTIGER_AERO,
-        content: <FrutigerAeroButton />,
-        devOnly: true
+        content: <FrutigerAeroButton />
     },
     {
         name: ThemeNames.RETRO,
-        content: <RetroButton />,
-        devOnly: true
+        content: <RetroButton />
     },
     {
         name: ThemeNames.NATURE,
-        content: <NatureButton />,
-        devOnly: true
+        content: <NatureButton />
     }
 ]
 

@@ -39,7 +39,7 @@ export const BottomBar = () => {
     )
 }
 
-const SettingsDrawer = (props: { open: boolean }) => {
+const SettingsDrawer = (props: { open: boolean }) => { 
     return (
         <div id="settings-drawer" className={`${props.open ? "open" : ""}`}>
             <div
