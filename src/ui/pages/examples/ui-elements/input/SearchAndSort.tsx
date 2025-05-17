@@ -6,7 +6,7 @@ import NameAscIcon from "../../../../../assets/namesortasc.svg?react"
 import NameDescIcon from "../../../../../assets/namesordesc.svg?react"
 import AmountAscIcon from "../../../../../assets/numbersortasc.svg?react"
 import AmountDescIcon from "../../../../../assets/numbersortdesc.svg?react"
-import TrashIcon from "../../../../../assets/trash.svg?react"
+import CrossIcon from "../../../../../assets/close.svg?react"
 
 const FoodItems = [
     "apple",
@@ -117,7 +117,7 @@ export const SearchAndSort = () => {
                     <button
                         onClick={() => onClearAll()}
                     >
-                        <TrashIcon />
+                        <CrossIcon />
                     </button>
                 </div>
             </div>
