@@ -19,14 +19,11 @@
         align-items: center;
         opacity: .5;
         transform: translateY(var(--button-start-position));
-
-        div {
-            display: flex;
-        }
+        padding: 3px;
 
         svg {
-            max-width: calc(var(--theme-button-size) - 10px);
-            max-height: calc(var(--theme-button-size) - 10px);
+            max-width: calc(var(--theme-button-size) - 5px);
+            max-height: calc(var(--theme-button-size) - 5px);
         }
 
         &.selected,

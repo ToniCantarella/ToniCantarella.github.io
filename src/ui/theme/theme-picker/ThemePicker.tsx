@@ -1,13 +1,10 @@
 import { useState, useContext, createContext, ReactElement, useEffect } from "react"
 import "./ThemePicker.scss"
-import { DarkButton } from "./button-content/DarkButton"
-import { LightButton } from "./button-content/LightButton"
-import { NeumorphismButton } from "./button-content/Neumorphism"
-import { FrutigerAeroButton } from "./button-content/FrutigerAeroButton"
-import { RetroButton } from "./button-content/RetroButton"
-import { NatureButton } from "./button-content/NatureButton"
+import DarkThemeIcon from "../../../assets/dark-theme.svg?react"
+import LightThemeIcon from "../../../assets/light-theme.svg?react"
+import NatureIcon from "../../../assets/nature.svg?react"
+import PointerIcon from "../../../assets/pointer.svg?react"
 import { AppContext } from "../../../App"
-import { DorficButton } from "./button-content/DorficButton"
 
 type Theme = {
     name: string,
@@ -27,34 +24,34 @@ export enum ThemeNames {
 const onlyDevModeThemes: Theme[] = [
     {
         name: ThemeNames.DORFIC,
-        content: <DorficButton />
+        content: <div />
     },
     {
         name: ThemeNames.NEUMORPHISM,
-        content: <NeumorphismButton />
+        content: <div />
     },
     {
         name: ThemeNames.FRUTIGER_AERO,
-        content: <FrutigerAeroButton />
+        content: <div />
     },
     {
         name: ThemeNames.RETRO,
-        content: <RetroButton />
+        content: <PointerIcon />
     },
     {
         name: ThemeNames.NATURE,
-        content: <NatureButton />
+        content: <NatureIcon />
     }
 ]
 
 export const themes: Theme[] = [
     {
         name: ThemeNames.DARK,
-        content: <DarkButton />
+        content: <DarkThemeIcon />
     },
     {
         name: ThemeNames.LIGHT,
-        content: <LightButton />
+        content: <LightThemeIcon />
     },
     ...(import.meta.env.MODE === "development" ? onlyDevModeThemes : [])
 ]
