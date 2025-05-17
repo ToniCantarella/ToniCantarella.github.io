@@ -42,10 +42,7 @@ export const BottomBar = () => {
 const SettingsDrawer = (props: { open: boolean }) => { 
     return (
         <div id="settings-drawer" className={`${props.open ? "open" : ""}`}>
-            <div
-                id="drawer-content"
-            >
-                {import.meta.env.MODE === "development" && <HomeButton />}
+            <div id="drawer-content">
                 <LanguagePicker />
                 <ThemePicker />
             </div>
