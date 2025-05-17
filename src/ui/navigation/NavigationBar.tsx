@@ -11,6 +11,7 @@ import StarIconOutlined from "../../assets/staroutlined.svg?react"
 import ContactIcon from "../../assets/message.svg?react"
 import ContactIconOutlined from "../../assets/messageoutlined.svg?react"
 import { HomeButton } from "./home-button/HomeButton"
+import { AppContext } from "../../App"
 
 type Page = {
 	pathname: string,
@@ -66,6 +67,7 @@ export const NavigationBar = () => {
 
 export const NavigationItems = (props: { icons?: boolean }) => {
 	const location = useLocation()
+	const appContext = useContext(AppContext)
 	const navContext = useContext(NavigationContext)
 	const { t } = useTranslation()
 
@@ -75,7 +77,12 @@ export const NavigationItems = (props: { icons?: boolean }) => {
 			<Link
 				className={`navigation-item ${selected ? "selected" : ""}`}
 				key={page.pathname}
-				onClick={() => navContext.onNavClick(page.pathname)}
+				onClick={() => {
+					navContext.onNavClick(page.pathname)
+					if (props.icons && page.pathname === Paths.ABOUT_ME && selected) {
+						appContext.playIntro()
+					}
+				}}
 				to={page.pathname}
 			>
 				{props.icons && (
