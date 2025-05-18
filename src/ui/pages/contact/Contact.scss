@@ -6,6 +6,10 @@
     flex-direction: column;
     color: var(--on-primary-color);
 
+    &.image-loading {
+        color: var(--on-surface-color);
+    }
+
     #background-image-container {
         position: absolute;
         display: flex;
@@ -45,18 +49,10 @@
                 svg {
                     height: 40px;
                     width: 40px;
-
-                    & * {
-                        fill: var(--on-primary-color);
-                    }
                 }
 
                 &:hover {
                     scale: 1.2;
-
-                    & * {
-                        fill: var(--primary-color);
-                    }
                 }
             }
         }

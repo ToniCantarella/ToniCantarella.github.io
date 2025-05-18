@@ -18,7 +18,7 @@ export const Contact = () => {
 
     return (
         <Page>
-            <div id="contact">
+            <div id="contact" className={`${imageLoading ? "image-loading" : ""}`}>
                 <div id="background-image-container">
                     {!imageLoading &&
                         <div
