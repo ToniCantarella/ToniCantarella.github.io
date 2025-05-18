@@ -1,14 +1,21 @@
-.light-theme {
-    --primary-color: var(--default-orange);
-    --surface-color: #fffefc;
-    --on-surface-color: var(--text-color);
-    --text-color: #39393a;
-    --shadow-color: #948b76;
-    --icon-color: var(--text-color);
-    --close-button-color: var(--on-surface-color);
+.dorfic {
 
-    --app-background: var(--light-color);
-    --app-bar-background: var(--primary-color);
+    /* This theme needs blue and shades of grey, look for mirrors edge for inspiration 
+    */
+
+    --primary-color: #f87509;
+    --surface-color: #3a3734;
+    --on-surface-color: var(--text-color);
+    --text-color: #413e3b;
+    --shadow-color: #161311;
+    --icon-color: var(--text-color);
+    --close-button-color: var(--icon-color);
+
+    --dorfic-dark-orange: #ee5f00;
+    --dorfic-light-orange: #ffcc5d;
+
+    --app-background: #fffdf3;
+    --app-bar-background: linear-gradient(to top right, var(--dorfic-dark-orange), var(--dorfic-light-orange));
 
     --surface-border-radius: var(--medium-padding);
 
@@ -35,7 +42,6 @@
 
             &:hover,
             &.selected {
-                color: var(--text-color);
 
                 &::after {
                     opacity: 1;

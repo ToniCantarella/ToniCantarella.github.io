@@ -1,3 +1,4 @@
+import { DorficBackground } from "./theme/theme-background/DorficBackground";
 import { FrutigerAeroBackground } from "./theme/theme-background/FrutigerAeroBackground";
 import { ThemeNames } from "./theme/theme-picker/ThemePicker";
 
@@ -14,6 +15,10 @@ const Backgrounds: Background[] = [
     {
         name: ThemeNames.LIGHT,
         content: <></>
+    },
+    {
+        name: ThemeNames.DORFIC,
+        content: <DorficBackground/>
     },
     {
         name: ThemeNames.NEUMORPHISM,
