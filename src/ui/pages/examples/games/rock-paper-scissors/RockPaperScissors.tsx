@@ -31,6 +31,7 @@ export const RockPaperScissorsGame = () => {
     const [computerPlay, setComputerPlay] = useState<Hand | null>(null)
     const [computerPlayIndex, setComputerPlayIndex] = useState<number | null>(null)
     const [winnerTitle, setWinnerTitle] = useState<string | null>(null)
+    const moveDelay = 1000
     const { t } = useTranslation()
 
     const dealCards = () => {
@@ -55,9 +56,11 @@ export const RockPaperScissorsGame = () => {
     const playCard = (card: Hand, index: number) => {
         setPlayerPlay(index)
         const newComputerPlay = getCard()
-        setComputerPlay(newComputerPlay)
-        setComputerPlayIndex(Math.floor(Math.random() * computerCards!.length))
-        evaluateWinner(card, newComputerPlay)
+        setTimeout(() => {
+            setComputerPlay(newComputerPlay)
+            setComputerPlayIndex(Math.floor(Math.random() * computerCards!.length))
+            evaluateWinner(card, newComputerPlay)
+        }, moveDelay)
     }
 
     const evaluateWinner = (player: Hand, computer: Hand) => {
@@ -94,42 +97,44 @@ export const RockPaperScissorsGame = () => {
                     {t(winnerTitle)}
                 </span>
             }
-            <div className="game-board">
+            <div className={`game-board ${playerPlay !== null ? "mid-play" : ""}`}>
                 <div className="hand computer-hand">
-                    {computerCards?.map((_, index) => {
-                        const isPlayedCard = computerPlay != null && index === computerPlayIndex
-                        return (
-                            <div
-                                key={index}
-                                className={`game-card ${isPlayedCard ? "computer-play" : ""}`}
-                                style={{
-                                    marginLeft: `${isPlayedCard ? "var(--card-width)" : `calc(${index} * var(--card-width))`}`,
-                                    rotate: `${isPlayedCard ? randomRotation() : `${15 + (index * (computerCards.length > 2 ? -15 : -30))}deg`}`
-                                }}
-                            >
-                                {isPlayedCard && getIcon(computerPlay!)}
-                            </div>
-                        )
-                    })}
+
                 </div>
+                {computerCards?.map((_, index) => {
+                    const isPlayedCard = computerPlay != null && index === computerPlayIndex
+                    return (
+                        <div
+                            key={index}
+                            className={`game-card ${isPlayedCard ? "computer-play" : "computer-card"}`}
+                            style={{
+                                marginLeft: `${isPlayedCard ? "var(--card-width)" : `calc(${index} * var(--card-width))`}`,
+                                rotate: `${isPlayedCard ? randomRotation() : `${15 + (index * (computerCards.length > 2 ? -15 : -30))}deg`}`
+                            }}
+                        >
+                            {isPlayedCard && getIcon(computerPlay!)}
+                        </div>
+                    )
+                })}
                 <div className="hand player-hand">
-                    {playerCards?.map((card, index) => {
-                        const isPlayedCard = index === playerPlay
-                        return (
-                            <button
-                                key={index}
-                                className={`game-card ${isPlayedCard ? "player-play" : ""}`}
-                                onClick={() => playCard(card, index)}
-                                style={{
-                                    marginLeft: `${isPlayedCard ? "0px" : `calc(${index} * var(--card-width))`}`,
-                                    rotate: `${isPlayedCard ? randomRotation() : `${-15 + (index * (playerCards.length > 2 ? 15 : 30))}deg`}`
-                                }}
-                            >
-                                {getIcon(card)}
-                            </button>
-                        )
-                    })}
+
                 </div>
+                {playerCards?.map((card, index) => {
+                    const isPlayedCard = index === playerPlay
+                    return (
+                        <button
+                            key={index}
+                            className={`game-card ${isPlayedCard ? "player-play" : "player-card"}`}
+                            onClick={() => playCard(card, index)}
+                            style={{
+                                marginLeft: `${isPlayedCard ? "0px" : `calc(${index} * var(--card-width))`}`,
+                                rotate: `${isPlayedCard ? randomRotation() : `${-15 + (index * (playerCards.length > 2 ? 15 : 30))}deg`}`
+                            }}
+                        >
+                            {getIcon(card)}
+                        </button>
+                    )
+                })}
             </div>
         </div>
     )

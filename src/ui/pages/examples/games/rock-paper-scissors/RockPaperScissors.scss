@@ -3,14 +3,19 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: 400px;
-    border: 1px solid;
+    min-height: 500px;
 
     --card-width: 70px;
     --card-height: 100px;
 
     .winner-title {
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: 0 0 10px var(--shadow-color);
+        font-size: xx-large;
+        z-index: 2;
     }
 
     .game-board {
@@ -21,43 +26,56 @@
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        border: 1px dashed;
+        border-radius: var(--small-padding);
+        padding: var(--small-padding);
+        position: relative;
+
+        &.mid-play {
+            pointer-events: none;
+        }
 
         .hand {
             position: relative;
             border: 1px dashed;
+            border-radius: var(--small-padding);
             width: calc(2 * var(--card-width));
             height: var(--card-height);
+        }
 
-            .game-card {
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: rgb(49, 37, 18);
-                border: 1px solid blue;
-                border-radius: 8px;
-                top: 0;
-                left: 0;
-                width: var(--card-width);
-                height: 100%;
+        .game-card {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(46, 28, 17);
+            border-radius: 8px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--card-width);
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+            height: var(--card-height);
 
-                svg {
-                    height: 40px;
-                    width: 40px;
+            &.player-card {
+                top: calc(100% - var(--card-height));
+            }
 
-                    & * {
-                        fill: white;
-                    }
+            svg {
+                height: 40px;
+                width: 40px;
+
+                & * {
+                    fill: white;
                 }
+            }
 
-                &.player-play {
-                    top: -150px;
-                }
+            &.player-play {
+                top: 50%;
+            }
 
-                &.computer-play {
-                    top: 150px;
-                }
+            &.computer-play {
+                top: 50%;
             }
         }
     }
