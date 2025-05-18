@@ -33,17 +33,21 @@
         }
 
         &.dark-theme {
-            border: 2px solid white;
-            background-color: black;
+            border: 2px solid #FAF1E6;
+            background-color: #292725;
 
             svg {
-                fill: white;
+                color: #FAF1E6;
             }
         }
 
         &.light-theme {
-            border: 2px solid black;
-            background-color: white;
+            border: 2px solid #292725;
+            background-color: #FAF1E6;
+
+            svg {
+                color: #292725;
+            }
         }
 
         &.neumorphism {
