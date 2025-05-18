@@ -4,13 +4,13 @@
     align-items: center;
     width: 100%;
     min-height: 400px;
-    height: 100%;
     border: 1px solid;
 
     --card-width: 70px;
     --card-height: 100px;
 
     .winner-title {
+        position: absolute;
     }
 
     .game-board {

@@ -31,7 +31,7 @@ export const RockPaperScissorsGame = () => {
     const [computerPlay, setComputerPlay] = useState<Hand | null>(null)
     const [computerPlayIndex, setComputerPlayIndex] = useState<number | null>(null)
     const [winnerTitle, setWinnerTitle] = useState<string | null>(null)
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const dealCards = () => {
         const newPlayerCards = generateDeck()
@@ -85,27 +85,14 @@ export const RockPaperScissorsGame = () => {
         dealCards()
     }, [])
 
+    const randomRotation = () => `${Math.floor(Math.random() * (30 - (-15)) + (-15))}deg`
+
     return (
         <div id="rock-paper-scissors-game">
             {winnerTitle &&
                 <span className="winner-title">
                     {t(winnerTitle)}
                 </span>
-            }
-            {winnerTitle &&
-                <button
-                    className=""
-                    onClick={() => redo()}
-                >
-                    retry
-                </button>
-            }
-            {playerCards?.length === 0 &&
-                <button
-                    onClick={() => dealCards()}
-                >
-                    start over
-                </button>
             }
             <div className="game-board">
                 <div className="hand computer-hand">
@@ -117,7 +104,7 @@ export const RockPaperScissorsGame = () => {
                                 className={`game-card ${isPlayedCard ? "computer-play" : ""}`}
                                 style={{
                                     marginLeft: `${isPlayedCard ? "var(--card-width)" : `calc(${index} * var(--card-width))`}`,
-                                    rotate: `${isPlayedCard ? "15deg" : `${15 + (index * (computerCards.length > 2 ? -15 : -30))}deg`}`
+                                    rotate: `${isPlayedCard ? randomRotation() : `${15 + (index * (computerCards.length > 2 ? -15 : -30))}deg`}`
                                 }}
                             >
                                 {isPlayedCard && getIcon(computerPlay!)}
@@ -135,7 +122,7 @@ export const RockPaperScissorsGame = () => {
                                 onClick={() => playCard(card, index)}
                                 style={{
                                     marginLeft: `${isPlayedCard ? "0px" : `calc(${index} * var(--card-width))`}`,
-                                    rotate: `${isPlayedCard ? "-15deg" : `${-15 + (index * (playerCards.length > 2 ? 15 : 30))}deg`}`
+                                    rotate: `${isPlayedCard ? randomRotation() : `${-15 + (index * (playerCards.length > 2 ? 15 : 30))}deg`}`
                                 }}
                             >
                                 {getIcon(card)}
