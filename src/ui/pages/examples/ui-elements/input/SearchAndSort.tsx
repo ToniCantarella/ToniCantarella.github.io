@@ -116,6 +116,7 @@ export const SearchAndSort = () => {
                     </button>
                     <button
                         onClick={() => onClearAll()}
+                        className="clear-all"
                     >
                         <CrossIcon />
                     </button>
