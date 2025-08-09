@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { preloadImages } from "../../../App"
 import CupImage from "../../../assets/cup.jpg"
 import GithubIcon from "../../../assets/github.svg?react"
 import LinkedInIcon from "../../../assets/linkedin.svg?react"
@@ -8,26 +6,18 @@ import { Page } from "../Page"
 import "./Contact.scss"
 
 export const Contact = () => {
-    const [imageLoading, setImageLoading] = useState<boolean>(true)
     const { t } = useTranslation()
-
-    useEffect(() => {
-        preloadImages([CupImage])
-            .then(() => setImageLoading(false))
-    }, [])
 
     return (
         <Page>
-            <div id="contact" className={`${imageLoading ? "image-loading" : ""}`}>
+            <div id="contact">
                 <div id="background-image-container">
-                    {!imageLoading &&
-                        <div
-                            id="background-image"
-                            style={{
-                                backgroundImage: `url(${CupImage})`
-                            }}
-                        />
-                    }
+                    <div
+                        id="background-image"
+                        style={{
+                            backgroundImage: `url(${CupImage})`
+                        }}
+                    />
                 </div>
                 <div id="contact-info">
                     <p>toni.cantarella@outlook.com</p>

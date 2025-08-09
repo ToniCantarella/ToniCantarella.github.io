@@ -1,7 +1,6 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
-import { preloadImages } from "../../../App"
 import motorbikeImage from "../../../assets/motorbike.jpg"
 import torchImage from "../../../assets/torch.jpg"
 import winterImage from "../../../assets/winter.jpg"
@@ -25,10 +24,6 @@ export const AboutMe = () => {
         motorbikeImage,
         torchImage
     ]
-
-    useEffect(() => {
-        preloadImages(images)
-    }, [])
 
     return (
         <Page>
