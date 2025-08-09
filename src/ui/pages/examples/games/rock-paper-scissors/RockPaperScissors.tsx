@@ -76,13 +76,13 @@ export const RockPaperScissorsGame = () => {
         }
     }
 
-    const redo = () => {
+    /* const redo = () => {
         setComputerPlay(null)
         setComputerPlayIndex(null)
         setPlayerPlay(null)
         setComputerCards(computerCards!.filter((_, i) => computerPlayIndex !== i))
         setPlayerCards(playerCards!.filter((_, i) => playerPlay !== i))
-    }
+    } */
 
     useEffect(() => {
         dealCards()
