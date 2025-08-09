@@ -1,6 +1,7 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
+import { preloadImages } from "../../../App"
 import motorbikeImage from "../../../assets/motorbike.jpg"
 import torchImage from "../../../assets/torch.jpg"
 import winterImage from "../../../assets/winter.jpg"
@@ -16,7 +17,7 @@ export const AboutMe = () => {
     const firstDayOfWork = new Date("2022-05-30")
     const years = now.getFullYear() - firstDayOfWork.getFullYear()
     const months = now.getMonth() - firstDayOfWork.getMonth()
-    const monthsString = months > 6 ? ",5" : "" 
+    const monthsString = months > 6 ? ",5" : ""
     const yearsOfExperience = `${years}${monthsString}`
 
     const images = [
@@ -24,6 +25,10 @@ export const AboutMe = () => {
         motorbikeImage,
         torchImage
     ]
+
+    useEffect(() => {
+        preloadImages(images)
+    }, [])
 
     return (
         <Page>

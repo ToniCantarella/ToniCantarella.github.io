@@ -19,6 +19,16 @@ type AppContextType = {
 
 export const AppContext = createContext<AppContextType>({} as AppContextType)
 
+export const preloadImages = (urls: string[]) => {
+	return Promise.all(
+		urls.map(url => {
+			const img = new Image();
+			img.src = url;
+			return img.decode()
+		})
+	)
+}
+
 function App() {
 	const { theme } = useContext(ThemeContext)
 	const { t } = useTranslation()

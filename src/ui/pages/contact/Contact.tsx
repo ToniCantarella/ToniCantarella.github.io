@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
+import { preloadImages } from "../../../App"
 import CupImage from "../../../assets/cup.jpg"
 import GithubIcon from "../../../assets/github.svg?react"
 import LinkedInIcon from "../../../assets/linkedin.svg?react"
@@ -11,9 +12,8 @@ export const Contact = () => {
     const { t } = useTranslation()
 
     useEffect(() => {
-        const img = new Image()
-        img.src = CupImage
-        img.onload = () => setImageLoading(false)
+        preloadImages([CupImage])
+            .then(() => setImageLoading(false))
     }, [])
 
     return (
