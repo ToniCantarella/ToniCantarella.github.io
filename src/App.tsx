@@ -1,14 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { BrowserRouter as Router } from "react-router-dom"
-import { Background } from "./ui/AppBackground"
 import './App.scss'
 import "./ui/theme/theme-styles/DarkTheme.scss"
 import "./ui/theme/theme-styles/LightTheme.scss"
-import "./ui/theme/theme-styles/Dorfic.scss"
-import "./ui/theme/theme-styles/Neumorphism.scss"
-import "./ui/theme/theme-styles/FrutigerAero.scss"
-import "./ui/theme/theme-styles/Retro.scss"
-import "./ui/theme/theme-styles/Nature.scss"
 import { AppContent } from "./ui/AppContent"
 import { BottomBar } from "./ui/navigation/bottom-bar/BottomBar"
 import { ThemeContext } from "./ui/theme/theme-picker/ThemePicker"
@@ -53,9 +47,6 @@ function App() {
 	return (
 		<AppContext.Provider value={appContext}>
 			<div id="app" className={theme}>
-				<Background
-					theme={theme}
-				/>
 				<Router basename="/">
 					{introPlaying && <Intro />}
 					<div id="app-bar">

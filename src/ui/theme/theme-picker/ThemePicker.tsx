@@ -2,8 +2,6 @@ import { useState, useContext, createContext, ReactElement, useEffect } from "re
 import "./ThemePicker.scss"
 import DarkThemeIcon from "../../../assets/dark-theme.svg?react"
 import LightThemeIcon from "../../../assets/light-theme.svg?react"
-import NatureIcon from "../../../assets/nature.svg?react"
-import PointerIcon from "../../../assets/pointer.svg?react"
 import { AppContext } from "../../../App"
 
 type Theme = {
@@ -13,36 +11,8 @@ type Theme = {
 
 export enum ThemeNames {
     DARK = "dark-theme",
-    LIGHT = "light-theme",
-    DORFIC = "dorfic",
-    NEUMORPHISM = "neumorphism",
-    FRUTIGER_AERO = "frutiger-aero",
-    RETRO = "retro",
-    NATURE = "nature"
+    LIGHT = "light-theme"
 }
-
-const onlyDevModeThemes: Theme[] = [
-    {
-        name: ThemeNames.DORFIC,
-        content: <div />
-    },
-    {
-        name: ThemeNames.NEUMORPHISM,
-        content: <div />
-    },
-    {
-        name: ThemeNames.FRUTIGER_AERO,
-        content: <div />
-    },
-    {
-        name: ThemeNames.RETRO,
-        content: <PointerIcon />
-    },
-    {
-        name: ThemeNames.NATURE,
-        content: <NatureIcon />
-    }
-]
 
 export const themes: Theme[] = [
     {
@@ -52,8 +22,7 @@ export const themes: Theme[] = [
     {
         name: ThemeNames.LIGHT,
         content: <LightThemeIcon />
-    },
-    ...(import.meta.env.MODE === "development" ? onlyDevModeThemes : [])
+    }
 ]
 
 export const ThemePicker = () => {
