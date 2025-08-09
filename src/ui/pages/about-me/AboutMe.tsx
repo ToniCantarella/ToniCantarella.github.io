@@ -12,7 +12,12 @@ import "./AboutMe.scss"
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
     const { t } = useTranslation()
-    const yearsOfExperience = new Date().getFullYear() - new Date("2022-05-30").getFullYear()
+    const now = new Date()
+    const firstDayOfWork = new Date("2022-05-30")
+    const years = now.getFullYear() - firstDayOfWork.getFullYear()
+    const months = now.getMonth() - firstDayOfWork.getMonth()
+    const monthsString = months > 6 ? ",5" : "" 
+    const yearsOfExperience = `${years}${monthsString}`
 
     const images = [
         winterImage,
