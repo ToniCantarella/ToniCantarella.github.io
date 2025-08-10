@@ -13,6 +13,7 @@ import winterImage from "./assets/winter.jpg"
 import motorbikeImage from "./assets/motorbike.jpg"
 import torchImage from "./assets/torch.jpg"
 import contactImage from "./assets/cup.jpg"
+import noiseGradient from "./assets/noiseGradient.jpg"
 
 type AppContextType = {
 	firstRender: boolean,
@@ -68,6 +69,7 @@ function App() {
 	return (
 		<AppContext.Provider value={appContext}>
 			<div id="app" className={theme}>
+				<img src={noiseGradient} id="background-image"/>
 				<Router basename="/">
 					{introPlaying && <Intro />}
 					<div id="app-bar">
