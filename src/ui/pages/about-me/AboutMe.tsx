@@ -8,7 +8,13 @@ import { Carousel } from "../../common/Carousel"
 import { NavigationContext, Paths } from "../../navigation/NavigationBar"
 import { Page } from "../Page"
 import "./AboutMe.scss"
-import { usePreloadImages } from "../../hooks/useImagePreload"
+
+const images = [winterImage, motorbikeImage, torchImage];
+
+images.forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
 
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
@@ -19,14 +25,6 @@ export const AboutMe = () => {
     const months = now.getMonth() - firstDayOfWork.getMonth()
     const monthsString = months > 6 ? ",5" : ""
     const yearsOfExperience = `${years}${monthsString}`
-
-    const images = [
-        winterImage,
-        motorbikeImage,
-        torchImage
-    ]
-
-    usePreloadImages(images)
 
     return (
         <Page>
