@@ -8,6 +8,7 @@ import { Carousel } from "../../common/Carousel"
 import { NavigationContext, Paths } from "../../navigation/NavigationBar"
 import { Page } from "../Page"
 import "./AboutMe.scss"
+import { usePreloadImages } from "../../hooks/useImagePreload"
 
 export const AboutMe = () => {
     const navContext = useContext(NavigationContext)
@@ -24,6 +25,8 @@ export const AboutMe = () => {
         motorbikeImage,
         torchImage
     ]
+
+    usePreloadImages(images)
 
     return (
         <Page>

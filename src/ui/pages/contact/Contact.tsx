@@ -4,9 +4,12 @@ import GithubIcon from "../../../assets/github.svg?react"
 import LinkedInIcon from "../../../assets/linkedin.svg?react"
 import { Page } from "../Page"
 import "./Contact.scss"
+import { usePreloadImage } from "../../hooks/useImagePreload"
 
 export const Contact = () => {
     const { t } = useTranslation()
+
+    usePreloadImage(CupImage)
 
     return (
         <Page>
