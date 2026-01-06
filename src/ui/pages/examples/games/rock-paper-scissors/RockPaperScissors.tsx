@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import RockIcon from "../../../../../assets/rock.svg?react"
-import PaperIcon from "../../../../../assets/paper.svg?react"
-import ScissorsIcon from "../../../../../assets/scissors.svg?react"
+import RockIcon from "../../../../../assets/svg/rock.svg?react"
+import PaperIcon from "../../../../../assets/svg/paper.svg?react"
+import ScissorsIcon from "../../../../../assets/svg/scissors.svg?react"
 import "./RockPaperScissors.scss"
 import { useTranslation } from "react-i18next"
 

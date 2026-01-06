@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./Dialog.scss"
 import { Card } from "./Card"
-import CloseIcon from "../../assets/close.svg?react"
+import CloseIcon from "../../assets/svg/close.svg?react"
 import { createPortal } from "react-dom"
 import { useTranslation } from "react-i18next"
 

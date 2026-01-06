@@ -1,7 +1,7 @@
 import { useState, useContext, createContext, ReactElement, useEffect } from "react"
 import "./ThemePicker.scss"
-import DarkThemeIcon from "../../../assets/dark-theme.svg?react"
-import LightThemeIcon from "../../../assets/light-theme.svg?react"
+import DarkThemeIcon from "../../../assets/svg/dark-theme.svg?react"
+import LightThemeIcon from "../../../assets/svg/light-theme.svg?react"
 import { AppContext } from "../../../App"
 
 type Theme = {

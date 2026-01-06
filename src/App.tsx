@@ -9,10 +9,10 @@ import { ThemeContext } from "./ui/theme/theme-picker/ThemePicker"
 import { TopBar } from "./ui/navigation/top-bar/TopBar"
 import { Intro } from "./ui/intro/Intro"
 import { useTranslation } from "react-i18next"
-import winterImage from "./assets/winter.jpg"
-import motorbikeImage from "./assets/motorbike.jpg"
-import torchImage from "./assets/torch.jpg"
-import contactImage from "./assets/cup.jpg"
+import winterImage from "./assets/images/winter.jpg"
+import motorbikeImage from "./assets/images/motorbike.jpg"
+import torchImage from "./assets/images/torch.jpg"
+import contactImage from "./assets/images/cup.jpg"
 
 type AppContextType = {
 	firstRender: boolean,

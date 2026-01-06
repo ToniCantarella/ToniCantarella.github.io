@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import SearchIcon from "../../../../../assets/search.svg?react"
+import SearchIcon from "../../../../../assets/svg/search.svg?react"
 import "./SearchAndFilter.scss"
 import { useTranslation } from "react-i18next"
-import NameAscIcon from "../../../../../assets/namesortasc.svg?react"
-import NameDescIcon from "../../../../../assets/namesordesc.svg?react"
-import AmountAscIcon from "../../../../../assets/numbersortasc.svg?react"
-import AmountDescIcon from "../../../../../assets/numbersortdesc.svg?react"
-import CrossIcon from "../../../../../assets/close.svg?react"
+import NameAscIcon from "../../../../../assets/svg/namesortasc.svg?react"
+import NameDescIcon from "../../../../../assets/svg/namesordesc.svg?react"
+import AmountAscIcon from "../../../../../assets/svg/numbersortasc.svg?react"
+import AmountDescIcon from "../../../../../assets/svg/numbersortdesc.svg?react"
+import CrossIcon from "../../../../../assets/svg/close.svg?react"
 
 const FoodItems = [
     "apple",

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import ArrowIcon from "../../assets/arrow.svg?react"
+import ArrowIcon from "../../assets/svg/arrow.svg?react"
 import "./Carousel.scss"
 import { IndexIndicator } from "./IndexIndicator"
 import { ProgressIndicator } from "./ProgressIndicator"

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
-import CupImage from "../../../assets/cup.jpg"
-import GithubIcon from "../../../assets/github.svg?react"
-import LinkedInIcon from "../../../assets/linkedin.svg?react"
+import CupImage from "../../../assets/images/cup.jpg"
+import GithubIcon from "../../../assets/svg/github.svg?react"
+import LinkedInIcon from "../../../assets/svg/linkedin.svg?react"
 import { Page } from "../Page"
 import "./Contact.scss"
 

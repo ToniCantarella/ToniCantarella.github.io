@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 import "./LanguagePicker.scss"
-import FinlandFlag from "../../assets/finland.svg?react"
-import EnglandFlag from "../../assets/england.svg?react"
+import FinlandFlag from "../../assets/svg/finland.svg?react"
+import EnglandFlag from "../../assets/svg/england.svg?react"
 import { ReactElement, useEffect } from "react"
 
 export type Language = {
