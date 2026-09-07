@@ -1,7 +1,7 @@
-import {useEffect, useState} from "react"
+import {useState} from "react"
 import {useLocation} from "react-router";
 
-enum Direction {
+export enum Direction {
     BACK = "back",
     FORWARD = "forward"
 }
@@ -9,22 +9,23 @@ enum Direction {
 const routeOrder = ["/", "/experience", "/examples", "/art", "/contact"]
 
 export default function useRouteDirection() {
-    const location = useLocation()
-    const [prevLocation, setPrevLocation] = useState<string>(location.pathname)
-    const [direction, setDirection] = useState<Direction>(Direction.FORWARD)
+    const { pathname } = useLocation()
+    const [state, setState] = useState({
+        prev: pathname,
+        direction: Direction.FORWARD,
+    })
 
-    useEffect(() => {
-        setPrevLocation(location.pathname)
+    if (state.prev !== pathname) {
+        const previousIndex = routeOrder.indexOf(state.prev)
+        const currentIndex = routeOrder.indexOf(pathname)
 
-        const previousIndex = routeOrder.indexOf(prevLocation)
-        const currentIndex = routeOrder.indexOf(location.pathname)
+        setState({
+            prev: pathname,
+            direction: currentIndex > previousIndex
+                ? Direction.FORWARD
+                : Direction.BACK,
+        })
+    }
 
-        if (previousIndex < currentIndex) {
-            setDirection(Direction.FORWARD)
-        } else {
-            setDirection(Direction.BACK)
-        }
-    },[location.pathname])
-
-    return direction
+    return state.direction
 }
