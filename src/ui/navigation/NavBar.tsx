@@ -12,27 +12,27 @@ export default function NavBar(props: NavBarProps) {
             </NavLink>
             <ul className="flex gap-8">
                 <li>
-                    <NavLink to="/" viewTransition>
+                    <NavLink to="/">
                         About
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="experience" viewTransition>
+                    <NavLink to="experience">
                         Experience
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="examples" viewTransition>
+                    <NavLink to="examples">
                         Examples
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="art" viewTransition>
+                    <NavLink to="art">
                         Art
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="contact" viewTransition>
+                    <NavLink to="contact">
                         Contact
                     </NavLink>
                 </li>
