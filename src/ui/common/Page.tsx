@@ -9,8 +9,8 @@ type PageProps = {
 export default function Page(props: PageProps) {
     const navigationDirection = usePresenceData()
 
-    const backAnimation = {opacity: 0, x: -100}
-    const forwardAnimation = {opacity: 0, x: 100}
+    const backAnimation = {opacity: 0, x: "-100%"}
+    const forwardAnimation = {opacity: 0, x: "100%"}
 
     const defaultPosition = {opacity: 1, x: 0}
 
@@ -23,7 +23,7 @@ export default function Page(props: PageProps) {
 
     return (
         <motion.div
-            className="border-purple-200 border-2 flex-1 absolute"
+            className="border-purple-200 border-2 absolute w-full h-full"
             initial={enterAnimation}
             animate={defaultPosition}
             exit={exitAnimation}

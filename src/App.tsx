@@ -14,7 +14,7 @@ function App() {
             <NavBar
                 onLogoClick={() => {}}
             />
-            <main className="page-content flex flex-1">
+            <main className="page-content flex flex-1 relative overflow-hidden">
                 <AnimatePresence initial={false} custom={navigationDirection}>
                     <Routes location={location} key={location.pathname}>
                         <Route index element={<Home/>}/>
