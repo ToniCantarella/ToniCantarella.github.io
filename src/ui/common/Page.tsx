@@ -27,7 +27,7 @@ export default function Page(props: PageProps) {
             initial={enterAnimation}
             animate={defaultPosition}
             exit={exitAnimation}
-            transition={{duration: 1}}
+            transition={{duration: .3}}
         >
             {props.children}
         </motion.div>
