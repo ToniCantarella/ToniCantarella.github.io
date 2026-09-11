@@ -17,34 +17,6 @@ body {
     view-transition-name: page-content;
 }
 
-::view-transition-old(page-content) {
-    animation: slide-out 350ms ease forwards;
-}
-
-::view-transition-new(page-content) {
-    animation: slide-in 350ms ease forwards;
-}
-
-@keyframes slide-in {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-out {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    to {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+@theme {
+    --font-sans: "Red Hat Display", sans-serif;
 }
