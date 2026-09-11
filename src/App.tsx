@@ -1,9 +1,9 @@
 import {Route, Routes, useLocation} from 'react-router'
-import NavBar from './ui/navigation/NavBar'
 import Home from "./ui/home/Home.tsx";
 import Page from "./ui/common/Page.tsx";
 import useRouteDirection from "./ui/navigation/Navigation.tsx";
 import {AnimatePresence} from "motion/react";
+import TopBar from "./ui/topbar/TopBar.tsx";
 
 function App() {
     const location = useLocation()
@@ -11,8 +11,9 @@ function App() {
 
     return (
         <div className='flex flex-col h-full'>
-            <NavBar
-                onLogoClick={() => {}}
+            <TopBar
+                onLogoClick={() => {
+                }}
             />
             <main className="page-content flex flex-1 relative overflow-hidden">
                 <AnimatePresence initial={false} custom={navigationDirection}>

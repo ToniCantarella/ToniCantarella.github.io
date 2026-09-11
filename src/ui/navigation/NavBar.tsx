@@ -6,7 +6,7 @@ type NavBarProps = {
 
 export default function NavBar(props: NavBarProps) {
     return (
-        <nav className="sticky flex justify-between">
+        <nav className="flex justify-between gap-60">
             <NavLink to="/" onClick={props.onLogoClick}>
                 TC
             </NavLink>
