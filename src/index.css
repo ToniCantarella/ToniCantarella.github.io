@@ -18,6 +18,7 @@ body {
     color-scheme: light;
     --bg: #ffffff;
     --fg: #14201d;
+    --primary: #ff6c27;
     --surface: #f5f7f6;
     --muted: #596a64;
     --border: #dce3e0;
@@ -27,6 +28,7 @@ body {
     color-scheme: dark;
     --bg: #0e1412;
     --fg: #e4ebe8;
+    --primary: #ff6c27;
     --surface: #151d1a;
     --muted: #8ea39c;
     --border: #253029;
@@ -41,6 +43,7 @@ body {
 }
 
 @theme inline {
+    --color-primary: var(--primary);
     --color-surface: var(--surface);
     --color-muted: var(--muted);
     --color-border: var(--border);

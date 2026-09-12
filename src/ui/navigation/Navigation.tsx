@@ -6,7 +6,35 @@ export enum Direction {
     FORWARD = "forward"
 }
 
-const routeOrder = ["/", "/experience", "/examples", "/art", "/contact"]
+export type Route = {
+    path: string
+    label: string
+}
+
+export const routes: Route[] = [
+    {
+        path: "/",
+        label: "About",
+    },
+    {
+        path: "/experience",
+        label: "Experience",
+    },
+    {
+        path: "/examples",
+        label: "Examples",
+    },
+    {
+        path: "/art",
+        label: "Art",
+    },
+    {
+        path: "/contact",
+        label: "Contact",
+    },
+]
+
+const routeOrder = routes.map(route => route.path)
 
 export default function useRouteDirection() {
     const { pathname } = useLocation()
