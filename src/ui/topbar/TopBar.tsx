@@ -9,10 +9,14 @@ type TopBarProps = {
 export default function TopBar(props: TopBarProps) {
 
     return (
-        <div className="sticky flex justify-between border-2 border-purple-500-200">
-            <NavBar onLogoClick={props.onLogoClick} />
-            <ThemePicker />
-            <LanguagePicker />
+        <div className="sticky flex justify-center">
+            <div className="flex w-[1200px] justify-between">
+                <NavBar onLogoClick={props.onLogoClick}/>
+                <div className="flex gap-8">
+                    <ThemePicker/>
+                    <LanguagePicker/>
+                </div>
+            </div>
         </div>
     )
 }

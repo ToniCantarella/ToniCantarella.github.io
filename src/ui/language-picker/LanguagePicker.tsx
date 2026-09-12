@@ -23,7 +23,7 @@ export default function LanguagePicker() {
     const {i18n} = useTranslation()
 
     return (
-        <div>
+        <div className="flex gap-4">
             {SupportedLanguages.map((language) => (
                 <button
                     key={language.lngCode}

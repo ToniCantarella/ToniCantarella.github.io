@@ -10,7 +10,7 @@ export default function ThemePicker() {
     }, [theme]);
 
     return (
-        <div>
+        <div className="flex gap-4">
             {themes.map((theme) => (
                 <button
                     key={theme}
