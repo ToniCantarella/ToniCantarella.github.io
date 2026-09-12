@@ -1,10 +1,14 @@
 import {useEffect, useState} from "react";
+import {MdLightMode, MdNightlightRound} from "react-icons/md";
 
-const themes = ["light", "dark"]
+enum Theme {
+    Dark = "dark",
+    Light = "light"
+}
 
 export default function ThemePicker() {
-    const fetchedTheme = localStorage.getItem("theme")
-    const [theme, setTheme] = useState<string>(fetchedTheme ? fetchedTheme : "dark");
+    const fetchedTheme = localStorage.getItem("theme") as Theme;
+    const [theme, setTheme] = useState<Theme>(fetchedTheme ? fetchedTheme : Theme.Dark);
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme)
@@ -13,14 +17,29 @@ export default function ThemePicker() {
 
     return (
         <div className="flex gap-4">
-            {themes.map((theme) => (
-                <button
-                    key={theme}
-                    onClick={() => setTheme(theme)}
-                >
-                    {theme}
-                </button>
-            ))}
+            <ThemeButton
+                onClick={() => setTheme(Theme.Light)}
+                icon={<MdLightMode/>}
+            />
+            <ThemeButton
+                onClick={() => setTheme(Theme.Dark)}
+                icon={<MdNightlightRound/>}
+            />
         </div>
+    )
+}
+
+type ThemeButtonProps = {
+    icon: React.ReactNode
+    onClick?: () => void
+}
+
+function ThemeButton(props: ThemeButtonProps) {
+    return (
+        <button
+            onClick={props.onClick}
+        >
+            {props.icon}
+        </button>
     )
 }
