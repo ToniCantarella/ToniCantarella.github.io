@@ -34,7 +34,7 @@ export default function IntroAnimation(props: IntroAnimationProps) {
                             setFirstVisit(false)
                             props.onExit()
                         }}
-                        className="absolute w-full h-full bg-amber-500 z-11"
+                        className="absolute w-full h-full bg-amber-500"
                     >
                     </motion.div>
                 </motion.div>
