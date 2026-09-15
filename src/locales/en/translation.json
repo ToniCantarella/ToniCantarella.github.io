@@ -1,6 +1,6 @@
 {
   "home": {
-    "introduction": "This is my introduction"
+    "introduction": "I am a front-end focused developer, with {{yearsOfExperience}} years of experience in developing modern web and mobile applications."
   },
   "navigation": {
     "about" : "About",

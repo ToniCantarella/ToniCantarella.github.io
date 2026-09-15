@@ -1,6 +1,6 @@
 {
   "home": {
-    "introduction": "Tämä on minun intro"
+    "introduction": "Olen frontendiin painottunut ohjelmistokehittäjä, jolla on {{yearsOfExperience}} vuoden työkokemus modernien web- ja mobiilisovellusten kehittämisestä."
   },
   "navigation": {
     "about" : "Tietoja",
