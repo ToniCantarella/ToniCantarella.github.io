@@ -27,7 +27,7 @@ function App() {
                     <AnimatePresence initial={false} custom={navigationDirection}>
                         <Routes location={location} key={location.pathname}>
                             <Route index element={<Home/>}/>
-                            <Route path="/experience" element={<Page>experience</Page>}/>
+                            <Route path="/projects" element={<Page>experience</Page>}/>
                             <Route path="/examples" element={<Page>examples</Page>}/>
                             <Route path="/art" element={<Page>art</Page>}/>
                             <Route path="/contact" element={<Page>contact</Page>}/>

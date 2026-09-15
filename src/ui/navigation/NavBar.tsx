@@ -1,5 +1,6 @@
 import {NavLink, useLocation} from "react-router"
 import {type Route, routes} from "./Navigation.tsx";
+import {useTranslation} from "react-i18next";
 
 type NavBarProps = {
     onLogoClick: () => void
@@ -7,6 +8,7 @@ type NavBarProps = {
 
 export default function NavBar(props: NavBarProps) {
     const location = useLocation()
+    const {t} = useTranslation()
 
     return (
         <nav className="flex gap-60">
@@ -23,7 +25,7 @@ export default function NavBar(props: NavBarProps) {
                                 to={route.path}
                                 className={`transition-colors duration-300 hover:text-primary ${selected ? 'text-primary' : ''}`}
                             >
-                                {route.label}
+                                {t(`navigation.${route.label}`)}
                             </NavLink>
                         </li>
                     )

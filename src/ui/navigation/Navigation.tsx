@@ -14,23 +14,23 @@ export type Route = {
 export const routes: Route[] = [
     {
         path: "/",
-        label: "About",
+        label: "about",
     },
     {
         path: "/experience",
-        label: "Experience",
+        label: "experience",
     },
     {
-        path: "/examples",
-        label: "Examples",
+        path: "/projects",
+        label: "projects",
     },
     {
         path: "/art",
-        label: "Art",
+        label: "art",
     },
     {
         path: "/contact",
-        label: "Contact",
+        label: "contact",
     },
 ]
 

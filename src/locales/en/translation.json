@@ -1,5 +1,12 @@
 {
   "home": {
     "introduction": "This is my introduction"
+  },
+  "navigation": {
+    "about" : "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "art": "Art",
+    "contact": "Contact"
   }
 }

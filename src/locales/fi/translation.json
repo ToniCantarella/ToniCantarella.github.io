@@ -1,5 +1,12 @@
 {
   "home": {
     "introduction": "Tämä on minun intro"
+  },
+  "navigation": {
+    "about" : "Tietoja",
+    "experience": "Kokemus",
+    "projects": "Projektit",
+    "art": "Taide",
+    "contact": "Ota yhteyttä"
   }
 }
